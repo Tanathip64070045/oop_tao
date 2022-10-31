@@ -6,3 +6,4 @@ public class Main {
  MainWindow p4 = new MainWindow();
  }
 }
+// งงๆ wtf      
