@@ -3,5 +3,6 @@ public class Main {
  MainWindow p1 = new MainWindow();
  MainWindow p2 = new MainWindow();
  MainWindow p3 = new MainWindow();
+ MainWindow p4 = new MainWindow();
  }
 }
