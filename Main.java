@@ -5,3 +5,4 @@ public class Main {
  MainWindow p3 = new MainWindow();
  }
 }
+// งงๆ wtf
