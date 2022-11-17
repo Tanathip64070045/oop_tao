@@ -3,6 +3,7 @@ import javax.swing.*;
 import java.awt.event.*;
 
 public class MainWindow extends JFrame {
+
         public MainWindow() {
                 // create JSwing
                 JPanel panelHeader = new JPanel();
@@ -11,26 +12,35 @@ public class MainWindow extends JFrame {
                 JPanel panelBottom = new JPanel();
                 JPanel panelTop = new JPanel();
                 JPanel panelInTop = new JPanel();
-                // Icon iconRec = new ImageIcon("./img/imageRec.png");
-                // Icon iconCoffee = new ImageIcon("./img/imageCoffee.png");
-                // Icon iconTea = new ImageIcon("./img/imageTea.png");
-                // Icon iconMilk = new ImageIcon("./img/imageMilk.png");
-                // Icon iconJuice = new ImageIcon("./img/imageJuice.png");
-                // Icon iconSoda = new ImageIcon("./img/imageSoda.png");
-                // JButton btnLogin = new JButton();
-                // JButton btnRec = new JButton(iconRec);
-                // JButton btnCoffee = new JButton(iconCoffee);
-                // JButton btnTea = new JButton(iconTea);
-                // JButton btnMilk = new JButton(iconMilk);
-                // JButton btnJuice = new JButton(iconJuice);
-                // JButton btnSoda = new JButton(iconSoda);
-                JButton btnLogin = new JButton();
-                JButton btnRec = new JButton();
-                JButton btnCoffee = new JButton();
-                JButton btnTea = new JButton();
-                JButton btnMilk = new JButton();
-                JButton btnJuice = new JButton();
-                JButton btnSoda = new JButton();
+                
+                // IMG and scale
+                ImageIcon image1 = new ImageIcon("imageCoffee.png");
+                image1.setImage(image1.getImage().getScaledInstance(70,70,Image.SCALE_DEFAULT));
+                ImageIcon image2 = new ImageIcon("imageJuice.png");
+                image2.setImage(image2.getImage().getScaledInstance(70,70,Image.SCALE_DEFAULT));
+                ImageIcon image3 = new ImageIcon("imageMilk.png");
+                image3.setImage(image3.getImage().getScaledInstance(70,70,Image.SCALE_DEFAULT));
+                ImageIcon image4 = new ImageIcon("imageRec.png");
+                image4.setImage(image4.getImage().getScaledInstance(70,70,Image.SCALE_DEFAULT));
+                ImageIcon image5 = new ImageIcon("imageSoda.png");
+                image5.setImage(image5.getImage().getScaledInstance(70,70,Image.SCALE_DEFAULT));
+                ImageIcon image6 = new ImageIcon("imageTea.png");
+                image6.setImage(image6.getImage().getScaledInstance(70,70,Image.SCALE_DEFAULT));
+                
+                //button Menu
+                JButton btnLogin = new JButton("LOGIN");
+                JButton btnRec = new JButton(image4);
+                btnRec.setLayout(new BorderLayout());
+                JButton btnCoffee = new JButton(image1);
+                btnCoffee.setLayout(new BorderLayout());
+                JButton btnTea = new JButton(image6);
+                btnTea.setLayout(new BorderLayout());
+                JButton btnMilk = new JButton(image3);
+                btnMilk.setLayout(new BorderLayout());
+                JButton btnJuice = new JButton(image2);
+                btnJuice.setLayout(new BorderLayout());
+                JButton btnSoda = new JButton(image5);
+                btnSoda.setLayout(new BorderLayout());
                 JLabel logo = new JLabel("", SwingConstants.CENTER);
                 JLabel txt = new JLabel("", SwingConstants.CENTER);
 
@@ -98,18 +108,56 @@ public class MainWindow extends JFrame {
                 btnSoda.setBackground(Color.decode("#C59E7E"));
                 btnLogin.setBackground(Color.decode("#F6E6E6"));
                 btnLogin.setMargin(new Insets(10, 20, 10, 20));
-                btnRec.setText("Recommend");
-                btnCoffee.setText("Coffee");
-                btnTea.setText("Tea");
-                btnMilk.setText("Milk and Chocolate");
-                btnJuice.setText("Juice");
-                btnSoda.setText("Soda");
-                btnLogin.setText("Login");
-                // btnRec.setVerticalTextPosition(JButton.SOUTH);
+                
+                
+                // txt in Menu Coffee
+                JPanel pCoffee = new JPanel();
+                JLabel tCoffee = new JLabel("Coffee");
+                pCoffee.add(tCoffee);
+                pCoffee.setBackground(Color.decode("#C59E7E"));
+                btnCoffee.add(pCoffee, BorderLayout.SOUTH);
+                
+                // txt in Menu Juice
+                JPanel pJuice = new JPanel();
+                JLabel tJuice = new JLabel("Juice");
+                pJuice.add(tJuice);
+                pJuice.setBackground(Color.decode("#C59E7E"));
+                btnJuice.add(pJuice, BorderLayout.SOUTH);
+
+                // txt in Menu Milk
+                JPanel pMilk = new JPanel();
+                JLabel tMilk = new JLabel("Milk & Chocolate");
+                pMilk.add(tMilk);
+                pMilk.setBackground(Color.decode("#C59E7E"));
+                btnMilk.add(pMilk, BorderLayout.SOUTH);
+
+                 // txt in Menu Rec
+                 JPanel pRec = new JPanel();
+                 JLabel tRec = new JLabel("Recommend");
+                 pRec.add(tRec);
+                 pRec.setBackground(Color.decode("#C59E7E"));
+                 btnRec.add(pRec, BorderLayout.SOUTH);
+
+                 // txt in Menu Soda
+                 JPanel pSoda = new JPanel();
+                 JLabel tSoda = new JLabel("Soda");
+                 pSoda.add(tSoda);
+                 pSoda.setBackground(Color.decode("#C59E7E"));
+                 btnSoda.add(pSoda, BorderLayout.SOUTH);
+
+                 // txt in Menu Tea
+                 JPanel pTea = new JPanel();
+                 JLabel tTea = new JLabel("Tea");
+                 pTea.add(tTea);
+                 pTea.setBackground(Color.decode("#C59E7E"));
+                 btnTea.add(pTea, BorderLayout.SOUTH);
+
+
+                
 
                 // เซ็ตค่าต่างๆ ขนาดของโปรแกรม width= 400, height= 500
                 this.setTitle("Tao Ngai");
-                this.setSize(720, 960);
+                this.setSize(720, 830);
                 this.setLayout(new BorderLayout());
                 this.add(panelTop, BorderLayout.NORTH);
                 this.add(panelBody, BorderLayout.CENTER);
