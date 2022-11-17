@@ -11,19 +11,26 @@ public class MainWindow extends JFrame {
                 JPanel panelBottom = new JPanel();
                 JPanel panelTop = new JPanel();
                 JPanel panelInTop = new JPanel();
-                Icon iconRec = new ImageIcon("./img/imageRec.png");
-                Icon iconCoffee = new ImageIcon("./img/imageCoffee.png");
-                Icon iconTea = new ImageIcon("./img/imageTea.png");
-                Icon iconMilk = new ImageIcon("./img/imageMilk.png");
-                Icon iconJuice = new ImageIcon("./img/imageJuice.png");
-                Icon iconSoda = new ImageIcon("./img/imageSoda.png");
+                // Icon iconRec = new ImageIcon("./img/imageRec.png");
+                // Icon iconCoffee = new ImageIcon("./img/imageCoffee.png");
+                // Icon iconTea = new ImageIcon("./img/imageTea.png");
+                // Icon iconMilk = new ImageIcon("./img/imageMilk.png");
+                // Icon iconJuice = new ImageIcon("./img/imageJuice.png");
+                // Icon iconSoda = new ImageIcon("./img/imageSoda.png");
+                // JButton btnLogin = new JButton();
+                // JButton btnRec = new JButton(iconRec);
+                // JButton btnCoffee = new JButton(iconCoffee);
+                // JButton btnTea = new JButton(iconTea);
+                // JButton btnMilk = new JButton(iconMilk);
+                // JButton btnJuice = new JButton(iconJuice);
+                // JButton btnSoda = new JButton(iconSoda);
                 JButton btnLogin = new JButton();
-                JButton btnRec = new JButton(iconRec);
-                JButton btnCoffee = new JButton(iconCoffee);
-                JButton btnTea = new JButton(iconTea);
-                JButton btnMilk = new JButton(iconMilk);
-                JButton btnJuice = new JButton(iconJuice);
-                JButton btnSoda = new JButton(iconSoda);
+                JButton btnRec = new JButton();
+                JButton btnCoffee = new JButton();
+                JButton btnTea = new JButton();
+                JButton btnMilk = new JButton();
+                JButton btnJuice = new JButton();
+                JButton btnSoda = new JButton();
                 JLabel logo = new JLabel("", SwingConstants.CENTER);
                 JLabel txt = new JLabel("", SwingConstants.CENTER);
 
@@ -98,7 +105,7 @@ public class MainWindow extends JFrame {
                 btnJuice.setText("Juice");
                 btnSoda.setText("Soda");
                 btnLogin.setText("Login");
-                btnRec.setVerticalTextPosition(JButton.SOUTH);
+                // btnRec.setVerticalTextPosition(JButton.SOUTH);
 
                 // เซ็ตค่าต่างๆ ขนาดของโปรแกรม width= 400, height= 500
                 this.setTitle("Tao Ngai");
