@@ -1,6 +1,4 @@
 import java.awt.*;
-
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.event.*;
 
@@ -13,18 +11,21 @@ public class MainWindow extends JFrame {
                 JPanel panelBottom = new JPanel();
                 JPanel panelTop = new JPanel();
                 JPanel panelInTop = new JPanel();
-                JButton btnLogin = new JButton("LOGIN");
-                JButton btnRec = new JButton("Recommend");
-                JButton btnCoffee = new JButton("Coffee");
-                JButton btnTea = new JButton("Tea");
-                JButton btnMilk = new JButton("Milk and Chocolate");
-                JButton btnJuice = new JButton("Juice");
-                JButton btnSoda = new JButton("Soda");
+                Icon iconRec = new ImageIcon("./img/imageRec.png");
+                Icon iconCoffee = new ImageIcon("./img/imageCoffee.png");
+                Icon iconTea = new ImageIcon("./img/imageTea.png");
+                Icon iconMilk = new ImageIcon("./img/imageMilk.png");
+                Icon iconJuice = new ImageIcon("./img/imageJuice.png");
+                Icon iconSoda = new ImageIcon("./img/imageSoda.png");
+                JButton btnLogin = new JButton();
+                JButton btnRec = new JButton(iconRec);
+                JButton btnCoffee = new JButton(iconCoffee);
+                JButton btnTea = new JButton(iconTea);
+                JButton btnMilk = new JButton(iconMilk);
+                JButton btnJuice = new JButton(iconJuice);
+                JButton btnSoda = new JButton(iconSoda);
                 JLabel logo = new JLabel("", SwingConstants.CENTER);
                 JLabel txt = new JLabel("", SwingConstants.CENTER);
-
-                Image img = ImageIO.read(getClass().getResource("resources/water.bmp"));
-                btnRec.setIcon(new ImageIcon(img));
 
                 // layoutBody setting
                 GridLayout layoutBody = new GridLayout(3, 2);
@@ -36,11 +37,13 @@ public class MainWindow extends JFrame {
 
                 // Label
                 logo.setText("Tao Ngoi");
-                logo.setFont(new Font("Arial", Font.PLAIN, 50));
+                logo.setFont(new Font("Arial", Font.PLAIN, 100));
+                logo.setForeground(Color.decode("#F6E6E6"));
 
                 // txt
                 txt.setText("Please select a category");
-                txt.setFont(new Font("Arial", Font.PLAIN, 20));
+                txt.setFont(new Font("Arial", Font.PLAIN, 50));
+                txt.setForeground(Color.decode("#F6E6E6"));
 
                 // panelBottom setting
                 panelBottom.setBackground(Color.decode("#443740"));
@@ -53,6 +56,7 @@ public class MainWindow extends JFrame {
                 panelHeader.setLayout(new BorderLayout());
                 panelHeader.add(logo, BorderLayout.CENTER);
                 panelHeader.add(txt, BorderLayout.SOUTH);
+                panelHeader.setBorder(BorderFactory.createEmptyBorder(30, 10, 30, 10));
 
                 // panelTop setting
                 panelTop.setLayout(new BorderLayout());
@@ -77,7 +81,6 @@ public class MainWindow extends JFrame {
                 panelInBody.add(btnMilk);
                 panelInBody.add(btnJuice);
                 panelInBody.add(btnSoda);
-                // btnRec.setMargin(new Insets(10, 10, 10, 10));
 
                 // Button setting
                 btnRec.setBackground(Color.decode("#C59E7E"));
@@ -87,10 +90,19 @@ public class MainWindow extends JFrame {
                 btnJuice.setBackground(Color.decode("#C59E7E"));
                 btnSoda.setBackground(Color.decode("#C59E7E"));
                 btnLogin.setBackground(Color.decode("#F6E6E6"));
+                btnLogin.setMargin(new Insets(10, 20, 10, 20));
+                btnRec.setText("Recommend");
+                btnCoffee.setText("Coffee");
+                btnTea.setText("Tea");
+                btnMilk.setText("Milk and Chocolate");
+                btnJuice.setText("Juice");
+                btnSoda.setText("Soda");
+                btnLogin.setText("Login");
+                btnRec.setVerticalTextPosition(JButton.SOUTH);
 
                 // เซ็ตค่าต่างๆ ขนาดของโปรแกรม width= 400, height= 500
                 this.setTitle("Tao Ngai");
-                this.setSize(600, 800);
+                this.setSize(720, 960);
                 this.setLayout(new BorderLayout());
                 this.add(panelTop, BorderLayout.NORTH);
                 this.add(panelBody, BorderLayout.CENTER);
