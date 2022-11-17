@@ -8,8 +8,8 @@ public class MainWindow extends JFrame{
         JPanel panel2 = new JPanel();
         JPanel panel3 = new JPanel();
         JButton btn1 = new JButton("LOGIN");
-        JLabel logo = new JLabel();
-        JLabel txt = new JLabel();
+        JLabel logo = new JLabel("", SwingConstants.CENTER);
+        JLabel txt = new JLabel("", SwingConstants.CENTER);
 
         //Label
         logo.setText("Tao Ngoi");
