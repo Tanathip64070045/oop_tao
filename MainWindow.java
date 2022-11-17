@@ -10,6 +10,7 @@ public class MainWindow extends JFrame{
         JButton btn1 = new JButton("LOGIN");
         JLabel logo = new JLabel();
         JLabel txt = new JLabel();
+        JLabel space = new JLabel(" ");
 
         //Label
         logo.setText("Tao Ngoi");
