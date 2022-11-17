@@ -8,16 +8,15 @@ public class MainWindow extends JFrame{
         JPanel panel2 = new JPanel();
         JPanel panel3 = new JPanel();
         JButton btn1 = new JButton("LOGIN");
-        JLabel logo = new JLabel();
-        JLabel txt = new JLabel();
-        JLabel space = new JLabel(" ");
+        JLabel logo = new JLabel("", SwingConstants.CENTER);
+        JLabel txt = new JLabel("", SwingConstants.CENTER);
 
         //Label
         logo.setText("Tao Ngoi");
         logo.setFont(new Font("Arial", Font.PLAIN, 50));
 
         //txt
-        txt.setText("Please Choose");
+        txt.setText("Please select a category");
         txt.setFont(new Font("Arial", Font.PLAIN, 20));
 
 
@@ -30,13 +29,13 @@ public class MainWindow extends JFrame{
 
         // panel1 setting
 //        panel1.setSize(400,100);
-        panel1.setBackground(Color.red);
+        panel1.setBackground(Color.decode("#896970"));
         panel1.setLayout(new BorderLayout());
         panel1.add(logo, BorderLayout.CENTER);
         panel1.add(txt, BorderLayout.SOUTH);
 
         //panel2 setting
-        panel2.setBackground(Color.blue);
+        panel2.setBackground(Color.decode("#443740"));
 //        panel2.setSize(400, 350);
 
 
