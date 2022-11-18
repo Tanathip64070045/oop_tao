@@ -2,9 +2,13 @@ import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
 
-public class MainWindow extends JFrame {
+public class MainWindow{
+
+        private JFrame fr;
 
         public MainWindow() {
+
+                fr = new JFrame();
                 // create JSwing
                 JPanel panelHeader = new JPanel();
                 JPanel panelBody = new JPanel();
@@ -50,7 +54,7 @@ public class MainWindow extends JFrame {
                 layoutBody.setVgap(20);
 
                 // Set default font
-                this.setFont(new Font("Arial", Font.PLAIN, 24));
+                fr.setFont(new Font("Arial", Font.PLAIN, 24));
 
                 // Label
                 logo.setText("Tao Ngoi");
@@ -156,14 +160,14 @@ public class MainWindow extends JFrame {
                 
 
                 // เซ็ตค่าต่างๆ ขนาดของโปรแกรม width= 400, height= 500
-                this.setTitle("Tao Ngai");
-                this.setSize(720, 830);
-                this.setLayout(new BorderLayout());
-                this.add(panelTop, BorderLayout.NORTH);
-                this.add(panelBody, BorderLayout.CENTER);
-                this.add(panelBottom, BorderLayout.SOUTH);
-                this.setVisible(true);
-                this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                fr.setTitle("Tao Ngai");
+                fr.setSize(720, 830);
+                fr.setLayout(new BorderLayout());
+                fr.add(panelTop, BorderLayout.NORTH);
+                fr.add(panelBody, BorderLayout.CENTER);
+                fr.add(panelBottom, BorderLayout.SOUTH);
+                fr.setVisible(true);
+                fr.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         }
 }
