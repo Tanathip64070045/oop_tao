@@ -11,7 +11,7 @@ import java.sql.SQLException;
 public class Connection {
 //    @param db connect database;
     public static java.sql.Connection connection() {
-        String url = "jdbc:sqlite:../Taonyoi/database.db";
+        String url = "jdbc:sqlite:database.db";
         java.sql.Connection conn = null;
         try {
             conn = DriverManager.getConnection(url);
