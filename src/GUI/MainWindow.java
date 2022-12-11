@@ -24,17 +24,17 @@ public class MainWindow{
                 JPanel panelInTop = new JPanel();
                 
                 // IMG and scale../Taonyoi/database.db
-                ImageIcon image1 = new ImageIcon("../OOP_TAO/public/img/imageCoffee.png");
+                ImageIcon image1 = new ImageIcon("../Taonyoi/public/img/imageCoffee.png");
                 image1.setImage(image1.getImage().getScaledInstance(70,70,Image.SCALE_DEFAULT));
-                ImageIcon image2 = new ImageIcon("../OOP_TAO/public/img/imageJuice.png");
+                ImageIcon image2 = new ImageIcon("../Taonyoi/public/img/imageJuice.png");
                 image2.setImage(image2.getImage().getScaledInstance(70,70,Image.SCALE_DEFAULT));
-                ImageIcon image3 = new ImageIcon("../OOP_TAO/public/img/imageMilk.png");
+                ImageIcon image3 = new ImageIcon("../Taonyoi/public/img/imageMilk.png");
                 image3.setImage(image3.getImage().getScaledInstance(70,70,Image.SCALE_DEFAULT));
-                ImageIcon image4 = new ImageIcon("../OOP_TAO/public/img/imageRec.png");
+                ImageIcon image4 = new ImageIcon("../Taonyoi/public/img/imageRec.png");
                 image4.setImage(image4.getImage().getScaledInstance(70,70,Image.SCALE_DEFAULT));
-                ImageIcon image5 = new ImageIcon("../OOP_TAO/public/img/imageSoda.png");
+                ImageIcon image5 = new ImageIcon("../Taonyoi/public/img/imageSoda.png");
                 image5.setImage(image5.getImage().getScaledInstance(70,70,Image.SCALE_DEFAULT));
-                ImageIcon image6 = new ImageIcon("../OOP_TAO/public/img/imageTea.png");
+                ImageIcon image6 = new ImageIcon("../Taonyoi/public/img/imageTea.png");
                 image6.setImage(image6.getImage().getScaledInstance(70,70,Image.SCALE_DEFAULT));
                 
                 //button Menu
