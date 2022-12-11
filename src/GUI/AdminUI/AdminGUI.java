@@ -7,6 +7,10 @@ public class AdminGUI extends javax.swing.JFrame {
         initComponents();
         setBackground(new Color(68,55,64));
         setResizable(false);
+        
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
+        setVisible(true);
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -14,7 +18,7 @@ public class AdminGUI extends javax.swing.JFrame {
 
         pnl_main = new javax.swing.JPanel();
         navbar = new GUI.Components.Navbar();
-        adminControl1 = new GUI.AdminUI.AdminControl();
+        adminControl1 = new GUI.Components.AdminControl();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(68, 55, 64));
@@ -83,7 +87,7 @@ public class AdminGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private GUI.AdminUI.AdminControl adminControl1;
+    private GUI.Components.AdminControl adminControl1;
     private GUI.Components.Navbar navbar;
     private javax.swing.JPanel pnl_main;
     // End of variables declaration//GEN-END:variables

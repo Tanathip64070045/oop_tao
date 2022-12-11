@@ -1,4 +1,4 @@
-package GUI.AdminUI;
+package GUI.Components;
 
 import GUI.Components.pnlCard;
 import GUI.Components.pnlBorder;

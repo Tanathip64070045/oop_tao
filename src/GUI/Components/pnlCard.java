@@ -24,17 +24,34 @@ public class pnlCard extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(245, 245, 245));
         setPreferredSize(new java.awt.Dimension(320, 155));
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lbl_title.setFont(new java.awt.Font("Tahoma", 0, 32)); // NOI18N
         lbl_title.setForeground(new java.awt.Color(124, 124, 124));
         lbl_title.setText("Title");
-        add(lbl_title, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 20, -1, -1));
 
         lbl_values.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         lbl_values.setForeground(new java.awt.Color(102, 102, 102));
         lbl_values.setText("Values");
-        add(lbl_values, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 90, -1, -1));
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(lbl_title))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(130, 130, 130)
+                .addComponent(lbl_values))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(lbl_title)
+                .addGap(31, 31, 31)
+                .addComponent(lbl_values))
+        );
     }// </editor-fold>//GEN-END:initComponents
 
     @Override
