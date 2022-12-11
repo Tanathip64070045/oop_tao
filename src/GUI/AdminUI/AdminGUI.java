@@ -1,6 +1,8 @@
 package GUI.AdminUI;
 
 import GUI.MainWindow;
+import GUI.MainWindow2;
+
 import java.awt.Color;
 
 public class AdminGUI extends javax.swing.JFrame {
@@ -94,7 +96,7 @@ public class AdminGUI extends javax.swing.JFrame {
 
     private void navbar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_navbar1MouseClicked
         setVisible(false);
-        new MainWindow();
+        new MainWindow2();
     }//GEN-LAST:event_navbar1MouseClicked
 
     public static void main(String args[]) {
