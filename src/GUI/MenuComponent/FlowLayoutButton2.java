@@ -30,110 +30,167 @@ public class FlowLayoutButton2 extends javax.swing.JPanel {
     private void initComponents() {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
-        jToggleButton2 = new javax.swing.JToggleButton();
-        jToggleButton3 = new javax.swing.JToggleButton();
-        jToggleButton4 = new javax.swing.JToggleButton();
-        jToggleButton5 = new javax.swing.JToggleButton();
-        jToggleButton6 = new javax.swing.JToggleButton();
+        pnlBorder1 = new GUI.Components.pnlBorder();
+        jLabel1 = new javax.swing.JLabel();
+        pnlBorder2 = new GUI.Components.pnlBorder();
+        jLabel2 = new javax.swing.JLabel();
+        pnlBorder3 = new GUI.Components.pnlBorder();
+        jLabel3 = new javax.swing.JLabel();
+        pnlBorder4 = new GUI.Components.pnlBorder();
+        jLabel4 = new javax.swing.JLabel();
+        pnlBorder5 = new GUI.Components.pnlBorder();
+        jLabel5 = new javax.swing.JLabel();
 
-        jToggleButton2.setBackground(new java.awt.Color(144, 111, 118));
-        buttonGroup1.add(jToggleButton2);
-        jToggleButton2.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jToggleButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jToggleButton2.setText("0%");
-        jToggleButton2.setMaximumSize(new java.awt.Dimension(180, 35));
-        jToggleButton2.setPreferredSize(new java.awt.Dimension(105, 35));
-        jToggleButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton2ActionPerformed(evt);
-            }
-        });
-        add(jToggleButton2);
+        setPreferredSize(new java.awt.Dimension(574, 45));
 
-        jToggleButton3.setBackground(new java.awt.Color(144, 111, 118));
-        buttonGroup1.add(jToggleButton3);
-        jToggleButton3.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jToggleButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jToggleButton3.setText("25%");
-        jToggleButton3.setMaximumSize(new java.awt.Dimension(180, 35));
-        jToggleButton3.setPreferredSize(new java.awt.Dimension(105, 35));
-        jToggleButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton3ActionPerformed(evt);
-            }
-        });
-        add(jToggleButton3);
+        pnlBorder1.setBackground(new java.awt.Color(144, 111, 118));
+        pnlBorder1.setPreferredSize(new java.awt.Dimension(105, 35));
 
-        jToggleButton4.setBackground(new java.awt.Color(144, 111, 118));
-        buttonGroup1.add(jToggleButton4);
-        jToggleButton4.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jToggleButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jToggleButton4.setText("50%");
-        jToggleButton4.setMaximumSize(new java.awt.Dimension(180, 35));
-        jToggleButton4.setPreferredSize(new java.awt.Dimension(105, 35));
-        jToggleButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton4ActionPerformed(evt);
-            }
-        });
-        add(jToggleButton4);
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("0%");
 
-        jToggleButton5.setBackground(new java.awt.Color(144, 111, 118));
-        buttonGroup1.add(jToggleButton5);
-        jToggleButton5.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jToggleButton5.setForeground(new java.awt.Color(255, 255, 255));
-        jToggleButton5.setText("75%");
-        jToggleButton5.setMaximumSize(new java.awt.Dimension(180, 35));
-        jToggleButton5.setPreferredSize(new java.awt.Dimension(105, 35));
-        jToggleButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton5ActionPerformed(evt);
-            }
-        });
-        add(jToggleButton5);
+        javax.swing.GroupLayout pnlBorder1Layout = new javax.swing.GroupLayout(pnlBorder1);
+        pnlBorder1.setLayout(pnlBorder1Layout);
+        pnlBorder1Layout.setHorizontalGroup(
+            pnlBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlBorder1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 93, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        pnlBorder1Layout.setVerticalGroup(
+            pnlBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlBorder1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
 
-        jToggleButton6.setBackground(new java.awt.Color(144, 111, 118));
-        buttonGroup1.add(jToggleButton6);
-        jToggleButton6.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jToggleButton6.setForeground(new java.awt.Color(255, 255, 255));
-        jToggleButton6.setText("100%");
-        jToggleButton6.setMaximumSize(new java.awt.Dimension(180, 35));
-        jToggleButton6.setPreferredSize(new java.awt.Dimension(105, 35));
-        jToggleButton6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton6ActionPerformed(evt);
-            }
-        });
-        add(jToggleButton6);
+        add(pnlBorder1);
+
+        pnlBorder2.setBackground(new java.awt.Color(144, 111, 118));
+        pnlBorder2.setPreferredSize(new java.awt.Dimension(105, 35));
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("25%");
+
+        javax.swing.GroupLayout pnlBorder2Layout = new javax.swing.GroupLayout(pnlBorder2);
+        pnlBorder2.setLayout(pnlBorder2Layout);
+        pnlBorder2Layout.setHorizontalGroup(
+            pnlBorder2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlBorder2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 93, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        pnlBorder2Layout.setVerticalGroup(
+            pnlBorder2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlBorder2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        add(pnlBorder2);
+
+        pnlBorder3.setBackground(new java.awt.Color(144, 111, 118));
+        pnlBorder3.setPreferredSize(new java.awt.Dimension(105, 35));
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("50%");
+
+        javax.swing.GroupLayout pnlBorder3Layout = new javax.swing.GroupLayout(pnlBorder3);
+        pnlBorder3.setLayout(pnlBorder3Layout);
+        pnlBorder3Layout.setHorizontalGroup(
+            pnlBorder3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlBorder3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 93, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        pnlBorder3Layout.setVerticalGroup(
+            pnlBorder3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlBorder3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        add(pnlBorder3);
+
+        pnlBorder4.setBackground(new java.awt.Color(144, 111, 118));
+        pnlBorder4.setPreferredSize(new java.awt.Dimension(105, 35));
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("75%");
+
+        javax.swing.GroupLayout pnlBorder4Layout = new javax.swing.GroupLayout(pnlBorder4);
+        pnlBorder4.setLayout(pnlBorder4Layout);
+        pnlBorder4Layout.setHorizontalGroup(
+            pnlBorder4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlBorder4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 93, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        pnlBorder4Layout.setVerticalGroup(
+            pnlBorder4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlBorder4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        add(pnlBorder4);
+
+        pnlBorder5.setBackground(new java.awt.Color(144, 111, 118));
+        pnlBorder5.setPreferredSize(new java.awt.Dimension(105, 35));
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setText("100%");
+
+        javax.swing.GroupLayout pnlBorder5Layout = new javax.swing.GroupLayout(pnlBorder5);
+        pnlBorder5.setLayout(pnlBorder5Layout);
+        pnlBorder5Layout.setHorizontalGroup(
+            pnlBorder5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlBorder5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 93, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        pnlBorder5Layout.setVerticalGroup(
+            pnlBorder5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlBorder5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        add(pnlBorder5);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton2ActionPerformed
-
-    private void jToggleButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton3ActionPerformed
-
-    private void jToggleButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton4ActionPerformed
-
-    private void jToggleButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton5ActionPerformed
-
-    private void jToggleButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton6ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JToggleButton jToggleButton2;
-    private javax.swing.JToggleButton jToggleButton3;
-    private javax.swing.JToggleButton jToggleButton4;
-    private javax.swing.JToggleButton jToggleButton5;
-    private javax.swing.JToggleButton jToggleButton6;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private GUI.Components.pnlBorder pnlBorder1;
+    private GUI.Components.pnlBorder pnlBorder2;
+    private GUI.Components.pnlBorder pnlBorder3;
+    private GUI.Components.pnlBorder pnlBorder4;
+    private GUI.Components.pnlBorder pnlBorder5;
     // End of variables declaration//GEN-END:variables
 }
