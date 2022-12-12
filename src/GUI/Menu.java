@@ -51,6 +51,8 @@ public class Menu extends javax.swing.JFrame {
 
         pnlBorder1.setBackground(new java.awt.Color(137, 105, 112));
 
+        jScrollPane1.setBorder(null);
+        jScrollPane1.setHorizontalScrollBar(null);
         jScrollPane1.setViewportView(menuPanel1);
 
         javax.swing.GroupLayout pnlBorder1Layout = new javax.swing.GroupLayout(pnlBorder1);
@@ -59,7 +61,7 @@ public class Menu extends javax.swing.JFrame {
             pnlBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlBorder1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 708, Short.MAX_VALUE)
                 .addContainerGap())
         );
         pnlBorder1Layout.setVerticalGroup(
