@@ -17,7 +17,6 @@ public class MenuPanel extends javax.swing.JPanel {
      */
     public MenuPanel() {
         initComponents();
-        setOpaque(false);
     }
 
     /**
@@ -68,14 +67,6 @@ public class MenuPanel extends javax.swing.JPanel {
         add(drinkGUI16);
     }// </editor-fold>//GEN-END:initComponents
 
-    @Override
-    protected void paintChildren(Graphics g) {
-        Graphics2D g2 = (Graphics2D) g;
-        g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING,RenderingHints.VALUE_ANTIALIAS_ON);
-        g2.setColor(getBackground());
-        g2.fillRoundRect(0, 0, getWidth(), getHeight(), 20, 20);
-        super.paintChildren(g);
-    }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private GUI.MenuComponent.DrinkGUI drinkGUI1;
