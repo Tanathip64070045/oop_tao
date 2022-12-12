@@ -43,6 +43,7 @@ public class CatagoryGUI extends javax.swing.JPanel {
         buttonGroup1.add(jToggleButton8);
         jToggleButton8.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jToggleButton8.setText("Recomment");
+        jToggleButton8.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         jToggleButton8.setBorderPainted(false);
         jToggleButton8.setHideActionText(true);
         jToggleButton8.addActionListener(new java.awt.event.ActionListener() {
@@ -55,6 +56,7 @@ public class CatagoryGUI extends javax.swing.JPanel {
         buttonGroup1.add(jToggleButton15);
         jToggleButton15.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jToggleButton15.setText("Recomment");
+        jToggleButton15.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         jToggleButton15.setBorderPainted(false);
         jToggleButton15.setHideActionText(true);
         jToggleButton15.addActionListener(new java.awt.event.ActionListener() {
@@ -69,6 +71,7 @@ public class CatagoryGUI extends javax.swing.JPanel {
         buttonGroup1.add(jToggleButton3);
         jToggleButton3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jToggleButton3.setText("Recomment");
+        jToggleButton3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         jToggleButton3.setBorderPainted(false);
         jToggleButton3.setHideActionText(true);
         jToggleButton3.setMaximumSize(new java.awt.Dimension(100, 100));
@@ -78,11 +81,13 @@ public class CatagoryGUI extends javax.swing.JPanel {
                 jToggleButton3ActionPerformed(evt);
             }
         });
+        add(jToggleButton3);
 
         jToggleButton4.setBackground(new java.awt.Color(246, 230, 230));
         buttonGroup1.add(jToggleButton4);
         jToggleButton4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jToggleButton4.setText("Coffee");
+        jToggleButton4.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         jToggleButton4.setBorderPainted(false);
         jToggleButton4.setHideActionText(true);
         jToggleButton4.setMaximumSize(new java.awt.Dimension(100, 100));
@@ -92,11 +97,13 @@ public class CatagoryGUI extends javax.swing.JPanel {
                 jToggleButton4ActionPerformed(evt);
             }
         });
+        add(jToggleButton4);
 
         jToggleButton5.setBackground(new java.awt.Color(246, 230, 230));
         buttonGroup1.add(jToggleButton5);
         jToggleButton5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jToggleButton5.setText("Tea");
+        jToggleButton5.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         jToggleButton5.setBorderPainted(false);
         jToggleButton5.setHideActionText(true);
         jToggleButton5.setMaximumSize(new java.awt.Dimension(100, 100));
@@ -106,12 +113,14 @@ public class CatagoryGUI extends javax.swing.JPanel {
                 jToggleButton5ActionPerformed(evt);
             }
         });
+        add(jToggleButton5);
 
         jToggleButton6.setBackground(new java.awt.Color(246, 230, 230));
         buttonGroup1.add(jToggleButton6);
         jToggleButton6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jToggleButton6.setText("Milk and Cocoa");
         jToggleButton6.setToolTipText("");
+        jToggleButton6.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         jToggleButton6.setBorderPainted(false);
         jToggleButton6.setHideActionText(true);
         jToggleButton6.setMaximumSize(new java.awt.Dimension(100, 100));
@@ -121,11 +130,13 @@ public class CatagoryGUI extends javax.swing.JPanel {
                 jToggleButton6ActionPerformed(evt);
             }
         });
+        add(jToggleButton6);
 
         jToggleButton7.setBackground(new java.awt.Color(246, 230, 230));
         buttonGroup1.add(jToggleButton7);
         jToggleButton7.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jToggleButton7.setText("Juice");
+        jToggleButton7.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         jToggleButton7.setBorderPainted(false);
         jToggleButton7.setHideActionText(true);
         jToggleButton7.setMaximumSize(new java.awt.Dimension(100, 100));
@@ -135,11 +146,13 @@ public class CatagoryGUI extends javax.swing.JPanel {
                 jToggleButton7ActionPerformed(evt);
             }
         });
+        add(jToggleButton7);
 
         jToggleButton9.setBackground(new java.awt.Color(246, 230, 230));
         buttonGroup1.add(jToggleButton9);
         jToggleButton9.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jToggleButton9.setText("Soda");
+        jToggleButton9.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         jToggleButton9.setBorderPainted(false);
         jToggleButton9.setHideActionText(true);
         jToggleButton9.setMaximumSize(new java.awt.Dimension(100, 100));
@@ -149,39 +162,7 @@ public class CatagoryGUI extends javax.swing.JPanel {
                 jToggleButton9ActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jToggleButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jToggleButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jToggleButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jToggleButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jToggleButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jToggleButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jToggleButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(22, Short.MAX_VALUE))
-        );
+        add(jToggleButton9);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jToggleButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton3ActionPerformed

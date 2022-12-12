@@ -49,7 +49,7 @@ public class MenuPanel extends javax.swing.JPanel {
         setBackground(new java.awt.Color(137, 105, 112));
         setPreferredSize(new java.awt.Dimension(720, 1050));
         setRequestFocusEnabled(false);
-        setLayout(new java.awt.FlowLayout(1, 7, 10));
+        setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 7, 10));
         add(drinkGUI1);
         add(drinkGUI2);
         add(drinkGUI3);
