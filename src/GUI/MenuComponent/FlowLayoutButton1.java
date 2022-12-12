@@ -29,73 +29,104 @@ public class FlowLayoutButton1 extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        buttonGroup1 = new javax.swing.ButtonGroup();
-        jToggleButton2 = new javax.swing.JToggleButton();
-        jToggleButton3 = new javax.swing.JToggleButton();
-        jToggleButton4 = new javax.swing.JToggleButton();
+        HotButton = new GUI.Components.pnlBorder();
+        jLabel1 = new javax.swing.JLabel();
+        IcedButton = new GUI.Components.pnlBorder();
+        jLabel2 = new javax.swing.JLabel();
+        SmoothieButton = new GUI.Components.pnlBorder();
+        jLabel3 = new javax.swing.JLabel();
 
-        jToggleButton2.setBackground(new java.awt.Color(144, 111, 118));
-        buttonGroup1.add(jToggleButton2);
-        jToggleButton2.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jToggleButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jToggleButton2.setText("Hot");
-        jToggleButton2.setMaximumSize(new java.awt.Dimension(180, 35));
-        jToggleButton2.setPreferredSize(new java.awt.Dimension(180, 35));
-        jToggleButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton2ActionPerformed(evt);
-            }
-        });
-        add(jToggleButton2);
+        setPreferredSize(new java.awt.Dimension(574, 45));
 
-        jToggleButton3.setBackground(new java.awt.Color(144, 111, 118));
-        buttonGroup1.add(jToggleButton3);
-        jToggleButton3.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jToggleButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jToggleButton3.setText("Iced(+฿5)");
-        jToggleButton3.setMaximumSize(new java.awt.Dimension(180, 35));
-        jToggleButton3.setPreferredSize(new java.awt.Dimension(180, 35));
-        jToggleButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton3ActionPerformed(evt);
-            }
-        });
-        add(jToggleButton3);
+        HotButton.setBackground(new java.awt.Color(144, 111, 118));
+        HotButton.setPreferredSize(new java.awt.Dimension(175, 35));
 
-        jToggleButton4.setBackground(new java.awt.Color(144, 111, 118));
-        buttonGroup1.add(jToggleButton4);
-        jToggleButton4.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jToggleButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jToggleButton4.setSelected(true);
-        jToggleButton4.setText("Smoothie(+฿10)");
-        jToggleButton4.setToolTipText("");
-        jToggleButton4.setMaximumSize(new java.awt.Dimension(180, 35));
-        jToggleButton4.setPreferredSize(new java.awt.Dimension(180, 35));
-        jToggleButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton4ActionPerformed(evt);
-            }
-        });
-        add(jToggleButton4);
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Hot");
+
+        javax.swing.GroupLayout HotButtonLayout = new javax.swing.GroupLayout(HotButton);
+        HotButton.setLayout(HotButtonLayout);
+        HotButtonLayout.setHorizontalGroup(
+            HotButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, HotButtonLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 163, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        HotButtonLayout.setVerticalGroup(
+            HotButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(HotButtonLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        add(HotButton);
+
+        IcedButton.setBackground(new java.awt.Color(144, 111, 118));
+        IcedButton.setPreferredSize(new java.awt.Dimension(175, 35));
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("Iced");
+
+        javax.swing.GroupLayout IcedButtonLayout = new javax.swing.GroupLayout(IcedButton);
+        IcedButton.setLayout(IcedButtonLayout);
+        IcedButtonLayout.setHorizontalGroup(
+            IcedButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(IcedButtonLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 163, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        IcedButtonLayout.setVerticalGroup(
+            IcedButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(IcedButtonLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        add(IcedButton);
+
+        SmoothieButton.setBackground(new java.awt.Color(144, 111, 118));
+        SmoothieButton.setPreferredSize(new java.awt.Dimension(175, 35));
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("Smoothie");
+
+        javax.swing.GroupLayout SmoothieButtonLayout = new javax.swing.GroupLayout(SmoothieButton);
+        SmoothieButton.setLayout(SmoothieButtonLayout);
+        SmoothieButtonLayout.setHorizontalGroup(
+            SmoothieButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SmoothieButtonLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 163, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        SmoothieButtonLayout.setVerticalGroup(
+            SmoothieButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SmoothieButtonLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        add(SmoothieButton);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton2ActionPerformed
-
-    private void jToggleButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton3ActionPerformed
-
-    private void jToggleButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton4ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JToggleButton jToggleButton2;
-    private javax.swing.JToggleButton jToggleButton3;
-    private javax.swing.JToggleButton jToggleButton4;
+    private GUI.Components.pnlBorder HotButton;
+    private GUI.Components.pnlBorder IcedButton;
+    private GUI.Components.pnlBorder SmoothieButton;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 }
