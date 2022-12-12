@@ -49,9 +49,8 @@ public class SweetnessLevel extends javax.swing.JPanel {
                 .addComponent(jLabel1)
                 .addGap(591, 591, 591))
             .addGroup(pnlBorder1Layout.createSequentialGroup()
-                .addContainerGap()
                 .addComponent(flowLayoutButton21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         pnlBorder1Layout.setVerticalGroup(
             pnlBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
