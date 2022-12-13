@@ -6,36 +6,31 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
-
 import GUI.AdminUI.AdminGUI;
 import GUI.AdminUI.AdminStock;
-import GUI.MainWindow2;
-import Model.Card;
+import GUI.MainWindow;
 import Model.Product;
-import Model.Stock;
 import Model.ViewModel;
 import db.DBModel;
-import java.awt.event.MouseAdapter;
+import internal.Login;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
-import javax.swing.JOptionPane;
 
 
 public class AppController implements ActionListener, WindowListener, MouseListener,Runnable{
     private AdminGUI adminGUI;
     private AdminStock stock;
-    
+    private MainWindow mw;
+    private internal.Login login;
     private ImageIcon balaIcon = new ImageIcon("../oop_tao/src/GUI/icons/Vecter3.png");
     private ImageIcon tIcon = new ImageIcon("../oop_tao/src/GUI/icons/Vecter3.png");
-
     
     private DBModel db;
     private Product p = new Product();
@@ -46,28 +41,37 @@ public class AppController implements ActionListener, WindowListener, MouseListe
     }
     
     public static void main(String[] args) {
-        AppController app = new AppController();
+        new AppController();
     }
     public AppController(){
         db = new DBModel();
-        MainWindow2 mw = new MainWindow2();
+        mw = new MainWindow();
+        mw.setVisible(true);
+        
+        login = new Login();
+        login.getBtnLogin().addActionListener(this);
+        login.getBtnLogin().setText("test");
+        login.getLblUsername().setText("asd");
+        
+        mw.getPnlLogin().addMouseListener(this);
         
         
-        adminGUI.getAdminControl().getStock().addMouseListener(this);
+//        adminGUI.getAdminControl().getStock().addMouseListener(this);
         int i = db.getProducts().size();
                 System.out.println(i);
         
 //        adminGUI.getAdminControl().getBalance().setData(new Card(null, "  Balance.", "9999.99 ฿", "description"));
 //        adminGUI.getAdminControl().getTotally().setData(new Card(null, "Totally.", "9999.99 ฿", "description"));
-        adminGUI.getAdminControl().getStock().sendData(new Stock(i));
+//        adminGUI.getAdminControl().getStock().sendData(new Stock(i));
 
-        adminGUI.addWindowListener(this);
+//        adminGUI.addWindowListener(this);
     }
     
     int index;
     
     @Override
     public void actionPerformed(ActionEvent ae) {
+
         if(ae.getSource().equals(stock.getAdminProducts().getBtnAdd())){
             try{
                 index = db.getIndex();
@@ -105,6 +109,11 @@ public class AppController implements ActionListener, WindowListener, MouseListe
 //                    JOptionPane.showMessageDialog(null,"Remove Data.", "Removing", JOptionPane.PLAIN_MESSAGE);
                 }
           }
+        if(ae.getSource().equals(login.getBtnLogin())){
+                System.out.println("tets");
+                adminGUI = new AdminGUI();
+    //             && (login.getTfUsername().equals("madara") && login.getTfPassword().equals("55555"))
+        }
     }
     
     
@@ -113,7 +122,7 @@ public class AppController implements ActionListener, WindowListener, MouseListe
     private String fName = "";
     File sourceFile = null;
     File destinationFile = null;
-    
+                                         
     private void btnImageActionPerformed(java.awt.event.ActionEvent evt) {                                         
         if(evt.getSource().equals(stock.getAdminProducts().getBtnImage())){
             JFileChooser fc = new JFileChooser();
@@ -186,43 +195,51 @@ public class AppController implements ActionListener, WindowListener, MouseListe
 
     @Override
     public void mouseClicked(MouseEvent e) {
-        if(e.getSource().equals(adminGUI.getAdminControl().getStock())){
-//            new tap;
-            stock = new AdminStock();
-            
-            stock.getAdminProducts().getBtnAdd().addActionListener(this);
-            stock.getAdminProducts().getBtnUpdate().addActionListener(this);
-            stock.getAdminProducts().getBtnDelete().addActionListener(this);
-            stock.getAdminProducts().getBtnImage().addActionListener(this);
-            
-            for(int i = 0; i < db.getProducts().size(); i++){
-                int id = ((Product)(db.getProducts().get(i))).getId();
-                String img = ((Product)(db.getProducts().get(i))).getImg();
-                String productName = ((Product)(db.getProducts().get(i))).getProductName();
-                double price = ((Product)(db.getProducts().get(i))).getPrice();
-                String category = ((Product)(db.getProducts().get(i))).getCategory();
-                JButton action = new JButton("Delete");
+//        if(e.getSource().equals(adminGUI.getAdminControl().getStock())){
+////            new tap;
+//            stock = new AdminStock();
+//            
+//            stock.getAdminProducts().getBtnAdd().addActionListener(this);
+//            stock.getAdminProducts().getBtnUpdate().addActionListener(this);
+//            stock.getAdminProducts().getBtnDelete().addActionListener(this);
+//            stock.getAdminProducts().getBtnImage().addActionListener(this);
+//            
+//            for(int i = 0; i < db.getProducts().size(); i++){
+//                int id = ((Product)(db.getProducts().get(i))).getId();
+//                String img = ((Product)(db.getProducts().get(i))).getImg();
+//                String productName = ((Product)(db.getProducts().get(i))).getProductName();
+//                double price = ((Product)(db.getProducts().get(i))).getPrice();
+//                String category = ((Product)(db.getProducts().get(i))).getCategory();
+//                JButton action = new JButton("Delete");
+//
+//                Object[] data = {id,img,productName,price,category,action};
+//                stock.getAdminProducts().getTable().getTableModel().addRow(data);
+//            }
+//
+//            stock.getAdminProducts().getTable().addMouseListener(new MouseAdapter(){
+//                public void mouseClicked(MouseEvent arg0){
+//                    int i = stock.getAdminProducts().getTable().getSelectedRow();
+//                    stock.getAdminProducts().getTfName().setText(stock.getAdminProducts().getTable().getValueAt(i, 2).toString());
+//                    stock.getAdminProducts().getTfPrice().setText(stock.getAdminProducts().getTable().getValueAt(i, 3).toString());
+//                    stock.getAdminProducts().getCategory().setSelectedItem(stock.getAdminProducts().getTable().getValueAt(i, 4));
+//                    view.setfName(stock.getAdminProducts().getTable().getValueAt(i, 1).toString());
+////                        System.out.println(stock.getAdminProducts().getTable().getValueAt(i, 1).toString());
+//                    stock.getAdminProducts().getLblFile().setText(shorten(stock.getAdminProducts().getTable().getValueAt(i, 1).toString(), 20));
+//                    
+////                    stock.getAdminProducts().getPnlViewer().repaint();                    stock.getAdminProducts().getPnlViewer().revalidate();
+//
+//
+//                }
+//            });
+//        }
 
-                Object[] data = {id,img,productName,price,category,action};
-                stock.getAdminProducts().getTable().getTableModel().addRow(data);
-            }
+        if(e.getSource().equals(mw.getPnlLogin())){
+            login.setVisible(true);
+        }
+//        check username
 
-            stock.getAdminProducts().getTable().addMouseListener(new MouseAdapter(){
-                public void mouseClicked(MouseEvent arg0){
-                    int i = stock.getAdminProducts().getTable().getSelectedRow();
-                    stock.getAdminProducts().getTfName().setText(stock.getAdminProducts().getTable().getValueAt(i, 2).toString());
-                    stock.getAdminProducts().getTfPrice().setText(stock.getAdminProducts().getTable().getValueAt(i, 3).toString());
-                    stock.getAdminProducts().getCategory().setSelectedItem(stock.getAdminProducts().getTable().getValueAt(i, 4));
-                    view.setfName(stock.getAdminProducts().getTable().getValueAt(i, 1).toString());
-//                        System.out.println(stock.getAdminProducts().getTable().getValueAt(i, 1).toString());
-                    stock.getAdminProducts().getLblFile().setText(shorten(stock.getAdminProducts().getTable().getValueAt(i, 1).toString(), 20));
-                    
-//                    stock.getAdminProducts().getPnlViewer().repaint();                    stock.getAdminProducts().getPnlViewer().revalidate();
-
-
-                }
-            });
-        } 
+                        
+        
     }
     @Override
     public void mousePressed(MouseEvent e) {

@@ -120,6 +120,9 @@ public class AdminProducts extends javax.swing.JPanel implements ActionListener 
 
         category.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Coffee", "Milk & Coco", "Tea", "Soda", "Juice" }));
 
+        btnAdd.setBackground(new java.awt.Color(51, 102, 255));
+        btnAdd.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnAdd.setForeground(new java.awt.Color(255, 255, 255));
         btnAdd.setText("Add");
         btnAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -127,8 +130,14 @@ public class AdminProducts extends javax.swing.JPanel implements ActionListener 
             }
         });
 
+        btnUpdate.setBackground(new java.awt.Color(197, 158, 126));
+        btnUpdate.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnUpdate.setForeground(new java.awt.Color(255, 255, 255));
         btnUpdate.setText("Update");
 
+        btnDelete.setBackground(new java.awt.Color(197, 158, 126));
+        btnDelete.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnDelete.setForeground(new java.awt.Color(255, 255, 255));
         btnDelete.setText("Delete");
 
         choosepic.setBackground(new java.awt.Color(255, 255, 255));
@@ -142,6 +151,8 @@ public class AdminProducts extends javax.swing.JPanel implements ActionListener 
         lblFile.setForeground(new java.awt.Color(102, 102, 102));
         choosepic.add(lblFile);
 
+        btnImage.setBackground(new java.awt.Color(197, 158, 126));
+        btnImage.setForeground(new java.awt.Color(255, 255, 255));
         btnImage.setText("Browse File.");
         btnImage.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

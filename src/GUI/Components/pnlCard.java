@@ -1,6 +1,6 @@
 package GUI.Components;
 
-import Model.CardModel;
+import Model.Card;
 
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -11,8 +11,9 @@ public class pnlCard extends javax.swing.JPanel {
         initComponents();
         setOpaque(false);
     }
-    public void setData(CardModel data){
+    public void setData(Card data){
         lbl_title.setText(data.getTitle());
+        lbl_title.setIcon(data.getIcon());
         lbl_values.setText(data.getValues());
     }
     @SuppressWarnings("unchecked")
@@ -27,7 +28,6 @@ public class pnlCard extends javax.swing.JPanel {
 
         lbl_title.setFont(new java.awt.Font("Tahoma", 0, 32)); // NOI18N
         lbl_title.setForeground(new java.awt.Color(124, 124, 124));
-        lbl_title.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/Vector3.png"))); // NOI18N
         lbl_title.setText("Title");
 
         lbl_values.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N

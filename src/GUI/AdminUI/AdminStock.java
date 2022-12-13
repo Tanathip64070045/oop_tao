@@ -28,6 +28,7 @@ public class AdminStock extends javax.swing.JFrame{
         panel_main = new javax.swing.JPanel();
         adminProducts = new GUI.Components.AdminProducts();
         navbar1 = new GUI.Components.Navbar();
+        navbar21 = new GUI.Components.Navbar2();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -39,11 +40,13 @@ public class AdminStock extends javax.swing.JFrame{
         navbar1.setLayout(navbar1Layout);
         navbar1Layout.setHorizontalGroup(
             navbar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1400, Short.MAX_VALUE)
+            .addComponent(navbar21, javax.swing.GroupLayout.DEFAULT_SIZE, 1495, Short.MAX_VALUE)
         );
         navbar1Layout.setVerticalGroup(
             navbar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, navbar1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(navbar21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         panel_main.add(navbar1, java.awt.BorderLayout.PAGE_START);
@@ -56,7 +59,7 @@ public class AdminStock extends javax.swing.JFrame{
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panel_main, javax.swing.GroupLayout.DEFAULT_SIZE, 750, Short.MAX_VALUE)
+            .addComponent(panel_main, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -74,6 +77,7 @@ public class AdminStock extends javax.swing.JFrame{
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private GUI.Components.AdminProducts adminProducts;
     private GUI.Components.Navbar navbar1;
+    private GUI.Components.Navbar2 navbar21;
     private javax.swing.JPanel panel_main;
     // End of variables declaration//GEN-END:variables
 
