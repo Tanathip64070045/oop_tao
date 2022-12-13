@@ -27,7 +27,7 @@ public class PaymentMainWindow extends javax.swing.JPanel {
     private void initComponents() {
 
         BackButton1 = new javax.swing.JLabel();
-        panelBorder2 = new GUI.PaymentGUI.Components.PanelBorder();
+        panelBorder1 = new GUI.PaymentGUI.Components.PanelBorder();
         ButtonCash = new GUI.PaymentGUI.Components.PaymentMainWindowCashButton();
         ButtonQrCode = new GUI.PaymentGUI.Components.PaymentMainWindowQrCodeButton();
         ButtonTrue = new GUI.PaymentGUI.Components.PaymentMainWindowTrueButton();
@@ -48,12 +48,11 @@ public class PaymentMainWindow extends javax.swing.JPanel {
         BackButton1.setText("BACK");
         add(BackButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, -1, -1));
 
-        panelBorder2.setMinimumSize(new java.awt.Dimension(0, 0));
-        panelBorder2.setPreferredSize(new java.awt.Dimension(720, 730));
-        panelBorder2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        panelBorder2.add(ButtonCash, new org.netbeans.lib.awtextra.AbsoluteConstraints(95, 299, -1, -1));
-        panelBorder2.add(ButtonQrCode, new org.netbeans.lib.awtextra.AbsoluteConstraints(455, 299, -1, -1));
-        panelBorder2.add(ButtonTrue, new org.netbeans.lib.awtextra.AbsoluteConstraints(275, 464, -1, -1));
+        panelBorder1.setMinimumSize(new java.awt.Dimension(720, 730));
+        panelBorder1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        panelBorder1.add(ButtonCash, new org.netbeans.lib.awtextra.AbsoluteConstraints(95, 299, -1, -1));
+        panelBorder1.add(ButtonQrCode, new org.netbeans.lib.awtextra.AbsoluteConstraints(455, 299, -1, -1));
+        panelBorder1.add(ButtonTrue, new org.netbeans.lib.awtextra.AbsoluteConstraints(275, 464, -1, -1));
 
         ButtonPanel.setBackground(new java.awt.Color(163, 43, 43));
 
@@ -76,26 +75,26 @@ public class PaymentMainWindow extends javax.swing.JPanel {
             .addComponent(buttonCancel, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
         );
 
-        panelBorder2.add(ButtonPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(155, 640, -1, -1));
+        panelBorder1.add(ButtonPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(155, 640, -1, -1));
 
         label1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         label1.setText("Choose Your Payment Method");
-        panelBorder2.add(label1, new org.netbeans.lib.awtextra.AbsoluteConstraints(87, 28, -1, -1));
+        panelBorder1.add(label1, new org.netbeans.lib.awtextra.AbsoluteConstraints(87, 28, -1, -1));
 
         ProductName.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         ProductName.setText("Product Name");
-        panelBorder2.add(ProductName, new org.netbeans.lib.awtextra.AbsoluteConstraints(95, 251, -1, -1));
+        panelBorder1.add(ProductName, new org.netbeans.lib.awtextra.AbsoluteConstraints(95, 251, -1, -1));
 
         ProductValue.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         ProductValue.setForeground(new java.awt.Color(238, 114, 0));
         ProductValue.setText("0 ฿");
-        panelBorder2.add(ProductValue, new org.netbeans.lib.awtextra.AbsoluteConstraints(577, 251, 48, -1));
+        panelBorder1.add(ProductValue, new org.netbeans.lib.awtextra.AbsoluteConstraints(577, 251, 48, -1));
 
         ProductImg.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         ProductImg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/imgPayment.png"))); // NOI18N
-        panelBorder2.add(ProductImg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 96, 720, -1));
+        panelBorder1.add(ProductImg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 96, 720, -1));
 
-        add(panelBorder2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, -1, -1));
+        add(panelBorder1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, -1, 730));
     }// </editor-fold>//GEN-END:initComponents
 
 
@@ -110,6 +109,6 @@ public class PaymentMainWindow extends javax.swing.JPanel {
     private java.awt.Label ProductValue;
     private java.awt.Label buttonCancel;
     private java.awt.Label label1;
-    private GUI.PaymentGUI.Components.PanelBorder panelBorder2;
+    private GUI.PaymentGUI.Components.PanelBorder panelBorder1;
     // End of variables declaration//GEN-END:variables
 }
