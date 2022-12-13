@@ -32,8 +32,7 @@ public class Menu extends javax.swing.JFrame {
         backGround1 = new GUI.Components.BackGround();
         jPanel1 = new javax.swing.JPanel();
         pnlBorder1 = new GUI.Components.pnlBorder();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        menuPanel1 = new GUI.MenuComponent.MenuPanel();
+        menuPanel2 = new GUI.MenuComponent.MenuPanel();
         jLabel1 = new javax.swing.JLabel();
         catagoryGUI1 = new GUI.MenuComponent.CatagoryGUI();
 
@@ -51,25 +50,20 @@ public class Menu extends javax.swing.JFrame {
 
         pnlBorder1.setBackground(new java.awt.Color(137, 105, 112));
 
-        jScrollPane1.setBorder(null);
-        jScrollPane1.setHorizontalScrollBar(null);
-        jScrollPane1.setViewportView(menuPanel1);
-
         javax.swing.GroupLayout pnlBorder1Layout = new javax.swing.GroupLayout(pnlBorder1);
         pnlBorder1.setLayout(pnlBorder1Layout);
         pnlBorder1Layout.setHorizontalGroup(
             pnlBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlBorder1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 708, Short.MAX_VALUE)
-                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlBorder1Layout.createSequentialGroup()
+                .addComponent(menuPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         pnlBorder1Layout.setVerticalGroup(
             pnlBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlBorder1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 568, Short.MAX_VALUE)
-                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlBorder1Layout.createSequentialGroup()
+                .addContainerGap(24, Short.MAX_VALUE)
+                .addComponent(menuPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(23, 23, 23))
         );
 
         jPanel1.add(pnlBorder1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 720, -1));
@@ -127,8 +121,7 @@ public class Menu extends javax.swing.JFrame {
     private GUI.MenuComponent.CatagoryGUI catagoryGUI1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private GUI.MenuComponent.MenuPanel menuPanel1;
+    private GUI.MenuComponent.MenuPanel menuPanel2;
     private GUI.Components.pnlBorder pnlBorder1;
     // End of variables declaration//GEN-END:variables
 }

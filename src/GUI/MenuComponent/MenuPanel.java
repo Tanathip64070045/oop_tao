@@ -36,17 +36,9 @@ public class MenuPanel extends javax.swing.JPanel {
         drinkGUI6 = new GUI.MenuComponent.DrinkGUI();
         drinkGUI7 = new GUI.MenuComponent.DrinkGUI();
         drinkGUI8 = new GUI.MenuComponent.DrinkGUI();
-        drinkGUI9 = new GUI.MenuComponent.DrinkGUI();
-        drinkGUI10 = new GUI.MenuComponent.DrinkGUI();
-        drinkGUI11 = new GUI.MenuComponent.DrinkGUI();
-        drinkGUI12 = new GUI.MenuComponent.DrinkGUI();
-        drinkGUI13 = new GUI.MenuComponent.DrinkGUI();
-        drinkGUI14 = new GUI.MenuComponent.DrinkGUI();
-        drinkGUI15 = new GUI.MenuComponent.DrinkGUI();
-        drinkGUI16 = new GUI.MenuComponent.DrinkGUI();
 
         setBackground(new java.awt.Color(137, 105, 112));
-        setPreferredSize(new java.awt.Dimension(720, 1050));
+        setPreferredSize(new java.awt.Dimension(720, 534));
         setRequestFocusEnabled(false);
         setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 7, 10));
         add(drinkGUI1);
@@ -57,26 +49,11 @@ public class MenuPanel extends javax.swing.JPanel {
         add(drinkGUI6);
         add(drinkGUI7);
         add(drinkGUI8);
-        add(drinkGUI9);
-        add(drinkGUI10);
-        add(drinkGUI11);
-        add(drinkGUI12);
-        add(drinkGUI13);
-        add(drinkGUI14);
-        add(drinkGUI15);
-        add(drinkGUI16);
     }// </editor-fold>//GEN-END:initComponents
 
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private GUI.MenuComponent.DrinkGUI drinkGUI1;
-    private GUI.MenuComponent.DrinkGUI drinkGUI10;
-    private GUI.MenuComponent.DrinkGUI drinkGUI11;
-    private GUI.MenuComponent.DrinkGUI drinkGUI12;
-    private GUI.MenuComponent.DrinkGUI drinkGUI13;
-    private GUI.MenuComponent.DrinkGUI drinkGUI14;
-    private GUI.MenuComponent.DrinkGUI drinkGUI15;
-    private GUI.MenuComponent.DrinkGUI drinkGUI16;
     private GUI.MenuComponent.DrinkGUI drinkGUI2;
     private GUI.MenuComponent.DrinkGUI drinkGUI3;
     private GUI.MenuComponent.DrinkGUI drinkGUI4;
@@ -84,6 +61,5 @@ public class MenuPanel extends javax.swing.JPanel {
     private GUI.MenuComponent.DrinkGUI drinkGUI6;
     private GUI.MenuComponent.DrinkGUI drinkGUI7;
     private GUI.MenuComponent.DrinkGUI drinkGUI8;
-    private GUI.MenuComponent.DrinkGUI drinkGUI9;
     // End of variables declaration//GEN-END:variables
 }
