@@ -41,6 +41,8 @@ public class PaymentChangeWindow extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        panelBorder1.setPreferredSize(new java.awt.Dimension(720, 730));
+
         buttonPanel.setBackground(new java.awt.Color(197, 158, 126));
 
         buttonConfirm.setAlignment(java.awt.Label.CENTER);
@@ -102,7 +104,7 @@ public class PaymentChangeWindow extends javax.swing.JFrame {
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(Received, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(Change, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(307, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelBorder1Layout.setVerticalGroup(
             panelBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -122,7 +124,7 @@ public class PaymentChangeWindow extends javax.swing.JFrame {
                 .addGap(30, 30, 30))
         );
 
-        getContentPane().add(panelBorder1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, -1, 730));
+        getContentPane().add(panelBorder1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, -1, -1));
 
         jPanel1.setBackground(new java.awt.Color(66, 56, 63));
         jPanel1.setPreferredSize(new java.awt.Dimension(720, 830));
