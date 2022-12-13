@@ -86,15 +86,12 @@ public class AdminProducts extends javax.swing.JPanel implements ActionListener 
         lblPictures = new javax.swing.JLabel();
         lblFile = new javax.swing.JLabel();
         btnImage = new javax.swing.JButton();
-        pnlViewer1 = new GUI.Components.pnlViewer();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
         spTable.setBackground(new java.awt.Color(255, 255, 255));
         spTable.setBorder(null);
 
-        table.setBackground(new java.awt.Color(255, 255, 255));
-        table.setForeground(new java.awt.Color(0, 0, 0));
         table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -153,17 +150,6 @@ public class AdminProducts extends javax.swing.JPanel implements ActionListener 
         });
         choosepic.add(btnImage);
 
-        javax.swing.GroupLayout pnlViewer1Layout = new javax.swing.GroupLayout(pnlViewer1);
-        pnlViewer1.setLayout(pnlViewer1Layout);
-        pnlViewer1Layout.setHorizontalGroup(
-            pnlViewer1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 261, Short.MAX_VALUE)
-        );
-        pnlViewer1Layout.setVerticalGroup(
-            pnlViewer1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 200, Short.MAX_VALUE)
-        );
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -196,11 +182,7 @@ public class AdminProducts extends javax.swing.JPanel implements ActionListener 
                                 .addComponent(btnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(77, 77, 77))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(215, 215, 215)
-                                .addComponent(pnlViewer1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
+                                .addGap(77, 77, 77))))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -226,8 +208,6 @@ public class AdminProducts extends javax.swing.JPanel implements ActionListener 
                         .addComponent(category, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(choosepic, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(pnlViewer1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnAdd)
@@ -356,7 +336,6 @@ public class AdminProducts extends javax.swing.JPanel implements ActionListener 
     private javax.swing.JLabel lblPictures;
     private javax.swing.JLabel lblPrice;
     private javax.swing.JLabel lblProduct;
-    private GUI.Components.pnlViewer pnlViewer1;
     private javax.swing.JScrollPane spTable;
     private GUI.Components.Table table;
     private javax.swing.JTextField tfName;
@@ -398,9 +377,7 @@ public class AdminProducts extends javax.swing.JPanel implements ActionListener 
         this.lblFile = lblFile;
     }
 
-    public pnlViewer getPnlViewer() {
-        return pnlViewer1;
-    }
+    
 
     public void setTfName(JTextField tfName) {
         this.tfName = tfName;

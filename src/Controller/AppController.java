@@ -9,6 +9,7 @@ import java.awt.event.WindowListener;
 
 import GUI.AdminUI.AdminGUI;
 import GUI.AdminUI.AdminStock;
+import GUI.MainWindow2;
 import Model.Card;
 import Model.Product;
 import Model.Stock;
@@ -49,14 +50,15 @@ public class AppController implements ActionListener, WindowListener, MouseListe
     }
     public AppController(){
         db = new DBModel();
-        adminGUI = new AdminGUI();
+        MainWindow2 mw = new MainWindow2();
+        
         
         adminGUI.getAdminControl().getStock().addMouseListener(this);
         int i = db.getProducts().size();
                 System.out.println(i);
         
-        adminGUI.getAdminControl().getBalance().setData(new Card(balaIcon, "  Balance.", "9999.99 ฿", "description"));
-        adminGUI.getAdminControl().getTotally().setData(new Card(tIcon, "Totally.", "9999.99 ฿", "description"));
+//        adminGUI.getAdminControl().getBalance().setData(new Card(null, "  Balance.", "9999.99 ฿", "description"));
+//        adminGUI.getAdminControl().getTotally().setData(new Card(null, "Totally.", "9999.99 ฿", "description"));
         adminGUI.getAdminControl().getStock().sendData(new Stock(i));
 
         adminGUI.addWindowListener(this);
@@ -121,7 +123,7 @@ public class AppController implements ActionListener, WindowListener, MouseListe
                 Path p = Paths.get(f.getAbsolutePath());
                     stock.getAdminProducts().getLblFile().setText(shorten(p.getFileName().toString(), 20));
                     fName = p.getFileName().toString();
-                    view.setfName(fName);
+//                    view.setfName(fName);
                 
                 String fileName = p.toString();
                 String fileNameOutput = p.getFileName().toString().replaceFirst("[.][^.]+$", "");
@@ -215,7 +217,7 @@ public class AppController implements ActionListener, WindowListener, MouseListe
 //                        System.out.println(stock.getAdminProducts().getTable().getValueAt(i, 1).toString());
                     stock.getAdminProducts().getLblFile().setText(shorten(stock.getAdminProducts().getTable().getValueAt(i, 1).toString(), 20));
                     
-                    stock.getAdminProducts().getPnlViewer().repaint();                    stock.getAdminProducts().getPnlViewer().revalidate();
+//                    stock.getAdminProducts().getPnlViewer().repaint();                    stock.getAdminProducts().getPnlViewer().revalidate();
 
 
                 }
