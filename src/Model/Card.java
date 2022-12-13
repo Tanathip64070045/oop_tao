@@ -2,7 +2,7 @@ package Model;
 
 import javax.swing.Icon;
 
-public class CardModel {
+public class Card {
 
     public Icon getIcon() {
         return icon;
@@ -36,14 +36,14 @@ public class CardModel {
         this.description = description;
     }
 
-    public CardModel(Icon icon, String title, String values, String description) {
+    public Card(Icon icon, String title, String values, String description) {
         this.icon = icon;
         this.title = title;
         this.values = values;
         this.description = description;
     }
 
-    public CardModel() {
+    public Card() {
     }
     
     

@@ -4,13 +4,11 @@ import GUI.Components.pnlCard;
 import GUI.Components.pnlBorder;
 import GUI.Components.pnlStock;
 import GUI.Components.Table;
-import Model.CardModel;
+import Model.Card;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
-import java.awt.event.MouseListener;
-import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JScrollPane;
 
@@ -20,13 +18,13 @@ public class AdminControl extends javax.swing.JPanel{
         setOpaque(false);
         setForeground(new Color(68,55,64));
         
-        balance.setData(new CardModel(null, "Balance.", "9999.99 ฿", "description"));
-        totally.setData(new CardModel(null, "Totally.", "9999.99 ฿", "description"));
-
+//        balance.setData(new Card(null, "Balance.", "9999.99 ฿", "description"));
+//        totally.setData(new Card(null, "Totally.", "9999.99 ฿", "description"));
+//        
         spTable.getViewport().setBackground(Color.WHITE);
     }
 
-    public AdminControl(pnlCard1 balance, JLabel lblTable, pnlBorder pnlBorder1, JScrollPane spTable, pnlStock stock, Table table, pnlCard totally) {
+    public AdminControl(pnlCard balance, JLabel lblTable, pnlBorder pnlBorder1, JScrollPane spTable, pnlStock stock, Table table, pnlCard totally) {
         this.balance = balance;
         this.label = lblTable;
         this.pnlBorder1 = pnlBorder1;
@@ -47,7 +45,7 @@ public class AdminControl extends javax.swing.JPanel{
         table = new GUI.Components.Table();
         label = new javax.swing.JLabel();
         totally = new GUI.Components.pnlCard();
-        balance = new GUI.Components.pnlCard1();
+        balance = new GUI.Components.pnlCard();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setForeground(new java.awt.Color(68, 55, 64));
@@ -98,14 +96,13 @@ public class AdminControl extends javax.swing.JPanel{
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap(20, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(pnlBorder1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(stock, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(balance, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(totally, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(stock, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(balance, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(totally, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(30, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -138,7 +135,7 @@ public class AdminControl extends javax.swing.JPanel{
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private GUI.Components.pnlCard1 balance;
+    private GUI.Components.pnlCard balance;
     private javax.swing.JLabel label;
     private GUI.Components.pnlBorder pnlBorder1;
     private javax.swing.JScrollPane spTable;
@@ -146,4 +143,18 @@ public class AdminControl extends javax.swing.JPanel{
     private GUI.Components.Table table;
     private GUI.Components.pnlCard totally;
     // End of variables declaration//GEN-END:variables
+ 
+
+    public pnlStock getStock() {
+        return stock;
+    }
+
+    public pnlCard getTotally() {
+        return totally;
+    }
+
+    public pnlCard getBalance() {
+        return balance;
+    }
+    
 }
