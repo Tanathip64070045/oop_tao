@@ -88,7 +88,6 @@ public class PaymentMainWindow extends javax.swing.JFrame {
         panelBorder2.setLayout(panelBorder2Layout);
         panelBorder2Layout.setHorizontalGroup(
             panelBorder2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(ProductImg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(panelBorder2Layout.createSequentialGroup()
                 .addGroup(panelBorder2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelBorder2Layout.createSequentialGroup()
@@ -115,6 +114,7 @@ public class PaymentMainWindow extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(ButtonQrCode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(95, 95, 95))
+            .addComponent(ProductImg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         panelBorder2Layout.setVerticalGroup(
             panelBorder2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -138,7 +138,7 @@ public class PaymentMainWindow extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanel1.add(panelBorder2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, -1, 730));
+        jPanel1.add(panelBorder2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, -1, -1));
 
         BackButton.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         BackButton.setForeground(new java.awt.Color(255, 255, 255));
@@ -146,9 +146,10 @@ public class PaymentMainWindow extends javax.swing.JFrame {
         BackButton.setText("BACK");
         jPanel1.add(BackButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 31, -1, -1));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 841));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        setBounds(0, 0, 736, 869);
+        setSize(new java.awt.Dimension(736, 869));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     /**
