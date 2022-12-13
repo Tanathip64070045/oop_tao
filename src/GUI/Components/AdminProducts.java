@@ -41,13 +41,33 @@ public class AdminProducts extends javax.swing.JPanel implements ActionListener{
 
         spTable = new javax.swing.JScrollPane();
         table = new GUI.Components.Table();
+<<<<<<< Updated upstream
         jButton1 = new javax.swing.JButton();
+=======
+        lblProduct = new javax.swing.JLabel();
+        lblName = new javax.swing.JLabel();
+        tfName = new javax.swing.JTextField();
+        lblPrice = new javax.swing.JLabel();
+        tfPrice = new javax.swing.JTextField();
+        lblCategory = new javax.swing.JLabel();
+        category = new javax.swing.JComboBox<>();
+        btnAdd = new javax.swing.JButton();
+        btnUpdate = new javax.swing.JButton();
+        btnDelete = new javax.swing.JButton();
+        choosepic = new javax.swing.JPanel();
+        lblPictures = new javax.swing.JLabel();
+        lblFile = new javax.swing.JLabel();
+        btnImage = new javax.swing.JButton();
+>>>>>>> Stashed changes
 
         setBackground(new java.awt.Color(255, 255, 255));
 
         spTable.setBorder(null);
 
+<<<<<<< Updated upstream
         table.setForeground(new java.awt.Color(255, 255, 255));
+=======
+>>>>>>> Stashed changes
         table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
@@ -61,8 +81,58 @@ public class AdminProducts extends javax.swing.JPanel implements ActionListener{
         ));
         spTable.setViewportView(table);
 
+<<<<<<< Updated upstream
         jButton1.setBackground(new java.awt.Color(197, 158, 126));
         jButton1.setText("Add Prodcut");
+=======
+        lblProduct.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        lblProduct.setForeground(new java.awt.Color(102, 102, 102));
+        lblProduct.setText("Products");
+
+        lblName.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lblName.setForeground(new java.awt.Color(51, 51, 51));
+        lblName.setText("Product");
+
+        lblPrice.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lblPrice.setForeground(new java.awt.Color(51, 51, 51));
+        lblPrice.setText("Price");
+
+        lblCategory.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lblCategory.setForeground(new java.awt.Color(51, 51, 51));
+        lblCategory.setText("Category");
+
+        category.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Coffee", "Milk & Coco", "Tea", "Soda", "Juice" }));
+
+        btnAdd.setText("Add");
+        btnAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddActionPerformed(evt);
+            }
+        });
+
+        btnUpdate.setText("Update");
+
+        btnDelete.setText("Delete");
+
+        choosepic.setBackground(new java.awt.Color(255, 255, 255));
+
+        lblPictures.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lblPictures.setForeground(new java.awt.Color(51, 51, 51));
+        lblPictures.setText("Pictures");
+        choosepic.add(lblPictures);
+
+        lblFile.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblFile.setForeground(new java.awt.Color(102, 102, 102));
+        choosepic.add(lblFile);
+
+        btnImage.setText("Browse File.");
+        btnImage.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnImageActionPerformed(evt);
+            }
+        });
+        choosepic.add(btnImage);
+>>>>>>> Stashed changes
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -74,9 +144,34 @@ public class AdminProducts extends javax.swing.JPanel implements ActionListener{
                         .addGap(25, 25, 25)
                         .addComponent(spTable, javax.swing.GroupLayout.PREFERRED_SIZE, 645, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
+<<<<<<< Updated upstream
                         .addGap(265, 265, 265)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(50, Short.MAX_VALUE))
+=======
+                        .addComponent(spTable, javax.swing.GroupLayout.PREFERRED_SIZE, 670, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(173, 173, 173)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblCategory)
+                                    .addComponent(choosepic, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(lblPrice)
+                                        .addComponent(tfPrice)
+                                        .addComponent(lblName)
+                                        .addComponent(tfName)
+                                        .addComponent(category, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(77, 77, 77))))))
+>>>>>>> Stashed changes
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -84,8 +179,35 @@ public class AdminProducts extends javax.swing.JPanel implements ActionListener{
                 .addGap(25, 25, 25)
                 .addComponent(spTable, javax.swing.GroupLayout.PREFERRED_SIZE, 625, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+<<<<<<< Updated upstream
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(23, Short.MAX_VALUE))
+=======
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(spTable, javax.swing.GroupLayout.PREFERRED_SIZE, 559, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(44, 44, 44))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lblName)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(tfName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lblPrice)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(tfPrice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 12, 12)
+                        .addComponent(lblCategory)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(category, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(choosepic, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnAdd)
+                            .addComponent(btnUpdate)
+                            .addComponent(btnDelete))
+                        .addGap(58, 58, 58))))
+>>>>>>> Stashed changes
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -112,8 +234,79 @@ public class AdminProducts extends javax.swing.JPanel implements ActionListener{
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+<<<<<<< Updated upstream
     private javax.swing.JButton jButton1;
+=======
+    private javax.swing.JButton btnAdd;
+    private javax.swing.JButton btnDelete;
+    private javax.swing.JButton btnImage;
+    private javax.swing.JButton btnUpdate;
+    private javax.swing.JComboBox<String> category;
+    private javax.swing.JPanel choosepic;
+    private javax.swing.JLabel lblCategory;
+    private javax.swing.JLabel lblFile;
+    private javax.swing.JLabel lblName;
+    private javax.swing.JLabel lblPictures;
+    private javax.swing.JLabel lblPrice;
+    private javax.swing.JLabel lblProduct;
+>>>>>>> Stashed changes
     private javax.swing.JScrollPane spTable;
     private GUI.Components.Table table;
     // End of variables declaration//GEN-END:variables
+<<<<<<< Updated upstream
+=======
+    public JButton getBtnAdd() {
+        return btnAdd;
+    }
+
+    public JButton getBtnDelete() {
+        return btnDelete;
+    }
+
+    public JButton getBtnImage() {
+        return btnImage;
+    }
+
+    public JButton getBtnUpdate() {
+        return btnUpdate;
+    }
+
+    public Table getTable() {
+        return table;
+    }
+
+    public JComboBox<String> getCategory() {
+        return category;
+    }
+
+    public JLabel getLblFile() {
+        return lblFile;
+    }
+
+    public void setCategory(JComboBox<String> category) {
+        this.category = category;
+    }
+
+    public void setLblFile(JLabel lblFile) {
+        this.lblFile = lblFile;
+    }
+
+    
+
+    public void setTfName(JTextField tfName) {
+        this.tfName = tfName;
+    }
+
+    public void setTfPrice(JTextField tfPrice) {
+        this.tfPrice = tfPrice;
+    }
+
+    public JTextField getTfName() {
+        return tfName;
+    }
+
+    public JTextField getTfPrice() {
+        return tfPrice;
+    }
+>>>>>>> Stashed changes
 }
