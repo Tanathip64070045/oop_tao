@@ -29,13 +29,29 @@ public class BackGround extends javax.swing.JPanel {
         BackButton1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(66, 56, 63));
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        setPreferredSize(new java.awt.Dimension(720, 830));
 
         BackButton1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         BackButton1.setForeground(new java.awt.Color(255, 255, 255));
         BackButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/Vector (3).png"))); // NOI18N
         BackButton1.setText("BACK");
-        add(BackButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 31, -1, -1));
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(BackButton1)
+                .addContainerGap(573, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(BackButton1)
+                .addContainerGap(763, Short.MAX_VALUE))
+        );
     }// </editor-fold>//GEN-END:initComponents
 
 

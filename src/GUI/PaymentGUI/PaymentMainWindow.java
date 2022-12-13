@@ -1,6 +1,6 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package GUI.PaymentGUI;
 
@@ -8,14 +8,13 @@ package GUI.PaymentGUI;
  *
  * @author admin
  */
-public class PaymentMainWindow extends javax.swing.JFrame {
+public class PaymentMainWindow extends javax.swing.JPanel {
 
     /**
-     * Creates new form NewJFrame
+     * Creates new form PaymentMainWindow
      */
     public PaymentMainWindow() {
         initComponents();
-        this.setResizable(false);
     }
 
     /**
@@ -27,7 +26,7 @@ public class PaymentMainWindow extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        BackButton1 = new javax.swing.JLabel();
         panelBorder2 = new GUI.PaymentGUI.Components.PanelBorder();
         ButtonCash = new GUI.PaymentGUI.Components.PaymentMainWindowCashButton();
         ButtonQrCode = new GUI.PaymentGUI.Components.PaymentMainWindowQrCodeButton();
@@ -38,17 +37,23 @@ public class PaymentMainWindow extends javax.swing.JFrame {
         ProductName = new java.awt.Label();
         ProductValue = new java.awt.Label();
         ProductImg = new javax.swing.JLabel();
-        BackButton = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(66, 56, 63));
         setPreferredSize(new java.awt.Dimension(720, 830));
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(66, 56, 63));
-        jPanel1.setPreferredSize(new java.awt.Dimension(720, 830));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        BackButton1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        BackButton1.setForeground(new java.awt.Color(255, 255, 255));
+        BackButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/Vector (3).png"))); // NOI18N
+        BackButton1.setText("BACK");
+        add(BackButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, -1, -1));
 
+        panelBorder2.setMinimumSize(new java.awt.Dimension(0, 0));
         panelBorder2.setPreferredSize(new java.awt.Dimension(720, 730));
+        panelBorder2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        panelBorder2.add(ButtonCash, new org.netbeans.lib.awtextra.AbsoluteConstraints(95, 299, -1, -1));
+        panelBorder2.add(ButtonQrCode, new org.netbeans.lib.awtextra.AbsoluteConstraints(455, 299, -1, -1));
+        panelBorder2.add(ButtonTrue, new org.netbeans.lib.awtextra.AbsoluteConstraints(275, 464, -1, -1));
 
         ButtonPanel.setBackground(new java.awt.Color(163, 43, 43));
 
@@ -71,127 +76,31 @@ public class PaymentMainWindow extends javax.swing.JFrame {
             .addComponent(buttonCancel, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
         );
 
+        panelBorder2.add(ButtonPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(155, 640, -1, -1));
+
         label1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         label1.setText("Choose Your Payment Method");
+        panelBorder2.add(label1, new org.netbeans.lib.awtextra.AbsoluteConstraints(87, 28, -1, -1));
 
         ProductName.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         ProductName.setText("Product Name");
+        panelBorder2.add(ProductName, new org.netbeans.lib.awtextra.AbsoluteConstraints(95, 251, -1, -1));
 
         ProductValue.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         ProductValue.setForeground(new java.awt.Color(238, 114, 0));
         ProductValue.setText("0 ฿");
+        panelBorder2.add(ProductValue, new org.netbeans.lib.awtextra.AbsoluteConstraints(577, 251, 48, -1));
 
         ProductImg.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         ProductImg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/imgPayment.png"))); // NOI18N
+        panelBorder2.add(ProductImg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 96, 720, -1));
 
-        javax.swing.GroupLayout panelBorder2Layout = new javax.swing.GroupLayout(panelBorder2);
-        panelBorder2.setLayout(panelBorder2Layout);
-        panelBorder2Layout.setHorizontalGroup(
-            panelBorder2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelBorder2Layout.createSequentialGroup()
-                .addGroup(panelBorder2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelBorder2Layout.createSequentialGroup()
-                        .addGap(87, 87, 87)
-                        .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(panelBorder2Layout.createSequentialGroup()
-                        .addGap(95, 95, 95)
-                        .addComponent(ProductName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(panelBorder2Layout.createSequentialGroup()
-                        .addGap(275, 275, 275)
-                        .addComponent(ButtonTrue, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(panelBorder2Layout.createSequentialGroup()
-                        .addGap(155, 155, 155)
-                        .addComponent(ButtonPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(84, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelBorder2Layout.createSequentialGroup()
-                .addGroup(panelBorder2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(panelBorder2Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(ProductValue, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(panelBorder2Layout.createSequentialGroup()
-                        .addGap(95, 95, 95)
-                        .addComponent(ButtonCash, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(ButtonQrCode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(95, 95, 95))
-            .addComponent(ProductImg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        panelBorder2Layout.setVerticalGroup(
-            panelBorder2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelBorder2Layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20)
-                .addComponent(ProductImg)
-                .addGap(10, 10, 10)
-                .addGroup(panelBorder2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(ProductName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ProductValue, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(15, 15, 15)
-                .addGroup(panelBorder2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(ButtonCash, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ButtonQrCode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(15, 15, 15)
-                .addComponent(ButtonTrue, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
-                .addComponent(ButtonPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-
-        jPanel1.add(panelBorder2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, -1, -1));
-
-        BackButton.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        BackButton.setForeground(new java.awt.Color(255, 255, 255));
-        BackButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/Vector (3).png"))); // NOI18N
-        BackButton.setText("BACK");
-        jPanel1.add(BackButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 31, -1, -1));
-
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-
-        pack();
-        setLocationRelativeTo(null);
+        add(panelBorder2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(PaymentMainWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(PaymentMainWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(PaymentMainWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(PaymentMainWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new PaymentMainWindow().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel BackButton;
+    private javax.swing.JLabel BackButton1;
     private GUI.PaymentGUI.Components.PaymentMainWindowCashButton ButtonCash;
     private GUI.PaymentGUI.Components.Button ButtonPanel;
     private GUI.PaymentGUI.Components.PaymentMainWindowQrCodeButton ButtonQrCode;
@@ -200,7 +109,6 @@ public class PaymentMainWindow extends javax.swing.JFrame {
     private java.awt.Label ProductName;
     private java.awt.Label ProductValue;
     private java.awt.Label buttonCancel;
-    private javax.swing.JPanel jPanel1;
     private java.awt.Label label1;
     private GUI.PaymentGUI.Components.PanelBorder panelBorder2;
     // End of variables declaration//GEN-END:variables
