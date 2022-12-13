@@ -14,7 +14,7 @@ public class Login extends javax.swing.JInternalFrame implements ActionListener{
 
     public Login() {
         initComponents();
-        btnLogin.addActionListener(this);
+//        btnLogin.addActionListener(this);
     }
 
     @SuppressWarnings("unchecked")
@@ -144,9 +144,9 @@ public class Login extends javax.swing.JInternalFrame implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource().equals(btnLogin)){
+//        if(e.getSource().equals(btnLogin)){
 //            System.out.println("test");
-        }
+//        }
     }
 
 }
