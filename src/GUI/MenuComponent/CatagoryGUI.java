@@ -29,184 +29,196 @@ public class CatagoryGUI extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        buttonGroup1 = new javax.swing.ButtonGroup();
-        jToggleButton8 = new javax.swing.JToggleButton();
-        jToggleButton15 = new javax.swing.JToggleButton();
-        jToggleButton3 = new javax.swing.JToggleButton();
-        jToggleButton4 = new javax.swing.JToggleButton();
-        jToggleButton5 = new javax.swing.JToggleButton();
-        jToggleButton6 = new javax.swing.JToggleButton();
-        jToggleButton7 = new javax.swing.JToggleButton();
-        jToggleButton9 = new javax.swing.JToggleButton();
+        RecommentButton = new GUI.Components.pnlBorder();
+        RecommentText = new javax.swing.JLabel();
+        CoffeeButton = new GUI.Components.pnlBorder();
+        CoffeeText = new javax.swing.JLabel();
+        TeaButton = new GUI.Components.pnlBorder();
+        TeaText = new javax.swing.JLabel();
+        MilkAndCocoaButton = new GUI.Components.pnlBorder();
+        MilkAndCocoaText = new javax.swing.JLabel();
+        JuiceButton = new GUI.Components.pnlBorder();
+        JuiceText = new javax.swing.JLabel();
+        SodaButton = new GUI.Components.pnlBorder();
+        SodaText = new javax.swing.JLabel();
 
-        jToggleButton8.setBackground(new java.awt.Color(246, 230, 230));
-        buttonGroup1.add(jToggleButton8);
-        jToggleButton8.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jToggleButton8.setText("Recomment");
-        jToggleButton8.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        jToggleButton8.setBorderPainted(false);
-        jToggleButton8.setHideActionText(true);
-        jToggleButton8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton8ActionPerformed(evt);
-            }
-        });
+        setPreferredSize(new java.awt.Dimension(700, 55));
 
-        jToggleButton15.setBackground(new java.awt.Color(246, 230, 230));
-        buttonGroup1.add(jToggleButton15);
-        jToggleButton15.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jToggleButton15.setText("Recomment");
-        jToggleButton15.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        jToggleButton15.setBorderPainted(false);
-        jToggleButton15.setHideActionText(true);
-        jToggleButton15.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton15ActionPerformed(evt);
-            }
-        });
+        RecommentButton.setBackground(new java.awt.Color(246, 230, 230));
 
-        setPreferredSize(new java.awt.Dimension(700, 200));
+        RecommentText.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        RecommentText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        RecommentText.setText("Recomment");
+        RecommentText.setAutoscrolls(true);
 
-        jToggleButton3.setBackground(new java.awt.Color(246, 230, 230));
-        buttonGroup1.add(jToggleButton3);
-        jToggleButton3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jToggleButton3.setText("Recomment");
-        jToggleButton3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        jToggleButton3.setBorderPainted(false);
-        jToggleButton3.setHideActionText(true);
-        jToggleButton3.setMaximumSize(new java.awt.Dimension(100, 100));
-        jToggleButton3.setPreferredSize(new java.awt.Dimension(100, 100));
-        jToggleButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton3ActionPerformed(evt);
-            }
-        });
-        add(jToggleButton3);
+        javax.swing.GroupLayout RecommentButtonLayout = new javax.swing.GroupLayout(RecommentButton);
+        RecommentButton.setLayout(RecommentButtonLayout);
+        RecommentButtonLayout.setHorizontalGroup(
+            RecommentButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RecommentButtonLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(RecommentText, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        RecommentButtonLayout.setVerticalGroup(
+            RecommentButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(RecommentButtonLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(RecommentText, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(54, Short.MAX_VALUE))
+        );
 
-        jToggleButton4.setBackground(new java.awt.Color(246, 230, 230));
-        buttonGroup1.add(jToggleButton4);
-        jToggleButton4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jToggleButton4.setText("Coffee");
-        jToggleButton4.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        jToggleButton4.setBorderPainted(false);
-        jToggleButton4.setHideActionText(true);
-        jToggleButton4.setMaximumSize(new java.awt.Dimension(100, 100));
-        jToggleButton4.setPreferredSize(new java.awt.Dimension(100, 100));
-        jToggleButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton4ActionPerformed(evt);
-            }
-        });
-        add(jToggleButton4);
+        add(RecommentButton);
 
-        jToggleButton5.setBackground(new java.awt.Color(246, 230, 230));
-        buttonGroup1.add(jToggleButton5);
-        jToggleButton5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jToggleButton5.setText("Tea");
-        jToggleButton5.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        jToggleButton5.setBorderPainted(false);
-        jToggleButton5.setHideActionText(true);
-        jToggleButton5.setMaximumSize(new java.awt.Dimension(100, 100));
-        jToggleButton5.setPreferredSize(new java.awt.Dimension(100, 100));
-        jToggleButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton5ActionPerformed(evt);
-            }
-        });
-        add(jToggleButton5);
+        CoffeeButton.setBackground(new java.awt.Color(246, 230, 230));
+        CoffeeButton.setPreferredSize(new java.awt.Dimension(108, 100));
 
-        jToggleButton6.setBackground(new java.awt.Color(246, 230, 230));
-        buttonGroup1.add(jToggleButton6);
-        jToggleButton6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jToggleButton6.setText("Milk and Cocoa");
-        jToggleButton6.setToolTipText("");
-        jToggleButton6.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        jToggleButton6.setBorderPainted(false);
-        jToggleButton6.setHideActionText(true);
-        jToggleButton6.setMaximumSize(new java.awt.Dimension(100, 100));
-        jToggleButton6.setPreferredSize(new java.awt.Dimension(100, 100));
-        jToggleButton6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton6ActionPerformed(evt);
-            }
-        });
-        add(jToggleButton6);
+        CoffeeText.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        CoffeeText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        CoffeeText.setText("Coffee");
+        CoffeeText.setAutoscrolls(true);
 
-        jToggleButton7.setBackground(new java.awt.Color(246, 230, 230));
-        buttonGroup1.add(jToggleButton7);
-        jToggleButton7.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jToggleButton7.setText("Juice");
-        jToggleButton7.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        jToggleButton7.setBorderPainted(false);
-        jToggleButton7.setHideActionText(true);
-        jToggleButton7.setMaximumSize(new java.awt.Dimension(100, 100));
-        jToggleButton7.setPreferredSize(new java.awt.Dimension(100, 100));
-        jToggleButton7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton7ActionPerformed(evt);
-            }
-        });
-        add(jToggleButton7);
+        javax.swing.GroupLayout CoffeeButtonLayout = new javax.swing.GroupLayout(CoffeeButton);
+        CoffeeButton.setLayout(CoffeeButtonLayout);
+        CoffeeButtonLayout.setHorizontalGroup(
+            CoffeeButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CoffeeButtonLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(CoffeeText, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        CoffeeButtonLayout.setVerticalGroup(
+            CoffeeButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(CoffeeButtonLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(CoffeeText, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(54, Short.MAX_VALUE))
+        );
 
-        jToggleButton9.setBackground(new java.awt.Color(246, 230, 230));
-        buttonGroup1.add(jToggleButton9);
-        jToggleButton9.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jToggleButton9.setText("Soda");
-        jToggleButton9.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        jToggleButton9.setBorderPainted(false);
-        jToggleButton9.setHideActionText(true);
-        jToggleButton9.setMaximumSize(new java.awt.Dimension(100, 100));
-        jToggleButton9.setPreferredSize(new java.awt.Dimension(100, 100));
-        jToggleButton9.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton9ActionPerformed(evt);
-            }
-        });
-        add(jToggleButton9);
+        add(CoffeeButton);
+
+        TeaButton.setBackground(new java.awt.Color(246, 230, 230));
+        TeaButton.setPreferredSize(new java.awt.Dimension(108, 100));
+
+        TeaText.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        TeaText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        TeaText.setText("Tea");
+        TeaText.setAutoscrolls(true);
+
+        javax.swing.GroupLayout TeaButtonLayout = new javax.swing.GroupLayout(TeaButton);
+        TeaButton.setLayout(TeaButtonLayout);
+        TeaButtonLayout.setHorizontalGroup(
+            TeaButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TeaButtonLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(TeaText, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        TeaButtonLayout.setVerticalGroup(
+            TeaButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TeaButtonLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(TeaText, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(54, Short.MAX_VALUE))
+        );
+
+        add(TeaButton);
+
+        MilkAndCocoaButton.setBackground(new java.awt.Color(246, 230, 230));
+        MilkAndCocoaButton.setPreferredSize(new java.awt.Dimension(108, 100));
+
+        MilkAndCocoaText.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        MilkAndCocoaText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        MilkAndCocoaText.setText("Milk and cocoa");
+        MilkAndCocoaText.setAutoscrolls(true);
+
+        javax.swing.GroupLayout MilkAndCocoaButtonLayout = new javax.swing.GroupLayout(MilkAndCocoaButton);
+        MilkAndCocoaButton.setLayout(MilkAndCocoaButtonLayout);
+        MilkAndCocoaButtonLayout.setHorizontalGroup(
+            MilkAndCocoaButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(MilkAndCocoaButtonLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(MilkAndCocoaText)
+                .addContainerGap(8, Short.MAX_VALUE))
+        );
+        MilkAndCocoaButtonLayout.setVerticalGroup(
+            MilkAndCocoaButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(MilkAndCocoaButtonLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(MilkAndCocoaText, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(54, Short.MAX_VALUE))
+        );
+
+        add(MilkAndCocoaButton);
+
+        JuiceButton.setBackground(new java.awt.Color(246, 230, 230));
+        JuiceButton.setPreferredSize(new java.awt.Dimension(108, 100));
+
+        JuiceText.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        JuiceText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        JuiceText.setText("Juice");
+        JuiceText.setAutoscrolls(true);
+
+        javax.swing.GroupLayout JuiceButtonLayout = new javax.swing.GroupLayout(JuiceButton);
+        JuiceButton.setLayout(JuiceButtonLayout);
+        JuiceButtonLayout.setHorizontalGroup(
+            JuiceButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JuiceButtonLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(JuiceText, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        JuiceButtonLayout.setVerticalGroup(
+            JuiceButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JuiceButtonLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(JuiceText, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(54, Short.MAX_VALUE))
+        );
+
+        add(JuiceButton);
+
+        SodaButton.setBackground(new java.awt.Color(246, 230, 230));
+        SodaButton.setPreferredSize(new java.awt.Dimension(108, 100));
+
+        SodaText.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        SodaText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        SodaText.setText("Soda");
+        SodaText.setAutoscrolls(true);
+
+        javax.swing.GroupLayout SodaButtonLayout = new javax.swing.GroupLayout(SodaButton);
+        SodaButton.setLayout(SodaButtonLayout);
+        SodaButtonLayout.setHorizontalGroup(
+            SodaButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SodaButtonLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(SodaText, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        SodaButtonLayout.setVerticalGroup(
+            SodaButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SodaButtonLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(SodaText, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(54, Short.MAX_VALUE))
+        );
+
+        add(SodaButton);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jToggleButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton3ActionPerformed
-
-    private void jToggleButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton15ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton15ActionPerformed
-
-    private void jToggleButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton8ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton8ActionPerformed
-
-    private void jToggleButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton4ActionPerformed
-
-    private void jToggleButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton5ActionPerformed
-
-    private void jToggleButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton6ActionPerformed
-
-    private void jToggleButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton7ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton7ActionPerformed
-
-    private void jToggleButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton9ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton9ActionPerformed
 
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JToggleButton jToggleButton15;
-    private javax.swing.JToggleButton jToggleButton3;
-    private javax.swing.JToggleButton jToggleButton4;
-    private javax.swing.JToggleButton jToggleButton5;
-    private javax.swing.JToggleButton jToggleButton6;
-    private javax.swing.JToggleButton jToggleButton7;
-    private javax.swing.JToggleButton jToggleButton8;
-    private javax.swing.JToggleButton jToggleButton9;
+    private GUI.Components.pnlBorder CoffeeButton;
+    private javax.swing.JLabel CoffeeText;
+    private GUI.Components.pnlBorder JuiceButton;
+    private javax.swing.JLabel JuiceText;
+    private GUI.Components.pnlBorder MilkAndCocoaButton;
+    private javax.swing.JLabel MilkAndCocoaText;
+    private GUI.Components.pnlBorder RecommentButton;
+    private javax.swing.JLabel RecommentText;
+    private GUI.Components.pnlBorder SodaButton;
+    private javax.swing.JLabel SodaText;
+    private GUI.Components.pnlBorder TeaButton;
+    private javax.swing.JLabel TeaText;
     // End of variables declaration//GEN-END:variables
 }
