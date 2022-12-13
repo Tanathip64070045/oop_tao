@@ -10,12 +10,12 @@ import java.awt.Color;
  *
  * @author Adam
  */
-public class RoundButton extends javax.swing.JPanel {
+public class PurchasingButton extends javax.swing.JPanel {
 
     /**
      * Creates new form RoundButton
      */
-    public RoundButton() {
+    public PurchasingButton() {
         initComponents();
         setBackground(new Color(0,0,0,0));
     }
@@ -30,15 +30,15 @@ public class RoundButton extends javax.swing.JPanel {
     private void initComponents() {
 
         pnlBorder1 = new GUI.Components.pnlBorder();
-        jLabel1 = new javax.swing.JLabel();
+        priceText = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         pnlBorder1.setBackground(new java.awt.Color(246, 230, 230));
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Purchasing | ฿45");
+        priceText.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        priceText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        priceText.setText("Purchasing | ฿45");
 
         javax.swing.GroupLayout pnlBorder1Layout = new javax.swing.GroupLayout(pnlBorder1);
         pnlBorder1.setLayout(pnlBorder1Layout);
@@ -46,14 +46,14 @@ public class RoundButton extends javax.swing.JPanel {
             pnlBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlBorder1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 194, Short.MAX_VALUE)
+                .addComponent(priceText, javax.swing.GroupLayout.DEFAULT_SIZE, 194, Short.MAX_VALUE)
                 .addContainerGap())
         );
         pnlBorder1Layout.setVerticalGroup(
             pnlBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlBorder1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
+                .addComponent(priceText, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -62,7 +62,7 @@ public class RoundButton extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
     private GUI.Components.pnlBorder pnlBorder1;
+    private javax.swing.JLabel priceText;
     // End of variables declaration//GEN-END:variables
 }

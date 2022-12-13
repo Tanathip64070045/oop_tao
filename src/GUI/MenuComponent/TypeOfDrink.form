@@ -16,17 +16,17 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="pnlBorder1" min="-2" max="-2" attributes="0"/>
+          <Component id="pnlBorder" min="-2" max="-2" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="pnlBorder1" max="32767" attributes="0"/>
+          <Component id="pnlBorder" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Container class="GUI.Components.pnlBorder" name="pnlBorder1">
+    <Container class="GUI.Components.pnlBorder" name="pnlBorder">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="7e" green="9e" red="c5" type="rgb"/>
@@ -38,12 +38,12 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
-                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                  <Component id="typeOfDrinkText" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="408" max="-2" attributes="0"/>
               </Group>
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                  <Component id="flowLayoutButton11" min="-2" max="-2" attributes="0"/>
+                  <Component id="typeOfDrinkButton" min="-2" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -51,16 +51,16 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace pref="12" max="32767" attributes="0"/>
-                  <Component id="jLabel1" min="-2" pref="46" max="-2" attributes="0"/>
+                  <Component id="typeOfDrinkText" min="-2" pref="46" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="flowLayoutButton11" min="-2" max="-2" attributes="0"/>
+                  <Component id="typeOfDrinkButton" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="jLabel1">
+        <Component class="javax.swing.JLabel" name="typeOfDrinkText">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="24" style="1"/>
@@ -71,7 +71,7 @@
             <Property name="text" type="java.lang.String" value="Type of drink"/>
           </Properties>
         </Component>
-        <Component class="GUI.MenuComponent.FlowLayoutButton1" name="flowLayoutButton11">
+        <Component class="GUI.MenuComponent.TypeOfDrinkButton" name="typeOfDrinkButton">
         </Component>
       </SubComponents>
     </Container>

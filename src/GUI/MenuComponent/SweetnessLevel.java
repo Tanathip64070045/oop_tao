@@ -30,15 +30,15 @@ public class SweetnessLevel extends javax.swing.JPanel {
     private void initComponents() {
 
         pnlBorder1 = new GUI.Components.pnlBorder();
-        jLabel1 = new javax.swing.JLabel();
-        flowLayoutButton21 = new GUI.MenuComponent.FlowLayoutButton2();
+        sweetnessLevelText = new javax.swing.JLabel();
+        sweetnessLevelButton = new GUI.MenuComponent.SweetnessLevelButton();
 
         pnlBorder1.setBackground(new java.awt.Color(197, 158, 126));
         pnlBorder1.setPreferredSize(new java.awt.Dimension(574, 93));
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(161, 65, 65));
-        jLabel1.setText("Sweetness Level");
+        sweetnessLevelText.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        sweetnessLevelText.setForeground(new java.awt.Color(161, 65, 65));
+        sweetnessLevelText.setText("Sweetness Level");
 
         javax.swing.GroupLayout pnlBorder1Layout = new javax.swing.GroupLayout(pnlBorder1);
         pnlBorder1.setLayout(pnlBorder1Layout);
@@ -46,19 +46,19 @@ public class SweetnessLevel extends javax.swing.JPanel {
             pnlBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlBorder1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
+                .addComponent(sweetnessLevelText)
                 .addGap(591, 591, 591))
             .addGroup(pnlBorder1Layout.createSequentialGroup()
-                .addComponent(flowLayoutButton21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(sweetnessLevelButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         pnlBorder1Layout.setVerticalGroup(
             pnlBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlBorder1Layout.createSequentialGroup()
                 .addContainerGap(12, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(sweetnessLevelText, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(flowLayoutButton21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(sweetnessLevelButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12))
         );
 
@@ -76,8 +76,8 @@ public class SweetnessLevel extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private GUI.MenuComponent.FlowLayoutButton2 flowLayoutButton21;
-    private javax.swing.JLabel jLabel1;
     private GUI.Components.pnlBorder pnlBorder1;
+    private GUI.MenuComponent.SweetnessLevelButton sweetnessLevelButton;
+    private javax.swing.JLabel sweetnessLevelText;
     // End of variables declaration//GEN-END:variables
 }

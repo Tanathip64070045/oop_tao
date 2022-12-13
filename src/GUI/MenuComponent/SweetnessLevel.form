@@ -41,11 +41,11 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
-                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                  <Component id="sweetnessLevelText" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="591" max="-2" attributes="0"/>
               </Group>
               <Group type="102" alignment="0" attributes="0">
-                  <Component id="flowLayoutButton21" min="-2" max="-2" attributes="0"/>
+                  <Component id="sweetnessLevelButton" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -54,16 +54,16 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace pref="12" max="32767" attributes="0"/>
-                  <Component id="jLabel1" min="-2" pref="46" max="-2" attributes="0"/>
+                  <Component id="sweetnessLevelText" min="-2" pref="46" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="flowLayoutButton21" min="-2" max="-2" attributes="0"/>
+                  <Component id="sweetnessLevelButton" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="jLabel1">
+        <Component class="javax.swing.JLabel" name="sweetnessLevelText">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="24" style="1"/>
@@ -74,7 +74,7 @@
             <Property name="text" type="java.lang.String" value="Sweetness Level"/>
           </Properties>
         </Component>
-        <Component class="GUI.MenuComponent.FlowLayoutButton2" name="flowLayoutButton21">
+        <Component class="GUI.MenuComponent.SweetnessLevelButton" name="sweetnessLevelButton">
         </Component>
       </SubComponents>
     </Container>

@@ -1,23 +1,20 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package GUI;
-
-import java.awt.Color;
 
 /**
  *
  * @author Adam
  */
-public class Menu extends javax.swing.JFrame {
+public class Menu extends javax.swing.JPanel {
 
     /**
-     * Creates new form Menu
+     * Creates new form MenuGUI
      */
     public Menu() {
         initComponents();
-        setBackground(new Color(0,0,0,0));
     }
 
     /**
@@ -29,24 +26,26 @@ public class Menu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        backGround1 = new GUI.Components.BackGround();
-        jPanel1 = new javax.swing.JPanel();
-        pnlBorder1 = new GUI.Components.pnlBorder();
-        menuPanel2 = new GUI.MenuComponent.MenuPanel();
-        jLabel1 = new javax.swing.JLabel();
         catagoryGUI1 = new GUI.MenuComponent.CatagoryGUI();
+        jPanel1 = new javax.swing.JPanel();
+        BackButton = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        pnlBorder1 = new GUI.Components.pnlBorder();
+        menuPanel = new GUI.MenuComponent.MenuPanel();
+        headerText = new javax.swing.JLabel();
+        catagoryGUI = new GUI.MenuComponent.CatagoryGUI();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        setUndecorated(true);
-        setResizable(false);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        backGround1.setPreferredSize(new java.awt.Dimension(720, 100));
-        getContentPane().add(backGround1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 80));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(66, 56, 63));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        BackButton.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        BackButton.setForeground(new java.awt.Color(255, 255, 255));
+        BackButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/Vector (3).png"))); // NOI18N
+        BackButton.setText("BACK");
+
+        jPanel2.setBackground(new java.awt.Color(66, 56, 63));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         pnlBorder1.setBackground(new java.awt.Color(137, 105, 112));
 
@@ -55,73 +54,60 @@ public class Menu extends javax.swing.JFrame {
         pnlBorder1Layout.setHorizontalGroup(
             pnlBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlBorder1Layout.createSequentialGroup()
-                .addComponent(menuPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(menuPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         pnlBorder1Layout.setVerticalGroup(
             pnlBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlBorder1Layout.createSequentialGroup()
                 .addContainerGap(24, Short.MAX_VALUE)
-                .addComponent(menuPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(menuPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(23, 23, 23))
         );
 
-        jPanel1.add(pnlBorder1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 720, -1));
+        jPanel2.add(pnlBorder1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 720, -1));
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(246, 230, 230));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Choose your drink");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 6, 720, 83));
-        jPanel1.add(catagoryGUI1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, -1, -1));
+        headerText.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
+        headerText.setForeground(new java.awt.Color(246, 230, 230));
+        headerText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        headerText.setText("Choose your drink");
+        jPanel2.add(headerText, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 6, 720, 83));
+        jPanel2.add(catagoryGUI, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, -1, -1));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 720, 750));
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(BackButton)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(BackButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 750, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(7, Short.MAX_VALUE))
+        );
 
-        pack();
-        setLocationRelativeTo(null);
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 830));
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Menu().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private GUI.Components.BackGround backGround1;
+    private javax.swing.JLabel BackButton;
+    private GUI.MenuComponent.CatagoryGUI catagoryGUI;
     private GUI.MenuComponent.CatagoryGUI catagoryGUI1;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel headerText;
     private javax.swing.JPanel jPanel1;
-    private GUI.MenuComponent.MenuPanel menuPanel2;
+    private javax.swing.JPanel jPanel2;
+    private GUI.MenuComponent.MenuPanel menuPanel;
     private GUI.Components.pnlBorder pnlBorder1;
     // End of variables declaration//GEN-END:variables
 }

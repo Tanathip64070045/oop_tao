@@ -29,196 +29,196 @@ public class CatagoryGUI extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        RecommentButton = new GUI.Components.pnlBorder();
-        RecommentText = new javax.swing.JLabel();
-        CoffeeButton = new GUI.Components.pnlBorder();
-        CoffeeText = new javax.swing.JLabel();
-        TeaButton = new GUI.Components.pnlBorder();
-        TeaText = new javax.swing.JLabel();
-        MilkAndCocoaButton = new GUI.Components.pnlBorder();
-        MilkAndCocoaText = new javax.swing.JLabel();
-        JuiceButton = new GUI.Components.pnlBorder();
-        JuiceText = new javax.swing.JLabel();
-        SodaButton = new GUI.Components.pnlBorder();
-        SodaText = new javax.swing.JLabel();
+        recommentButton = new GUI.Components.pnlBorder();
+        recommentText = new javax.swing.JLabel();
+        coffeeButton = new GUI.Components.pnlBorder();
+        coffeeText = new javax.swing.JLabel();
+        teaButton = new GUI.Components.pnlBorder();
+        teaText = new javax.swing.JLabel();
+        milkAndCocoaButton = new GUI.Components.pnlBorder();
+        milkAndCocoaText = new javax.swing.JLabel();
+        juiceButton = new GUI.Components.pnlBorder();
+        juiceText = new javax.swing.JLabel();
+        sodaButton = new GUI.Components.pnlBorder();
+        sodaText = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(700, 55));
 
-        RecommentButton.setBackground(new java.awt.Color(246, 230, 230));
+        recommentButton.setBackground(new java.awt.Color(246, 230, 230));
 
-        RecommentText.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        RecommentText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        RecommentText.setText("Recomment");
-        RecommentText.setAutoscrolls(true);
+        recommentText.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        recommentText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        recommentText.setText("Recomment");
+        recommentText.setAutoscrolls(true);
 
-        javax.swing.GroupLayout RecommentButtonLayout = new javax.swing.GroupLayout(RecommentButton);
-        RecommentButton.setLayout(RecommentButtonLayout);
-        RecommentButtonLayout.setHorizontalGroup(
-            RecommentButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RecommentButtonLayout.createSequentialGroup()
+        javax.swing.GroupLayout recommentButtonLayout = new javax.swing.GroupLayout(recommentButton);
+        recommentButton.setLayout(recommentButtonLayout);
+        recommentButtonLayout.setHorizontalGroup(
+            recommentButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, recommentButtonLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(RecommentText, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(recommentText, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
-        RecommentButtonLayout.setVerticalGroup(
-            RecommentButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(RecommentButtonLayout.createSequentialGroup()
+        recommentButtonLayout.setVerticalGroup(
+            recommentButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(recommentButtonLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(RecommentText, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(recommentText, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(54, Short.MAX_VALUE))
         );
 
-        add(RecommentButton);
+        add(recommentButton);
 
-        CoffeeButton.setBackground(new java.awt.Color(246, 230, 230));
-        CoffeeButton.setPreferredSize(new java.awt.Dimension(108, 100));
+        coffeeButton.setBackground(new java.awt.Color(246, 230, 230));
+        coffeeButton.setPreferredSize(new java.awt.Dimension(108, 100));
 
-        CoffeeText.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        CoffeeText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        CoffeeText.setText("Coffee");
-        CoffeeText.setAutoscrolls(true);
+        coffeeText.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        coffeeText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        coffeeText.setText("Coffee");
+        coffeeText.setAutoscrolls(true);
 
-        javax.swing.GroupLayout CoffeeButtonLayout = new javax.swing.GroupLayout(CoffeeButton);
-        CoffeeButton.setLayout(CoffeeButtonLayout);
-        CoffeeButtonLayout.setHorizontalGroup(
-            CoffeeButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CoffeeButtonLayout.createSequentialGroup()
+        javax.swing.GroupLayout coffeeButtonLayout = new javax.swing.GroupLayout(coffeeButton);
+        coffeeButton.setLayout(coffeeButtonLayout);
+        coffeeButtonLayout.setHorizontalGroup(
+            coffeeButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, coffeeButtonLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(CoffeeText, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(coffeeText, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
-        CoffeeButtonLayout.setVerticalGroup(
-            CoffeeButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(CoffeeButtonLayout.createSequentialGroup()
+        coffeeButtonLayout.setVerticalGroup(
+            coffeeButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(coffeeButtonLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(CoffeeText, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(coffeeText, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(54, Short.MAX_VALUE))
         );
 
-        add(CoffeeButton);
+        add(coffeeButton);
 
-        TeaButton.setBackground(new java.awt.Color(246, 230, 230));
-        TeaButton.setPreferredSize(new java.awt.Dimension(108, 100));
+        teaButton.setBackground(new java.awt.Color(246, 230, 230));
+        teaButton.setPreferredSize(new java.awt.Dimension(108, 100));
 
-        TeaText.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        TeaText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        TeaText.setText("Tea");
-        TeaText.setAutoscrolls(true);
+        teaText.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        teaText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        teaText.setText("Tea");
+        teaText.setAutoscrolls(true);
 
-        javax.swing.GroupLayout TeaButtonLayout = new javax.swing.GroupLayout(TeaButton);
-        TeaButton.setLayout(TeaButtonLayout);
-        TeaButtonLayout.setHorizontalGroup(
-            TeaButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TeaButtonLayout.createSequentialGroup()
+        javax.swing.GroupLayout teaButtonLayout = new javax.swing.GroupLayout(teaButton);
+        teaButton.setLayout(teaButtonLayout);
+        teaButtonLayout.setHorizontalGroup(
+            teaButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, teaButtonLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(TeaText, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(teaText, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
-        TeaButtonLayout.setVerticalGroup(
-            TeaButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(TeaButtonLayout.createSequentialGroup()
+        teaButtonLayout.setVerticalGroup(
+            teaButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(teaButtonLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(TeaText, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(teaText, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(54, Short.MAX_VALUE))
         );
 
-        add(TeaButton);
+        add(teaButton);
 
-        MilkAndCocoaButton.setBackground(new java.awt.Color(246, 230, 230));
-        MilkAndCocoaButton.setPreferredSize(new java.awt.Dimension(108, 100));
+        milkAndCocoaButton.setBackground(new java.awt.Color(246, 230, 230));
+        milkAndCocoaButton.setPreferredSize(new java.awt.Dimension(108, 100));
 
-        MilkAndCocoaText.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        MilkAndCocoaText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        MilkAndCocoaText.setText("Milk and cocoa");
-        MilkAndCocoaText.setAutoscrolls(true);
+        milkAndCocoaText.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        milkAndCocoaText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        milkAndCocoaText.setText("Milk and cocoa");
+        milkAndCocoaText.setAutoscrolls(true);
 
-        javax.swing.GroupLayout MilkAndCocoaButtonLayout = new javax.swing.GroupLayout(MilkAndCocoaButton);
-        MilkAndCocoaButton.setLayout(MilkAndCocoaButtonLayout);
-        MilkAndCocoaButtonLayout.setHorizontalGroup(
-            MilkAndCocoaButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(MilkAndCocoaButtonLayout.createSequentialGroup()
+        javax.swing.GroupLayout milkAndCocoaButtonLayout = new javax.swing.GroupLayout(milkAndCocoaButton);
+        milkAndCocoaButton.setLayout(milkAndCocoaButtonLayout);
+        milkAndCocoaButtonLayout.setHorizontalGroup(
+            milkAndCocoaButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(milkAndCocoaButtonLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(MilkAndCocoaText)
+                .addComponent(milkAndCocoaText)
                 .addContainerGap(8, Short.MAX_VALUE))
         );
-        MilkAndCocoaButtonLayout.setVerticalGroup(
-            MilkAndCocoaButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(MilkAndCocoaButtonLayout.createSequentialGroup()
+        milkAndCocoaButtonLayout.setVerticalGroup(
+            milkAndCocoaButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(milkAndCocoaButtonLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(MilkAndCocoaText, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(milkAndCocoaText, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(54, Short.MAX_VALUE))
         );
 
-        add(MilkAndCocoaButton);
+        add(milkAndCocoaButton);
 
-        JuiceButton.setBackground(new java.awt.Color(246, 230, 230));
-        JuiceButton.setPreferredSize(new java.awt.Dimension(108, 100));
+        juiceButton.setBackground(new java.awt.Color(246, 230, 230));
+        juiceButton.setPreferredSize(new java.awt.Dimension(108, 100));
 
-        JuiceText.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        JuiceText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        JuiceText.setText("Juice");
-        JuiceText.setAutoscrolls(true);
+        juiceText.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        juiceText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        juiceText.setText("Juice");
+        juiceText.setAutoscrolls(true);
 
-        javax.swing.GroupLayout JuiceButtonLayout = new javax.swing.GroupLayout(JuiceButton);
-        JuiceButton.setLayout(JuiceButtonLayout);
-        JuiceButtonLayout.setHorizontalGroup(
-            JuiceButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JuiceButtonLayout.createSequentialGroup()
+        javax.swing.GroupLayout juiceButtonLayout = new javax.swing.GroupLayout(juiceButton);
+        juiceButton.setLayout(juiceButtonLayout);
+        juiceButtonLayout.setHorizontalGroup(
+            juiceButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, juiceButtonLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(JuiceText, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(juiceText, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
-        JuiceButtonLayout.setVerticalGroup(
-            JuiceButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(JuiceButtonLayout.createSequentialGroup()
+        juiceButtonLayout.setVerticalGroup(
+            juiceButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(juiceButtonLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(JuiceText, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(juiceText, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(54, Short.MAX_VALUE))
         );
 
-        add(JuiceButton);
+        add(juiceButton);
 
-        SodaButton.setBackground(new java.awt.Color(246, 230, 230));
-        SodaButton.setPreferredSize(new java.awt.Dimension(108, 100));
+        sodaButton.setBackground(new java.awt.Color(246, 230, 230));
+        sodaButton.setPreferredSize(new java.awt.Dimension(108, 100));
 
-        SodaText.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        SodaText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        SodaText.setText("Soda");
-        SodaText.setAutoscrolls(true);
+        sodaText.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        sodaText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        sodaText.setText("Soda");
+        sodaText.setAutoscrolls(true);
 
-        javax.swing.GroupLayout SodaButtonLayout = new javax.swing.GroupLayout(SodaButton);
-        SodaButton.setLayout(SodaButtonLayout);
-        SodaButtonLayout.setHorizontalGroup(
-            SodaButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SodaButtonLayout.createSequentialGroup()
+        javax.swing.GroupLayout sodaButtonLayout = new javax.swing.GroupLayout(sodaButton);
+        sodaButton.setLayout(sodaButtonLayout);
+        sodaButtonLayout.setHorizontalGroup(
+            sodaButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sodaButtonLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(SodaText, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(sodaText, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
-        SodaButtonLayout.setVerticalGroup(
-            SodaButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(SodaButtonLayout.createSequentialGroup()
+        sodaButtonLayout.setVerticalGroup(
+            sodaButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(sodaButtonLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(SodaText, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(sodaText, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(54, Short.MAX_VALUE))
         );
 
-        add(SodaButton);
+        add(sodaButton);
     }// </editor-fold>//GEN-END:initComponents
 
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private GUI.Components.pnlBorder CoffeeButton;
-    private javax.swing.JLabel CoffeeText;
-    private GUI.Components.pnlBorder JuiceButton;
-    private javax.swing.JLabel JuiceText;
-    private GUI.Components.pnlBorder MilkAndCocoaButton;
-    private javax.swing.JLabel MilkAndCocoaText;
-    private GUI.Components.pnlBorder RecommentButton;
-    private javax.swing.JLabel RecommentText;
-    private GUI.Components.pnlBorder SodaButton;
-    private javax.swing.JLabel SodaText;
-    private GUI.Components.pnlBorder TeaButton;
-    private javax.swing.JLabel TeaText;
+    private GUI.Components.pnlBorder coffeeButton;
+    private javax.swing.JLabel coffeeText;
+    private GUI.Components.pnlBorder juiceButton;
+    private javax.swing.JLabel juiceText;
+    private GUI.Components.pnlBorder milkAndCocoaButton;
+    private javax.swing.JLabel milkAndCocoaText;
+    private GUI.Components.pnlBorder recommentButton;
+    private javax.swing.JLabel recommentText;
+    private GUI.Components.pnlBorder sodaButton;
+    private javax.swing.JLabel sodaText;
+    private GUI.Components.pnlBorder teaButton;
+    private javax.swing.JLabel teaText;
     // End of variables declaration//GEN-END:variables
 }

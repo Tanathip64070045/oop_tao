@@ -43,14 +43,14 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
                           <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="toppings1" min="-2" max="-2" attributes="0"/>
-                              <Component id="sweetnessLevel1" min="-2" max="-2" attributes="0"/>
-                              <Component id="typeOfDrink2" min="-2" max="-2" attributes="0"/>
+                              <Component id="toppings" min="-2" max="-2" attributes="0"/>
+                              <Component id="sweetnessLevel" min="-2" max="-2" attributes="0"/>
+                              <Component id="typeOfDrink" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
-                          <Component id="roundButton1" min="-2" max="-2" attributes="0"/>
+                          <Component id="roundButton" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -61,26 +61,26 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="typeOfDrink2" min="-2" max="-2" attributes="0"/>
+                  <Component id="typeOfDrink" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="sweetnessLevel1" min="-2" max="-2" attributes="0"/>
+                  <Component id="sweetnessLevel" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="toppings1" min="-2" max="-2" attributes="0"/>
+                  <Component id="toppings" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="roundButton1" min="-2" max="-2" attributes="0"/>
+                  <Component id="roundButton" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="37" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="GUI.MenuComponent.TypeOfDrink" name="typeOfDrink2">
+        <Component class="GUI.MenuComponent.TypeOfDrink" name="typeOfDrink">
         </Component>
-        <Component class="GUI.MenuComponent.SweetnessLevel" name="sweetnessLevel1">
+        <Component class="GUI.MenuComponent.SweetnessLevel" name="sweetnessLevel">
         </Component>
-        <Component class="GUI.MenuComponent.Toppings" name="toppings1">
+        <Component class="GUI.MenuComponent.Toppings" name="toppings">
         </Component>
-        <Component class="GUI.MenuComponent.RoundButton" name="roundButton1">
+        <Component class="GUI.MenuComponent.PurchasingButton" name="roundButton">
         </Component>
       </SubComponents>
     </Container>

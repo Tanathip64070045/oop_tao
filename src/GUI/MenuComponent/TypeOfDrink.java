@@ -29,35 +29,35 @@ public class TypeOfDrink extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        pnlBorder1 = new GUI.Components.pnlBorder();
-        jLabel1 = new javax.swing.JLabel();
-        flowLayoutButton11 = new GUI.MenuComponent.FlowLayoutButton1();
+        pnlBorder = new GUI.Components.pnlBorder();
+        typeOfDrinkText = new javax.swing.JLabel();
+        typeOfDrinkButton = new GUI.MenuComponent.TypeOfDrinkButton();
 
-        pnlBorder1.setBackground(new java.awt.Color(197, 158, 126));
+        pnlBorder.setBackground(new java.awt.Color(197, 158, 126));
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(161, 65, 65));
-        jLabel1.setText("Type of drink");
+        typeOfDrinkText.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        typeOfDrinkText.setForeground(new java.awt.Color(161, 65, 65));
+        typeOfDrinkText.setText("Type of drink");
 
-        javax.swing.GroupLayout pnlBorder1Layout = new javax.swing.GroupLayout(pnlBorder1);
-        pnlBorder1.setLayout(pnlBorder1Layout);
-        pnlBorder1Layout.setHorizontalGroup(
-            pnlBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlBorder1Layout.createSequentialGroup()
+        javax.swing.GroupLayout pnlBorderLayout = new javax.swing.GroupLayout(pnlBorder);
+        pnlBorder.setLayout(pnlBorderLayout);
+        pnlBorderLayout.setHorizontalGroup(
+            pnlBorderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlBorderLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
+                .addComponent(typeOfDrinkText)
                 .addGap(408, 408, 408))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlBorder1Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlBorderLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(flowLayoutButton11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(typeOfDrinkButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
-        pnlBorder1Layout.setVerticalGroup(
-            pnlBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlBorder1Layout.createSequentialGroup()
+        pnlBorderLayout.setVerticalGroup(
+            pnlBorderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlBorderLayout.createSequentialGroup()
                 .addContainerGap(12, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(typeOfDrinkText, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(flowLayoutButton11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(typeOfDrinkButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12))
         );
 
@@ -65,18 +65,18 @@ public class TypeOfDrink extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlBorder1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(pnlBorder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlBorder1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(pnlBorder, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private GUI.MenuComponent.FlowLayoutButton1 flowLayoutButton11;
-    private javax.swing.JLabel jLabel1;
-    private GUI.Components.pnlBorder pnlBorder1;
+    private GUI.Components.pnlBorder pnlBorder;
+    private GUI.MenuComponent.TypeOfDrinkButton typeOfDrinkButton;
+    private javax.swing.JLabel typeOfDrinkText;
     // End of variables declaration//GEN-END:variables
 }

@@ -29,63 +29,63 @@ public class DrinkGUI extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        NamePanel = new javax.swing.JPanel();
-        Name = new javax.swing.JLabel();
-        Price = new javax.swing.JLabel();
-        Image = new javax.swing.JLabel();
+        namePanel = new javax.swing.JPanel();
+        name = new javax.swing.JLabel();
+        price = new javax.swing.JLabel();
+        image = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(197, 158, 126));
         setToolTipText("");
 
-        NamePanel.setBackground(new java.awt.Color(86, 71, 71));
+        namePanel.setBackground(new java.awt.Color(86, 71, 71));
 
-        Name.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        Name.setForeground(new java.awt.Color(255, 255, 255));
-        Name.setText("COCO");
+        name.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        name.setForeground(new java.awt.Color(255, 255, 255));
+        name.setText("COCO");
 
-        javax.swing.GroupLayout NamePanelLayout = new javax.swing.GroupLayout(NamePanel);
-        NamePanel.setLayout(NamePanelLayout);
-        NamePanelLayout.setHorizontalGroup(
-            NamePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(NamePanelLayout.createSequentialGroup()
+        javax.swing.GroupLayout namePanelLayout = new javax.swing.GroupLayout(namePanel);
+        namePanel.setLayout(namePanelLayout);
+        namePanelLayout.setHorizontalGroup(
+            namePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(namePanelLayout.createSequentialGroup()
                 .addGap(50, 50, 50)
-                .addComponent(Name)
+                .addComponent(name)
                 .addContainerGap(51, Short.MAX_VALUE))
         );
-        NamePanelLayout.setVerticalGroup(
-            NamePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Name, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 68, Short.MAX_VALUE)
+        namePanelLayout.setVerticalGroup(
+            namePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(name, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 68, Short.MAX_VALUE)
         );
 
-        Price.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        Price.setForeground(new java.awt.Color(255, 255, 255));
-        Price.setText("45฿");
+        price.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        price.setForeground(new java.awt.Color(255, 255, 255));
+        price.setText("45฿");
 
-        Image.setText("Img");
+        image.setText("Img");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(NamePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(namePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(0, 117, Short.MAX_VALUE)
-                        .addComponent(Price))
+                        .addComponent(price))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(Image, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(image, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addContainerGap())))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(Price)
+                .addComponent(price)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Image, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
+                .addComponent(image, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(NamePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(namePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(16, 16, 16))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -100,10 +100,10 @@ public class DrinkGUI extends javax.swing.JPanel {
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel Image;
-    private javax.swing.JLabel Name;
-    private javax.swing.JPanel NamePanel;
-    private javax.swing.JLabel Price;
+    private javax.swing.JLabel image;
+    private javax.swing.JLabel name;
+    private javax.swing.JPanel namePanel;
+    private javax.swing.JLabel price;
     // End of variables declaration//GEN-END:variables
 }
 
