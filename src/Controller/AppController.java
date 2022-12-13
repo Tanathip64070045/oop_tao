@@ -23,173 +23,174 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
 
+public class AppController implements ActionListener, WindowListener, MouseListener, Runnable {
 
-public class AppController implements ActionListener, WindowListener, MouseListener,Runnable{
     private AdminGUI adminGUI;
     private AdminStock stock;
     private MainWindow mw;
     private internal.Login login;
     private ImageIcon balaIcon = new ImageIcon("../oop_tao/src/GUI/icons/Vecter3.png");
     private ImageIcon tIcon = new ImageIcon("../oop_tao/src/GUI/icons/Vecter3.png");
-    
+
     private DBModel db;
     private Product p = new Product();
-    
+
     @Override
     public void windowOpened(WindowEvent e) {
         db.loadFile();
     }
-    
+
     public static void main(String[] args) {
         new AppController();
+
     }
-    public AppController(){
+
+    public AppController() {
         db = new DBModel();
         mw = new MainWindow();
-        mw.setVisible(true);
-        
         login = new Login();
-        login.getBtnLogin().addActionListener(this);
-        login.getBtnLogin().setText("test");
-        login.getLblUsername().setText("asd");
-        
+
+        mw.getPnlDesktop().add(login);
+        mw.setVisible(true);
+
         mw.getPnlLogin().addMouseListener(this);
-        
-        
-//        adminGUI.getAdminControl().getStock().addMouseListener(this);
+        login.getBtnLogin().addActionListener(this);   
+
+        adminGUI.getAdminControl().getStock().addMouseListener(this);
         int i = db.getProducts().size();
-                System.out.println(i);
-        
+        System.out.println(i);
+
 //        adminGUI.getAdminControl().getBalance().setData(new Card(null, "  Balance.", "9999.99 ฿", "description"));
 //        adminGUI.getAdminControl().getTotally().setData(new Card(null, "Totally.", "9999.99 ฿", "description"));
 //        adminGUI.getAdminControl().getStock().sendData(new Stock(i));
-
 //        adminGUI.addWindowListener(this);
     }
-    
+
     int index;
-    
+
     @Override
     public void actionPerformed(ActionEvent ae) {
 
-        if(ae.getSource().equals(stock.getAdminProducts().getBtnAdd())){
-            try{
+        if (ae.getSource().equals(stock.getAdminProducts().getBtnAdd())) {
+            try {
                 index = db.getIndex();
                 index++;
                 System.out.println(index);
                 p = new Product(index, stock.getAdminProducts().getTfName().getText(), Double.parseDouble(stock.getAdminProducts().getTfPrice().getText()), stock.getAdminProducts().getCategory().getSelectedItem().toString(), fName, 0);
 
                 db.addProduct(p);
-                Object[] data = {index,fName,stock.getAdminProducts().getTfName().getText(),Double.parseDouble(stock.getAdminProducts().getTfPrice().getText()),stock.getAdminProducts().getCategory().getSelectedItem().toString(),new JButton("Delete")};
+                Object[] data = {index, fName, stock.getAdminProducts().getTfName().getText(), Double.parseDouble(stock.getAdminProducts().getTfPrice().getText()), stock.getAdminProducts().getCategory().getSelectedItem().toString(), new JButton("Delete")};
 
                 stock.getAdminProducts().getTable().getTableModel().addRow(data);
                 stock.getAdminProducts().getTable().getTableModel().fireTableDataChanged();
                 stock.getAdminProducts().getTable().repaint();
 
-                saveFile(sourceFile,destinationFile);
+                saveFile(sourceFile, destinationFile);
 
-            } catch (NumberFormatException e){
+            } catch (NumberFormatException e) {
 //                JOptionPane.showMessageDialog(null,"Please Fill.", "Error", JOptionPane.PLAIN_MESSAGE);
             }
-          } else if(ae.getSource().equals(stock.getAdminProducts().getBtnImage())){
-              btnImageActionPerformed(ae);
-          } else if(ae.getSource().equals(stock.getAdminProducts().getBtnUpdate())){
-                int i = stock.getAdminProducts().getTable().getSelectedRow();
-                    stock.getAdminProducts().getTable().setValueAt(stock.getAdminProducts().getTfName().getText(),i,2);
-                    stock.getAdminProducts().getTable().setValueAt(stock.getAdminProducts().getTfPrice().getText(), i,3);
-                    stock.getAdminProducts().getTable().setValueAt(stock.getAdminProducts().getCategory().getSelectedItem().toString(), i,4);
-                    stock.getAdminProducts().getTable().setValueAt(stock.getAdminProducts().getLblFile().getText(), i,1);
+        } else if (ae.getSource().equals(stock.getAdminProducts().getBtnImage())) {
+            btnImageActionPerformed(ae);
+        } else if (ae.getSource().equals(stock.getAdminProducts().getBtnUpdate())) {
+            int i = stock.getAdminProducts().getTable().getSelectedRow();
+            stock.getAdminProducts().getTable().setValueAt(stock.getAdminProducts().getTfName().getText(), i, 2);
+            stock.getAdminProducts().getTable().setValueAt(stock.getAdminProducts().getTfPrice().getText(), i, 3);
+            stock.getAdminProducts().getTable().setValueAt(stock.getAdminProducts().getCategory().getSelectedItem().toString(), i, 4);
+            stock.getAdminProducts().getTable().setValueAt(stock.getAdminProducts().getLblFile().getText(), i, 1);
 
 //                JOptionPane.showMessageDialog(null,"Update Data.", "Updating", JOptionPane.PLAIN_MESSAGE);
-          } else if(ae.getSource().equals(stock.getAdminProducts().getBtnDelete())){
-                int i = stock.getAdminProducts().getTable().getSelectedRow();
-                if(i>=0){
-                    db.removeProducts(stock.getAdminProducts().getTable().getSelectedRow());
-                    stock.getAdminProducts().getTable().getTableModel().removeRow(i);
+        } else if (ae.getSource().equals(stock.getAdminProducts().getBtnDelete())) {
+            int i = stock.getAdminProducts().getTable().getSelectedRow();
+            if (i >= 0) {
+                db.removeProducts(stock.getAdminProducts().getTable().getSelectedRow());
+                stock.getAdminProducts().getTable().getTableModel().removeRow(i);
 //                    JOptionPane.showMessageDialog(null,"Remove Data.", "Removing", JOptionPane.PLAIN_MESSAGE);
-                }
-          }
-        if(ae.getSource().equals(login.getBtnLogin())){
-                System.out.println("tets");
-                adminGUI = new AdminGUI();
-    //             && (login.getTfUsername().equals("madara") && login.getTfPassword().equals("55555"))
+            }
+        }
+        if (ae.getSource().equals(login.getBtnLogin())) {
+            System.out.println("tets");
+            adminGUI = new AdminGUI();
+            //             && (login.getTfUsername().equals("madara") && login.getTfPassword().equals("55555"))
         }
     }
-    
-    
-    
+
 //    File Image Saving...
     private String fName = "";
     File sourceFile = null;
     File destinationFile = null;
-                                         
-    private void btnImageActionPerformed(java.awt.event.ActionEvent evt) {                                         
-        if(evt.getSource().equals(stock.getAdminProducts().getBtnImage())){
+
+    private void btnImageActionPerformed(java.awt.event.ActionEvent evt) {
+        if (evt.getSource().equals(stock.getAdminProducts().getBtnImage())) {
             JFileChooser fc = new JFileChooser();
             int result = fc.showOpenDialog(null);
             if (result == JFileChooser.APPROVE_OPTION) {
                 File f = fc.getSelectedFile();
                 Path p = Paths.get(f.getAbsolutePath());
-                    stock.getAdminProducts().getLblFile().setText(shorten(p.getFileName().toString(), 20));
-                    fName = p.getFileName().toString();
+                stock.getAdminProducts().getLblFile().setText(shorten(p.getFileName().toString(), 20));
+                fName = p.getFileName().toString();
 //                    view.setfName(fName);
-                
+
                 String fileName = p.toString();
                 String fileNameOutput = p.getFileName().toString().replaceFirst("[.][^.]+$", "");
                 String newPath = "public/products";
                 File directory = new File(newPath);
-                if(!directory.exists()){
+                if (!directory.exists()) {
                     directory.mkdirs();
                 }
-                String  extension = fileName.substring(fileName.lastIndexOf('.') + 1);
-                    sourceFile = new File(fileName);
-                    destinationFile = new File(newPath+"/"+fileNameOutput+"."+extension);
+                String extension = fileName.substring(fileName.lastIndexOf('.') + 1);
+                sourceFile = new File(fileName);
+                destinationFile = new File(newPath + "/" + fileNameOutput + "." + extension);
             }
         }
     }
-    public void saveFile(File sourceFile,File destinationFile){
-        try{
+
+    public void saveFile(File sourceFile, File destinationFile) {
+        try {
             Files.copy(sourceFile.toPath(), destinationFile.toPath());
-        } catch (IOException e){
+        } catch (IOException e) {
         }
     }
-    private String shorten(String text,int max){
-       if(text == null){
-           return "";
-       }
-       if(text.length() <= max){
-           return text;
-       }
-       if(max <= 5){
-           return text.substring(0,max);
-       }
-       return text.substring(0,max-2) + "...";
+
+    private String shorten(String text, int max) {
+        if (text == null) {
+            return "";
+        }
+        if (text.length() <= max) {
+            return text;
+        }
+        if (max <= 5) {
+            return text.substring(0, max);
+        }
+        return text.substring(0, max - 2) + "...";
     }
-    
-    
-    
+
     @Override
     public void windowClosing(WindowEvent e) {
         db.saveFile();
         System.out.println("save");
     }
+
     @Override
     public void windowClosed(WindowEvent e) {
     }
+
     @Override
     public void windowIconified(WindowEvent e) {
     }
+
     @Override
     public void windowDeiconified(WindowEvent e) {
     }
+
     @Override
     public void windowActivated(WindowEvent e) {
     }
+
     @Override
     public void windowDeactivated(WindowEvent e) {
     }
-    
-    
+
     private ViewModel view = new ViewModel();
     private BufferedImage img;
 
@@ -233,14 +234,13 @@ public class AppController implements ActionListener, WindowListener, MouseListe
 //            });
 //        }
 
-        if(e.getSource().equals(mw.getPnlLogin())){
+        if (e.getSource().equals(mw.getPnlLogin())) {
             login.setVisible(true);
         }
 //        check username
 
-                        
-        
     }
+
     @Override
     public void mousePressed(MouseEvent e) {
     }
@@ -252,6 +252,7 @@ public class AppController implements ActionListener, WindowListener, MouseListe
     @Override
     public void mouseEntered(MouseEvent e) {
     }
+
     @Override
     public void mouseExited(MouseEvent e) {
     }

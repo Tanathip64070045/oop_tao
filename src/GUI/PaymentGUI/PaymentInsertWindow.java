@@ -131,7 +131,7 @@ public class PaymentInsertWindow extends javax.swing.JFrame {
         getContentPane().add(panelBorder1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, -1, -1));
         getContentPane().add(backGround1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 830));
 
-        setSize(new java.awt.Dimension(736, 869));
+        pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
