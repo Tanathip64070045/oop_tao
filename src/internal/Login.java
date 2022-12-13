@@ -4,6 +4,7 @@ import GUI.AdminUI.AdminGUI;
 import GUI.MainWindow;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.ButtonModel;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
@@ -125,7 +126,6 @@ public class Login extends javax.swing.JInternalFrame implements ActionListener{
     private javax.swing.JTextField tfPassword;
     private javax.swing.JTextField tfUsername;
     // End of variables declaration//GEN-END:variables
-
     public JButton getBtnLogin() {
         return btnLogin;
     }
@@ -145,7 +145,6 @@ public class Login extends javax.swing.JInternalFrame implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource().equals(btnLogin)){
-//            System.out.println("test");
         }
     }
 

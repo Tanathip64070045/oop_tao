@@ -41,14 +41,11 @@ public class PaymentMainWindow extends javax.swing.JFrame {
         BackButton = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(720, 830));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(66, 56, 63));
         jPanel1.setPreferredSize(new java.awt.Dimension(720, 830));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        panelBorder2.setPreferredSize(new java.awt.Dimension(720, 730));
 
         ButtonPanel.setBackground(new java.awt.Color(163, 43, 43));
 
@@ -138,7 +135,7 @@ public class PaymentMainWindow extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanel1.add(panelBorder2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, -1, -1));
+        jPanel1.add(panelBorder2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, -1, 730));
 
         BackButton.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         BackButton.setForeground(new java.awt.Color(255, 255, 255));
@@ -148,7 +145,7 @@ public class PaymentMainWindow extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        setSize(new java.awt.Dimension(736, 869));
+        setSize(new java.awt.Dimension(720, 830));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
