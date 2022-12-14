@@ -1,89 +1,70 @@
-//
-// Source code recreated from a .class file by IntelliJ IDEA
-// (powered by FernFlower decompiler)
-//
-
 package db;
 
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import Model.Product;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+
+import java.util.ArrayList;
 
 public class DBModel {
-    public DBModel() {
-//
+    Product product = new Product();
+    public int index;
+    private ArrayList products = new ArrayList ();
+    
+    public DBModel(){
     }
-
-    public static void main(String[] args) {
-//        insert("test", 999,"test", "test.png");
-//        insert("test", 999,"test", "test.png");
-//        insert("test", 999,"test", "test.png");
-//        insert("test", 999,"test", "test.png");
-//        insert("test", 999,"test", "test.png");
-        query();
+    public  void removeProducts(int id) {
+        products.remove(id);
+        System.out.println("remove index : "+ id);
     }
-//    public static void update(int id, String product, int price, String img) {
-//        String sql = "UPDATE products SET product = ?, price = ?,img = ? WHERE id = ?";
-//
-//        try {
-//            PreparedStatement pstmt = Connection.connection().prepareStatement(sql);
-//            pstmt.setString(4, String.valueOf(id));
-//            pstmt.setString(1, product);
-//            pstmt.setString(2, String.valueOf(price));
-//            pstmt.setString(3, img);
-//            pstmt.executeUpdate();
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
-//
-//    }
-
-    public static void delete(int id) {
-        String sql = "DELETE FROM products WHERE id=?";
-
-        try {
-            PreparedStatement pstmt = Connection.connection().prepareStatement(sql);
-            pstmt.setString(1, String.valueOf(id));
-            pstmt.executeUpdate();
-        } catch (SQLException var3) {
-            var3.printStackTrace();
-        }
-
+    public void setProducts(ArrayList products) { 
+        this.products = products;
+        System.out.println("set array");
     }
-
-    public static void insert(String product, int price,String category, String img) {
-        String sql = "INSERT INTO products(product,price,category,image) values(?,?,?,?);";
-
-        try {
-            PreparedStatement pstmt = Connection.connection().prepareStatement(sql);
-            pstmt.setString(1, product);
-            pstmt.setString(2, String.valueOf(price));
-            pstmt.setString(3, category);
-            pstmt.setString(4, img);
-            pstmt.executeUpdate();
-        } catch (SQLException e) {
-            e.printStackTrace();
+    public void addProduct(Product p){
+        if(!products.contains(p)){
+            index++;
+            products.add(p);
+            System.out.println("Adding Product. index : " + index);
+            System.err.println(getProducts());
         }
     }
-
-    public static void query() {
-        try {
-            String sql = "SELECT * FROM products";
-            Statement statement = Connection.connection().createStatement();
-            ResultSet result = statement.executeQuery(sql);
-
-            while(result.next()) {
-                String id = result.getString("id");
-                String product = result.getString("product");
-                String price = result.getString("price");
-                String category = result.getString("category");
-                String img = result.getString("image");
-                System.out.println(id + " | " + product + "  |  "+ price + "  |  "+ category + "  |  " + img);
+    public int getIndex(){
+       return index;
+    }
+    public ArrayList getProducts(){
+        return products;
+    }
+    public int getNewId(){
+        return products.size()+1;
+    }
+    public void loadFile(){
+        try(FileInputStream fin = new FileInputStream("database.dat");
+            ObjectInputStream in = new ObjectInputStream(fin);){
+            
+            try{
+                setProducts((ArrayList <Product>) in.readObject());
+                System.out.println("Loading. . .");
+            }catch(Exception e){
+                System.out.print(e);
             }
-        } catch (SQLException e) {
-            e.printStackTrace();
+            
+        }catch(IOException e){
+            System.out.println(e);
         }
+    }
+    public boolean saveFile() {
+        try ( FileOutputStream fOut = new FileOutputStream("database.dat");  ObjectOutputStream oout = new ObjectOutputStream(fOut);) {
 
+            oout.writeObject(this.products);
+            System.out.println(products);
+
+            return true;
+        } catch (Exception i) {
+            return false;
+        }
     }
 }

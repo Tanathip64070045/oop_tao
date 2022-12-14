@@ -6,15 +6,15 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
-
 import GUI.AdminUI.AdminGUI;
 import GUI.AdminUI.AdminStock;
-import GUI.MainWindow2;
+import GUI.MainWindow;
 import Model.Card;
 import Model.Product;
 import Model.Stock;
 import Model.ViewModel;
 import db.DBModel;
+import internal.Login;
 import java.awt.event.MouseAdapter;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -22,20 +22,18 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
-import javax.swing.JOptionPane;
 
 
 public class AppController implements ActionListener, WindowListener, MouseListener,Runnable{
     private AdminGUI adminGUI;
     private AdminStock stock;
-    
+    private MainWindow mw;
+    private internal.Login login;
     private ImageIcon balaIcon = new ImageIcon("../oop_tao/src/GUI/icons/Vecter3.png");
     private ImageIcon tIcon = new ImageIcon("../oop_tao/src/GUI/icons/Vecter3.png");
-
     
     private DBModel db;
     private Product p = new Product();
@@ -43,31 +41,47 @@ public class AppController implements ActionListener, WindowListener, MouseListe
     @Override
     public void windowOpened(WindowEvent e) {
         db.loadFile();
+        System.out.println("Load");
     }
     
     public static void main(String[] args) {
-        AppController app = new AppController();
+        new AppController();
     }
     public AppController(){
         db = new DBModel();
-        MainWindow2 mw = new MainWindow2();
+        mw = new MainWindow();
+        
+        adminGUI = new AdminGUI();
+        adminGUI.setVisible(false);
+        
+        stock = new AdminStock();
+        stock.setVisible(false);
+        
+        login = new Login();
+            login.getBtnLogin().addActionListener(this);
+
+
+        mw.setVisible(true);
+        mw.getPnlLogin().addMouseListener(this);
+        mw.addWindowListener(this);
         
         
         adminGUI.getAdminControl().getStock().addMouseListener(this);
+        
         int i = db.getProducts().size();
                 System.out.println(i);
         
-//        adminGUI.getAdminControl().getBalance().setData(new Card(null, "  Balance.", "9999.99 ฿", "description"));
-//        adminGUI.getAdminControl().getTotally().setData(new Card(null, "Totally.", "9999.99 ฿", "description"));
+        adminGUI.getAdminControl().getBalance().setData(new Card(null, "  Balance.", "9999.99 ฿", "description"));
+        adminGUI.getAdminControl().getTotally().setData(new Card(null, "Totally.", "9999.99 ฿", "description"));
         adminGUI.getAdminControl().getStock().sendData(new Stock(i));
 
-        adminGUI.addWindowListener(this);
     }
     
     int index;
     
     @Override
     public void actionPerformed(ActionEvent ae) {
+
         if(ae.getSource().equals(stock.getAdminProducts().getBtnAdd())){
             try{
                 index = db.getIndex();
@@ -105,15 +119,16 @@ public class AppController implements ActionListener, WindowListener, MouseListe
 //                    JOptionPane.showMessageDialog(null,"Remove Data.", "Removing", JOptionPane.PLAIN_MESSAGE);
                 }
           }
+        if(ae.getSource().equals(login.getBtnLogin())){
+            adminGUI.setVisible(true);
+        }
     }
-    
-    
     
 //    File Image Saving...
     private String fName = "";
     File sourceFile = null;
     File destinationFile = null;
-    
+                                         
     private void btnImageActionPerformed(java.awt.event.ActionEvent evt) {                                         
         if(evt.getSource().equals(stock.getAdminProducts().getBtnImage())){
             JFileChooser fc = new JFileChooser();
@@ -222,7 +237,16 @@ public class AppController implements ActionListener, WindowListener, MouseListe
 
                 }
             });
-        } 
+        }
+
+        if(e.getSource().equals(mw.getPnlLogin())){
+            mw.getPnlDesktop().add(login);
+            login.setVisible(true);
+        }
+//        check username
+
+                        
+        
     }
     @Override
     public void mousePressed(MouseEvent e) {
@@ -241,7 +265,6 @@ public class AppController implements ActionListener, WindowListener, MouseListe
 
     @Override
     public void run() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
 }

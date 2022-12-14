@@ -1,8 +1,6 @@
 package GUI.AdminUI;
 
-import GUI.MainWindow;
-import GUI.MainWindow2;
-
+import GUI.Components.AdminControl;
 import java.awt.Color;
 
 public class AdminGUI extends javax.swing.JFrame {
@@ -21,9 +19,8 @@ public class AdminGUI extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         pnl_main = new javax.swing.JPanel();
-        navbar = new GUI.Components.Navbar();
-        navbar1 = new GUI.Components.Navbar();
         adminControl1 = new GUI.Components.AdminControl();
+        navbar11 = new GUI.Components.Navbar();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -41,40 +38,8 @@ public class AdminGUI extends javax.swing.JFrame {
 
         pnl_main.setBackground(new java.awt.Color(51, 51, 51));
         pnl_main.setLayout(new java.awt.BorderLayout());
-
-        navbar1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                navbar1MouseClicked(evt);
-            }
-        });
-
-        javax.swing.GroupLayout navbarLayout = new javax.swing.GroupLayout(navbar);
-        navbar.setLayout(navbarLayout);
-        navbarLayout.setHorizontalGroup(
-            navbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, navbarLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(navbar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        navbarLayout.setVerticalGroup(
-            navbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(navbarLayout.createSequentialGroup()
-                .addComponent(navbar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 42, Short.MAX_VALUE))
-        );
-
-        pnl_main.add(navbar, java.awt.BorderLayout.PAGE_START);
-
-        adminControl1.addAncestorListener(new javax.swing.event.AncestorListener() {
-            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
-                adminControl1AncestorAdded(evt);
-            }
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
-            }
-            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
-            }
-        });
         pnl_main.add(adminControl1, java.awt.BorderLayout.CENTER);
+        pnl_main.add(navbar11, java.awt.BorderLayout.PAGE_START);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -84,20 +49,11 @@ public class AdminGUI extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnl_main, javax.swing.GroupLayout.DEFAULT_SIZE, 830, Short.MAX_VALUE)
+            .addComponent(pnl_main, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void adminControl1AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_adminControl1AncestorAdded
-        // TODO add your handling code here:
-    }//GEN-LAST:event_adminControl1AncestorAdded
-
-    private void navbar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_navbar1MouseClicked
-        setVisible(false);
-        new MainWindow2();
-    }//GEN-LAST:event_navbar1MouseClicked
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -134,9 +90,12 @@ public class AdminGUI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private GUI.Components.AdminControl adminControl1;
     private javax.swing.JPanel jPanel1;
-    private GUI.Components.Navbar navbar;
-    private GUI.Components.Navbar navbar1;
+    private GUI.Components.Navbar navbar11;
     private javax.swing.JPanel pnl_main;
     // End of variables declaration//GEN-END:variables
+
+    public AdminControl getAdminControl() {
+        return adminControl1;
+    }
 
 }
