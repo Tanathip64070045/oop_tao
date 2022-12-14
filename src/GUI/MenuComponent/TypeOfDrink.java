@@ -34,32 +34,13 @@ public class TypeOfDrink extends javax.swing.JPanel {
         typeOfDrinkButton = new GUI.MenuComponent.TypeOfDrinkButton();
 
         pnlBorder.setBackground(new java.awt.Color(197, 158, 126));
+        pnlBorder.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         typeOfDrinkText.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         typeOfDrinkText.setForeground(new java.awt.Color(161, 65, 65));
         typeOfDrinkText.setText("Type of drink");
-
-        javax.swing.GroupLayout pnlBorderLayout = new javax.swing.GroupLayout(pnlBorder);
-        pnlBorder.setLayout(pnlBorderLayout);
-        pnlBorderLayout.setHorizontalGroup(
-            pnlBorderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlBorderLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(typeOfDrinkText)
-                .addGap(408, 408, 408))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlBorderLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(typeOfDrinkButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        pnlBorderLayout.setVerticalGroup(
-            pnlBorderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlBorderLayout.createSequentialGroup()
-                .addContainerGap(12, Short.MAX_VALUE)
-                .addComponent(typeOfDrinkText, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(typeOfDrinkButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12))
-        );
+        pnlBorder.add(typeOfDrinkText, new org.netbeans.lib.awtextra.AbsoluteConstraints(9, 12, -1, 46));
+        pnlBorder.add(typeOfDrinkButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 64, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

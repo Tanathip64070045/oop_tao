@@ -4,6 +4,8 @@
  */
 package GUI.PaymentGUI;
 
+import GUI.PaymentGUI.Components.ButtonConfirm;
+
 /**
  *
  * @author admin
@@ -27,8 +29,8 @@ public class PaymentChangeWindow extends javax.swing.JPanel {
     private void initComponents() {
 
         panelBorder1 = new GUI.PaymentGUI.Components.PanelBorder();
-        buttonPanel = new GUI.PaymentGUI.Components.ButtonConfirm();
-        buttonConfirm = new java.awt.Label();
+        buttonComfirm = new GUI.PaymentGUI.Components.ButtonConfirm();
+        jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         label2 = new java.awt.Label();
         label3 = new java.awt.Label();
@@ -41,28 +43,14 @@ public class PaymentChangeWindow extends javax.swing.JPanel {
 
         panelBorder1.setSize(new java.awt.Dimension(720, 830));
 
-        buttonPanel.setBackground(new java.awt.Color(197, 158, 126));
+        buttonComfirm.setBackground(new java.awt.Color(197, 158, 126));
+        buttonComfirm.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        buttonConfirm.setAlignment(java.awt.Label.CENTER);
-        buttonConfirm.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        buttonConfirm.setForeground(new java.awt.Color(255, 255, 255));
-        buttonConfirm.setText("Continue");
-
-        javax.swing.GroupLayout buttonPanelLayout = new javax.swing.GroupLayout(buttonPanel);
-        buttonPanel.setLayout(buttonPanelLayout);
-        buttonPanelLayout.setHorizontalGroup(
-            buttonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(buttonPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(buttonConfirm, javax.swing.GroupLayout.DEFAULT_SIZE, 630, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        buttonPanelLayout.setVerticalGroup(
-            buttonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(buttonPanelLayout.createSequentialGroup()
-                .addComponent(buttonConfirm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 2, Short.MAX_VALUE))
-        );
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("Continue");
+        buttonComfirm.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 0, 630, 50));
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/glasshour.png"))); // NOI18N
@@ -102,7 +90,7 @@ public class PaymentChangeWindow extends javax.swing.JPanel {
                         .addComponent(Change, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(panelBorder1Layout.createSequentialGroup()
                         .addGap(35, 35, 35)
-                        .addComponent(buttonPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(buttonComfirm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelBorder1Layout.setVerticalGroup(
@@ -119,7 +107,7 @@ public class PaymentChangeWindow extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
                 .addComponent(Change, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
-                .addComponent(buttonPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(buttonComfirm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(30, Short.MAX_VALUE))
         );
 
@@ -130,11 +118,16 @@ public class PaymentChangeWindow extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private java.awt.Label Change;
     private java.awt.Label Received;
-    private java.awt.Label buttonConfirm;
-    private GUI.PaymentGUI.Components.ButtonConfirm buttonPanel;
+    private GUI.PaymentGUI.Components.ButtonConfirm buttonComfirm;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private java.awt.Label label2;
     private java.awt.Label label3;
     private GUI.PaymentGUI.Components.PanelBorder panelBorder1;
     // End of variables declaration//GEN-END:variables
+
+    public ButtonConfirm getButtonConfirm() {
+        return buttonComfirm;
+    }
+
 }

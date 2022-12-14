@@ -4,6 +4,9 @@
  */
 package GUI.PaymentGUI;
 
+import GUI.PaymentGUI.Components.ButtonConfirm;
+import javax.swing.JLabel;
+
 /**
  *
  * @author admin
@@ -27,63 +30,65 @@ public class PaymentQrWindow extends javax.swing.JPanel {
     private void initComponents() {
 
         panelBorder1 = new GUI.PaymentGUI.Components.PanelBorder();
-        buttonPanel = new GUI.PaymentGUI.Components.ButtonConfirm();
-        buttonConfirm = new java.awt.Label();
         jLabel1 = new javax.swing.JLabel();
-        buttonPenel2 = new GUI.PaymentGUI.Components.ButtonConfirm();
-        buttonCancel = new java.awt.Label();
-        BackButton1 = new javax.swing.JLabel();
+        buttonConfirm = new GUI.PaymentGUI.Components.ButtonConfirm();
+        jLabel2 = new javax.swing.JLabel();
+        buttonCancel = new GUI.PaymentGUI.Components.ButtonConfirm();
+        jLabel3 = new javax.swing.JLabel();
+        BackButton = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(66, 56, 63));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        buttonPanel.setBackground(new java.awt.Color(197, 158, 126));
-
-        buttonConfirm.setAlignment(java.awt.Label.CENTER);
-        buttonConfirm.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        buttonConfirm.setForeground(new java.awt.Color(255, 255, 255));
-        buttonConfirm.setText("Pay");
-
-        javax.swing.GroupLayout buttonPanelLayout = new javax.swing.GroupLayout(buttonPanel);
-        buttonPanel.setLayout(buttonPanelLayout);
-        buttonPanelLayout.setHorizontalGroup(
-            buttonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(buttonPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(buttonConfirm, javax.swing.GroupLayout.DEFAULT_SIZE, 630, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        buttonPanelLayout.setVerticalGroup(
-            buttonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(buttonPanelLayout.createSequentialGroup()
-                .addComponent(buttonConfirm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 2, Short.MAX_VALUE))
-        );
-
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/QrScan.png"))); // NOI18N
 
-        buttonPenel2.setBackground(new java.awt.Color(163, 43, 43));
+        buttonConfirm.setBackground(new java.awt.Color(197, 158, 126));
 
-        buttonCancel.setAlignment(java.awt.Label.CENTER);
-        buttonCancel.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        buttonCancel.setForeground(new java.awt.Color(255, 255, 255));
-        buttonCancel.setText("Cancel");
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("Pay");
 
-        javax.swing.GroupLayout buttonPenel2Layout = new javax.swing.GroupLayout(buttonPenel2);
-        buttonPenel2.setLayout(buttonPenel2Layout);
-        buttonPenel2Layout.setHorizontalGroup(
-            buttonPenel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(buttonPenel2Layout.createSequentialGroup()
+        javax.swing.GroupLayout buttonConfirmLayout = new javax.swing.GroupLayout(buttonConfirm);
+        buttonConfirm.setLayout(buttonConfirmLayout);
+        buttonConfirmLayout.setHorizontalGroup(
+            buttonConfirmLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, buttonConfirmLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(buttonCancel, javax.swing.GroupLayout.DEFAULT_SIZE, 630, Short.MAX_VALUE)
+                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 638, Short.MAX_VALUE)
                 .addContainerGap())
         );
-        buttonPenel2Layout.setVerticalGroup(
-            buttonPenel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(buttonPenel2Layout.createSequentialGroup()
-                .addComponent(buttonCancel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 2, Short.MAX_VALUE))
+        buttonConfirmLayout.setVerticalGroup(
+            buttonConfirmLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+        );
+
+        buttonCancel.setBackground(new java.awt.Color(163, 43, 43));
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("Cancel");
+
+        javax.swing.GroupLayout buttonCancelLayout = new javax.swing.GroupLayout(buttonCancel);
+        buttonCancel.setLayout(buttonCancelLayout);
+        buttonCancelLayout.setHorizontalGroup(
+            buttonCancelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 650, Short.MAX_VALUE)
+            .addGroup(buttonCancelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(buttonCancelLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 638, Short.MAX_VALUE)
+                    .addContainerGap()))
+        );
+        buttonCancelLayout.setVerticalGroup(
+            buttonCancelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(buttonCancelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(buttonCancelLayout.createSequentialGroup()
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout panelBorder1Layout = new javax.swing.GroupLayout(panelBorder1);
@@ -94,8 +99,8 @@ public class PaymentQrWindow extends javax.swing.JPanel {
             .addGroup(panelBorder1Layout.createSequentialGroup()
                 .addContainerGap(35, Short.MAX_VALUE)
                 .addGroup(panelBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(buttonPenel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(buttonPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(buttonCancel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonConfirm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(35, Short.MAX_VALUE))
         );
         panelBorder1Layout.setVerticalGroup(
@@ -104,29 +109,43 @@ public class PaymentQrWindow extends javax.swing.JPanel {
                 .addContainerGap(97, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 94, Short.MAX_VALUE)
-                .addComponent(buttonPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(buttonConfirm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
-                .addComponent(buttonPenel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(buttonCancel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(30, Short.MAX_VALUE))
         );
 
         add(panelBorder1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, -1, -1));
 
-        BackButton1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        BackButton1.setForeground(new java.awt.Color(255, 255, 255));
-        BackButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/Vector (3).png"))); // NOI18N
-        BackButton1.setText("BACK");
-        add(BackButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, -1, -1));
+        BackButton.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        BackButton.setForeground(new java.awt.Color(255, 255, 255));
+        BackButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/Vector (3).png"))); // NOI18N
+        BackButton.setText("BACK");
+        add(BackButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel BackButton1;
-    private java.awt.Label buttonCancel;
-    private java.awt.Label buttonConfirm;
-    private GUI.PaymentGUI.Components.ButtonConfirm buttonPanel;
-    private GUI.PaymentGUI.Components.ButtonConfirm buttonPenel2;
+    private javax.swing.JLabel BackButton;
+    private GUI.PaymentGUI.Components.ButtonConfirm buttonCancel;
+    private GUI.PaymentGUI.Components.ButtonConfirm buttonConfirm;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private GUI.PaymentGUI.Components.PanelBorder panelBorder1;
     // End of variables declaration//GEN-END:variables
+
+    public JLabel getBackButton() {
+        return BackButton;
+    }
+
+    public ButtonConfirm getButtonConfirm() {
+        return buttonConfirm;
+    }
+
+    public ButtonConfirm getButtonCancel() {
+        return buttonCancel;
+    }
+    
+    
 }
