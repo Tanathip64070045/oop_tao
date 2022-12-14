@@ -48,7 +48,7 @@ public class ToppingsButton extends javax.swing.JPanel {
         bubbleText.setForeground(new java.awt.Color(255, 255, 255));
         bubbleText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         bubbleText.setText("Bubble");
-        bubbleButton.add(bubbleText, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 123, -1));
+        bubbleButton.add(bubbleText, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 5, 120, -1));
 
         add(bubbleButton);
 
@@ -60,7 +60,7 @@ public class ToppingsButton extends javax.swing.JPanel {
         whipCreamText.setForeground(new java.awt.Color(255, 255, 255));
         whipCreamText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         whipCreamText.setText("Whip cream");
-        whipCreamButton.add(whipCreamText, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 123, -1));
+        whipCreamButton.add(whipCreamText, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 5, 120, -1));
 
         add(whipCreamButton);
 
@@ -71,8 +71,8 @@ public class ToppingsButton extends javax.swing.JPanel {
         milkFoamText.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         milkFoamText.setForeground(new java.awt.Color(255, 255, 255));
         milkFoamText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        milkFoamText.setText("Milk foam");
-        milkFoamButton.add(milkFoamText, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 123, -1));
+        milkFoamText.setText("Milk Foam");
+        milkFoamButton.add(milkFoamText, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 5, 120, -1));
 
         add(milkFoamButton);
 
@@ -84,7 +84,7 @@ public class ToppingsButton extends javax.swing.JPanel {
         oreoText.setForeground(new java.awt.Color(255, 255, 255));
         oreoText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         oreoText.setText("Oreo");
-        oreoButton.add(oreoText, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 123, -1));
+        oreoButton.add(oreoText, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 5, 110, -1));
 
         add(oreoButton);
     }// </editor-fold>//GEN-END:initComponents

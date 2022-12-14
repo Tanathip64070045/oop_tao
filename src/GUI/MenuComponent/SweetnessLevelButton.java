@@ -51,7 +51,7 @@ public class SweetnessLevelButton extends javax.swing.JPanel {
         text0.setForeground(new java.awt.Color(255, 255, 255));
         text0.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         text0.setText("0%");
-        button0.add(text0, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 93, -1));
+        button0.add(text0, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 5, 90, -1));
 
         add(button0);
 
@@ -63,7 +63,7 @@ public class SweetnessLevelButton extends javax.swing.JPanel {
         text25.setForeground(new java.awt.Color(255, 255, 255));
         text25.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         text25.setText("25%");
-        button25.add(text25, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 93, -1));
+        button25.add(text25, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 5, 90, -1));
 
         add(button25);
 
@@ -75,7 +75,7 @@ public class SweetnessLevelButton extends javax.swing.JPanel {
         text50.setForeground(new java.awt.Color(255, 255, 255));
         text50.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         text50.setText("50%");
-        button50.add(text50, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 93, -1));
+        button50.add(text50, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 5, 90, -1));
 
         add(button50);
 
@@ -87,7 +87,7 @@ public class SweetnessLevelButton extends javax.swing.JPanel {
         text75.setForeground(new java.awt.Color(255, 255, 255));
         text75.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         text75.setText("75%");
-        button75.add(text75, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 93, -1));
+        button75.add(text75, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 5, 90, -1));
 
         add(button75);
 
@@ -99,7 +99,7 @@ public class SweetnessLevelButton extends javax.swing.JPanel {
         text100.setForeground(new java.awt.Color(255, 255, 255));
         text100.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         text100.setText("100%");
-        button100.add(text100, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 93, -1));
+        button100.add(text100, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 5, 90, -1));
 
         add(button100);
     }// </editor-fold>//GEN-END:initComponents

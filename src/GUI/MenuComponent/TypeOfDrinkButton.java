@@ -46,7 +46,7 @@ public class TypeOfDrinkButton extends javax.swing.JPanel {
         hotText.setForeground(new java.awt.Color(255, 255, 255));
         hotText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         hotText.setText("Hot");
-        hotButton.add(hotText, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 163, -1));
+        hotButton.add(hotText, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 5, 160, -1));
 
         add(hotButton);
 
@@ -58,7 +58,7 @@ public class TypeOfDrinkButton extends javax.swing.JPanel {
         icedText.setForeground(new java.awt.Color(255, 255, 255));
         icedText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         icedText.setText("Iced(+฿5)");
-        icedButton.add(icedText, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 163, -1));
+        icedButton.add(icedText, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 5, 160, -1));
 
         add(icedButton);
 
@@ -70,7 +70,7 @@ public class TypeOfDrinkButton extends javax.swing.JPanel {
         smoothieText.setForeground(new java.awt.Color(255, 255, 255));
         smoothieText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         smoothieText.setText("Smoothie(+฿10)");
-        smoothieButton.add(smoothieText, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 163, -1));
+        smoothieButton.add(smoothieText, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 5, 160, -1));
 
         add(smoothieButton);
     }// </editor-fold>//GEN-END:initComponents
