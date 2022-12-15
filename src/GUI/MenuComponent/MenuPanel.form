@@ -24,22 +24,4 @@
   </AuxValues>
 
   <Layout class="org.netbeans.modules.form.compat2.layouts.DesignFlowLayout"/>
-  <SubComponents>
-    <Component class="GUI.MenuComponent.DrinkGUI" name="drinkGUI1">
-    </Component>
-    <Component class="GUI.MenuComponent.DrinkGUI" name="drinkGUI2">
-    </Component>
-    <Component class="GUI.MenuComponent.DrinkGUI" name="drinkGUI3">
-    </Component>
-    <Component class="GUI.MenuComponent.DrinkGUI" name="drinkGUI4">
-    </Component>
-    <Component class="GUI.MenuComponent.DrinkGUI" name="drinkGUI5">
-    </Component>
-    <Component class="GUI.MenuComponent.DrinkGUI" name="drinkGUI6">
-    </Component>
-    <Component class="GUI.MenuComponent.DrinkGUI" name="drinkGUI7">
-    </Component>
-    <Component class="GUI.MenuComponent.DrinkGUI" name="drinkGUI8">
-    </Component>
-  </SubComponents>
 </Form>
