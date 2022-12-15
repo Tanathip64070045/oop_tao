@@ -8,9 +8,11 @@ import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 import GUI.AdminUI.AdminGUI;
 import GUI.AdminUI.AdminStock;
+import GUI.Components.pnlBorder;
 import GUI.EachDrink;
 import GUI.MainWindow;
 import GUI.Menu;
+import GUI.MenuComponent.CatagoryGUI;
 import GUI.MenuComponent.DrinkGUI;
 import GUI.PaymentGUI.PaymentChangeWindow;
 import GUI.PaymentGUI.PaymentInsertWindow;
@@ -162,12 +164,26 @@ public class AppController implements ActionListener, WindowListener, MouseListe
         adminGUI.getAdminControl().getStock().sendData(new Stock(i));
     }
 
-    public void ChooseProduct(String name) {
+    public void ChooseProduct(String name, pnlBorder btn) {
         mw.getPnlContainer().setVisible(false);
         menu.setVisible(true);
         menu.getPnlMenu().removeAll();
         menu.getPnlMenu().revalidate();
         menu.getPnlMenu().repaint();
+        
+        menu.getCatagoryGUI().getRecommendButton().setBackground(Color.decode("#F6E6E6"));
+        menu.getCatagoryGUI().getCoffeeButton().setBackground(Color.decode("#F6E6E6"));
+        menu.getCatagoryGUI().getJuiceButton().setBackground(Color.decode("#F6E6E6"));
+        menu.getCatagoryGUI().getSodaButton().setBackground(Color.decode("#F6E6E6"));
+        menu.getCatagoryGUI().getMilkAndCocoaButton().setBackground(Color.decode("#F6E6E6"));
+        menu.getCatagoryGUI().getTeaButton().setBackground(Color.decode("#F6E6E6"));
+        btn.setBackground(Color.decode("#CC8484"));
+//        btn.setLocation(btn.getX(), 500);
+//        System.out.println(btn.getLocation());
+        
+        menu.invalidate();
+        menu.validate();
+        menu.repaint();
 
         tle.removeAll(tle);
         count = 0;
@@ -379,7 +395,7 @@ public class AppController implements ActionListener, WindowListener, MouseListe
         }
 //        check username
 
-        if (e.getSource().equals(mw.getPnlRecommend())) {
+        if (e.getSource().equals(mw.getPnlRecommend()) || e.getSource().equals(menu.getCatagoryGUI().getRecommendButton())) {
 //            mw.getPnlContainer().setVisible(false);
 //            menu.setVisible(true);
 //            menu.getPnlMenu().removeAll();
@@ -387,17 +403,21 @@ public class AppController implements ActionListener, WindowListener, MouseListe
 //            menu.getPnlMenu().repaint();
             mw.getPnlContainer().setVisible(false);
             paymentmain.setVisible(true);
-        } else if (e.getSource().equals(mw.getPnlCoffee())) {
-            ChooseProduct("Coffee");
-        } else if (e.getSource().equals(mw.getPnlTea())) {
-            ChooseProduct("Tea");
-        } else if (e.getSource().equals(mw.getPnlMilk())) {
-            ChooseProduct("Milk & Coco");
-        } else if (e.getSource().equals(mw.getPnlJuice())) {
-            ChooseProduct("Juice");
+        } else if (e.getSource().equals(mw.getPnlCoffee()) || e.getSource().equals(menu.getCatagoryGUI().getCoffeeButton())) {
+            ChooseProduct("Coffee", menu.getCatagoryGUI().getCoffeeButton());
+            
+//            menu.getCatagoryGUI().getCoffeeButton().setBackground(Color.decode("#CC8484"));
+            
+            
+        } else if (e.getSource().equals(mw.getPnlTea()) || e.getSource().equals(menu.getCatagoryGUI().getTeaButton())) {
+            ChooseProduct("Tea", menu.getCatagoryGUI().getTeaButton());
+        } else if (e.getSource().equals(mw.getPnlMilk()) || e.getSource().equals(menu.getCatagoryGUI().getMilkAndCocoaButton())) {
+            ChooseProduct("Milk & Coco", menu.getCatagoryGUI().getMilkAndCocoaButton());
+        } else if (e.getSource().equals(mw.getPnlJuice()) || e.getSource().equals(menu.getCatagoryGUI().getJuiceButton())) {
+            ChooseProduct("Juice", menu.getCatagoryGUI().getJuiceButton());
 
-        } else if (e.getSource().equals(mw.getPnlSoda())) {
-            ChooseProduct("Soda");
+        } else if (e.getSource().equals(mw.getPnlSoda()) || e.getSource().equals(menu.getCatagoryGUI().getSodaButton())) {
+            ChooseProduct("Soda", menu.getCatagoryGUI().getSodaButton());
         }
 
         if (e.getSource().equals(menu.getBackButton())) {
@@ -406,26 +426,6 @@ public class AppController implements ActionListener, WindowListener, MouseListe
         }
 
         //Catagory GUI
-        if (e.getSource().equals(menu.getCatagoryGUI().getRecommendButton())) {
-            System.out.println("Insert Recommend Code");
-
-        } else if (e.getSource().equals(menu.getCatagoryGUI().getCoffeeButton())) {
-            System.out.println("Insert Coffee Code");
-            ChooseProduct("Coffee");
-        } else if (e.getSource().equals(menu.getCatagoryGUI().getTeaButton())) {
-            System.out.println("Insert Tea Code"); 
-            ChooseProduct("Tea");
-        } else if (e.getSource().equals(menu.getCatagoryGUI().getMilkAndCocoaButton())) {
-            System.out.println("Insert Milk and Cocoa Code");
-            ChooseProduct("Milk & Coco");
-        } else if (e.getSource().equals(menu.getCatagoryGUI().getJuiceButton())) {
-            System.out.println("Insert Juice Code");
-            ChooseProduct("Juice");
-        } else if (e.getSource().equals(menu.getCatagoryGUI().getSodaButton())) {
-            System.out.println("Insert Soda Code");
-
-            ChooseProduct("Soda");
-        }
 
         if (e.getSource().equals(eachdrink.getBackButton())) {
             eachdrink.setVisible(false);
