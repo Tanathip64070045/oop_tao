@@ -34,14 +34,14 @@ public class CatagoryGUI extends javax.swing.JPanel {
         recommendText = new javax.swing.JLabel();
         coffeeButton = new GUI.Components.pnlBorder();
         coffeeText = new javax.swing.JLabel();
-        teaButton = new GUI.Components.pnlBorder();
-        teaText = new javax.swing.JLabel();
+        juiceButton = new GUI.Components.pnlBorder();
+        JuiceButton = new javax.swing.JLabel();
         milkAndCocoaButton = new GUI.Components.pnlBorder();
         milkandcocoaText = new javax.swing.JLabel();
-        juiceButton = new GUI.Components.pnlBorder();
-        juiceText = new javax.swing.JLabel();
         sodaButton = new GUI.Components.pnlBorder();
         sodaText = new javax.swing.JLabel();
+        teaButton = new GUI.Components.pnlBorder();
+        teaText = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(700, 55));
 
@@ -67,16 +67,16 @@ public class CatagoryGUI extends javax.swing.JPanel {
 
         add(coffeeButton);
 
-        teaButton.setBackground(new java.awt.Color(246, 230, 230));
-        teaButton.setPreferredSize(new java.awt.Dimension(110, 100));
-        teaButton.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        juiceButton.setBackground(new java.awt.Color(246, 230, 230));
+        juiceButton.setPreferredSize(new java.awt.Dimension(110, 100));
+        juiceButton.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        teaText.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        teaText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        teaText.setText("Tea");
-        teaButton.add(teaText, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 110, 30));
+        JuiceButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        JuiceButton.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        JuiceButton.setText("Juice");
+        juiceButton.add(JuiceButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 110, 30));
 
-        add(teaButton);
+        add(juiceButton);
 
         milkAndCocoaButton.setBackground(new java.awt.Color(246, 230, 230));
         milkAndCocoaButton.setPreferredSize(new java.awt.Dimension(110, 100));
@@ -89,18 +89,6 @@ public class CatagoryGUI extends javax.swing.JPanel {
 
         add(milkAndCocoaButton);
 
-        juiceButton.setBackground(new java.awt.Color(246, 230, 230));
-        juiceButton.setPreferredSize(new java.awt.Dimension(110, 100));
-        juiceButton.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        juiceText.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        juiceText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        juiceText.setText("Juice");
-        juiceText.setAutoscrolls(true);
-        juiceButton.add(juiceText, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 96, 40));
-
-        add(juiceButton);
-
         sodaButton.setBackground(new java.awt.Color(246, 230, 230));
         sodaButton.setMinimumSize(new java.awt.Dimension(110, 100));
         sodaButton.setPreferredSize(new java.awt.Dimension(110, 100));
@@ -112,14 +100,25 @@ public class CatagoryGUI extends javax.swing.JPanel {
         sodaButton.add(sodaText, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 110, 30));
 
         add(sodaButton);
+
+        teaButton.setBackground(new java.awt.Color(246, 230, 230));
+        teaButton.setPreferredSize(new java.awt.Dimension(110, 100));
+        teaButton.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        teaText.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        teaText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        teaText.setText("Tea");
+        teaButton.add(teaText, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 110, 30));
+
+        add(teaButton);
     }// </editor-fold>//GEN-END:initComponents
 
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel JuiceButton;
     private GUI.Components.pnlBorder coffeeButton;
     private javax.swing.JLabel coffeeText;
     private GUI.Components.pnlBorder juiceButton;
-    private javax.swing.JLabel juiceText;
     private GUI.Components.pnlBorder milkAndCocoaButton;
     private javax.swing.JLabel milkandcocoaText;
     private GUI.Components.pnlBorder recommendButton;

@@ -43,7 +43,7 @@ public class DrinkGUI extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(197, 158, 126));
         setToolTipText("");
-        setPreferredSize(new java.awt.Dimension(165, 250));
+        setPreferredSize(new java.awt.Dimension(200, 270));
 
         namePanel.setBackground(new java.awt.Color(86, 71, 71));
 
@@ -56,7 +56,7 @@ public class DrinkGUI extends javax.swing.JPanel {
         namePanel.setLayout(namePanelLayout);
         namePanelLayout.setHorizontalGroup(
             namePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(product, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
+            .addComponent(product, javax.swing.GroupLayout.DEFAULT_SIZE, 438, Short.MAX_VALUE)
         );
         namePanelLayout.setVerticalGroup(
             namePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -69,7 +69,7 @@ public class DrinkGUI extends javax.swing.JPanel {
         price.setText("999 ฿");
 
         img.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        img.setIcon(new javax.swing.ImageIcon(getClass().getResource("/products/cf_latte.png"))); // NOI18N
+        img.setIcon(new javax.swing.ImageIcon(getClass().getResource("/products/sd_straw.png"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -79,8 +79,8 @@ public class DrinkGUI extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(img, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(price, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(price, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(img, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -89,7 +89,7 @@ public class DrinkGUI extends javax.swing.JPanel {
                 .addContainerGap()
                 .addComponent(price)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(img, javax.swing.GroupLayout.DEFAULT_SIZE, 119, Short.MAX_VALUE)
+                .addComponent(img, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(namePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(16, 16, 16))

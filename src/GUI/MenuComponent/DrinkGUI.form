@@ -7,7 +7,7 @@
     </Property>
     <Property name="toolTipText" type="java.lang.String" value=""/>
     <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[165, 250]"/>
+      <Dimension value="[200, 270]"/>
     </Property>
   </Properties>
   <AuxValues>
@@ -29,8 +29,8 @@
           <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="img" max="32767" attributes="0"/>
-                  <Component id="price" alignment="0" max="32767" attributes="0"/>
+                  <Component id="price" max="32767" attributes="0"/>
+                  <Component id="img" alignment="0" max="32767" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -42,7 +42,7 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="price" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="img" pref="119" max="32767" attributes="0"/>
+              <Component id="img" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="namePanel" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
@@ -61,7 +61,7 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="product" alignment="0" pref="165" max="32767" attributes="0"/>
+              <Component id="product" alignment="0" pref="438" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
@@ -101,7 +101,7 @@
       <Properties>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/products/cf_latte.png"/>
+          <Image iconType="3" name="/products/sd_straw.png"/>
         </Property>
       </Properties>
     </Component>

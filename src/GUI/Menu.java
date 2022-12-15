@@ -30,7 +30,6 @@ public class Menu extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
         jPanel1 = new javax.swing.JPanel();
         BackButton = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
@@ -51,17 +50,32 @@ public class Menu extends javax.swing.JPanel {
         BackButton.setText("BACK");
 
         jPanel2.setBackground(new java.awt.Color(66, 56, 63));
+        jPanel2.setMinimumSize(new java.awt.Dimension(720, 830));
+        jPanel2.setPreferredSize(new java.awt.Dimension(720, 830));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         pnlBorder1.setBackground(new java.awt.Color(137, 105, 112));
-        pnlBorder1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jScrollPane2.setBorder(null);
         jScrollPane2.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane2.setHorizontalScrollBar(null);
+
+        pnlMenu.setPreferredSize(new java.awt.Dimension(720, 900));
         jScrollPane2.setViewportView(pnlMenu);
 
-        pnlBorder1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 720, 580));
+        javax.swing.GroupLayout pnlBorder1Layout = new javax.swing.GroupLayout(pnlBorder1);
+        pnlBorder1.setLayout(pnlBorder1Layout);
+        pnlBorder1Layout.setHorizontalGroup(
+            pnlBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 720, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        pnlBorder1Layout.setVerticalGroup(
+            pnlBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlBorder1Layout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 578, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(206, Short.MAX_VALUE))
+        );
 
         jPanel2.add(pnlBorder1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 720, -1));
 
@@ -90,8 +104,7 @@ public class Menu extends javax.swing.JPanel {
                 .addGap(30, 30, 30)
                 .addComponent(BackButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -104,7 +117,6 @@ public class Menu extends javax.swing.JPanel {
     private javax.swing.JLabel headerText;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private GUI.Components.pnlBorder pnlBorder1;
     private GUI.MenuComponent.MenuPanel pnlMenu;
