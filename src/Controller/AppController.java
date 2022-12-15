@@ -52,9 +52,9 @@ public class AppController implements ActionListener, WindowListener, MouseListe
     private PaymentSuccess paymentsuccess;
     private ImageIcon balaIcon = new ImageIcon("../oop_tao/src/GUI/icons/Vecter3.png");
     private ImageIcon tIcon = new ImageIcon("../oop_tao/src/GUI/icons/Vecter3.png");
-//    private Thread tr;
+    private Thread tr;
     private DBModel db;
-    private Product p = new Product();
+    private Product p;
 
     @Override
     public void windowOpened(WindowEvent e) {
@@ -71,7 +71,8 @@ public class AppController implements ActionListener, WindowListener, MouseListe
         mw = new MainWindow();
         login = new Login();
         menu = new Menu();
-        
+        p = new Product();
+
         eachdrink = new EachDrink();
         paymentmain = new PaymentMainWindow();
         paymentchange = new PaymentChangeWindow();
@@ -117,6 +118,8 @@ public class AppController implements ActionListener, WindowListener, MouseListe
         paymentinsert.getButtonConfirm().addMouseListener(this);
         paymentinsert.getButtonCancel().addMouseListener(this);
 
+        paymentchange.getButtonConfirm().addMouseListener(this);
+        paymentchange.getButtonConfirm().setEnabled(false);
         paymentchange.addComponentListener(this);
 
         paymentsuccess.getButtonConfirm().addMouseListener(this);
@@ -149,13 +152,12 @@ public class AppController implements ActionListener, WindowListener, MouseListe
         adminGUI.getAdminControl().getBalance().setData(new Card(null, "  Balance.", "9999.99 ฿", "description"));
         adminGUI.getAdminControl().getTotally().setData(new Card(null, "Totally.", "9999.99 ฿", "description"));
         adminGUI.getAdminControl().getStock().sendData(new Stock(i));
-
     }
 
     int index;
 
     @Override
-    
+
     public void actionPerformed(ActionEvent ae) {
 
         if (ae.getSource().equals(stock.getAdminProducts().getBtnAdd())) {
@@ -388,24 +390,23 @@ public class AppController implements ActionListener, WindowListener, MouseListe
         if (e.getSource().equals(paymentinsert.getBackButton()) || e.getSource().equals(paymentinsert.getButtonCancel())) {
             paymentinsert.setVisible(false);
             paymentmain.setVisible(true);
-        }
-        else if (e.getSource().equals(paymentinsert.getButtonConfirm())) {
+        } else if (e.getSource().equals(paymentinsert.getButtonConfirm())) {
             paymentinsert.setVisible(false);
             paymentchange.setVisible(true);
         }
-        
+
         if (e.getSource().equals(paymentchange.getButtonConfirm())) {
             paymentchange.setVisible(false);
             paymentsuccess.setVisible(true);
-            paymentchange.getButtonConfirm().setBackground(new Color(246,230,230));
-            paymentchange.getButtonConfirm().removeMouseListener(this);
+            paymentchange.getButtonConfirm().setBackground(new Color(246, 230, 230));
+            paymentchange.getButtonConfirm().setEnabled(false);
         }
-        
+
         if (e.getSource().equals(paymentsuccess.getButtonConfirm())) {
             paymentsuccess.setVisible(false);
             mw.getPnlContainer().setVisible(true);
         }
-        
+
         if (e.getSource().equals(adminGUI.getNavbar().getBackButton())) {
             adminGUI.setVisible(false);
             mw.getPnlContainer().setVisible(true);
@@ -445,18 +446,18 @@ public class AppController implements ActionListener, WindowListener, MouseListe
 
     @Override
     public void componentShown(ComponentEvent e) {
-        
-      
-        try{
-            for(int i = 5;i>=0;i--){
 
-                paymentchange.getLabel3().setText("Please click continue in "+ i);
-                paymentchange.getTr().sleep(1000);
+        if (e.getSource().equals(paymentchange)) {
+            try {
+                for (int i = 5; i >= 0; i--) {
+                    paymentchange.getLabel3().setText("Please click continue in " + i);
+                    tr.sleep(1000);
+                }
+                paymentchange.getButtonConfirm().setBackground(new Color(197, 158, 126));
+                paymentchange.getButtonConfirm().setEnabled(true);
+            } catch (Exception ea) {
+                System.out.println(ea);
             }
-            paymentchange.getButtonConfirm().setBackground(new Color(197,158,126));
-            paymentchange.getButtonConfirm().addMouseListener(this);
-        }catch(Exception ea){
-            System.out.println("aaa");
         }
     }
 

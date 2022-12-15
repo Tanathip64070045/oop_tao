@@ -20,9 +20,6 @@ public class PaymentChangeWindow extends javax.swing.JPanel {
      */
     public PaymentChangeWindow() {
         initComponents();
-        tr = new Thread();
-      
-        
     }
 
     /**
@@ -132,20 +129,12 @@ public class PaymentChangeWindow extends javax.swing.JPanel {
     private java.awt.Label label3;
     private GUI.PaymentGUI.Components.PanelBorder panelBorder1;
     // End of variables declaration//GEN-END:variables
-    private Thread tr;
-    
+   
     public ButtonConfirm getButtonConfirm() {
         return buttonComfirm;
     }
 
-    public Thread getTr() {
-        return tr;
-    }
-
     public Label getLabel3() {
         return label3;
-    }
-    
-    
-    
+    }  
 }
