@@ -36,7 +36,7 @@ public class Menu extends javax.swing.JPanel {
         jPanel2 = new javax.swing.JPanel();
         pnlBorder1 = new GUI.Components.pnlBorder();
         jScrollPane2 = new javax.swing.JScrollPane();
-        menuPanel1 = new GUI.MenuComponent.MenuPanel();
+        pnlMenu = new GUI.MenuComponent.MenuPanel();
         headerText = new javax.swing.JLabel();
         catagoryGUI = new GUI.MenuComponent.CatagoryGUI();
 
@@ -59,7 +59,7 @@ public class Menu extends javax.swing.JPanel {
         jScrollPane2.setBorder(null);
         jScrollPane2.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane2.setHorizontalScrollBar(null);
-        jScrollPane2.setViewportView(menuPanel1);
+        jScrollPane2.setViewportView(pnlMenu);
 
         pnlBorder1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 720, 580));
 
@@ -106,8 +106,8 @@ public class Menu extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private GUI.MenuComponent.MenuPanel menuPanel1;
     private GUI.Components.pnlBorder pnlBorder1;
+    private GUI.MenuComponent.MenuPanel pnlMenu;
     // End of variables declaration//GEN-END:variables
 
     public JLabel getBackButton() {
@@ -118,9 +118,8 @@ public class Menu extends javax.swing.JPanel {
         return catagoryGUI;
     }
 
-//    public MenuPanel getMenuPanel() {
-//        return menuPanel;
-//    }
-    
+    public MenuPanel getPnlMenu() {
+        return pnlMenu;
+    }
     
 }

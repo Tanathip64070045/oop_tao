@@ -125,7 +125,7 @@
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                   <SubComponents>
-                    <Component class="GUI.MenuComponent.MenuPanel" name="menuPanel1">
+                    <Component class="GUI.MenuComponent.MenuPanel" name="pnlMenu">
                     </Component>
                   </SubComponents>
                 </Container>

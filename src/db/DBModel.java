@@ -38,6 +38,9 @@ public class DBModel {
     public ArrayList getProducts(){
         return products;
     }
+    public String getCategory(){
+        return product.getCategory();
+    }
     public int getNewId(){
         return products.size()+1;
     }
