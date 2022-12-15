@@ -1,6 +1,7 @@
 package GUI.AdminUI;
 
 import GUI.Components.AdminProducts;
+import GUI.Components.NavbarAdminStock;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
@@ -27,29 +28,14 @@ public class AdminStock extends javax.swing.JFrame{
 
         panel_main = new javax.swing.JPanel();
         adminProducts = new GUI.Components.AdminProducts();
-        navbar1 = new GUI.Components.Navbar();
-        navbar21 = new GUI.Components.Navbar2();
+        navbar = new GUI.Components.NavbarAdminStock();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         panel_main.setBackground(new java.awt.Color(51, 51, 51));
         panel_main.setLayout(new java.awt.BorderLayout());
         panel_main.add(adminProducts, java.awt.BorderLayout.CENTER);
-
-        javax.swing.GroupLayout navbar1Layout = new javax.swing.GroupLayout(navbar1);
-        navbar1.setLayout(navbar1Layout);
-        navbar1Layout.setHorizontalGroup(
-            navbar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(navbar21, javax.swing.GroupLayout.DEFAULT_SIZE, 1495, Short.MAX_VALUE)
-        );
-        navbar1Layout.setVerticalGroup(
-            navbar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, navbar1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(navbar21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-
-        panel_main.add(navbar1, java.awt.BorderLayout.PAGE_START);
+        panel_main.add(navbar, java.awt.BorderLayout.PAGE_START);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -76,9 +62,13 @@ public class AdminStock extends javax.swing.JFrame{
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private GUI.Components.AdminProducts adminProducts;
-    private GUI.Components.Navbar navbar1;
-    private GUI.Components.Navbar2 navbar21;
+    private GUI.Components.NavbarAdminStock navbar;
     private javax.swing.JPanel panel_main;
     // End of variables declaration//GEN-END:variables
 
+    public NavbarAdminStock getNavbar() {
+        return navbar;
+    }
+
+    
 }

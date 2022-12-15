@@ -4,6 +4,8 @@
  */
 package GUI.PaymentGUI;
 
+import GUI.PaymentGUI.Components.ButtonConfirm;
+
 /**
  *
  * @author admin
@@ -28,11 +30,11 @@ public class PaymentSuccess extends javax.swing.JPanel {
 
         jLabel1 = new javax.swing.JLabel();
         panelBorder1 = new GUI.PaymentGUI.Components.PanelBorder();
-        buttonPanel = new GUI.PaymentGUI.Components.ButtonConfirm();
-        buttonConfirm = new java.awt.Label();
         label2 = new java.awt.Label();
         label3 = new java.awt.Label();
         label4 = new java.awt.Label();
+        buttonConfirm = new GUI.PaymentGUI.Components.ButtonConfirm();
+        jLabel2 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(66, 56, 63));
         setPreferredSize(new java.awt.Dimension(720, 830));
@@ -43,29 +45,6 @@ public class PaymentSuccess extends javax.swing.JPanel {
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 720, 224));
 
         panelBorder1.setPreferredSize(new java.awt.Dimension(720, 600));
-
-        buttonPanel.setBackground(new java.awt.Color(197, 158, 126));
-
-        buttonConfirm.setAlignment(java.awt.Label.CENTER);
-        buttonConfirm.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        buttonConfirm.setForeground(new java.awt.Color(255, 255, 255));
-        buttonConfirm.setText("Confirm");
-
-        javax.swing.GroupLayout buttonPanelLayout = new javax.swing.GroupLayout(buttonPanel);
-        buttonPanel.setLayout(buttonPanelLayout);
-        buttonPanelLayout.setHorizontalGroup(
-            buttonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(buttonPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(buttonConfirm, javax.swing.GroupLayout.DEFAULT_SIZE, 630, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        buttonPanelLayout.setVerticalGroup(
-            buttonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(buttonPanelLayout.createSequentialGroup()
-                .addComponent(buttonConfirm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 2, Short.MAX_VALUE))
-        );
 
         label2.setAlignment(java.awt.Label.CENTER);
         label2.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
@@ -81,6 +60,33 @@ public class PaymentSuccess extends javax.swing.JPanel {
         label4.setForeground(new java.awt.Color(184, 184, 184));
         label4.setText("the green signal.");
 
+        buttonConfirm.setBackground(new java.awt.Color(197, 158, 126));
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("Confirm");
+
+        javax.swing.GroupLayout buttonConfirmLayout = new javax.swing.GroupLayout(buttonConfirm);
+        buttonConfirm.setLayout(buttonConfirmLayout);
+        buttonConfirmLayout.setHorizontalGroup(
+            buttonConfirmLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 650, Short.MAX_VALUE)
+            .addGroup(buttonConfirmLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(buttonConfirmLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 638, Short.MAX_VALUE)
+                    .addContainerGap()))
+        );
+        buttonConfirmLayout.setVerticalGroup(
+            buttonConfirmLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(buttonConfirmLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(buttonConfirmLayout.createSequentialGroup()
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+
         javax.swing.GroupLayout panelBorder1Layout = new javax.swing.GroupLayout(panelBorder1);
         panelBorder1.setLayout(panelBorder1Layout);
         panelBorder1Layout.setHorizontalGroup(
@@ -89,7 +95,7 @@ public class PaymentSuccess extends javax.swing.JPanel {
             .addComponent(label3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(panelBorder1Layout.createSequentialGroup()
                 .addContainerGap(35, Short.MAX_VALUE)
-                .addComponent(buttonPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(buttonConfirm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(35, Short.MAX_VALUE))
             .addComponent(label4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -103,7 +109,7 @@ public class PaymentSuccess extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(label4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 296, Short.MAX_VALUE)
-                .addComponent(buttonPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(buttonConfirm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(40, Short.MAX_VALUE))
         );
 
@@ -111,12 +117,17 @@ public class PaymentSuccess extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private java.awt.Label buttonConfirm;
-    private GUI.PaymentGUI.Components.ButtonConfirm buttonPanel;
+    private GUI.PaymentGUI.Components.ButtonConfirm buttonConfirm;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private java.awt.Label label2;
     private java.awt.Label label3;
     private java.awt.Label label4;
     private GUI.PaymentGUI.Components.PanelBorder panelBorder1;
     // End of variables declaration//GEN-END:variables
+
+    public ButtonConfirm getButtonConfirm() {
+        return buttonConfirm;
+    }
+    
 }

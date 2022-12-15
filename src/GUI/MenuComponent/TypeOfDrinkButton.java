@@ -40,82 +40,37 @@ public class TypeOfDrinkButton extends javax.swing.JPanel {
 
         hotButton.setBackground(new java.awt.Color(144, 111, 118));
         hotButton.setPreferredSize(new java.awt.Dimension(175, 35));
+        hotButton.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         hotText.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         hotText.setForeground(new java.awt.Color(255, 255, 255));
         hotText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         hotText.setText("Hot");
-
-        javax.swing.GroupLayout hotButtonLayout = new javax.swing.GroupLayout(hotButton);
-        hotButton.setLayout(hotButtonLayout);
-        hotButtonLayout.setHorizontalGroup(
-            hotButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, hotButtonLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(hotText, javax.swing.GroupLayout.DEFAULT_SIZE, 163, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        hotButtonLayout.setVerticalGroup(
-            hotButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(hotButtonLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(hotText, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+        hotButton.add(hotText, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 5, 160, -1));
 
         add(hotButton);
 
         icedButton.setBackground(new java.awt.Color(144, 111, 118));
         icedButton.setPreferredSize(new java.awt.Dimension(175, 35));
+        icedButton.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         icedText.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         icedText.setForeground(new java.awt.Color(255, 255, 255));
         icedText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         icedText.setText("Iced(+฿5)");
-
-        javax.swing.GroupLayout icedButtonLayout = new javax.swing.GroupLayout(icedButton);
-        icedButton.setLayout(icedButtonLayout);
-        icedButtonLayout.setHorizontalGroup(
-            icedButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(icedButtonLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(icedText, javax.swing.GroupLayout.DEFAULT_SIZE, 163, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        icedButtonLayout.setVerticalGroup(
-            icedButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(icedButtonLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(icedText, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+        icedButton.add(icedText, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 5, 160, -1));
 
         add(icedButton);
 
         smoothieButton.setBackground(new java.awt.Color(144, 111, 118));
         smoothieButton.setPreferredSize(new java.awt.Dimension(175, 35));
+        smoothieButton.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         smoothieText.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         smoothieText.setForeground(new java.awt.Color(255, 255, 255));
         smoothieText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         smoothieText.setText("Smoothie(+฿10)");
-
-        javax.swing.GroupLayout smoothieButtonLayout = new javax.swing.GroupLayout(smoothieButton);
-        smoothieButton.setLayout(smoothieButtonLayout);
-        smoothieButtonLayout.setHorizontalGroup(
-            smoothieButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(smoothieButtonLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(smoothieText, javax.swing.GroupLayout.DEFAULT_SIZE, 163, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        smoothieButtonLayout.setVerticalGroup(
-            smoothieButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(smoothieButtonLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(smoothieText, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+        smoothieButton.add(smoothieText, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 5, 160, -1));
 
         add(smoothieButton);
     }// </editor-fold>//GEN-END:initComponents

@@ -3,13 +3,32 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/norrapat/NetBeansProjects/oop_tao/src/GUI/AdminUI/AdminStock.java</file>
-            <file>file:/Users/norrapat/NetBeansProjects/oop_tao/src/Controller/AppController.java</file>
-            <file>file:/Users/norrapat/NetBeansProjects/oop_tao/src/GUI/Components/AdminProducts.java</file>
-            <file>file:/Users/norrapat/NetBeansProjects/oop_tao/src/GUI/Components/Navbar.java</file>
-            <file>file:/Users/norrapat/NetBeansProjects/oop_tao/src/internal/Login.java</file>
-            <file>file:/Users/norrapat/NetBeansProjects/oop_tao/src/GUI/MainWindow.java</file>
-            <file>file:/Users/norrapat/NetBeansProjects/oop_tao/src/GUI/Components/Navbar2.java</file>
+            <file>file:/C:/Users/admin/Documents/NetBeansProjects/OOP_TAO/src/GUI/MenuComponent/TypeOfDrinkButton.java</file>
+            <file>file:/C:/Users/admin/Documents/NetBeansProjects/OOP_TAO/src/GUI/PaymentGUI/PaymentMainWindow.java</file>
+            <file>file:/C:/Users/admin/Documents/NetBeansProjects/OOP_TAO/src/GUI/PaymentGUI/PaymentQrWindow.java</file>
+            <file>file:/C:/Users/admin/Documents/NetBeansProjects/OOP_TAO/src/GUI/Components/AdminProducts.java</file>
+            <file>file:/C:/Users/admin/Documents/NetBeansProjects/OOP_TAO/src/GUI/Components/NavbarAdminStock.java</file>
+            <file>file:/C:/Users/admin/Documents/NetBeansProjects/OOP_TAO/src/GUI/EachDrink.java</file>
+            <file>file:/C:/Users/admin/Documents/NetBeansProjects/OOP_TAO/src/GUI/Components/NavbarAdminGUI.java</file>
+            <file>file:/C:/Users/admin/Documents/NetBeansProjects/OOP_TAO/src/GUI/PaymentGUI/PaymentInsertWindow.java</file>
+            <file>file:/C:/Users/admin/Documents/NetBeansProjects/OOP_TAO/src/GUI/MenuComponent/SweetnessLevelButton.java</file>
+            <file>file:/C:/Users/admin/Documents/NetBeansProjects/OOP_TAO/src/GUI/MenuComponent/CatagoryGUI.java</file>
+            <file>file:/C:/Users/admin/Documents/NetBeansProjects/OOP_TAO/src/GUI/MenuComponent/DrinkGUI.java</file>
+            <file>file:/C:/Users/admin/Documents/NetBeansProjects/OOP_TAO/src/GUI/MenuComponent/PurchasingButton.java</file>
+            <file>file:/C:/Users/admin/Documents/NetBeansProjects/OOP_TAO/src/GUI/MenuComponent/MenuPanel.java</file>
+            <file>file:/C:/Users/admin/Documents/NetBeansProjects/OOP_TAO/src/Controller/AppController.java</file>
+            <file>file:/C:/Users/admin/Documents/NetBeansProjects/OOP_TAO/src/GUI/AdminUI/AdminStock.java</file>
+            <file>file:/C:/Users/admin/Documents/NetBeansProjects/OOP_TAO/src/GUI/MenuComponent/TypeOfDrink.java</file>
+            <file>file:/C:/Users/admin/Documents/NetBeansProjects/OOP_TAO/src/GUI/MenuComponent/SweetnessLevel.java</file>
+            <file>file:/C:/Users/admin/Documents/NetBeansProjects/OOP_TAO/src/GUI/MenuComponent/DecorateDrinkMenu.java</file>
+            <file>file:/C:/Users/admin/Documents/NetBeansProjects/OOP_TAO/src/GUI/Components/BackGround.java</file>
+            <file>file:/C:/Users/admin/Documents/NetBeansProjects/OOP_TAO/src/GUI/PaymentGUI/PaymentSuccess.java</file>
+            <file>file:/C:/Users/admin/Documents/NetBeansProjects/OOP_TAO/src/GUI/MenuComponent/Toppings.java</file>
+            <file>file:/C:/Users/admin/Documents/NetBeansProjects/OOP_TAO/src/GUI/Menu.java</file>
+            <file>file:/C:/Users/admin/Documents/NetBeansProjects/OOP_TAO/src/GUI/MenuComponent/ToppingsButton.java</file>
+            <file>file:/C:/Users/admin/Documents/NetBeansProjects/OOP_TAO/src/GUI/PaymentGUI/PaymentChangeWindow.java</file>
+            <file>file:/C:/Users/admin/Documents/NetBeansProjects/OOP_TAO/src/GUI/AdminUI/AdminGUI.java</file>
+            <file>file:/C:/Users/admin/Documents/NetBeansProjects/OOP_TAO/src/GUI/MainWindow.java</file>
         </group>
     </open-files>
 </project-private>

@@ -42,109 +42,49 @@ public class ToppingsButton extends javax.swing.JPanel {
 
         bubbleButton.setBackground(new java.awt.Color(144, 111, 118));
         bubbleButton.setPreferredSize(new java.awt.Dimension(135, 35));
+        bubbleButton.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         bubbleText.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         bubbleText.setForeground(new java.awt.Color(255, 255, 255));
         bubbleText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         bubbleText.setText("Bubble");
-
-        javax.swing.GroupLayout bubbleButtonLayout = new javax.swing.GroupLayout(bubbleButton);
-        bubbleButton.setLayout(bubbleButtonLayout);
-        bubbleButtonLayout.setHorizontalGroup(
-            bubbleButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(bubbleButtonLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(bubbleText, javax.swing.GroupLayout.DEFAULT_SIZE, 123, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        bubbleButtonLayout.setVerticalGroup(
-            bubbleButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bubbleButtonLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(bubbleText, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+        bubbleButton.add(bubbleText, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 5, 120, -1));
 
         add(bubbleButton);
 
         whipCreamButton.setBackground(new java.awt.Color(144, 111, 118));
         whipCreamButton.setPreferredSize(new java.awt.Dimension(135, 35));
+        whipCreamButton.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         whipCreamText.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         whipCreamText.setForeground(new java.awt.Color(255, 255, 255));
         whipCreamText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         whipCreamText.setText("Whip cream");
-
-        javax.swing.GroupLayout whipCreamButtonLayout = new javax.swing.GroupLayout(whipCreamButton);
-        whipCreamButton.setLayout(whipCreamButtonLayout);
-        whipCreamButtonLayout.setHorizontalGroup(
-            whipCreamButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(whipCreamButtonLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(whipCreamText, javax.swing.GroupLayout.DEFAULT_SIZE, 123, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        whipCreamButtonLayout.setVerticalGroup(
-            whipCreamButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, whipCreamButtonLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(whipCreamText, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+        whipCreamButton.add(whipCreamText, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 5, 120, -1));
 
         add(whipCreamButton);
 
         milkFoamButton.setBackground(new java.awt.Color(144, 111, 118));
         milkFoamButton.setPreferredSize(new java.awt.Dimension(135, 35));
+        milkFoamButton.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         milkFoamText.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         milkFoamText.setForeground(new java.awt.Color(255, 255, 255));
         milkFoamText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        milkFoamText.setText("Milk foam");
-
-        javax.swing.GroupLayout milkFoamButtonLayout = new javax.swing.GroupLayout(milkFoamButton);
-        milkFoamButton.setLayout(milkFoamButtonLayout);
-        milkFoamButtonLayout.setHorizontalGroup(
-            milkFoamButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(milkFoamButtonLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(milkFoamText, javax.swing.GroupLayout.DEFAULT_SIZE, 123, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        milkFoamButtonLayout.setVerticalGroup(
-            milkFoamButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, milkFoamButtonLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(milkFoamText, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+        milkFoamText.setText("Milk Foam");
+        milkFoamButton.add(milkFoamText, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 5, 120, -1));
 
         add(milkFoamButton);
 
         oreoButton.setBackground(new java.awt.Color(144, 111, 118));
         oreoButton.setPreferredSize(new java.awt.Dimension(135, 35));
+        oreoButton.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         oreoText.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         oreoText.setForeground(new java.awt.Color(255, 255, 255));
         oreoText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         oreoText.setText("Oreo");
-
-        javax.swing.GroupLayout oreoButtonLayout = new javax.swing.GroupLayout(oreoButton);
-        oreoButton.setLayout(oreoButtonLayout);
-        oreoButtonLayout.setHorizontalGroup(
-            oreoButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(oreoButtonLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(oreoText, javax.swing.GroupLayout.DEFAULT_SIZE, 123, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        oreoButtonLayout.setVerticalGroup(
-            oreoButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, oreoButtonLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(oreoText, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+        oreoButton.add(oreoText, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 5, 110, -1));
 
         add(oreoButton);
     }// </editor-fold>//GEN-END:initComponents
