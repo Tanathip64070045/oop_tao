@@ -19,7 +19,7 @@ public class AdminStock extends javax.swing.JFrame{
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setLocationRelativeTo(null);
         setVisible(true);
-        
+        setResizable(false);
     }
 
     @SuppressWarnings("unchecked")
