@@ -43,6 +43,7 @@ public class CatagoryGUI extends javax.swing.JPanel {
         teaButton = new GUI.Components.pnlBorder();
         teaText = new javax.swing.JLabel();
 
+        setAutoscrolls(true);
         setPreferredSize(new java.awt.Dimension(700, 55));
 
         recommendButton.setBackground(new java.awt.Color(246, 230, 230));
