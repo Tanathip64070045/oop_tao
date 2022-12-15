@@ -26,6 +26,8 @@ import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.event.ComponentEvent;
 import java.awt.event.ComponentListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.awt.event.MouseAdapter;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -36,8 +38,9 @@ import java.nio.file.Paths;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
+import javax.swing.JTextField;
 
-public class AppController implements ActionListener, WindowListener, MouseListener, Runnable, ComponentListener {
+public class AppController implements ActionListener, WindowListener, MouseListener, Runnable, ComponentListener, KeyListener {
 
     private AdminGUI adminGUI;
     private AdminStock stock;
@@ -55,12 +58,9 @@ public class AppController implements ActionListener, WindowListener, MouseListe
     private Thread tr;
     private DBModel db;
     private Product p;
-
-    @Override
-    public void windowOpened(WindowEvent e) {
-        db.loadFile();
-        System.out.println("Load");
-    }
+    private ViewModel view;
+    private BufferedImage img;
+    private int index;
 
     public static void main(String[] args) {
         new AppController();
@@ -72,6 +72,7 @@ public class AppController implements ActionListener, WindowListener, MouseListe
         login = new Login();
         menu = new Menu();
         p = new Product();
+        view = new ViewModel();
 
         eachdrink = new EachDrink();
         paymentmain = new PaymentMainWindow();
@@ -117,6 +118,8 @@ public class AppController implements ActionListener, WindowListener, MouseListe
         paymentinsert.getBackButton().addMouseListener(this);
         paymentinsert.getButtonConfirm().addMouseListener(this);
         paymentinsert.getButtonCancel().addMouseListener(this);
+        paymentinsert.getTextInsert().addKeyListener(this);
+        paymentinsert.addComponentListener(this);
 
         paymentchange.getButtonConfirm().addMouseListener(this);
         paymentchange.getButtonConfirm().setEnabled(false);
@@ -143,6 +146,7 @@ public class AppController implements ActionListener, WindowListener, MouseListe
         mw.getPnlSoda().addMouseListener(this);
         mw.getPnlTea().addMouseListener(this);
         mw.addWindowListener(this);
+        mw.getPnlContainer().addComponentListener(this);
 
         int i = db.getProducts().size();
         System.out.println(i);
@@ -152,9 +156,8 @@ public class AppController implements ActionListener, WindowListener, MouseListe
         adminGUI.getAdminControl().getBalance().setData(new Card(null, "  Balance.", "9999.99 ฿", "description"));
         adminGUI.getAdminControl().getTotally().setData(new Card(null, "Totally.", "9999.99 ฿", "description"));
         adminGUI.getAdminControl().getStock().sendData(new Stock(i));
-    }
 
-    int index;
+    }
 
     @Override
 
@@ -255,6 +258,12 @@ public class AppController implements ActionListener, WindowListener, MouseListe
     }
 
     @Override
+    public void windowOpened(WindowEvent e) {
+        db.loadFile();
+        System.out.println("Load");
+    }
+
+    @Override
     public void windowClosing(WindowEvent e) {
         db.saveFile();
         System.out.println("save");
@@ -279,9 +288,6 @@ public class AppController implements ActionListener, WindowListener, MouseListe
     @Override
     public void windowDeactivated(WindowEvent e) {
     }
-
-    private ViewModel view = new ViewModel();
-    private BufferedImage img;
 
     @Override
     public void mouseClicked(MouseEvent e) {
@@ -436,12 +442,10 @@ public class AppController implements ActionListener, WindowListener, MouseListe
 
     @Override
     public void componentResized(ComponentEvent e) {
-
     }
 
     @Override
     public void componentMoved(ComponentEvent e) {
-
     }
 
     @Override
@@ -459,11 +463,38 @@ public class AppController implements ActionListener, WindowListener, MouseListe
                 System.out.println(ea);
             }
         }
+
+        if (e.getSource().equals(paymentinsert)) {
+            paymentinsert.getTextInsert().setText("");
+        }
+        
+        if (e.getSource().equals(mw.getPnlContainer())) {
+            login.setVisible(false);
+        }
     }
 
     @Override
     public void componentHidden(ComponentEvent e) {
-
     }
 
+    @Override
+    public void keyTyped(KeyEvent e) {
+        if (e.getSource().equals(paymentinsert.getTextInsert())) {
+            char c = e.getKeyChar();
+            if (!((c >= '0') && (c <= '9')
+                    || (c == KeyEvent.VK_BACK_SPACE)
+                    || (c == KeyEvent.VK_DELETE))) {
+                paymentinsert.getToolkit().beep();
+                e.consume();
+            }
+        }
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+    }
 }
