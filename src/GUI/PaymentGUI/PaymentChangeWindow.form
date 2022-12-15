@@ -81,7 +81,7 @@
         <Container class="GUI.PaymentGUI.Components.ButtonConfirm" name="buttonComfirm">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="7e" green="9e" red="c5" type="rgb"/>
+              <Color blue="e6" green="e6" red="f6" type="rgb"/>
             </Property>
           </Properties>
 
@@ -138,7 +138,7 @@
               <Color blue="b8" green="b8" red="b8" type="rgb"/>
             </Property>
             <Property name="name" type="java.lang.String" value="" noResource="true"/>
-            <Property name="text" type="java.lang.String" value="The machine is about to change money."/>
+            <Property name="text" type="java.lang.String" value="Please click continue in "/>
           </Properties>
         </Component>
         <Component class="java.awt.Label" name="Received">

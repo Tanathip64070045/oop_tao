@@ -120,7 +120,7 @@ public class AdminProducts extends javax.swing.JPanel implements ActionListener 
 
         category.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Coffee", "Milk & Coco", "Tea", "Soda", "Juice" }));
 
-        btnAdd.setBackground(new java.awt.Color(51, 102, 255));
+        btnAdd.setBackground(new java.awt.Color(197, 158, 126));
         btnAdd.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnAdd.setForeground(new java.awt.Color(255, 255, 255));
         btnAdd.setText("Add");

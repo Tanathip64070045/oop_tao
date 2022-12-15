@@ -5,18 +5,24 @@
 package GUI.PaymentGUI;
 
 import GUI.PaymentGUI.Components.ButtonConfirm;
+import java.awt.Label;
+
 
 /**
  *
  * @author admin
  */
 public class PaymentChangeWindow extends javax.swing.JPanel {
-
+   
+    
     /**
      * Creates new form TEST
      */
     public PaymentChangeWindow() {
         initComponents();
+        tr = new Thread();
+      
+        
     }
 
     /**
@@ -43,7 +49,7 @@ public class PaymentChangeWindow extends javax.swing.JPanel {
 
         panelBorder1.setSize(new java.awt.Dimension(720, 830));
 
-        buttonComfirm.setBackground(new java.awt.Color(197, 158, 126));
+        buttonComfirm.setBackground(new java.awt.Color(246, 230, 230));
         buttonComfirm.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
@@ -64,7 +70,7 @@ public class PaymentChangeWindow extends javax.swing.JPanel {
         label3.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         label3.setForeground(new java.awt.Color(184, 184, 184));
         label3.setName(""); // NOI18N
-        label3.setText("The machine is about to change money.");
+        label3.setText("Please click continue in ");
 
         Received.setAlignment(java.awt.Label.CENTER);
         Received.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
@@ -113,7 +119,8 @@ public class PaymentChangeWindow extends javax.swing.JPanel {
 
         add(panelBorder1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 720, 730));
     }// </editor-fold>//GEN-END:initComponents
-
+    
+   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private java.awt.Label Change;
@@ -125,9 +132,20 @@ public class PaymentChangeWindow extends javax.swing.JPanel {
     private java.awt.Label label3;
     private GUI.PaymentGUI.Components.PanelBorder panelBorder1;
     // End of variables declaration//GEN-END:variables
-
+    private Thread tr;
+    
     public ButtonConfirm getButtonConfirm() {
         return buttonComfirm;
     }
 
+    public Thread getTr() {
+        return tr;
+    }
+
+    public Label getLabel3() {
+        return label3;
+    }
+    
+    
+    
 }
