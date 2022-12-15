@@ -199,7 +199,8 @@ public class AppController implements ActionListener, WindowListener, MouseListe
                 count++;
             }
         }
-//!!        menu.getPnlMenu().setPreferredSize(new Dimension(720, 1000));
+        menu.getPnlMenu().setPreferredSize(new Dimension(720, (int) (Math.ceil(((double) count)/3.0) * 280)));
+        System.out.println(menu.getPnlMenu().getPreferredSize());
     }
     int index;
 

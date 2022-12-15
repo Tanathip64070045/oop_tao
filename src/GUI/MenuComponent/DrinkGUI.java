@@ -43,6 +43,7 @@ public class DrinkGUI extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(197, 158, 126));
         setToolTipText("");
+        setMaximumSize(new java.awt.Dimension(200, 270));
         setPreferredSize(new java.awt.Dimension(200, 270));
 
         namePanel.setBackground(new java.awt.Color(86, 71, 71));
