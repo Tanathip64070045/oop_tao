@@ -81,4 +81,8 @@ public class Toppings extends javax.swing.JPanel {
     private GUI.MenuComponent.ToppingsButton toppingsButton;
     private javax.swing.JLabel toppingsText;
     // End of variables declaration//GEN-END:variables
+
+    public ToppingsButton getToppingsButton() {
+        return toppingsButton;
+    }
 }

@@ -4,6 +4,7 @@
  */
 package GUI.MenuComponent;
 
+import GUI.Components.pnlBorder;
 import java.awt.Color;
 
 /**
@@ -29,52 +30,24 @@ public class ToppingsButton extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        oreoButton = new GUI.Components.pnlBorder();
+        oreoText = new javax.swing.JLabel();
         bubbleButton = new GUI.Components.pnlBorder();
         bubbleText = new javax.swing.JLabel();
         whipCreamButton = new GUI.Components.pnlBorder();
         whipCreamText = new javax.swing.JLabel();
         milkFoamButton = new GUI.Components.pnlBorder();
         milkFoamText = new javax.swing.JLabel();
-        oreoButton = new GUI.Components.pnlBorder();
-        oreoText = new javax.swing.JLabel();
-
-        setPreferredSize(new java.awt.Dimension(574, 45));
-
-        bubbleButton.setBackground(new java.awt.Color(144, 111, 118));
-        bubbleButton.setPreferredSize(new java.awt.Dimension(135, 35));
-        bubbleButton.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        bubbleText.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        bubbleText.setForeground(new java.awt.Color(255, 255, 255));
-        bubbleText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        bubbleText.setText("Bubble");
-        bubbleButton.add(bubbleText, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 5, 120, -1));
-
-        add(bubbleButton);
-
-        whipCreamButton.setBackground(new java.awt.Color(144, 111, 118));
-        whipCreamButton.setPreferredSize(new java.awt.Dimension(135, 35));
-        whipCreamButton.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        whipCreamText.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        whipCreamText.setForeground(new java.awt.Color(255, 255, 255));
-        whipCreamText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        whipCreamText.setText("Whip cream");
-        whipCreamButton.add(whipCreamText, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 5, 120, -1));
-
-        add(whipCreamButton);
-
-        milkFoamButton.setBackground(new java.awt.Color(144, 111, 118));
-        milkFoamButton.setPreferredSize(new java.awt.Dimension(135, 35));
-        milkFoamButton.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        milkFoamText.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        milkFoamText.setForeground(new java.awt.Color(255, 255, 255));
-        milkFoamText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        milkFoamText.setText("Milk Foam");
-        milkFoamButton.add(milkFoamText, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 5, 120, -1));
-
-        add(milkFoamButton);
+        jellyButton = new GUI.Components.pnlBorder();
+        jellyText = new javax.swing.JLabel();
+        yoghurtButton = new GUI.Components.pnlBorder();
+        yoghurtText = new javax.swing.JLabel();
+        cookieButton = new GUI.Components.pnlBorder();
+        cookieText = new javax.swing.JLabel();
+        snackButton = new GUI.Components.pnlBorder();
+        snackText = new javax.swing.JLabel();
+        chocolateSauceButton = new GUI.Components.pnlBorder();
+        chocolateSauceText = new javax.swing.JLabel();
 
         oreoButton.setBackground(new java.awt.Color(144, 111, 118));
         oreoButton.setPreferredSize(new java.awt.Dimension(135, 35));
@@ -86,18 +59,158 @@ public class ToppingsButton extends javax.swing.JPanel {
         oreoText.setText("Oreo");
         oreoButton.add(oreoText, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 5, 110, -1));
 
-        add(oreoButton);
+        bubbleButton.setBackground(new java.awt.Color(144, 111, 118));
+        bubbleButton.setPreferredSize(new java.awt.Dimension(135, 35));
+        bubbleButton.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        bubbleText.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        bubbleText.setForeground(new java.awt.Color(255, 255, 255));
+        bubbleText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        bubbleText.setText("Bubble");
+        bubbleButton.add(bubbleText, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 5, 120, -1));
+
+        whipCreamButton.setBackground(new java.awt.Color(144, 111, 118));
+        whipCreamButton.setPreferredSize(new java.awt.Dimension(135, 35));
+        whipCreamButton.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        whipCreamText.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        whipCreamText.setForeground(new java.awt.Color(255, 255, 255));
+        whipCreamText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        whipCreamText.setText("Whip cream");
+        whipCreamButton.add(whipCreamText, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 5, 120, -1));
+
+        milkFoamButton.setBackground(new java.awt.Color(144, 111, 118));
+        milkFoamButton.setPreferredSize(new java.awt.Dimension(135, 35));
+        milkFoamButton.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        milkFoamText.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        milkFoamText.setForeground(new java.awt.Color(255, 255, 255));
+        milkFoamText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        milkFoamText.setText("Milk Foam");
+        milkFoamButton.add(milkFoamText, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 5, 120, -1));
+
+        jellyButton.setBackground(new java.awt.Color(144, 111, 118));
+        jellyButton.setPreferredSize(new java.awt.Dimension(135, 35));
+        jellyButton.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jellyText.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jellyText.setForeground(new java.awt.Color(255, 255, 255));
+        jellyText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jellyText.setText("Jelly");
+        jellyButton.add(jellyText, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 5, 110, -1));
+
+        yoghurtButton.setBackground(new java.awt.Color(144, 111, 118));
+        yoghurtButton.setPreferredSize(new java.awt.Dimension(135, 35));
+        yoghurtButton.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        yoghurtText.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        yoghurtText.setForeground(new java.awt.Color(255, 255, 255));
+        yoghurtText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        yoghurtText.setText("Yoghurt");
+        yoghurtButton.add(yoghurtText, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 5, 110, -1));
+
+        cookieButton.setBackground(new java.awt.Color(144, 111, 118));
+        cookieButton.setPreferredSize(new java.awt.Dimension(135, 35));
+        cookieButton.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        cookieText.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        cookieText.setForeground(new java.awt.Color(255, 255, 255));
+        cookieText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        cookieText.setText("Cookie");
+        cookieButton.add(cookieText, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 5, 110, -1));
+
+        snackButton.setBackground(new java.awt.Color(144, 111, 118));
+        snackButton.setPreferredSize(new java.awt.Dimension(135, 35));
+        snackButton.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        snackText.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        snackText.setForeground(new java.awt.Color(255, 255, 255));
+        snackText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        snackText.setText("Snack");
+        snackButton.add(snackText, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 5, 110, -1));
+
+        setPreferredSize(new java.awt.Dimension(574, 45));
+
+        chocolateSauceButton.setBackground(new java.awt.Color(144, 111, 118));
+        chocolateSauceButton.setPreferredSize(new java.awt.Dimension(135, 35));
+
+        chocolateSauceText.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
+        chocolateSauceText.setForeground(new java.awt.Color(255, 255, 255));
+        chocolateSauceText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        chocolateSauceText.setText("Chocolate Sauce");
+
+        javax.swing.GroupLayout chocolateSauceButtonLayout = new javax.swing.GroupLayout(chocolateSauceButton);
+        chocolateSauceButton.setLayout(chocolateSauceButtonLayout);
+        chocolateSauceButtonLayout.setHorizontalGroup(
+            chocolateSauceButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(chocolateSauceButtonLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(chocolateSauceText, javax.swing.GroupLayout.DEFAULT_SIZE, 123, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        chocolateSauceButtonLayout.setVerticalGroup(
+            chocolateSauceButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(chocolateSauceText, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
+        );
+
+        add(chocolateSauceButton);
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private GUI.Components.pnlBorder bubbleButton;
     private javax.swing.JLabel bubbleText;
+    private GUI.Components.pnlBorder chocolateSauceButton;
+    private javax.swing.JLabel chocolateSauceText;
+    private GUI.Components.pnlBorder cookieButton;
+    private javax.swing.JLabel cookieText;
+    private GUI.Components.pnlBorder jellyButton;
+    private javax.swing.JLabel jellyText;
     private GUI.Components.pnlBorder milkFoamButton;
     private javax.swing.JLabel milkFoamText;
     private GUI.Components.pnlBorder oreoButton;
     private javax.swing.JLabel oreoText;
+    private GUI.Components.pnlBorder snackButton;
+    private javax.swing.JLabel snackText;
     private GUI.Components.pnlBorder whipCreamButton;
     private javax.swing.JLabel whipCreamText;
+    private GUI.Components.pnlBorder yoghurtButton;
+    private javax.swing.JLabel yoghurtText;
     // End of variables declaration//GEN-END:variables
+
+    public pnlBorder getBubbleButton() {
+        return bubbleButton;
+    }
+
+    public pnlBorder getChocolateSauceButton() {
+        return chocolateSauceButton;
+    }
+
+    public pnlBorder getCookieButton() {
+        return cookieButton;
+    }
+
+    public pnlBorder getJellyButton() {
+        return jellyButton;
+    }
+
+    public pnlBorder getMilkFoamButton() {
+        return milkFoamButton;
+    }
+
+    public pnlBorder getOreoButton() {
+        return oreoButton;
+    }
+
+    public pnlBorder getSnackButton() {
+        return snackButton;
+    }
+
+    public pnlBorder getWhipCreamButton() {
+        return whipCreamButton;
+    }
+
+    public pnlBorder getYoghurtButton() {
+        return yoghurtButton;
+    }
 }

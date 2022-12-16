@@ -231,31 +231,52 @@ public class AppController implements ActionListener, WindowListener, MouseListe
 
 //                                ใช้ String category ที่รับมาคิดประเภทนะ ฝากด้วยคนที่ทำต่อจากฉัน
 
-                                eachdrink.getTypeOfDrink().getTypeOfDrinkButton().remove(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getHotButton());
-                                eachdrink.getTypeOfDrink().getTypeOfDrinkButton().remove(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getIcedButton());
-                                eachdrink.getTypeOfDrink().getTypeOfDrinkButton().remove(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getSmoothieButton());
+                                eachdrink.getTypeOfDrink().getTypeOfDrinkButton().removeAll();
+                                eachdrink.getToppings().getToppingsButton().removeAll();
 
                                 System.out.println(choose.getCategory());
                                 if (choose.getCategory().equals("Coffee")){
                                    eachdrink.getTypeOfDrink().getTypeOfDrinkButton().add(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getHotButton());
                                    eachdrink.getTypeOfDrink().getTypeOfDrinkButton().add(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getIcedButton());
                                    eachdrink.getTypeOfDrink().getTypeOfDrinkButton().add(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getSmoothieButton());
+                                   
+                                   eachdrink.getToppings().getToppingsButton().add(eachdrink.getToppings().getToppingsButton().getWhipCreamButton());
+                                   eachdrink.getToppings().getToppingsButton().add(eachdrink.getToppings().getToppingsButton().getMilkFoamButton());
+                                   eachdrink.getToppings().getToppingsButton().add(eachdrink.getToppings().getToppingsButton().getChocolateSauceButton());
                                 }
                                 else if (choose.getCategory().equals("Tea")){
                                    eachdrink.getTypeOfDrink().getTypeOfDrinkButton().add(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getIcedButton());
                                    eachdrink.getTypeOfDrink().getTypeOfDrinkButton().add(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getSmoothieButton());
+                                   
+                                   eachdrink.getToppings().getToppingsButton().add(eachdrink.getToppings().getToppingsButton().getBubbleButton());
+                                   eachdrink.getToppings().getToppingsButton().add(eachdrink.getToppings().getToppingsButton().getWhipCreamButton());
+                                   eachdrink.getToppings().getToppingsButton().add(eachdrink.getToppings().getToppingsButton().getJellyButton());
+                                   eachdrink.getToppings().getToppingsButton().add(eachdrink.getToppings().getToppingsButton().getYoghurtButton());
                                 }
                                 else if (choose.getCategory().equals("Milk & Coco")){
                                    eachdrink.getTypeOfDrink().getTypeOfDrinkButton().add(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getHotButton());
                                    eachdrink.getTypeOfDrink().getTypeOfDrinkButton().add(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getIcedButton());
                                    eachdrink.getTypeOfDrink().getTypeOfDrinkButton().add(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getSmoothieButton());
+                                   
+                                   eachdrink.getToppings().getToppingsButton().add(eachdrink.getToppings().getToppingsButton().getBubbleButton());
+                                   eachdrink.getToppings().getToppingsButton().add(eachdrink.getToppings().getToppingsButton().getWhipCreamButton());
+                                   eachdrink.getToppings().getToppingsButton().add(eachdrink.getToppings().getToppingsButton().getOreoButton());
+                                   eachdrink.getToppings().getToppingsButton().add(eachdrink.getToppings().getToppingsButton().getCookieButton());
                                 }
                                 else if (choose.getCategory().equals("Juice")){
                                    eachdrink.getTypeOfDrink().getTypeOfDrinkButton().add(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getIcedButton());
                                    eachdrink.getTypeOfDrink().getTypeOfDrinkButton().add(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getSmoothieButton());
+                                   
+                                   eachdrink.getToppings().getToppingsButton().add(eachdrink.getToppings().getToppingsButton().getBubbleButton());
+                                   eachdrink.getToppings().getToppingsButton().add(eachdrink.getToppings().getToppingsButton().getWhipCreamButton());
+                                   eachdrink.getToppings().getToppingsButton().add(eachdrink.getToppings().getToppingsButton().getSnackButton());
                                 }
                                 else if (choose.getCategory().equals("Soda")){
                                    eachdrink.getTypeOfDrink().getTypeOfDrinkButton().add(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getIcedButton());
+                                   
+                                   eachdrink.getToppings().getToppingsButton().add(eachdrink.getToppings().getToppingsButton().getBubbleButton());
+                                   eachdrink.getToppings().getToppingsButton().add(eachdrink.getToppings().getToppingsButton().getWhipCreamButton());
+                                   eachdrink.getToppings().getToppingsButton().add(eachdrink.getToppings().getToppingsButton().getJellyButton());
                                 }
                             }
                         }
