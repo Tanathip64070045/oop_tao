@@ -42,6 +42,7 @@ import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
+import javax.swing.JLabel;
 
 public class AppController implements ActionListener, WindowListener, MouseListener, Runnable, ComponentListener, KeyListener {
 
@@ -110,6 +111,12 @@ public class AppController implements ActionListener, WindowListener, MouseListe
 
         eachdrink.getBackButton().addMouseListener(this);
         eachdrink.getPurchasingButton().addMouseListener(this);
+        eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getHotButton().addMouseListener(this);
+        eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getIcedButton().addMouseListener(this);
+        eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getIced5Button().addMouseListener(this);
+        eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getSmoothie5Button().addMouseListener(this);
+        eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getSmoothie10Button().addMouseListener(this);
+        
 
         paymentmain.getBackButton().addMouseListener(this);
         paymentmain.getButtonCancel().addMouseListener(this);
@@ -240,6 +247,8 @@ public class AppController implements ActionListener, WindowListener, MouseListe
                                    eachdrink.getTypeOfDrink().getTypeOfDrinkButton().add(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getIced5Button());
                                    eachdrink.getTypeOfDrink().getTypeOfDrinkButton().add(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getSmoothie10Button());
                                    
+                                   ChooseTypeOfDrink(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getHotButton(), eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getHotText());
+                                   
                                    eachdrink.getToppings().getToppingsButton().add(eachdrink.getToppings().getToppingsButton().getWhipCreamButton());
                                    eachdrink.getToppings().getToppingsButton().add(eachdrink.getToppings().getToppingsButton().getMilkFoamButton());
                                    eachdrink.getToppings().getToppingsButton().add(eachdrink.getToppings().getToppingsButton().getChocolateSauceButton());
@@ -247,6 +256,8 @@ public class AppController implements ActionListener, WindowListener, MouseListe
                                 else if (choose.getCategory().equals("Tea")){
                                    eachdrink.getTypeOfDrink().getTypeOfDrinkButton().add(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getIcedButton());
                                    eachdrink.getTypeOfDrink().getTypeOfDrinkButton().add(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getSmoothie5Button());
+                                   
+                                   ChooseTypeOfDrink(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getIcedButton(), eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getIcedText());
                                    
                                    eachdrink.getToppings().getToppingsButton().add(eachdrink.getToppings().getToppingsButton().getBubbleButton());
                                    eachdrink.getToppings().getToppingsButton().add(eachdrink.getToppings().getToppingsButton().getWhipCreamButton());
@@ -258,6 +269,8 @@ public class AppController implements ActionListener, WindowListener, MouseListe
                                    eachdrink.getTypeOfDrink().getTypeOfDrinkButton().add(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getIced5Button());
                                    eachdrink.getTypeOfDrink().getTypeOfDrinkButton().add(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getSmoothie10Button());
                                    
+                                   ChooseTypeOfDrink(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getHotButton(), eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getHotText());
+                                   
                                    eachdrink.getToppings().getToppingsButton().add(eachdrink.getToppings().getToppingsButton().getBubbleButton());
                                    eachdrink.getToppings().getToppingsButton().add(eachdrink.getToppings().getToppingsButton().getWhipCreamButton());
                                    eachdrink.getToppings().getToppingsButton().add(eachdrink.getToppings().getToppingsButton().getOreoButton());
@@ -267,12 +280,16 @@ public class AppController implements ActionListener, WindowListener, MouseListe
                                    eachdrink.getTypeOfDrink().getTypeOfDrinkButton().add(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getIcedButton());
                                    eachdrink.getTypeOfDrink().getTypeOfDrinkButton().add(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getSmoothie5Button());
                                    
+                                   ChooseTypeOfDrink(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getIcedButton(), eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getIcedText());
+                                   
                                    eachdrink.getToppings().getToppingsButton().add(eachdrink.getToppings().getToppingsButton().getBubbleButton());
                                    eachdrink.getToppings().getToppingsButton().add(eachdrink.getToppings().getToppingsButton().getWhipCreamButton());
                                    eachdrink.getToppings().getToppingsButton().add(eachdrink.getToppings().getToppingsButton().getSnackButton());
                                 }
                                 else if (choose.getCategory().equals("Soda")){
                                    eachdrink.getTypeOfDrink().getTypeOfDrinkButton().add(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getIcedButton());
+                                   
+                                   ChooseTypeOfDrink(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getIcedButton(), eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getIcedText());
                                    
                                    eachdrink.getToppings().getToppingsButton().add(eachdrink.getToppings().getToppingsButton().getBubbleButton());
                                    eachdrink.getToppings().getToppingsButton().add(eachdrink.getToppings().getToppingsButton().getWhipCreamButton());
@@ -291,6 +308,30 @@ public class AppController implements ActionListener, WindowListener, MouseListe
     }
     int index;
 
+    
+    public void ChooseTypeOfDrink(pnlBorder btn, JLabel text){
+        eachdrink.getPurchasingButton().getPriceText().setText(String.format("Purchasing | %.2f ฿", choose.getPrice() + typeOfDrinkPrice + toppingsPrice));
+        
+        eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getHotButton().setBackground(Color.decode("#906F76"));
+        eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getHotText().setForeground(Color.decode("#FFFFFF"));
+        eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getIcedButton().setBackground(Color.decode("#906F76"));
+        eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getIcedText().setForeground(Color.decode("#FFFFFF"));
+        eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getIced5Button().setBackground(Color.decode("#906F76"));
+        eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getIced5Text().setForeground(Color.decode("#FFFFFF"));
+        eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getSmoothie5Button().setBackground(Color.decode("#906F76"));
+        eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getSmoothie5Text().setForeground(Color.decode("#FFFFFF"));
+        eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getSmoothie10Button().setBackground(Color.decode("#906F76"));
+        eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getSmoothie10Text().setForeground(Color.decode("#FFFFFF"));
+        
+        btn.setBackground(Color.decode("#F6E6E6"));
+        text.setForeground(Color.decode("#000000"));
+        
+        eachdrink.invalidate();
+        eachdrink.validate();
+        eachdrink.repaint();
+        
+    }
+    
     @Override
 
     public void actionPerformed(ActionEvent ae) {
@@ -436,8 +477,11 @@ public class AppController implements ActionListener, WindowListener, MouseListe
     DrinkGUI productss;
     ArrayList<DrinkGUI> tle = new ArrayList<DrinkGUI>();
     int count = 0;
-
+    
     Product choose;
+    
+    int typeOfDrinkPrice = 0;
+    int toppingsPrice = 0;
 
     @Override
     public void mouseClicked(MouseEvent e) {
@@ -512,7 +556,7 @@ public class AppController implements ActionListener, WindowListener, MouseListe
             menu.setVisible(false);
             mw.getPnlContainer().setVisible(true);
         }
-
+        
         //Catagory GUI
         if (e.getSource().equals(eachdrink.getBackButton())) {
             eachdrink.setVisible(false);
@@ -525,8 +569,33 @@ public class AppController implements ActionListener, WindowListener, MouseListe
             paymentmain.getProductImg().setIcon(new ImageIcon(getClass().getResource(String.format("/products/%s", choose.getImg()))));
             paymentmain.getProductName().setText(choose.getProductName());
             paymentmain.getProductValue().setText(Double.toString(choose.getPrice()));
-            
         }
+        else if (e.getSource().equals(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getHotButton())){
+            typeOfDrinkPrice = 0;
+            ChooseTypeOfDrink(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getHotButton(), eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getHotText());
+            System.out.println("Hot");
+        }
+        else if (e.getSource().equals(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getIcedButton())){
+            typeOfDrinkPrice = 0;
+            ChooseTypeOfDrink(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getIcedButton(), eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getIcedText());
+            System.out.println("Iced");
+        }
+        else if (e.getSource().equals(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getIced5Button())){
+            typeOfDrinkPrice = 5;
+            ChooseTypeOfDrink(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getIced5Button(), eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getIced5Text());
+            System.out.println("Iced");
+        }
+        else if (e.getSource().equals(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getSmoothie5Button())){
+            typeOfDrinkPrice = 5;
+            ChooseTypeOfDrink(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getSmoothie5Button(), eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getSmoothie5Text());
+            System.out.println("Smoothie");
+        }
+        else if (e.getSource().equals(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getSmoothie10Button())){
+            typeOfDrinkPrice = 10;
+            ChooseTypeOfDrink(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getSmoothie10Button(), eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getSmoothie10Text());
+            System.out.println("Smoothie");
+        }
+        
 
         if (e.getSource().equals(paymentmain.getBackButton()) || e.getSource().equals(paymentmain.getButtonCancel())) {
             paymentmain.setVisible(false);

@@ -6,6 +6,7 @@ package GUI.MenuComponent;
 
 import GUI.Components.pnlBorder;
 import java.awt.Color;
+import javax.swing.JLabel;
 
 /**
  *
@@ -126,6 +127,26 @@ public class TypeOfDrinkButton extends javax.swing.JPanel {
 
     public pnlBorder getSmoothie10Button() {
         return smoothie10Button;
+    }
+
+    public JLabel getHotText() {
+        return hotText;
+    }
+
+    public JLabel getIced5Text() {
+        return iced5Text;
+    }
+
+    public JLabel getIcedText() {
+        return icedText;
+    }
+
+    public JLabel getSmoothie10Text() {
+        return smoothie10Text;
+    }
+
+    public JLabel getSmoothie5Text() {
+        return smoothie5Text;
     }
 
 }
