@@ -8,6 +8,7 @@ import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 import GUI.AdminUI.AdminGUI;
 import GUI.AdminUI.AdminStock;
+import GUI.Components.pnlBorder;
 import GUI.EachDrink;
 import GUI.MainWindow;
 import GUI.Menu;
@@ -25,8 +26,11 @@ import db.DBModel;
 import internal.Login;
 import java.awt.CardLayout;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.event.ComponentEvent;
 import java.awt.event.ComponentListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.awt.event.MouseAdapter;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -39,7 +43,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
 
-public class AppController implements ActionListener, WindowListener, MouseListener, Runnable, ComponentListener {
+public class AppController implements ActionListener, WindowListener, MouseListener, Runnable, ComponentListener, KeyListener {
 
     private AdminGUI adminGUI;
     private AdminStock stock;
@@ -105,6 +109,7 @@ public class AppController implements ActionListener, WindowListener, MouseListe
         menu.getCatagoryGUI().getSodaButton().addMouseListener(this);
 
         eachdrink.getBackButton().addMouseListener(this);
+        eachdrink.getPurchasingButton().addMouseListener(this);
 
         paymentmain.getBackButton().addMouseListener(this);
         paymentmain.getButtonCancel().addMouseListener(this);
@@ -119,6 +124,8 @@ public class AppController implements ActionListener, WindowListener, MouseListe
         paymentinsert.getBackButton().addMouseListener(this);
         paymentinsert.getButtonConfirm().addMouseListener(this);
         paymentinsert.getButtonCancel().addMouseListener(this);
+        paymentinsert.getTextInsert().addKeyListener(this);
+        paymentinsert.addComponentListener(this);
 
         paymentchange.getButtonConfirm().addMouseListener(this);
         paymentchange.getButtonConfirm().setEnabled(false);
@@ -145,6 +152,7 @@ public class AppController implements ActionListener, WindowListener, MouseListe
         mw.getPnlSoda().addMouseListener(this);
         mw.getPnlTea().addMouseListener(this);
         mw.addWindowListener(this);
+        mw.getPnlContainer().addComponentListener(this);
 
         int i = db.getProducts().size();
         System.out.println(i);
@@ -155,7 +163,87 @@ public class AppController implements ActionListener, WindowListener, MouseListe
         adminGUI.getAdminControl().getTotally().setData(new Card(null, "Totally.", "9999.99 ฿", "description"));
         adminGUI.getAdminControl().getStock().sendData(new Stock(i));
     }
+    private String fn;
+    
+    public void ChooseProduct(String category, pnlBorder btn) {
+        mw.getPnlContainer().setVisible(false);
+        menu.setVisible(true);
+        menu.getPnlMenu().removeAll();
+        menu.getPnlMenu().revalidate();
+        menu.getPnlMenu().repaint();
+        
+        menu.getCatagoryGUI().getRecommendButton().setBackground(Color.decode("#F6E6E6"));
+        menu.getCatagoryGUI().getCoffeeButton().setBackground(Color.decode("#F6E6E6"));
+        menu.getCatagoryGUI().getJuiceButton().setBackground(Color.decode("#F6E6E6"));
+        menu.getCatagoryGUI().getSodaButton().setBackground(Color.decode("#F6E6E6"));
+        menu.getCatagoryGUI().getMilkAndCocoaButton().setBackground(Color.decode("#F6E6E6"));
+        menu.getCatagoryGUI().getTeaButton().setBackground(Color.decode("#F6E6E6"));
+        btn.setBackground(Color.decode("#CC8484"));
+//        btn.setLocation(btn.getX(), 500);
+//        System.out.println(btn.getLocation());
+        
+        menu.invalidate();
+        menu.validate();
+        menu.repaint();
 
+        tle.removeAll(tle);
+        count = 0;
+
+//            adding product juice
+        for (int index = 0; index < db.getProducts().size(); index++) {
+            if (((Product) db.getProducts().get(index)).getCategory().equals(category)) {
+                productss = new DrinkGUI(((Product) db.getProducts().get(index)).getProductName(),
+                        String.format("%s", Double.toString(((Product) db.getProducts().get(index)).getPrice())),
+                        new ImageIcon(getClass().getResource(String.format("/products/%s", ((Product) db.getProducts().get(index)).getImg()))));
+                tle.add(productss);
+                tle.get(count).addMouseListener(new MouseAdapter() {
+                    @Override
+                    public void mouseClicked(MouseEvent e) {
+                        for (int n = 0; n < count; n++) {
+                            if (e.getSource().equals(tle.get(n))) {
+                                System.err.println(tle.get(n).getProduct().getText());
+
+                                
+                                
+//                                    Choosing Product
+                                choose = new Product(0, tle.get(n).getProduct().getText(),
+                                        Double.parseDouble(tle.get(n).getPrice().getText()),category, tle.get(n).getImg().toString(),
+                                        0);
+                                
+                                String[] substrings = tle.get(n).getImg().toString().split(",");
+//                                String fn;
+                                for (String substring : substrings) {
+                                    if (substring.startsWith("defaultIcon=file:")) {
+                                        String[] sub = substring.split("/");
+                                        fn = sub[sub.length - 1];
+                                        break;
+                                    }
+                                }
+                                System.out.println(tle.get(n).getProduct().getText()+" "+Double.parseDouble(tle.get(n).getPrice().getText())+" "+category+" "+fn);
+                                
+                                menu.setVisible(false);
+                                
+                                eachdrink.set(new ImageIcon(getClass().getResource(String.format("/products/%s", fn))), choose.getProductName(), choose.getCategory(), choose.getPrice());
+                                eachdrink.setVisible(true);
+                                eachdrink.invalidate();
+                                eachdrink.validate();
+                                eachdrink.repaint();
+                                
+                                
+//                                Insert Type of Product
+
+//                                ใช้ String category ที่รับมาคิดประเภทนะ ฝากด้วยคนที่ทำต่อจากฉัน
+                            }
+                        }
+                    }
+                });
+                menu.getPnlMenu().add(productss);
+                count++;
+            }
+        }
+        menu.getPnlMenu().setPreferredSize(new Dimension(720, (int) (Math.ceil(((double) count)/3.0) * 280)));
+        System.out.println(menu.getPnlMenu().getPreferredSize());
+    }
     int index;
 
     @Override
@@ -285,9 +373,9 @@ public class AppController implements ActionListener, WindowListener, MouseListe
     private ViewModel view = new ViewModel();
     private BufferedImage img;
     DrinkGUI productss;
-    ArrayList <DrinkGUI> tle = new ArrayList<DrinkGUI> ();
+    ArrayList<DrinkGUI> tle = new ArrayList<DrinkGUI>();
     int count = 0;
-    
+
     Product choose;
 
     @Override
@@ -333,406 +421,44 @@ public class AppController implements ActionListener, WindowListener, MouseListe
         }
 //        check username
 
-        if (e.getSource().equals(mw.getPnlRecommend())) {
+        if (e.getSource().equals(mw.getPnlRecommend()) || e.getSource().equals(menu.getCatagoryGUI().getRecommendButton())) {
+//            mw.getPnlContainer().setVisible(false);
+//            menu.setVisible(true);
+//            menu.getPnlMenu().removeAll();
+//            menu.getPnlMenu().revalidate();
+//            menu.getPnlMenu().repaint();
             mw.getPnlContainer().setVisible(false);
-            menu.setVisible(true);
-            menu.getPnlMenu().removeAll();
-            menu.getPnlMenu().revalidate();
-            menu.getPnlMenu().repaint();
-        } else if (e.getSource().equals(mw.getPnlCoffee())) {
-            mw.getPnlContainer().setVisible(false);
-            menu.setVisible(true);
-            menu.getPnlMenu().removeAll();
-            menu.getPnlMenu().revalidate();
-            menu.getPnlMenu().repaint();
+            paymentmain.setVisible(true);
+        } else if (e.getSource().equals(mw.getPnlCoffee()) || e.getSource().equals(menu.getCatagoryGUI().getCoffeeButton())) {
+            ChooseProduct("Coffee", menu.getCatagoryGUI().getCoffeeButton());
             
-            tle.removeAll(tle);
-            count = 0;
             
-//            adding product coffee
-            for(int index = 0;index < db.getProducts().size();index++){
-                if( ((Product) db.getProducts().get(index)).getCategory().equals("Coffee") ){
-                    productss = new DrinkGUI(((Product) db.getProducts().get(index)).getProductName(),
-                    String.format("%s ฿", Double.toString(((Product) db.getProducts().get(index)).getPrice())),
-                            new ImageIcon(getClass().getResource(String.format("/products/%s", ((Product) db.getProducts().get(index)).getImg()))));
-                    tle.add(productss);
-                    tle.get(count).addMouseListener(new MouseAdapter() {
-                        @Override
-                        public void mouseClicked(MouseEvent e) {
-                            for(int n=0;n<count;n++){
-                                if(e.getSource().equals(tle.get(n))){
-                                    System.err.println(tle.get(n).getProduct().getText());
-                                    
-                                    
-//                                    Choosing Product
-                                    choose = new Product(0,((Product) db.getProducts().get(n)).getProductName(),
-                                            ((Product) db.getProducts().get(n)).getPrice(),((Product) db.getProducts().get(n)).getCategory(),((Product) db.getProducts().get(n)).getImg()
-                                                    ,0);
-                                    
-                                }                
-                            }
-                        }                    
-                    });
-                    menu.getPnlMenu().add(productss);
-                    count++;
-                }
-            }
+//            menu.getCatagoryGUI().getCoffeeButton().setBackground(Color.decode("#CC8484"));
+            
+            
+        } else if (e.getSource().equals(mw.getPnlTea()) || e.getSource().equals(menu.getCatagoryGUI().getTeaButton())) {
+            ChooseProduct("Tea", menu.getCatagoryGUI().getTeaButton());
+        } else if (e.getSource().equals(mw.getPnlMilk()) || e.getSource().equals(menu.getCatagoryGUI().getMilkAndCocoaButton())) {
+            ChooseProduct("Milk & Coco", menu.getCatagoryGUI().getMilkAndCocoaButton());
+        } else if (e.getSource().equals(mw.getPnlJuice()) || e.getSource().equals(menu.getCatagoryGUI().getJuiceButton())) {
+            ChooseProduct("Juice", menu.getCatagoryGUI().getJuiceButton());
 
-            
-            
-        } else if (e.getSource().equals(mw.getPnlTea())) {
-            mw.getPnlContainer().setVisible(false);
-            menu.setVisible(true);
-            menu.getPnlMenu().removeAll();
-            menu.getPnlMenu().revalidate();
-            menu.getPnlMenu().repaint();
-            
-            tle.removeAll(tle);
-            count = 0;
-            
-//            adding product tea
-            for(int index = 0;index < db.getProducts().size();index++){
-                if( ((Product) db.getProducts().get(index)).getCategory().equals("Tea") ){
-                    productss = new DrinkGUI(((Product) db.getProducts().get(index)).getProductName(),
-                    String.format("%s ฿", Double.toString(((Product) db.getProducts().get(index)).getPrice())),
-                            new ImageIcon(getClass().getResource(String.format("/products/%s", ((Product) db.getProducts().get(index)).getImg()))));
-                    tle.add(productss);
-                    tle.get(count).addMouseListener(new MouseAdapter() {
-                        @Override
-                        public void mouseClicked(MouseEvent e) {
-                            for(int n=0;n<count;n++){
-                                if(e.getSource().equals(tle.get(n))){
-                                    System.err.println(tle.get(n).getProduct().getText());
-                                    
-                                    
-//                                    Choosing Product
-                                    choose = new Product(0,((Product) db.getProducts().get(n)).getProductName(),
-                                            ((Product) db.getProducts().get(n)).getPrice(),((Product) db.getProducts().get(n)).getCategory(),((Product) db.getProducts().get(n)).getImg()
-                                                    ,0);
-                                    
-                                }                
-                            }
-                        }                    
-                    });
-                    menu.getPnlMenu().add(productss);
-                    count++;
-                }
-            }
-        } else if (e.getSource().equals(mw.getPnlMilk())) {
-            mw.getPnlContainer().setVisible(false);
-            menu.setVisible(true);
-            menu.getPnlMenu().removeAll();
-            menu.getPnlMenu().revalidate();
-            menu.getPnlMenu().repaint();
-            
-            tle.removeAll(tle);
-            count = 0;
-            
-//            adding product milk
-            for(int index = 0;index < db.getProducts().size();index++){
-                if( ((Product) db.getProducts().get(index)).getCategory().equals("Milk & Coco") ){
-                    productss = new DrinkGUI(((Product) db.getProducts().get(index)).getProductName(),
-                    String.format("%s ฿", Double.toString(((Product) db.getProducts().get(index)).getPrice())),
-                            new ImageIcon(getClass().getResource(String.format("/products/%s", ((Product) db.getProducts().get(index)).getImg()))));
-                    tle.add(productss);
-                    tle.get(count).addMouseListener(new MouseAdapter() {
-                        @Override
-                        public void mouseClicked(MouseEvent e) {
-                            for(int n=0;n<count;n++){
-                                if(e.getSource().equals(tle.get(n))){
-                                    System.err.println(tle.get(n).getProduct().getText());
-                                    
-                                    
-//                                    Choosing Product
-                                    choose = new Product(0,((Product) db.getProducts().get(n)).getProductName(),
-                                            ((Product) db.getProducts().get(n)).getPrice(),((Product) db.getProducts().get(n)).getCategory(),((Product) db.getProducts().get(n)).getImg()
-                                                    ,0);
-                                    
-                                }                
-                            }
-                        }                    
-                    });
-                    menu.getPnlMenu().add(productss);
-                    count++;
-                }
-            }
-        } else if (e.getSource().equals(mw.getPnlJuice())) {
-            mw.getPnlContainer().setVisible(false);
-            menu.setVisible(true);
-            menu.getPnlMenu().removeAll();
-            menu.getPnlMenu().revalidate();
-            menu.getPnlMenu().repaint();
-            
-            tle.removeAll(tle);
-            count = 0;            
-            
-//            adding product juice
-            for(int index = 0;index < db.getProducts().size();index++){
-                if( ((Product) db.getProducts().get(index)).getCategory().equals("Juice") ){
-                    productss = new DrinkGUI(((Product) db.getProducts().get(index)).getProductName(),
-                    String.format("%s ฿", Double.toString(((Product) db.getProducts().get(index)).getPrice())),
-                            new ImageIcon(getClass().getResource(String.format("/products/%s", ((Product) db.getProducts().get(index)).getImg()))));
-                    tle.add(productss);
-                    tle.get(count).addMouseListener(new MouseAdapter() {
-                        @Override
-                        public void mouseClicked(MouseEvent e) {
-                            for(int n=0;n<count;n++){
-                                if(e.getSource().equals(tle.get(n))){
-                                    System.err.println(tle.get(n).getProduct().getText());
-                                    
-                                    
-//                                    Choosing Product
-                                    choose = new Product(0,((Product) db.getProducts().get(n)).getProductName(),
-                                            ((Product) db.getProducts().get(n)).getPrice(),((Product) db.getProducts().get(n)).getCategory(),((Product) db.getProducts().get(n)).getImg()
-                                                    ,0);
-                                    
-                                }                
-                            }
-                        }                    
-                    });
-                    menu.getPnlMenu().add(productss);
-                    count++;
-                }
-            }
-            
-        } else if (e.getSource().equals(mw.getPnlSoda())) {
-            mw.getPnlContainer().setVisible(false);
-            menu.setVisible(true);
-            menu.getPnlMenu().removeAll();
-            menu.getPnlMenu().revalidate();
-            menu.getPnlMenu().repaint();
-            
-            tle.removeAll(tle);
-            count = 0;
-            
-//            adding product soda
-            for(int index = 0;index < db.getProducts().size();index++){
-                if( ((Product) db.getProducts().get(index)).getCategory().equals("Soda") ){
-                    productss = new DrinkGUI(((Product) db.getProducts().get(index)).getProductName(),
-                    String.format("%s ฿", Double.toString(((Product) db.getProducts().get(index)).getPrice())),
-                            new ImageIcon(getClass().getResource(String.format("/products/%s", ((Product) db.getProducts().get(index)).getImg()))));
-                    tle.add(productss);
-                    tle.get(count).addMouseListener(new MouseAdapter() {
-                        @Override
-                        public void mouseClicked(MouseEvent e) {
-                            for(int n=0;n<count;n++){
-                                if(e.getSource().equals(tle.get(n))){
-                                    System.err.println(tle.get(n).getProduct().getText());
-                                    
-                                    
-//                                    Choosing Product
-                                    choose = new Product(0,((Product) db.getProducts().get(n)).getProductName(),
-                                            ((Product) db.getProducts().get(n)).getPrice(),((Product) db.getProducts().get(n)).getCategory(),((Product) db.getProducts().get(n)).getImg()
-                                                    ,0);
-                                    
-                                }                
-                            }
-                        }                    
-                    });
-                    menu.getPnlMenu().add(productss);
-                    count++;
-                }
-            }
+        } else if (e.getSource().equals(mw.getPnlSoda()) || e.getSource().equals(menu.getCatagoryGUI().getSodaButton())) {
+            ChooseProduct("Soda", menu.getCatagoryGUI().getSodaButton());
         }
 
         if (e.getSource().equals(menu.getBackButton())) {
             menu.setVisible(false);
             mw.getPnlContainer().setVisible(true);
-        } else if (e.getSource().equals(menu.getCatagoryGUI().getRecommendButton())) {
-            System.out.println("Insert Recommend Code");
-            
-            
-        } else if (e.getSource().equals(menu.getCatagoryGUI().getCoffeeButton())) {
-            System.out.println("Insert Coffee Code");
-            
-            menu.getPnlMenu().removeAll();
-            menu.getPnlMenu().revalidate();
-            menu.getPnlMenu().repaint();
-            
-            tle.removeAll(tle);
-            count = 0;
-            
-            for(int index = 0;index < db.getProducts().size();index++){
-                if( ((Product) db.getProducts().get(index)).getCategory().equals("Coffee") ){
-                    productss = new DrinkGUI(((Product) db.getProducts().get(index)).getProductName(),
-                    String.format("%s ฿", Double.toString(((Product) db.getProducts().get(index)).getPrice())),
-                            new ImageIcon(getClass().getResource(String.format("/products/%s", ((Product) db.getProducts().get(index)).getImg()))));
-                    tle.add(productss);
-                    tle.get(count).addMouseListener(new MouseAdapter() {
-                        @Override
-                        public void mouseClicked(MouseEvent e) {
-                            for(int n=0;n<count;n++){
-                                if(e.getSource().equals(tle.get(n))){
-                                    System.err.println(tle.get(n).getProduct().getText());
-                                    
-                                    
-//                                    Choosing Product
-                                    choose = new Product(0,((Product) db.getProducts().get(n)).getProductName(),
-                                            ((Product) db.getProducts().get(n)).getPrice(),((Product) db.getProducts().get(n)).getCategory(),((Product) db.getProducts().get(n)).getImg()
-                                                    ,0);
-                                    
-                                }                
-                            }
-                        }                    
-                    });
-                    menu.getPnlMenu().add(productss);
-                    count++;
-                }
-            }
-        } else if (e.getSource().equals(menu.getCatagoryGUI().getTeaButton())) {
-            System.out.println("Insert Tea Code");
-            
-            menu.getPnlMenu().removeAll();
-            menu.getPnlMenu().revalidate();
-            menu.getPnlMenu().repaint();   
-            
-            tle.removeAll(tle);
-            count = 0;
-            
-            for(int index = 0;index < db.getProducts().size();index++){
-                if( ((Product) db.getProducts().get(index)).getCategory().equals("Tea") ){
-                    productss = new DrinkGUI(((Product) db.getProducts().get(index)).getProductName(),
-                    String.format("%s ฿", Double.toString(((Product) db.getProducts().get(index)).getPrice())),
-                            new ImageIcon(getClass().getResource(String.format("/products/%s", ((Product) db.getProducts().get(index)).getImg()))));
-                    tle.add(productss);
-                    tle.get(count).addMouseListener(new MouseAdapter() {
-                        @Override
-                        public void mouseClicked(MouseEvent e) {
-                            for(int n=0;n<count;n++){
-                                if(e.getSource().equals(tle.get(n))){
-                                    System.err.println(tle.get(n).getProduct().getText());
-                                    
-                                    
-//                                    Choosing Product
-                                    choose = new Product(0,((Product) db.getProducts().get(n)).getProductName(),
-                                            ((Product) db.getProducts().get(n)).getPrice(),((Product) db.getProducts().get(n)).getCategory(),((Product) db.getProducts().get(n)).getImg()
-                                                    ,0);
-                                    
-                                }                
-                            }
-                        }                    
-                    });
-                    menu.getPnlMenu().add(productss);
-                    count++;
-                }
-            }
-        } else if (e.getSource().equals(menu.getCatagoryGUI().getMilkAndCocoaButton())) {
-            System.out.println("Insert Milk and Cocoa Code");
-            
-            menu.getPnlMenu().removeAll();
-            menu.getPnlMenu().revalidate();
-            menu.getPnlMenu().repaint();
-            
-            tle.removeAll(tle);
-            count = 0;
-            
-            for(int index = 0;index < db.getProducts().size();index++){
-                if( ((Product) db.getProducts().get(index)).getCategory().equals("Milk & Coco") ){
-                    productss = new DrinkGUI(((Product) db.getProducts().get(index)).getProductName(),
-                    String.format("%s ฿", Double.toString(((Product) db.getProducts().get(index)).getPrice())),
-                            new ImageIcon(getClass().getResource(String.format("/products/%s", ((Product) db.getProducts().get(index)).getImg()))));
-                    tle.add(productss);
-                    tle.get(count).addMouseListener(new MouseAdapter() {
-                        @Override
-                        public void mouseClicked(MouseEvent e) {
-                            for(int n=0;n<count;n++){
-                                if(e.getSource().equals(tle.get(n))){
-                                    System.err.println(tle.get(n).getProduct().getText());
-                                    
-                                    
-//                                    Choosing Product
-                                    choose = new Product(0,((Product) db.getProducts().get(n)).getProductName(),
-                                            ((Product) db.getProducts().get(n)).getPrice(),((Product) db.getProducts().get(n)).getCategory(),((Product) db.getProducts().get(n)).getImg()
-                                                    ,0);
-                                    
-                                }                
-                            }
-                        }                    
-                    });
-                    menu.getPnlMenu().add(productss);
-                    count++;
-                }
-            }
-            
-        } else if (e.getSource().equals(menu.getCatagoryGUI().getJuiceButton())) {
-            System.out.println("Insert Juice Code");
-            
-            menu.getPnlMenu().removeAll();
-            menu.getPnlMenu().revalidate();
-            menu.getPnlMenu().repaint();
-            
-            tle.removeAll(tle);
-            count = 0;
-            
-            for(int index = 0;index < db.getProducts().size();index++){
-                if( ((Product) db.getProducts().get(index)).getCategory().equals("Juice") ){
-                    productss = new DrinkGUI(((Product) db.getProducts().get(index)).getProductName(),
-                    String.format("%s ฿", Double.toString(((Product) db.getProducts().get(index)).getPrice())),
-                            new ImageIcon(getClass().getResource(String.format("/products/%s", ((Product) db.getProducts().get(index)).getImg()))));
-                    tle.add(productss);
-                    tle.get(count).addMouseListener(new MouseAdapter() {
-                        @Override
-                        public void mouseClicked(MouseEvent e) {
-                            for(int n=0;n<count;n++){
-                                if(e.getSource().equals(tle.get(n))){
-                                    System.err.println(tle.get(n).getProduct().getText());
-                                    
-                                    
-//                                    Choosing Product
-                                    choose = new Product(0,((Product) db.getProducts().get(n)).getProductName(),
-                                            ((Product) db.getProducts().get(n)).getPrice(),((Product) db.getProducts().get(n)).getCategory(),((Product) db.getProducts().get(n)).getImg()
-                                                    ,0);
-                                    
-                                }                
-                            }
-                        }                    
-                    });
-                    menu.getPnlMenu().add(productss);
-                    count++;
-                }
-            }
-        } else if (e.getSource().equals(menu.getCatagoryGUI().getSodaButton())) {
-            System.out.println("Insert Soda Code");
-            
-            menu.getPnlMenu().removeAll();
-            menu.getPnlMenu().revalidate();
-            menu.getPnlMenu().repaint();
-            
-            tle.removeAll(tle);
-            count = 0;
-            
-            for(int index = 0;index < db.getProducts().size();index++){
-                if( ((Product) db.getProducts().get(index)).getCategory().equals("Soda") ){
-                    productss = new DrinkGUI(((Product) db.getProducts().get(index)).getProductName(),
-                    String.format("%s ฿", Double.toString(((Product) db.getProducts().get(index)).getPrice())),
-                            new ImageIcon(getClass().getResource(String.format("/products/%s", ((Product) db.getProducts().get(index)).getImg()))));
-                    tle.add(productss);
-                    tle.get(count).addMouseListener(new MouseAdapter() {
-                        @Override
-                        public void mouseClicked(MouseEvent e) {
-                            for(int n=0;n<count;n++){
-                                if(e.getSource().equals(tle.get(n))){
-                                    System.err.println(tle.get(n).getProduct().getText());
-                                    
-                                    
-//                                    Choosing Product
-                                    choose = new Product(0,((Product) db.getProducts().get(n)).getProductName(),
-                                            ((Product) db.getProducts().get(n)).getPrice(),((Product) db.getProducts().get(n)).getCategory(),((Product) db.getProducts().get(n)).getImg()
-                                                    ,0);
-                                    
-                                }                
-                            }
-                        }                    
-                    });
-                    menu.getPnlMenu().add(productss);
-                    count++;
-                }
-            }
         }
 
+        //Catagory GUI
         if (e.getSource().equals(eachdrink.getBackButton())) {
             eachdrink.setVisible(false);
             menu.setVisible(true);
+        } else if (e.getSource().equals(eachdrink.getPurchasingButton())){
+            eachdrink.setVisible(false);
+            paymentmain.setVisible(true);
         }
 
         if (e.getSource().equals(paymentmain.getBackButton()) || e.getSource().equals(paymentmain.getButtonCancel())) {
@@ -760,6 +486,7 @@ public class AppController implements ActionListener, WindowListener, MouseListe
         } else if (e.getSource().equals(paymentinsert.getButtonConfirm())) {
             paymentinsert.setVisible(false);
             paymentchange.setVisible(true);
+
         }
 
         if (e.getSource().equals(paymentchange.getButtonConfirm())) {
@@ -817,7 +544,7 @@ public class AppController implements ActionListener, WindowListener, MouseListe
         if (e.getSource().equals(paymentchange)) {
             try {
                 for (int i = 5; i >= 0; i--) {
-                    paymentchange.getLabel3().setText("Please click continue in " + i);
+                    paymentchange.getLabel3().setText("The machine is about to change money in " + i);
                     tr.sleep(1000);
                 }
                 paymentchange.getButtonConfirm().setBackground(new Color(197, 158, 126));
@@ -826,11 +553,39 @@ public class AppController implements ActionListener, WindowListener, MouseListe
                 System.out.println(ea);
             }
         }
+        if (e.getSource().equals(paymentinsert)) {
+            paymentinsert.getTextInsert().setText("");
+        }
+
+        if (e.getSource().equals(mw.getPnlContainer())) {
+            login.setVisible(false);
+        }
     }
 
     @Override
     public void componentHidden(ComponentEvent e) {
 
+    }
+
+    @Override
+    public void keyTyped(KeyEvent e) {
+        if (e.getSource().equals(paymentinsert.getTextInsert())) {
+            char c = e.getKeyChar();
+            if (!((c >= '0') && (c <= '9')
+                    || (c == KeyEvent.VK_BACK_SPACE)
+                    || (c == KeyEvent.VK_DELETE))) {
+                paymentinsert.getToolkit().beep();
+                e.consume();
+            }
+        }
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
     }
 
 }

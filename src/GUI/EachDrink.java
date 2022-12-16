@@ -4,6 +4,8 @@
  */
 package GUI;
 
+import GUI.MenuComponent.PurchasingButton;
+import javax.swing.Icon;
 import javax.swing.JLabel;
 
 /**
@@ -17,6 +19,12 @@ public class EachDrink extends javax.swing.JPanel {
      */
     public EachDrink() {
         initComponents();
+    }
+    public void set(Icon icon,String product,String category,double price){
+
+        this.image.setIcon(icon);
+        this.name.setText(product);
+        this.purchasingButton.getPriceText().setText(String.format("for %.2f", price));
     }
 
     /**
@@ -54,7 +62,7 @@ public class EachDrink extends javax.swing.JPanel {
         name.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
         name.setForeground(new java.awt.Color(247, 230, 230));
         name.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        name.setText("Soda");
+        name.setText("Title");
 
         purchasingButton.setForeground(new java.awt.Color(255, 255, 255));
 
@@ -122,6 +130,10 @@ public class EachDrink extends javax.swing.JPanel {
 
     public JLabel getBackButton() {
         return BackButton;
+    }
+
+    public PurchasingButton getPurchasingButton() {
+        return purchasingButton;
     }
     
     
