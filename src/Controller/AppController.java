@@ -172,6 +172,8 @@ public class AppController implements ActionListener, WindowListener, MouseListe
         menu.getPnlMenu().revalidate();
         menu.getPnlMenu().repaint();
         
+        
+        // Button
         menu.getCatagoryGUI().getRecommendButton().setBackground(Color.decode("#F6E6E6"));
         menu.getCatagoryGUI().getCoffeeButton().setBackground(Color.decode("#F6E6E6"));
         menu.getCatagoryGUI().getJuiceButton().setBackground(Color.decode("#F6E6E6"));
@@ -228,6 +230,33 @@ public class AppController implements ActionListener, WindowListener, MouseListe
 //                                Insert Type of Product
 
 //                                ใช้ String category ที่รับมาคิดประเภทนะ ฝากด้วยคนที่ทำต่อจากฉัน
+
+                                eachdrink.getTypeOfDrink().getTypeOfDrinkButton().remove(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getHotButton());
+                                eachdrink.getTypeOfDrink().getTypeOfDrinkButton().remove(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getIcedButton());
+                                eachdrink.getTypeOfDrink().getTypeOfDrinkButton().remove(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getSmoothieButton());
+
+                                System.out.println(choose.getCategory());
+                                if (choose.getCategory().equals("Coffee")){
+                                   eachdrink.getTypeOfDrink().getTypeOfDrinkButton().add(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getHotButton());
+                                   eachdrink.getTypeOfDrink().getTypeOfDrinkButton().add(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getIcedButton());
+                                   eachdrink.getTypeOfDrink().getTypeOfDrinkButton().add(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getSmoothieButton());
+                                }
+                                else if (choose.getCategory().equals("Tea")){
+                                   eachdrink.getTypeOfDrink().getTypeOfDrinkButton().add(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getIcedButton());
+                                   eachdrink.getTypeOfDrink().getTypeOfDrinkButton().add(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getSmoothieButton());
+                                }
+                                else if (choose.getCategory().equals("Milk & Coco")){
+                                   eachdrink.getTypeOfDrink().getTypeOfDrinkButton().add(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getHotButton());
+                                   eachdrink.getTypeOfDrink().getTypeOfDrinkButton().add(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getIcedButton());
+                                   eachdrink.getTypeOfDrink().getTypeOfDrinkButton().add(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getSmoothieButton());
+                                }
+                                else if (choose.getCategory().equals("Juice")){
+                                   eachdrink.getTypeOfDrink().getTypeOfDrinkButton().add(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getIcedButton());
+                                   eachdrink.getTypeOfDrink().getTypeOfDrinkButton().add(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getSmoothieButton());
+                                }
+                                else if (choose.getCategory().equals("Soda")){
+                                   eachdrink.getTypeOfDrink().getTypeOfDrinkButton().add(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getIcedButton());
+                                }
                             }
                         }
                     }
