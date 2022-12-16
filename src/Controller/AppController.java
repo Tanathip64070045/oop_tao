@@ -116,6 +116,11 @@ public class AppController implements ActionListener, WindowListener, MouseListe
         eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getIced5Button().addMouseListener(this);
         eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getSmoothie5Button().addMouseListener(this);
         eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getSmoothie10Button().addMouseListener(this);
+        eachdrink.getSweetnessLevel().getSweetnessLevelButton().getButton0().addMouseListener(this);
+        eachdrink.getSweetnessLevel().getSweetnessLevelButton().getButton25().addMouseListener(this);
+        eachdrink.getSweetnessLevel().getSweetnessLevelButton().getButton50().addMouseListener(this);
+        eachdrink.getSweetnessLevel().getSweetnessLevelButton().getButton75().addMouseListener(this);
+        eachdrink.getSweetnessLevel().getSweetnessLevelButton().getButton100().addMouseListener(this);
         
 
         paymentmain.getBackButton().addMouseListener(this);
@@ -240,6 +245,7 @@ public class AppController implements ActionListener, WindowListener, MouseListe
 
                                 eachdrink.getTypeOfDrink().getTypeOfDrinkButton().removeAll();
                                 eachdrink.getToppings().getToppingsButton().removeAll();
+                                ChooseSweetnessLevel(eachdrink.getSweetnessLevel().getSweetnessLevelButton().getButton50(), eachdrink.getSweetnessLevel().getSweetnessLevelButton().getText50());
 
                                 System.out.println(choose.getCategory());
                                 if (choose.getCategory().equals("Coffee")){
@@ -330,6 +336,27 @@ public class AppController implements ActionListener, WindowListener, MouseListe
         eachdrink.validate();
         eachdrink.repaint();
         
+    }
+    
+    public void ChooseSweetnessLevel(pnlBorder btn, JLabel text){
+        eachdrink.getSweetnessLevel().getSweetnessLevelButton().getButton0().setBackground(Color.decode("#906F76"));
+        eachdrink.getSweetnessLevel().getSweetnessLevelButton().getText0().setForeground(Color.decode("#FFFFFF"));
+        eachdrink.getSweetnessLevel().getSweetnessLevelButton().getButton25().setBackground(Color.decode("#906F76"));
+        eachdrink.getSweetnessLevel().getSweetnessLevelButton().getText25().setForeground(Color.decode("#FFFFFF"));
+        eachdrink.getSweetnessLevel().getSweetnessLevelButton().getButton50().setBackground(Color.decode("#906F76"));
+        eachdrink.getSweetnessLevel().getSweetnessLevelButton().getText50().setForeground(Color.decode("#FFFFFF"));
+        eachdrink.getSweetnessLevel().getSweetnessLevelButton().getButton75().setBackground(Color.decode("#906F76"));
+        eachdrink.getSweetnessLevel().getSweetnessLevelButton().getText75().setForeground(Color.decode("#FFFFFF"));
+        eachdrink.getSweetnessLevel().getSweetnessLevelButton().getButton100().setBackground(Color.decode("#906F76"));
+        eachdrink.getSweetnessLevel().getSweetnessLevelButton().getText100().setForeground(Color.decode("#FFFFFF"));
+        
+        btn.setBackground(Color.decode("#F6E6E6"));
+        text.setForeground(Color.decode("#000000"));
+        
+        eachdrink.invalidate();
+        eachdrink.validate();
+        eachdrink.repaint();
+   
     }
     
     @Override
@@ -594,6 +621,26 @@ public class AppController implements ActionListener, WindowListener, MouseListe
             typeOfDrinkPrice = 10;
             ChooseTypeOfDrink(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getSmoothie10Button(), eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getSmoothie10Text());
             System.out.println("Smoothie");
+        }
+        else if (e.getSource().equals(eachdrink.getSweetnessLevel().getSweetnessLevelButton().getButton0())){
+            ChooseSweetnessLevel(eachdrink.getSweetnessLevel().getSweetnessLevelButton().getButton0(), eachdrink.getSweetnessLevel().getSweetnessLevelButton().getText0());
+            System.out.println("SweetnessLevel 0%");
+        }
+        else if (e.getSource().equals(eachdrink.getSweetnessLevel().getSweetnessLevelButton().getButton25())){
+            ChooseSweetnessLevel(eachdrink.getSweetnessLevel().getSweetnessLevelButton().getButton25(), eachdrink.getSweetnessLevel().getSweetnessLevelButton().getText25());
+            System.out.println("SweetnessLevel 25%");
+        }
+        else if (e.getSource().equals(eachdrink.getSweetnessLevel().getSweetnessLevelButton().getButton50())){
+            ChooseSweetnessLevel(eachdrink.getSweetnessLevel().getSweetnessLevelButton().getButton50(), eachdrink.getSweetnessLevel().getSweetnessLevelButton().getText50());
+            System.out.println("SweetnessLevel 50%");
+        }
+        else if (e.getSource().equals(eachdrink.getSweetnessLevel().getSweetnessLevelButton().getButton75())){
+            ChooseSweetnessLevel(eachdrink.getSweetnessLevel().getSweetnessLevelButton().getButton75(), eachdrink.getSweetnessLevel().getSweetnessLevelButton().getText75());
+            System.out.println("SweetnessLevel 75%");
+        }
+        else if (e.getSource().equals(eachdrink.getSweetnessLevel().getSweetnessLevelButton().getButton100())){
+            ChooseSweetnessLevel(eachdrink.getSweetnessLevel().getSweetnessLevelButton().getButton100(), eachdrink.getSweetnessLevel().getSweetnessLevelButton().getText100());
+            System.out.println("SweetnessLevel 100%");
         }
         
 

@@ -4,7 +4,9 @@
  */
 package GUI.MenuComponent;
 
+import GUI.Components.pnlBorder;
 import java.awt.Color;
+import javax.swing.JLabel;
 
 /**
  *
@@ -29,7 +31,6 @@ public class SweetnessLevelButton extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        buttonGroup1 = new javax.swing.ButtonGroup();
         button0 = new GUI.Components.pnlBorder();
         text0 = new javax.swing.JLabel();
         button25 = new GUI.Components.pnlBorder();
@@ -111,11 +112,50 @@ public class SweetnessLevelButton extends javax.swing.JPanel {
     private GUI.Components.pnlBorder button25;
     private GUI.Components.pnlBorder button50;
     private GUI.Components.pnlBorder button75;
-    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel text0;
     private javax.swing.JLabel text100;
     private javax.swing.JLabel text25;
     private javax.swing.JLabel text50;
     private javax.swing.JLabel text75;
     // End of variables declaration//GEN-END:variables
+
+    public pnlBorder getButton0() {
+        return button0;
+    }
+
+    public pnlBorder getButton100() {
+        return button100;
+    }
+
+    public pnlBorder getButton25() {
+        return button25;
+    }
+
+    public pnlBorder getButton50() {
+        return button50;
+    }
+
+    public pnlBorder getButton75() {
+        return button75;
+    }
+
+    public JLabel getText0() {
+        return text0;
+    }
+
+    public JLabel getText100() {
+        return text100;
+    }
+
+    public JLabel getText25() {
+        return text25;
+    }
+
+    public JLabel getText50() {
+        return text50;
+    }
+
+    public JLabel getText75() {
+        return text75;
+    }
 }

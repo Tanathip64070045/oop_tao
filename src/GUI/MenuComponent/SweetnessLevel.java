@@ -80,4 +80,8 @@ public class SweetnessLevel extends javax.swing.JPanel {
     private GUI.MenuComponent.SweetnessLevelButton sweetnessLevelButton;
     private javax.swing.JLabel sweetnessLevelText;
     // End of variables declaration//GEN-END:variables
+
+    public SweetnessLevelButton getSweetnessLevelButton() {
+        return sweetnessLevelButton;
+    }
 }
