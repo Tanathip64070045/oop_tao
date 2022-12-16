@@ -12,7 +12,6 @@ import GUI.Components.pnlBorder;
 import GUI.EachDrink;
 import GUI.MainWindow;
 import GUI.Menu;
-import GUI.MenuComponent.CatagoryGUI;
 import GUI.MenuComponent.DrinkGUI;
 import GUI.PaymentGUI.PaymentChangeWindow;
 import GUI.PaymentGUI.PaymentInsertWindow;
@@ -110,6 +109,7 @@ public class AppController implements ActionListener, WindowListener, MouseListe
         menu.getCatagoryGUI().getSodaButton().addMouseListener(this);
 
         eachdrink.getBackButton().addMouseListener(this);
+        eachdrink.getPurchasingButton().addMouseListener(this);
 
         paymentmain.getBackButton().addMouseListener(this);
         paymentmain.getButtonCancel().addMouseListener(this);
@@ -163,8 +163,9 @@ public class AppController implements ActionListener, WindowListener, MouseListe
         adminGUI.getAdminControl().getTotally().setData(new Card(null, "Totally.", "9999.99 ฿", "description"));
         adminGUI.getAdminControl().getStock().sendData(new Stock(i));
     }
-
-    public void ChooseProduct(String name, pnlBorder btn) {
+    private String fn;
+    
+    public void ChooseProduct(String category, pnlBorder btn) {
         mw.getPnlContainer().setVisible(false);
         menu.setVisible(true);
         menu.getPnlMenu().removeAll();
@@ -190,9 +191,9 @@ public class AppController implements ActionListener, WindowListener, MouseListe
 
 //            adding product juice
         for (int index = 0; index < db.getProducts().size(); index++) {
-            if (((Product) db.getProducts().get(index)).getCategory().equals(name)) {
+            if (((Product) db.getProducts().get(index)).getCategory().equals(category)) {
                 productss = new DrinkGUI(((Product) db.getProducts().get(index)).getProductName(),
-                        String.format("%s ฿", Double.toString(((Product) db.getProducts().get(index)).getPrice())),
+                        String.format("%s", Double.toString(((Product) db.getProducts().get(index)).getPrice())),
                         new ImageIcon(getClass().getResource(String.format("/products/%s", ((Product) db.getProducts().get(index)).getImg()))));
                 tle.add(productss);
                 tle.get(count).addMouseListener(new MouseAdapter() {
@@ -202,11 +203,36 @@ public class AppController implements ActionListener, WindowListener, MouseListe
                             if (e.getSource().equals(tle.get(n))) {
                                 System.err.println(tle.get(n).getProduct().getText());
 
+                                
+                                
 //                                    Choosing Product
-                                choose = new Product(0, ((Product) db.getProducts().get(n)).getProductName(),
-                                        ((Product) db.getProducts().get(n)).getPrice(), ((Product) db.getProducts().get(n)).getCategory(), ((Product) db.getProducts().get(n)).getImg(),
+                                choose = new Product(0, tle.get(n).getProduct().getText(),
+                                        Double.parseDouble(tle.get(n).getPrice().getText()),category, tle.get(n).getImg().toString(),
                                         0);
+                                
+                                String[] substrings = tle.get(n).getImg().toString().split(",");
+//                                String fn;
+                                for (String substring : substrings) {
+                                    if (substring.startsWith("defaultIcon=file:")) {
+                                        String[] sub = substring.split("/");
+                                        fn = sub[sub.length - 1];
+                                        break;
+                                    }
+                                }
+                                System.out.println(tle.get(n).getProduct().getText()+" "+Double.parseDouble(tle.get(n).getPrice().getText())+" "+category+" "+fn);
+                                
+                                menu.setVisible(false);
+                                
+                                eachdrink.set(new ImageIcon(getClass().getResource(String.format("/products/%s", fn))), choose.getProductName(), choose.getCategory(), choose.getPrice());
+                                eachdrink.setVisible(true);
+                                eachdrink.invalidate();
+                                eachdrink.validate();
+                                eachdrink.repaint();
+                                
+                                
+//                                Insert Type of Product
 
+//                                ใช้ String category ที่รับมาคิดประเภทนะ ฝากด้วยคนที่ทำต่อจากฉัน
                             }
                         }
                     }
@@ -406,6 +432,7 @@ public class AppController implements ActionListener, WindowListener, MouseListe
         } else if (e.getSource().equals(mw.getPnlCoffee()) || e.getSource().equals(menu.getCatagoryGUI().getCoffeeButton())) {
             ChooseProduct("Coffee", menu.getCatagoryGUI().getCoffeeButton());
             
+            
 //            menu.getCatagoryGUI().getCoffeeButton().setBackground(Color.decode("#CC8484"));
             
             
@@ -426,10 +453,12 @@ public class AppController implements ActionListener, WindowListener, MouseListe
         }
 
         //Catagory GUI
-
         if (e.getSource().equals(eachdrink.getBackButton())) {
             eachdrink.setVisible(false);
             menu.setVisible(true);
+        } else if (e.getSource().equals(eachdrink.getPurchasingButton())){
+            eachdrink.setVisible(false);
+            paymentmain.setVisible(true);
         }
 
         if (e.getSource().equals(paymentmain.getBackButton()) || e.getSource().equals(paymentmain.getButtonCancel())) {

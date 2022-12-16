@@ -5,6 +5,7 @@
 package GUI.MenuComponent;
 
 import java.awt.Color;
+import javax.swing.JLabel;
 
 /**
  *
@@ -65,4 +66,9 @@ public class PurchasingButton extends javax.swing.JPanel {
     private GUI.Components.pnlBorder pnlBorder1;
     private javax.swing.JLabel priceText;
     // End of variables declaration//GEN-END:variables
+
+    public JLabel getPriceText() {
+        return priceText;
+    }
+
 }
