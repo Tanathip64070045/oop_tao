@@ -36,7 +36,7 @@
     <Component class="GUI.Components.AdminControl" name="adminControl1">
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="0" y="100" width="-1" height="730"/>
+          <AbsoluteConstraints x="0" y="100" width="720" height="730"/>
         </Constraint>
       </Constraints>
     </Component>

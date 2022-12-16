@@ -90,7 +90,7 @@ public class MainWindow extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         pnlDesktop.setBackground(new java.awt.Color(68, 55, 64));
@@ -100,7 +100,7 @@ public class MainWindow extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("LOGIN");
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/user 1 (1).png"))); // NOI18N
 
         javax.swing.GroupLayout pnlLoginLayout = new javax.swing.GroupLayout(pnlLogin);
         pnlLogin.setLayout(pnlLoginLayout);
@@ -108,7 +108,7 @@ public class MainWindow extends javax.swing.JFrame {
             pnlLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlLoginLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         pnlLoginLayout.setVerticalGroup(
@@ -125,7 +125,7 @@ public class MainWindow extends javax.swing.JFrame {
         pnlJuice.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/image 12.png"))); // NOI18N
+        jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/image 88.png"))); // NOI18N
         pnlJuice.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(-1, 20, 200, -1));
 
         jLabel14.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -139,7 +139,7 @@ public class MainWindow extends javax.swing.JFrame {
         pnlMilk.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/image 11.png"))); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/image 85.png"))); // NOI18N
         pnlMilk.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, 20, 200, -1));
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -152,8 +152,8 @@ public class MainWindow extends javax.swing.JFrame {
         pnlRecommend.setPreferredSize(new java.awt.Dimension(200, 160));
         pnlRecommend.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        JLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/image 5.png"))); // NOI18N
-        pnlRecommend.add(JLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 6, -1, -1));
+        JLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/star 1.png"))); // NOI18N
+        pnlRecommend.add(JLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 30, -1, -1));
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -165,8 +165,8 @@ public class MainWindow extends javax.swing.JFrame {
         pnlCoffee.setPreferredSize(new java.awt.Dimension(200, 160));
         pnlCoffee.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/image 6.png"))); // NOI18N
-        pnlCoffee.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(62, 14, -1, -1));
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/image 87.png"))); // NOI18N
+        pnlCoffee.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, -1, -1));
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -178,8 +178,8 @@ public class MainWindow extends javax.swing.JFrame {
         pnlSoda.setPreferredSize(new java.awt.Dimension(200, 160));
         pnlSoda.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/image 10.png"))); // NOI18N
-        pnlSoda.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(61, 12, -1, -1));
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/image 89.png"))); // NOI18N
+        pnlSoda.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, -1, -1));
 
         jLabel15.setBackground(new java.awt.Color(0, 0, 0));
         jLabel15.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -192,8 +192,8 @@ public class MainWindow extends javax.swing.JFrame {
         pnlTea.setPreferredSize(new java.awt.Dimension(200, 160));
         pnlTea.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/image 7.png"))); // NOI18N
-        pnlTea.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(46, 20, -1, -1));
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/image 86.png"))); // NOI18N
+        pnlTea.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, -1, -1));
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
