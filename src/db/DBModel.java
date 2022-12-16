@@ -33,7 +33,11 @@ public class DBModel {
         }
     }
     public int getIndex(){
-       return index;
+        if(products != null){
+            return products.size();
+        } else {
+            return index;
+        }
     }
     public ArrayList getProducts(){
         return products;

@@ -33,6 +33,7 @@ import java.awt.event.ComponentListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseAdapter;
+import java.awt.event.WindowAdapter;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -99,6 +100,8 @@ public class AppController implements ActionListener, WindowListener, MouseListe
         adminGUI.setVisible(false);
         stock.setVisible(false);
 
+        
+        
         login.getBtnLogin().addActionListener(this);
 
         menu.getBackButton().addMouseListener(this);
@@ -131,7 +134,7 @@ public class AppController implements ActionListener, WindowListener, MouseListe
         paymentchange.getButtonConfirm().setEnabled(false);
         paymentchange.addComponentListener(this);
 
-        paymentsuccess.getButtonConfirm().addMouseListener(this);
+        paymentsuccess.getButtonConfirm();
 
         mw.setLayout(new CardLayout());
         mw.add(adminGUI);
@@ -162,6 +165,8 @@ public class AppController implements ActionListener, WindowListener, MouseListe
         adminGUI.getAdminControl().getBalance().setData(new Card(null, "  Balance.", "9999.99 ฿", "description"));
         adminGUI.getAdminControl().getTotally().setData(new Card(null, "Totally.", "9999.99 ฿", "description"));
         adminGUI.getAdminControl().getStock().sendData(new Stock(i));
+        
+        stock.addWindowListener(this);
     }
 
     public void ChooseProduct(String name, pnlBorder btn) {
@@ -239,6 +244,8 @@ public class AppController implements ActionListener, WindowListener, MouseListe
                 stock.getAdminProducts().getTable().repaint();
 
                 saveFile(sourceFile, destinationFile);
+                db.saveFile();
+                adminGUI.getAdminControl().getStock().sendData(new Stock(db.getProducts().size()));
 
             } catch (NumberFormatException e) {
 //                JOptionPane.showMessageDialog(null,"Please Fill.", "Error", JOptionPane.PLAIN_MESSAGE);
@@ -251,6 +258,9 @@ public class AppController implements ActionListener, WindowListener, MouseListe
             stock.getAdminProducts().getTable().setValueAt(stock.getAdminProducts().getTfPrice().getText(), i, 3);
             stock.getAdminProducts().getTable().setValueAt(stock.getAdminProducts().getCategory().getSelectedItem().toString(), i, 4);
             stock.getAdminProducts().getTable().setValueAt(stock.getAdminProducts().getLblFile().getText(), i, 1);
+            db.saveFile();
+            adminGUI.getAdminControl().getStock().sendData(new Stock(db.getProducts().size()));
+
 
 //                JOptionPane.showMessageDialog(null,"Update Data.", "Updating", JOptionPane.PLAIN_MESSAGE);
         } else if (ae.getSource().equals(stock.getAdminProducts().getBtnDelete())) {
@@ -258,12 +268,15 @@ public class AppController implements ActionListener, WindowListener, MouseListe
             if (i >= 0) {
                 db.removeProducts(stock.getAdminProducts().getTable().getSelectedRow());
                 stock.getAdminProducts().getTable().getTableModel().removeRow(i);
+                db.saveFile();
+                adminGUI.getAdminControl().getStock().sendData(new Stock(db.getProducts().size()));
 //                    JOptionPane.showMessageDialog(null,"Remove Data.", "Removing", JOptionPane.PLAIN_MESSAGE);
             }
         }
-        if (ae.getSource().equals(login.getBtnLogin())) {
+        if (ae.getSource().equals(login.getBtnLogin()) && login.getTfUsername().getText().equals("madara") && login.getTfPassword().getText().equals("55555")) {
             mw.getPnlContainer().setVisible(false);
             adminGUI.setVisible(true);
+            adminGUI.getAdminControl().getStock().sendData(new Stock(db.getProducts().size()));
             login.setVisible(false);
         }
     }
@@ -320,6 +333,10 @@ public class AppController implements ActionListener, WindowListener, MouseListe
 
     @Override
     public void windowClosing(WindowEvent e) {
+        if(e.getSource().equals(stock)){
+            db.saveFile();
+            System.out.println("save");
+        }
         db.saveFile();
         System.out.println("save");
     }
@@ -468,6 +485,7 @@ public class AppController implements ActionListener, WindowListener, MouseListe
         }
 
         if (e.getSource().equals(paymentsuccess.getButtonConfirm())) {
+            
             paymentsuccess.setVisible(false);
             mw.getPnlContainer().setVisible(true);
         }
@@ -511,21 +529,33 @@ public class AppController implements ActionListener, WindowListener, MouseListe
 
     @Override
     public void componentShown(ComponentEvent e) {
-
+        
         if (e.getSource().equals(paymentchange)) {
+            
             try {
                 for (int i = 5; i >= 0; i--) {
                     paymentchange.getLabel3().setText("The machine is about to change money in " + i);
                     tr.sleep(1000);
+                                    
+
                 }
+                tr.sleep(1);
                 paymentchange.getButtonConfirm().setBackground(new Color(197, 158, 126));
                 paymentchange.getButtonConfirm().setEnabled(true);
+                
+                
+                
             } catch (Exception ea) {
                 System.out.println(ea);
             }
         }
         if (e.getSource().equals(paymentinsert)) {
             paymentinsert.getTextInsert().setText("");
+        }
+        
+        if (e.getSource().equals(paymentsuccess)) {
+            System.exit(1);
+            
         }
 
         if (e.getSource().equals(mw.getPnlContainer())) {
