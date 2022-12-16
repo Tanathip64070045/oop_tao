@@ -39,7 +39,7 @@ public class AdminGUI extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(720, 830));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         add(navbar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-        add(adminControl1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, -1, 730));
+        add(adminControl1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 720, 730));
     }// </editor-fold>//GEN-END:initComponents
 
 
