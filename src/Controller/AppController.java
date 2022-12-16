@@ -237,8 +237,8 @@ public class AppController implements ActionListener, WindowListener, MouseListe
                                 System.out.println(choose.getCategory());
                                 if (choose.getCategory().equals("Coffee")){
                                    eachdrink.getTypeOfDrink().getTypeOfDrinkButton().add(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getHotButton());
-                                   eachdrink.getTypeOfDrink().getTypeOfDrinkButton().add(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getIcedButton());
-                                   eachdrink.getTypeOfDrink().getTypeOfDrinkButton().add(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getSmoothieButton());
+                                   eachdrink.getTypeOfDrink().getTypeOfDrinkButton().add(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getIced5Button());
+                                   eachdrink.getTypeOfDrink().getTypeOfDrinkButton().add(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getSmoothie10Button());
                                    
                                    eachdrink.getToppings().getToppingsButton().add(eachdrink.getToppings().getToppingsButton().getWhipCreamButton());
                                    eachdrink.getToppings().getToppingsButton().add(eachdrink.getToppings().getToppingsButton().getMilkFoamButton());
@@ -246,7 +246,7 @@ public class AppController implements ActionListener, WindowListener, MouseListe
                                 }
                                 else if (choose.getCategory().equals("Tea")){
                                    eachdrink.getTypeOfDrink().getTypeOfDrinkButton().add(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getIcedButton());
-                                   eachdrink.getTypeOfDrink().getTypeOfDrinkButton().add(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getSmoothieButton());
+                                   eachdrink.getTypeOfDrink().getTypeOfDrinkButton().add(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getSmoothie5Button());
                                    
                                    eachdrink.getToppings().getToppingsButton().add(eachdrink.getToppings().getToppingsButton().getBubbleButton());
                                    eachdrink.getToppings().getToppingsButton().add(eachdrink.getToppings().getToppingsButton().getWhipCreamButton());
@@ -255,8 +255,8 @@ public class AppController implements ActionListener, WindowListener, MouseListe
                                 }
                                 else if (choose.getCategory().equals("Milk & Coco")){
                                    eachdrink.getTypeOfDrink().getTypeOfDrinkButton().add(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getHotButton());
-                                   eachdrink.getTypeOfDrink().getTypeOfDrinkButton().add(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getIcedButton());
-                                   eachdrink.getTypeOfDrink().getTypeOfDrinkButton().add(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getSmoothieButton());
+                                   eachdrink.getTypeOfDrink().getTypeOfDrinkButton().add(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getIced5Button());
+                                   eachdrink.getTypeOfDrink().getTypeOfDrinkButton().add(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getSmoothie10Button());
                                    
                                    eachdrink.getToppings().getToppingsButton().add(eachdrink.getToppings().getToppingsButton().getBubbleButton());
                                    eachdrink.getToppings().getToppingsButton().add(eachdrink.getToppings().getToppingsButton().getWhipCreamButton());
@@ -265,7 +265,7 @@ public class AppController implements ActionListener, WindowListener, MouseListe
                                 }
                                 else if (choose.getCategory().equals("Juice")){
                                    eachdrink.getTypeOfDrink().getTypeOfDrinkButton().add(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getIcedButton());
-                                   eachdrink.getTypeOfDrink().getTypeOfDrinkButton().add(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getSmoothieButton());
+                                   eachdrink.getTypeOfDrink().getTypeOfDrinkButton().add(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getSmoothie5Button());
                                    
                                    eachdrink.getToppings().getToppingsButton().add(eachdrink.getToppings().getToppingsButton().getBubbleButton());
                                    eachdrink.getToppings().getToppingsButton().add(eachdrink.getToppings().getToppingsButton().getWhipCreamButton());
