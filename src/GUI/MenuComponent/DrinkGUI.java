@@ -14,12 +14,19 @@ public class DrinkGUI extends javax.swing.JPanel {
     /**
      * Creates new form DrinkGUI
      */
-    public DrinkGUI() {
+    public DrinkGUI(String product, String price, Icon icon) {
         initComponents();
         this.setOpaque(false);
         
+        this.product.setText(product);
+        this.price.setText(price);
+        this.img.setIcon(icon);
     }
-
+//    public void setData(String product, String price, Icon icon){
+//        this.product.setText(product);
+//        this.price.setText(price);
+//        this.img.setIcon(icon);
+//    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -30,39 +37,40 @@ public class DrinkGUI extends javax.swing.JPanel {
     private void initComponents() {
 
         namePanel = new javax.swing.JPanel();
-        name = new javax.swing.JLabel();
+        product = new javax.swing.JLabel();
         price = new javax.swing.JLabel();
-        image = new javax.swing.JLabel();
+        img = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(197, 158, 126));
         setToolTipText("");
-        setPreferredSize(new java.awt.Dimension(165, 250));
+        setMaximumSize(new java.awt.Dimension(200, 270));
+        setPreferredSize(new java.awt.Dimension(200, 270));
 
         namePanel.setBackground(new java.awt.Color(86, 71, 71));
 
-        name.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        name.setForeground(new java.awt.Color(255, 255, 255));
-        name.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        name.setText("COCO");
+        product.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        product.setForeground(new java.awt.Color(255, 255, 255));
+        product.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        product.setText("Title");
 
         javax.swing.GroupLayout namePanelLayout = new javax.swing.GroupLayout(namePanel);
         namePanel.setLayout(namePanelLayout);
         namePanelLayout.setHorizontalGroup(
             namePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(name, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
+            .addComponent(product, javax.swing.GroupLayout.DEFAULT_SIZE, 438, Short.MAX_VALUE)
         );
         namePanelLayout.setVerticalGroup(
             namePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(name, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 68, Short.MAX_VALUE)
+            .addComponent(product, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 68, Short.MAX_VALUE)
         );
 
         price.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         price.setForeground(new java.awt.Color(255, 255, 255));
         price.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        price.setText("45฿");
+        price.setText("999 ฿");
 
-        image.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        image.setText("Img");
+        img.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        img.setIcon(new javax.swing.ImageIcon(getClass().getResource("/products/sd_straw.png"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -70,16 +78,19 @@ public class DrinkGUI extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(namePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(price, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(3, 3, 3))
-            .addComponent(image, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(price, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(img, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(price)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(image, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
+                .addComponent(img, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(namePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(16, 16, 16))
@@ -96,10 +107,23 @@ public class DrinkGUI extends javax.swing.JPanel {
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel image;
-    private javax.swing.JLabel name;
+    private javax.swing.JLabel img;
     private javax.swing.JPanel namePanel;
     private javax.swing.JLabel price;
+    private javax.swing.JLabel product;
     // End of variables declaration//GEN-END:variables
+
+    public JLabel getImg() {
+        return img;
+    }
+
+    public JLabel getPrice() {
+        return price;
+    }
+
+    public JLabel getProduct() {
+        return product;
+    }
+
 }
 

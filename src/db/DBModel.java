@@ -33,10 +33,17 @@ public class DBModel {
         }
     }
     public int getIndex(){
-       return index;
+        if(products != null){
+            return products.size();
+        } else {
+            return index;
+        }
     }
     public ArrayList getProducts(){
         return products;
+    }
+    public String getCategory(){
+        return product.getCategory();
     }
     public int getNewId(){
         return products.size()+1;

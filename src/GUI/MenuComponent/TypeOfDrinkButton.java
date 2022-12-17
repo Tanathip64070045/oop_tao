@@ -4,7 +4,9 @@
  */
 package GUI.MenuComponent;
 
+import GUI.Components.pnlBorder;
 import java.awt.Color;
+import javax.swing.JLabel;
 
 /**
  *
@@ -33,10 +35,12 @@ public class TypeOfDrinkButton extends javax.swing.JPanel {
         hotText = new javax.swing.JLabel();
         icedButton = new GUI.Components.pnlBorder();
         icedText = new javax.swing.JLabel();
-        smoothieButton = new GUI.Components.pnlBorder();
-        smoothieText = new javax.swing.JLabel();
-
-        setPreferredSize(new java.awt.Dimension(574, 45));
+        iced5Button = new GUI.Components.pnlBorder();
+        iced5Text = new javax.swing.JLabel();
+        smoothie5Button = new GUI.Components.pnlBorder();
+        smoothie5Text = new javax.swing.JLabel();
+        smoothie10Button = new GUI.Components.pnlBorder();
+        smoothie10Text = new javax.swing.JLabel();
 
         hotButton.setBackground(new java.awt.Color(144, 111, 118));
         hotButton.setPreferredSize(new java.awt.Dimension(175, 35));
@@ -48,8 +52,6 @@ public class TypeOfDrinkButton extends javax.swing.JPanel {
         hotText.setText("Hot");
         hotButton.add(hotText, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 5, 160, -1));
 
-        add(hotButton);
-
         icedButton.setBackground(new java.awt.Color(144, 111, 118));
         icedButton.setPreferredSize(new java.awt.Dimension(175, 35));
         icedButton.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -57,31 +59,94 @@ public class TypeOfDrinkButton extends javax.swing.JPanel {
         icedText.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         icedText.setForeground(new java.awt.Color(255, 255, 255));
         icedText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        icedText.setText("Iced(+฿5)");
+        icedText.setText("Iced");
         icedButton.add(icedText, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 5, 160, -1));
 
-        add(icedButton);
+        iced5Button.setBackground(new java.awt.Color(144, 111, 118));
+        iced5Button.setPreferredSize(new java.awt.Dimension(175, 35));
+        iced5Button.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        smoothieButton.setBackground(new java.awt.Color(144, 111, 118));
-        smoothieButton.setPreferredSize(new java.awt.Dimension(175, 35));
-        smoothieButton.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        iced5Text.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        iced5Text.setForeground(new java.awt.Color(255, 255, 255));
+        iced5Text.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        iced5Text.setText("Iced(+฿5)");
+        iced5Button.add(iced5Text, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 5, 160, -1));
 
-        smoothieText.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        smoothieText.setForeground(new java.awt.Color(255, 255, 255));
-        smoothieText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        smoothieText.setText("Smoothie(+฿10)");
-        smoothieButton.add(smoothieText, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 5, 160, -1));
+        smoothie5Button.setBackground(new java.awt.Color(144, 111, 118));
+        smoothie5Button.setPreferredSize(new java.awt.Dimension(175, 35));
+        smoothie5Button.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        add(smoothieButton);
+        smoothie5Text.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        smoothie5Text.setForeground(new java.awt.Color(255, 255, 255));
+        smoothie5Text.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        smoothie5Text.setText("Smoothie(+฿5)");
+        smoothie5Button.add(smoothie5Text, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 5, 160, -1));
+
+        smoothie10Button.setBackground(new java.awt.Color(144, 111, 118));
+        smoothie10Button.setPreferredSize(new java.awt.Dimension(175, 35));
+        smoothie10Button.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        smoothie10Text.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        smoothie10Text.setForeground(new java.awt.Color(255, 255, 255));
+        smoothie10Text.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        smoothie10Text.setText("Smoothie(+฿10)");
+        smoothie10Button.add(smoothie10Text, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 5, 160, -1));
+
+        setPreferredSize(new java.awt.Dimension(574, 45));
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private GUI.Components.pnlBorder hotButton;
     private javax.swing.JLabel hotText;
+    private GUI.Components.pnlBorder iced5Button;
+    private javax.swing.JLabel iced5Text;
     private GUI.Components.pnlBorder icedButton;
     private javax.swing.JLabel icedText;
-    private GUI.Components.pnlBorder smoothieButton;
-    private javax.swing.JLabel smoothieText;
+    private GUI.Components.pnlBorder smoothie10Button;
+    private javax.swing.JLabel smoothie10Text;
+    private GUI.Components.pnlBorder smoothie5Button;
+    private javax.swing.JLabel smoothie5Text;
     // End of variables declaration//GEN-END:variables
+
+    public pnlBorder getHotButton() {
+        return hotButton;
+    }
+
+    public pnlBorder getIced5Button() {
+        return iced5Button;
+    }
+
+    public pnlBorder getSmoothie5Button() {
+        return smoothie5Button;
+    }
+
+    public pnlBorder getIcedButton() {
+        return icedButton;
+    }
+
+    public pnlBorder getSmoothie10Button() {
+        return smoothie10Button;
+    }
+
+    public JLabel getHotText() {
+        return hotText;
+    }
+
+    public JLabel getIced5Text() {
+        return iced5Text;
+    }
+
+    public JLabel getIcedText() {
+        return icedText;
+    }
+
+    public JLabel getSmoothie10Text() {
+        return smoothie10Text;
+    }
+
+    public JLabel getSmoothie5Text() {
+        return smoothie5Text;
+    }
+
 }

@@ -32,6 +32,7 @@ public class Toppings extends javax.swing.JPanel {
         pnlBorder = new GUI.Components.pnlBorder();
         toppingsText = new javax.swing.JLabel();
         toppingsButton = new GUI.MenuComponent.ToppingsButton();
+        description = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(574, 121));
 
@@ -41,6 +42,10 @@ public class Toppings extends javax.swing.JPanel {
         toppingsText.setForeground(new java.awt.Color(161, 65, 65));
         toppingsText.setText("Toppings");
 
+        description.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        description.setForeground(new java.awt.Color(255, 255, 255));
+        description.setText("(+฿5)");
+
         javax.swing.GroupLayout pnlBorderLayout = new javax.swing.GroupLayout(pnlBorder);
         pnlBorder.setLayout(pnlBorderLayout);
         pnlBorderLayout.setHorizontalGroup(
@@ -48,16 +53,20 @@ public class Toppings extends javax.swing.JPanel {
             .addGroup(pnlBorderLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(toppingsText)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(description)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(pnlBorderLayout.createSequentialGroup()
                 .addComponent(toppingsButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 1, Short.MAX_VALUE))
         );
         pnlBorderLayout.setVerticalGroup(
             pnlBorderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlBorderLayout.createSequentialGroup()
                 .addContainerGap(12, Short.MAX_VALUE)
-                .addComponent(toppingsText, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(pnlBorderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(toppingsText, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE)
+                    .addComponent(description, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(toppingsButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12))
@@ -77,8 +86,13 @@ public class Toppings extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel description;
     private GUI.Components.pnlBorder pnlBorder;
     private GUI.MenuComponent.ToppingsButton toppingsButton;
     private javax.swing.JLabel toppingsText;
     // End of variables declaration//GEN-END:variables
+
+    public ToppingsButton getToppingsButton() {
+        return toppingsButton;
+    }
 }

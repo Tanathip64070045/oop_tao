@@ -4,7 +4,9 @@
  */
 package GUI.MenuComponent;
 
+import GUI.Components.pnlBorder;
 import java.awt.Color;
+import javax.swing.JLabel;
 
 /**
  *
@@ -60,4 +62,10 @@ public class TypeOfDrink extends javax.swing.JPanel {
     private GUI.MenuComponent.TypeOfDrinkButton typeOfDrinkButton;
     private javax.swing.JLabel typeOfDrinkText;
     // End of variables declaration//GEN-END:variables
+
+
+    public TypeOfDrinkButton getTypeOfDrinkButton() {
+        return typeOfDrinkButton;
+    }
+
 }

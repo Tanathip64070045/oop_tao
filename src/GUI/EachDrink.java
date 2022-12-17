@@ -4,6 +4,11 @@
  */
 package GUI;
 
+import GUI.MenuComponent.PurchasingButton;
+import GUI.MenuComponent.SweetnessLevel;
+import GUI.MenuComponent.Toppings;
+import GUI.MenuComponent.TypeOfDrink;
+import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
 /**
@@ -18,7 +23,11 @@ public class EachDrink extends javax.swing.JPanel {
     public EachDrink() {
         initComponents();
     }
-
+    public void set(String icon, String name, String category, double price){
+        this.image.setIcon(new ImageIcon(getClass().getResource(String.format("/products/%s", icon))));
+        this.name.setText(name);
+        this.purchasingButton.getPriceText().setText(String.format("Purchasing | %.2f ฿", price));
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -54,7 +63,7 @@ public class EachDrink extends javax.swing.JPanel {
         name.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
         name.setForeground(new java.awt.Color(247, 230, 230));
         name.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        name.setText("Soda");
+        name.setText("Title");
 
         purchasingButton.setForeground(new java.awt.Color(255, 255, 255));
 
@@ -123,6 +132,24 @@ public class EachDrink extends javax.swing.JPanel {
     public JLabel getBackButton() {
         return BackButton;
     }
+
+    public PurchasingButton getPurchasingButton() {
+        return purchasingButton;
+    }
+
+    public SweetnessLevel getSweetnessLevel() {
+        return sweetnessLevel;
+    }
+
+    public Toppings getToppings() {
+        return toppings;
+    }
+
+    public TypeOfDrink getTypeOfDrink() {
+        return typeOfDrink;
+    }
+    
+    
     
     
 }

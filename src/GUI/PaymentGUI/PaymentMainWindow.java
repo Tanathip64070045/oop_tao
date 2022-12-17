@@ -8,6 +8,7 @@ import GUI.PaymentGUI.Components.Button;
 import GUI.PaymentGUI.Components.PaymentMainWindowCashButton;
 import GUI.PaymentGUI.Components.PaymentMainWindowQrCodeButton;
 import GUI.PaymentGUI.Components.PaymentMainWindowTrueButton;
+import java.awt.Label;
 import javax.swing.JLabel;
 
 /**
@@ -125,6 +126,8 @@ public class PaymentMainWindow extends javax.swing.JPanel {
     private GUI.PaymentGUI.Components.PanelBorder panelBorder1;
     // End of variables declaration//GEN-END:variables
 
+    
+    
     public JLabel getBackButton() {
         return BackButton1;
     }
@@ -148,5 +151,19 @@ public class PaymentMainWindow extends javax.swing.JPanel {
     public Button getButtonCancel() {
         return ButtonCancel;
     }
+
+    public JLabel getProductImg() {
+        return ProductImg;
+    }
+
+    public Label getProductName() {
+        return ProductName;
+    }
+
+    public Label getProductValue() {
+        return ProductValue;
+    }
+    
+    
 
 }
