@@ -39,11 +39,14 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.filechooser.FileFilter;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.plaf.OptionPaneUI;
 
 public class AppController implements ActionListener, WindowListener, MouseListener, Runnable, ComponentListener, KeyListener {
@@ -499,6 +502,9 @@ public class AppController implements ActionListener, WindowListener, MouseListe
     private void btnImageActionPerformed(java.awt.event.ActionEvent evt) {
         if (evt.getSource().equals(stock.getAdminProducts().getBtnImage())) {
             JFileChooser fc = new JFileChooser();
+                FileFilter imageFilter = new FileNameExtensionFilter("Image files", ImageIO.getReaderFileSuffixes());
+                fc.addChoosableFileFilter(imageFilter);
+                fc.setAcceptAllFileFilterUsed(false);
             int result = fc.showOpenDialog(null);
             if (result == JFileChooser.APPROVE_OPTION) {
                 File f = fc.getSelectedFile();
