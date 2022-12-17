@@ -6,6 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 
@@ -23,11 +24,11 @@ public class Login extends javax.swing.JInternalFrame implements ActionListener{
 
         jPanel1 = new javax.swing.JPanel();
         tfUsername = new javax.swing.JTextField();
-        tfPassword = new javax.swing.JTextField();
         lblUsername = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         btnLogin = new javax.swing.JButton();
+        jPasswordField1 = new javax.swing.JPasswordField();
 
         setTitle("Login");
         setName("Login"); // NOI18N
@@ -35,8 +36,6 @@ public class Login extends javax.swing.JInternalFrame implements ActionListener{
         jPanel1.setBackground(new java.awt.Color(99, 86, 86));
 
         tfUsername.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-
-        tfPassword.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         lblUsername.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         lblUsername.setForeground(new java.awt.Color(255, 255, 255));
@@ -57,6 +56,12 @@ public class Login extends javax.swing.JInternalFrame implements ActionListener{
 
         btnLogin.setText("LOGIN");
 
+        jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jPasswordField1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -67,9 +72,9 @@ public class Login extends javax.swing.JInternalFrame implements ActionListener{
                     .addComponent(jLabel2)
                     .addComponent(lblUsername))
                 .addGap(56, 56, 56)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(tfUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tfPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(tfUsername, javax.swing.GroupLayout.DEFAULT_SIZE, 294, Short.MAX_VALUE)
+                    .addComponent(jPasswordField1))
                 .addGap(110, 110, 110))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -90,13 +95,13 @@ public class Login extends javax.swing.JInternalFrame implements ActionListener{
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tfUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblUsername))
-                .addGap(26, 26, 26)
+                .addGap(27, 27, 27)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tfPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
-                .addGap(35, 35, 35)
+                    .addComponent(jLabel2)
+                    .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(47, 47, 47)
                 .addComponent(btnLogin)
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -116,13 +121,17 @@ public class Login extends javax.swing.JInternalFrame implements ActionListener{
         setVisible(false);
     }//GEN-LAST:event_jLabel3MouseClicked
 
+    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPasswordField1ActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLogin;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JLabel lblUsername;
-    private javax.swing.JTextField tfPassword;
     private javax.swing.JTextField tfUsername;
     // End of variables declaration//GEN-END:variables
 
@@ -130,9 +139,11 @@ public class Login extends javax.swing.JInternalFrame implements ActionListener{
         return btnLogin;
     }
 
-    public JTextField getTfPassword() {
-        return tfPassword;
+    public JPasswordField getjPasswordField1() {
+        return jPasswordField1;
     }
+
+    
 
     public JTextField getTfUsername() {
         return tfUsername;

@@ -43,6 +43,8 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.plaf.OptionPaneUI;
 
 public class AppController implements ActionListener, WindowListener, MouseListener, Runnable, ComponentListener, KeyListener {
 
@@ -472,12 +474,20 @@ public class AppController implements ActionListener, WindowListener, MouseListe
             }
         }
         if (ae.getSource().equals(login.getBtnLogin())) {
-            mw.getPnlContainer().setVisible(false);
-            adminGUI.setVisible(true);
-            login.setVisible(false);
+            if(login.getTfUsername().getText().equals("madara") && login.getjPasswordField1().getText().equals("55555")){
+                mw.getPnlContainer().setVisible(false);
+                adminGUI.setVisible(true);
+                login.setVisible(false);
+                adminGUI.getAdminControl().getStock().sendData(new Stock(db.getProducts().size()));
+            }
+            else if(login.getTfUsername().getText().equals("madara")){
+                JOptionPane jp = new JOptionPane();
+                jp.showMessageDialog(null, "Wrong Password", "Worng Password", JOptionPane.ERROR_MESSAGE);
+            }else{
+                JOptionPane jp = new JOptionPane();
+                jp.showMessageDialog(null, "Wrong Username", "Worng Username", JOptionPane.ERROR_MESSAGE);
+            }
             
-            
-            adminGUI.getAdminControl().getStock().sendData(new Stock(db.getProducts().size()));
         }
     }
 
@@ -608,6 +618,7 @@ public class AppController implements ActionListener, WindowListener, MouseListe
         }
 
         if (e.getSource().equals(mw.getPnlLogin())) {
+            
             login.setVisible(true);
         }
 //        check username
