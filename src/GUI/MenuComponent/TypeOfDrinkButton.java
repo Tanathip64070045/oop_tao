@@ -89,7 +89,7 @@ public class TypeOfDrinkButton extends javax.swing.JPanel {
         smoothie10Text.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         smoothie10Text.setForeground(new java.awt.Color(255, 255, 255));
         smoothie10Text.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        smoothie10Text.setText("Smoothie(+฿5)");
+        smoothie10Text.setText("Smoothie(+฿10)");
         smoothie10Button.add(smoothie10Text, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 5, 160, -1));
 
         setPreferredSize(new java.awt.Dimension(574, 45));
