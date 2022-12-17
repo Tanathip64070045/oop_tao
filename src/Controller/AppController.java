@@ -221,6 +221,7 @@ public class AppController implements ActionListener, WindowListener, MouseListe
         menu.repaint();
 
         tle.removeAll(tle);
+        recomCategory.removeAll(recomCategory);
         count = 0;
 
 //            adding product juice
@@ -251,10 +252,10 @@ public class AppController implements ActionListener, WindowListener, MouseListe
                 sortedMap.put(entry.getKey(), entry.getValue());
             }
 
-//            for (Map.Entry<String, Integer> entry : sortedMap.entrySet()) {
-//                System.out.print(entry.getKey() + " " + entry.getValue() + ", ");
-//            }
-//            System.out.println("\n");
+            for (Map.Entry<String, Integer> entry : sortedMap.entrySet()) {
+                System.out.print(entry.getKey() + " " + entry.getValue() + ", ");
+            }
+            System.out.println("\n");
             int check = 0;
             for (Map.Entry<String, Integer> entry : sortedMap.entrySet()) {
                 if (check < 6) {
@@ -270,7 +271,7 @@ public class AppController implements ActionListener, WindowListener, MouseListe
                 for (int j = 0; j < db.getProducts().size(); j++) {
                     if (((Product) db.getProducts().get(j)).getProductName().equals(arr.get(i))) {
                         items = new DrinkGUI(((Product) db.getProducts().get(j)).getProductName(), String.format("%.0f ฿", (((Product) db.getProducts().get(j)).getPrice())), new ImageIcon(getClass().getResource(String.format("/products/%s", ((Product) db.getProducts().get(j)).getImg()))));
-
+                        recomCategory.add(((Product) db.getProducts().get(j)).getCategory());
                         tle.add(items);
                         tle.get(count).addMouseListener(new MouseAdapter() {
                             @Override
@@ -290,7 +291,7 @@ public class AppController implements ActionListener, WindowListener, MouseListe
                                         }
                                         
                                         //                                    Choosing Product
-                                        choose = new Product(0, "", Double.parseDouble(tle.get(n).getPrice().getText().replace(" ฿", "")), category, fn, 0);
+                                        choose = new Product(0, tle.get(n).getProduct().getText(), Double.parseDouble(tle.get(n).getPrice().getText().replace(" ฿", "")), recomCategory.get(n), fn, 0);
                                         
                                         
                                         menu.setVisible(false);
@@ -762,6 +763,7 @@ public class AppController implements ActionListener, WindowListener, MouseListe
     private BufferedImage img;
     DrinkGUI productss;
     ArrayList<DrinkGUI> tle = new ArrayList<DrinkGUI>();
+    ArrayList<String> recomCategory = new ArrayList<String>();
     int count = 0;
 
     Product choose;
