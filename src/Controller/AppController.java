@@ -259,6 +259,7 @@ public class AppController implements ActionListener, WindowListener, MouseListe
                                 eachdrink.getToppings().getToppingsButton().removeAll();
                                 ChooseSweetnessLevel(eachdrink.getSweetnessLevel().getSweetnessLevelButton().getButton50(), eachdrink.getSweetnessLevel().getSweetnessLevelButton().getText50());
                                 setChooseToppings();
+                                typeOfDrinkPrice = 0;
 
                                 System.out.println(choose.getCategory());
                                 if (choose.getCategory().equals("Coffee")){
