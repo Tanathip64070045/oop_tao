@@ -771,6 +771,7 @@ public class AppController implements ActionListener, WindowListener, MouseListe
             amountAndChange = (Double.parseDouble(paymentinsert.getTextInsert().getText()))-(choose.getPrice() + typeOfDrinkPrice + toppingsPrice);
             paymentchange.getChange().setText(("Chane : "+ amountAndChange +" Baht"));
             paymentinsert.setVisible(false);
+            paymentchange.getButtonConfirm().setVisible(false);
             paymentchange.setVisible(true);
 
         }
@@ -839,9 +840,11 @@ public class AppController implements ActionListener, WindowListener, MouseListe
                     paymentchange.getLabel3().setText("The machine is about to change money in " + i);
                     tr.sleep(1000);
                 }
+                paymentchange.getLabel3().setText("please click countinue...");
                 paymentchange.getButtonConfirm().setBackground(new Color(197, 158, 126));
                 paymentchange.getButtonConfirm().addMouseListener(this);
                 paymentchange.getButtonConfirm().setEnabled(true);
+                paymentchange.getButtonConfirm().setVisible(true);
                 
                
             } catch (Exception ea) {
