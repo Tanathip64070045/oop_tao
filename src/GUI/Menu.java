@@ -20,6 +20,7 @@ public class Menu extends javax.swing.JPanel {
      */
     public Menu() {
         initComponents();
+        jScrollPane.getVerticalScrollBar().setUnitIncrement(16);
     }
 
     /**
@@ -123,6 +124,7 @@ public class Menu extends javax.swing.JPanel {
     private GUI.MenuComponent.MenuPanel pnlMenu;
     // End of variables declaration//GEN-END:variables
 
+    
     public JLabel getBackButton() {
         return BackButton;
     }
