@@ -193,6 +193,9 @@ public class AppController implements ActionListener, WindowListener, MouseListe
         menu.getPnlMenu().revalidate();
         menu.getPnlMenu().repaint();
         
+        //resetScrollPane
+        menu.getjScrollPane().getVerticalScrollBar().setValue(0);
+        
         
         // Button
         menu.getCatagoryGUI().getRecommendButton().setBackground(Color.decode("#F6E6E6"));
