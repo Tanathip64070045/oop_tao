@@ -11,12 +11,12 @@ import java.awt.Color;
  *
  * @author Adam
  */
-public class CatagoryGUI extends javax.swing.JPanel {
+public class CategoryGUI extends javax.swing.JPanel {
 
     /**
      * Creates new form CatagoryGUI
      */
-    public CatagoryGUI() {
+    public CategoryGUI() {
         initComponents();
         setBackground(new Color(0,0,0,0));
     }

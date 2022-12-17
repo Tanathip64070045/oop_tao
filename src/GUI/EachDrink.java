@@ -5,6 +5,9 @@
 package GUI;
 
 import GUI.MenuComponent.PurchasingButton;
+import GUI.MenuComponent.SweetnessLevel;
+import GUI.MenuComponent.Toppings;
+import GUI.MenuComponent.TypeOfDrink;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
@@ -133,6 +136,20 @@ public class EachDrink extends javax.swing.JPanel {
     public PurchasingButton getPurchasingButton() {
         return purchasingButton;
     }
+
+    public SweetnessLevel getSweetnessLevel() {
+        return sweetnessLevel;
+    }
+
+    public Toppings getToppings() {
+        return toppings;
+    }
+
+    public TypeOfDrink getTypeOfDrink() {
+        return typeOfDrink;
+    }
+    
+    
     
     
 }

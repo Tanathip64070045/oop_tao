@@ -4,7 +4,7 @@
  */
 package GUI;
 
-import GUI.MenuComponent.CatagoryGUI;
+import GUI.MenuComponent.CategoryGUI;
 import GUI.MenuComponent.MenuPanel;
 import javax.swing.JLabel;
 
@@ -37,7 +37,7 @@ public class Menu extends javax.swing.JPanel {
         jScrollPane2 = new javax.swing.JScrollPane();
         pnlMenu = new GUI.MenuComponent.MenuPanel();
         headerText = new javax.swing.JLabel();
-        catagoryGUI = new GUI.MenuComponent.CatagoryGUI();
+        catagoryGUI = new GUI.MenuComponent.CategoryGUI();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -113,7 +113,7 @@ public class Menu extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel BackButton;
-    private GUI.MenuComponent.CatagoryGUI catagoryGUI;
+    private GUI.MenuComponent.CategoryGUI catagoryGUI;
     private javax.swing.JLabel headerText;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
@@ -126,7 +126,7 @@ public class Menu extends javax.swing.JPanel {
         return BackButton;
     }
 
-    public CatagoryGUI getCatagoryGUI() {
+    public CategoryGUI getCatagoryGUI() {
         return catagoryGUI;
     }
 
