@@ -5,6 +5,7 @@ import Model.Card;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
+import javax.swing.JLabel;
 
 public class pnlCard extends javax.swing.JPanel {
     public pnlCard() {
@@ -12,8 +13,8 @@ public class pnlCard extends javax.swing.JPanel {
         setOpaque(false);
     }
     public void setData(Card data){
-        lbl_title.setText(data.getTitle());
         lbl_title.setIcon(data.getIcon());
+        lbl_title.setText(data.getTitle());
         lbl_values.setText(data.getValues());
     }
     @SuppressWarnings("unchecked")
@@ -28,6 +29,7 @@ public class pnlCard extends javax.swing.JPanel {
 
         lbl_title.setFont(new java.awt.Font("Tahoma", 0, 32)); // NOI18N
         lbl_title.setForeground(new java.awt.Color(124, 124, 124));
+        lbl_title.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/coins-solid 3.png"))); // NOI18N
         lbl_title.setText("Title");
 
         lbl_values.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
@@ -67,4 +69,14 @@ public class pnlCard extends javax.swing.JPanel {
     private javax.swing.JLabel lbl_title;
     private javax.swing.JLabel lbl_values;
     // End of variables declaration//GEN-END:variables
+
+    public JLabel getLblTsitle() {
+        return lbl_title;
+    }
+
+    public JLabel getLblValue() {
+        return lbl_values;
+    }
+
+    
 }

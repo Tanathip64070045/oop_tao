@@ -56,13 +56,10 @@ public class AdminControl extends javax.swing.JPanel{
 
         table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+
             },
             new String [] {
-                "Amount", "", "Products"
+                "Amount", "", "Products", "Category"
             }
         ));
         spTable.setViewportView(table);
@@ -133,5 +130,11 @@ public class AdminControl extends javax.swing.JPanel{
     public pnlCard getBalance() {
         return balance;
     }
+
+    public Table getTable() {
+        return table;
+    }
+    
+    
     
 }

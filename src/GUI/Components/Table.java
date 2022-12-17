@@ -16,6 +16,7 @@ public class Table extends javax.swing.JTable{
         setGridColor(new Color(230,230,230));
         setRowHeight(40);
         getTableHeader().setReorderingAllowed(false);
+        setAutoCreateRowSorter(true);
 
         getTableHeader().setDefaultRenderer(new DefaultTableCellRenderer() {
             @Override

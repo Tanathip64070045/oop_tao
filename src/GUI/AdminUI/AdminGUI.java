@@ -4,11 +4,8 @@
  */
 package GUI.AdminUI;
 
-import java.awt.Color;
 import GUI.Components.AdminControl;
 import GUI.Components.NavbarAdminGUI;
-import java.awt.Color;
-import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
 
 /**
  *
@@ -55,4 +52,5 @@ public class AdminGUI extends javax.swing.JPanel {
     public NavbarAdminGUI getNavbar() {
         return navbar;
     }
+    
 }

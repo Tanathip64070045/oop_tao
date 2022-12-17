@@ -7,24 +7,12 @@ import java.awt.RenderingHints;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import Model.Product;
-import Model.ViewModel;
-import db.DBModel;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.awt.event.WindowEvent;
+
 import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+
 import javax.swing.JButton;
 import javax.swing.JComboBox;
-import javax.swing.JFileChooser;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 public class AdminProducts extends javax.swing.JPanel implements ActionListener {
@@ -91,6 +79,7 @@ public class AdminProducts extends javax.swing.JPanel implements ActionListener 
 
         spTable.setBackground(new java.awt.Color(255, 255, 255));
         spTable.setBorder(null);
+        spTable.setForeground(new java.awt.Color(255, 255, 255));
 
         table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

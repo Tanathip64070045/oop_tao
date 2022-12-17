@@ -17,7 +17,6 @@ import javax.swing.JLabel;
  */
 public class NavbarAdminStock extends javax.swing.JPanel{
     
-    
      
     public NavbarAdminStock() {
         initComponents();

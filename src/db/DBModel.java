@@ -14,7 +14,21 @@ public class DBModel {
     public int index;
     private ArrayList products = new ArrayList ();
     
+    
+    
+    private double balance;
+    private double totally;
+
+    public double getBalance() {
+        return balance;
+    }
+
+    public double getTotally() {
+        return totally;
+    }
+    
     public DBModel(){
+            
     }
     public  void removeProducts(int id) {
         products.remove(id);
@@ -22,7 +36,6 @@ public class DBModel {
     }
     public void setProducts(ArrayList products) { 
         this.products = products;
-        System.out.println("set array");
     }
     public void addProduct(Product p){
         if(!products.contains(p)){
@@ -39,6 +52,7 @@ public class DBModel {
             return index;
         }
     }
+    
     public ArrayList getProducts(){
         return products;
     }
@@ -54,7 +68,6 @@ public class DBModel {
             
             try{
                 setProducts((ArrayList <Product>) in.readObject());
-                System.out.println("Loading. . .");
             }catch(Exception e){
                 System.out.print(e);
             }
@@ -64,7 +77,8 @@ public class DBModel {
         }
     }
     public boolean saveFile() {
-        try ( FileOutputStream fOut = new FileOutputStream("database.dat");  ObjectOutputStream oout = new ObjectOutputStream(fOut);) {
+        try ( FileOutputStream fOut = new FileOutputStream("database.dat");  
+                ObjectOutputStream oout = new ObjectOutputStream(fOut);) {
 
             oout.writeObject(this.products);
             System.out.println(products);

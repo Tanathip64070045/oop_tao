@@ -102,7 +102,7 @@ public class PaymentMainWindow extends javax.swing.JPanel {
         ProductValue.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         ProductValue.setForeground(new java.awt.Color(238, 114, 0));
         ProductValue.setText("0 ฿");
-        panelBorder1.add(ProductValue, new org.netbeans.lib.awtextra.AbsoluteConstraints(577, 251, 48, -1));
+        panelBorder1.add(ProductValue, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 250, 90, -1));
 
         ProductImg.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         ProductImg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/imgPayment.png"))); // NOI18N

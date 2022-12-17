@@ -27,6 +27,7 @@ import internal.Login;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Image;
 import java.awt.event.ComponentEvent;
 import java.awt.event.ComponentListener;
 import java.awt.event.KeyEvent;
@@ -39,6 +40,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Comparator;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -62,17 +64,20 @@ public class AppController implements ActionListener, WindowListener, MouseListe
     private PaymentInsertWindow paymentinsert;
     private PaymentQrWindow paymentqr;
     private PaymentSuccess paymentsuccess;
-    private ImageIcon balaIcon = new ImageIcon("../oop_tao/src/GUI/icons/Vecter3.png");
-    private ImageIcon tIcon = new ImageIcon("../oop_tao/src/GUI/icons/Vecter3.png");
+    private ImageIcon balaIcon = new ImageIcon(getClass().getResource("/GUI/icons/coins-solid 3.png"));
+    private ImageIcon tIcon = new ImageIcon(getClass().getResource("/GUI/icons/Vector3.png"));
     private Thread tr;
     private DBModel db;
     private Product p;
     private double amountAndChange;
-
+    
+    private double totally;
+    private double balance;
+    
     @Override
     public void windowOpened(WindowEvent e) {
         db.loadFile();
-        System.out.println("Load");
+        System.out.println("load");
     }
 
     public static void main(String[] args) {
@@ -183,15 +188,15 @@ public class AppController implements ActionListener, WindowListener, MouseListe
         mw.addWindowListener(this);
         mw.getPnlContainer().addComponentListener(this);
 
-        int i = db.getProducts().size();
-        System.out.println(i);
+//        System.err.println("Product size :" + db.getProducts().size());
 
         adminGUI.getAdminControl().getStock().addMouseListener(this);
         adminGUI.getNavbar().getBackButton().addMouseListener(this);
-        adminGUI.getAdminControl().getBalance().setData(new Card(null, "  Balance.", "9999.99 ฿", "description"));
-        adminGUI.getAdminControl().getTotally().setData(new Card(null, "Totally.", "9999.99 ฿", "description"));
-        adminGUI.getAdminControl().getStock().sendData(new Stock(i));
-    }
+        adminGUI.getAdminControl().getBalance().setData(new Card(balaIcon,  "  Balance.", "      " + balance + " ฿", "description"));
+        adminGUI.getAdminControl().getTotally().setData(new Card(tIcon, "  Totally.","      " + totally + " ฿", "description"));
+        adminGUI.getAdminControl().getStock().sendData(new Stock(db.getProducts().size()));
+    }    
+    
     private String fn;
     
     public void ChooseProduct(String category, pnlBorder btn) {
@@ -224,116 +229,144 @@ public class AppController implements ActionListener, WindowListener, MouseListe
         count = 0;
 
 //            adding product juice
-        for (int index = 0; index < db.getProducts().size(); index++) {
-            if (((Product) db.getProducts().get(index)).getCategory().equals(category)) {
-                productss = new DrinkGUI(((Product) db.getProducts().get(index)).getProductName(),
-                        String.format("%s", Double.toString(((Product) db.getProducts().get(index)).getPrice())),
-                        new ImageIcon(getClass().getResource(String.format("/products/%s", ((Product) db.getProducts().get(index)).getImg()))));
-                tle.add(productss);
-                tle.get(count).addMouseListener(new MouseAdapter() {
-                    @Override
-                    public void mouseClicked(MouseEvent e) {
-                        for (int n = 0; n < count; n++) {
-                            if (e.getSource().equals(tle.get(n))) {
-                                System.err.println(tle.get(n).getProduct().getText());
-                                
-                                String[] substrings = tle.get(n).getImg().toString().split(",");
-//                                String fn;
-                                for (String substring : substrings) {
-                                    if (substring.startsWith("defaultIcon=file:")) {
-                                        String[] sub = substring.split("/");
-                                        fn = sub[sub.length - 1];
-                                        break;
+        if(category.equals("Recommend")){
+//                Recommend นนทำตรงนี้นะ
+
+        } else {
+            for (int index = 0; index < db.getProducts().size(); index++) {
+                if (((Product) db.getProducts().get(index)).getCategory().equals(category)) {
+                    productss = new DrinkGUI(((Product) db.getProducts().get(index)).getProductName(),
+                            String.format("%.0f ฿", (((Product) db.getProducts().get(index)).getPrice())),
+    //                        FileImgtoImageIcon(String.format("./src/products/%s", ((Product) db.getProducts().get(index)).getImg())));
+    //                        FileImgtoImageIcon(getClass().getResource(String.format("/products/%s", ((Product) db.getProducts().get(index)).getImg())).toString()));
+                            new ImageIcon(getClass().getResource(String.format("/products/%s", ((Product) db.getProducts().get(index)).getImg()))));
+                    
+                    
+                    tle.add(productss);
+                    tle.get(count).addMouseListener(new MouseAdapter() {
+                        @Override
+                        public void mouseClicked(MouseEvent e) {
+                            for (int n = 0; n < count; n++) {
+                                if (e.getSource().equals(tle.get(n))) {
+    //                                System.err.println(tle.get(n).getProduct().getText());
+
+                                    String[] substrings = tle.get(n).getImg().toString().split(",");
+                                    System.out.println(tle.get(n).getImg().toString());
+    //                                String fn;
+                                    for (String substring : substrings) {
+                                        if (substring.startsWith("defaultIcon=file:")) {
+                                            String[] sub = substring.split("/");
+                                            fn = sub[sub.length - 1];
+                                            break;
+                                        }
                                     }
-                                }
-//                                    Choosing Product
-                                choose = new Product(0, tle.get(n).getProduct().getText(), Double.parseDouble(tle.get(n).getPrice().getText()), category, fn, 0);
-                                
-                                System.out.println(choose.getProductName()+" "+choose.getPrice()+" "+choose.getCategory()+" "+choose.getImg());
-                                
-                                menu.setVisible(false); 
-                                eachdrink.set(choose.getImg(), choose.getProductName(), choose.getCategory(), choose.getPrice());
-                                eachdrink.setVisible(true);
-                                eachdrink.invalidate();
-                                eachdrink.validate();
-                                eachdrink.repaint();
-                                
-                                
-//                                Insert Type of Product
+    //                                    Choosing Product
+                                    System.out.println(fn);
+                                    choose = new Product(0, tle.get(n).getProduct().getText(), Double.parseDouble(tle.get(n).getPrice().getText().replace(" ฿", "")), category, fn, 0);
 
-//                                ใช้ String category ที่รับมาคิดประเภทนะ ฝากด้วยคนที่ทำต่อจากฉัน
+    //                                System.out.println(choose.getProductName()+" "+choose.getPrice()+" "+choose.getCategory()+" "+choose.getImg());
 
-                                eachdrink.getTypeOfDrink().getTypeOfDrinkButton().removeAll();
-                                eachdrink.getToppings().getToppingsButton().removeAll();
-                                ChooseSweetnessLevel(eachdrink.getSweetnessLevel().getSweetnessLevelButton().getButton50(), eachdrink.getSweetnessLevel().getSweetnessLevelButton().getText50());
-                                setChooseToppings();
-                                typeOfDrinkPrice = 0;
+                                    menu.setVisible(false); 
+                                    eachdrink.set(choose.getImg(), choose.getProductName(), choose.getCategory(), choose.getPrice());
+                                    eachdrink.setVisible(true);
+                                    eachdrink.invalidate();
+                                    eachdrink.validate();
+                                    eachdrink.repaint();
 
-                                System.out.println(choose.getCategory());
-                                if (choose.getCategory().equals("Coffee")){
-                                   eachdrink.getTypeOfDrink().getTypeOfDrinkButton().add(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getHotButton());
-                                   eachdrink.getTypeOfDrink().getTypeOfDrinkButton().add(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getIced5Button());
-                                   eachdrink.getTypeOfDrink().getTypeOfDrinkButton().add(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getSmoothie10Button());
-                                   
-                                   ChooseTypeOfDrink(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getHotButton(), eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getHotText());
-                                   
-                                   eachdrink.getToppings().getToppingsButton().add(eachdrink.getToppings().getToppingsButton().getWhipCreamButton());
-                                   eachdrink.getToppings().getToppingsButton().add(eachdrink.getToppings().getToppingsButton().getMilkFoamButton());
-                                   eachdrink.getToppings().getToppingsButton().add(eachdrink.getToppings().getToppingsButton().getChocolateSauceButton());
-                                }
-                                else if (choose.getCategory().equals("Tea")){
-                                   eachdrink.getTypeOfDrink().getTypeOfDrinkButton().add(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getIcedButton());
-                                   eachdrink.getTypeOfDrink().getTypeOfDrinkButton().add(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getSmoothie5Button());
-                                   
-                                   ChooseTypeOfDrink(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getIcedButton(), eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getIcedText());
-                                   
-                                   eachdrink.getToppings().getToppingsButton().add(eachdrink.getToppings().getToppingsButton().getBubbleButton());
-                                   eachdrink.getToppings().getToppingsButton().add(eachdrink.getToppings().getToppingsButton().getWhipCreamButton());
-                                   eachdrink.getToppings().getToppingsButton().add(eachdrink.getToppings().getToppingsButton().getJellyButton());
-                                   eachdrink.getToppings().getToppingsButton().add(eachdrink.getToppings().getToppingsButton().getYoghurtButton());
-                                }
-                                else if (choose.getCategory().equals("Milk & Coco")){
-                                   eachdrink.getTypeOfDrink().getTypeOfDrinkButton().add(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getHotButton());
-                                   eachdrink.getTypeOfDrink().getTypeOfDrinkButton().add(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getIced5Button());
-                                   eachdrink.getTypeOfDrink().getTypeOfDrinkButton().add(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getSmoothie10Button());
-                                   
-                                   ChooseTypeOfDrink(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getHotButton(), eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getHotText());
-                                   
-                                   eachdrink.getToppings().getToppingsButton().add(eachdrink.getToppings().getToppingsButton().getBubbleButton());
-                                   eachdrink.getToppings().getToppingsButton().add(eachdrink.getToppings().getToppingsButton().getWhipCreamButton());
-                                   eachdrink.getToppings().getToppingsButton().add(eachdrink.getToppings().getToppingsButton().getOreoButton());
-                                   eachdrink.getToppings().getToppingsButton().add(eachdrink.getToppings().getToppingsButton().getCookieButton());
-                                }
-                                else if (choose.getCategory().equals("Juice")){
-                                   eachdrink.getTypeOfDrink().getTypeOfDrinkButton().add(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getIcedButton());
-                                   eachdrink.getTypeOfDrink().getTypeOfDrinkButton().add(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getSmoothie5Button());
-                                   
-                                   ChooseTypeOfDrink(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getIcedButton(), eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getIcedText());
-                                   
-                                   eachdrink.getToppings().getToppingsButton().add(eachdrink.getToppings().getToppingsButton().getBubbleButton());
-                                   eachdrink.getToppings().getToppingsButton().add(eachdrink.getToppings().getToppingsButton().getWhipCreamButton());
-                                   eachdrink.getToppings().getToppingsButton().add(eachdrink.getToppings().getToppingsButton().getSnackButton());
-                                }
-                                else if (choose.getCategory().equals("Soda")){
-                                   eachdrink.getTypeOfDrink().getTypeOfDrinkButton().add(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getIcedButton());
-                                   
-                                   ChooseTypeOfDrink(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getIcedButton(), eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getIcedText());
-                                   
-                                   eachdrink.getToppings().getToppingsButton().add(eachdrink.getToppings().getToppingsButton().getBubbleButton());
-                                   eachdrink.getToppings().getToppingsButton().add(eachdrink.getToppings().getToppingsButton().getWhipCreamButton());
-                                   eachdrink.getToppings().getToppingsButton().add(eachdrink.getToppings().getToppingsButton().getJellyButton());
+
+    //                                Insert Type of Product
+
+    //                                ใช้ String category ที่รับมาคิดประเภทนะ ฝากด้วยคนที่ทำต่อจากฉัน
+
+                                    eachdrink.getTypeOfDrink().getTypeOfDrinkButton().removeAll();
+                                    eachdrink.getToppings().getToppingsButton().removeAll();
+                                    ChooseSweetnessLevel(eachdrink.getSweetnessLevel().getSweetnessLevelButton().getButton50(), eachdrink.getSweetnessLevel().getSweetnessLevelButton().getText50());
+                                    setChooseToppings();
+                                    typeOfDrinkPrice = 0;
+
+    //                                System.out.println(choose.getCategory());
+                                    if (choose.getCategory().equals("Coffee")){
+                                       eachdrink.getTypeOfDrink().getTypeOfDrinkButton().add(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getHotButton());
+                                       eachdrink.getTypeOfDrink().getTypeOfDrinkButton().add(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getIced5Button());
+                                       eachdrink.getTypeOfDrink().getTypeOfDrinkButton().add(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getSmoothie10Button());
+
+                                       ChooseTypeOfDrink(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getHotButton(), eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getHotText());
+
+                                       eachdrink.getToppings().getToppingsButton().add(eachdrink.getToppings().getToppingsButton().getWhipCreamButton());
+                                       eachdrink.getToppings().getToppingsButton().add(eachdrink.getToppings().getToppingsButton().getMilkFoamButton());
+                                       eachdrink.getToppings().getToppingsButton().add(eachdrink.getToppings().getToppingsButton().getChocolateSauceButton());
+                                    }
+                                    else if (choose.getCategory().equals("Tea")){
+                                       eachdrink.getTypeOfDrink().getTypeOfDrinkButton().add(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getIcedButton());
+                                       eachdrink.getTypeOfDrink().getTypeOfDrinkButton().add(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getSmoothie5Button());
+
+                                       ChooseTypeOfDrink(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getIcedButton(), eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getIcedText());
+
+                                       eachdrink.getToppings().getToppingsButton().add(eachdrink.getToppings().getToppingsButton().getBubbleButton());
+                                       eachdrink.getToppings().getToppingsButton().add(eachdrink.getToppings().getToppingsButton().getWhipCreamButton());
+                                       eachdrink.getToppings().getToppingsButton().add(eachdrink.getToppings().getToppingsButton().getJellyButton());
+                                       eachdrink.getToppings().getToppingsButton().add(eachdrink.getToppings().getToppingsButton().getYoghurtButton());
+                                    }
+                                    else if (choose.getCategory().equals("Milk & Coco")){
+                                       eachdrink.getTypeOfDrink().getTypeOfDrinkButton().add(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getHotButton());
+                                       eachdrink.getTypeOfDrink().getTypeOfDrinkButton().add(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getIced5Button());
+                                       eachdrink.getTypeOfDrink().getTypeOfDrinkButton().add(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getSmoothie10Button());
+
+                                       ChooseTypeOfDrink(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getHotButton(), eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getHotText());
+
+                                       eachdrink.getToppings().getToppingsButton().add(eachdrink.getToppings().getToppingsButton().getBubbleButton());
+                                       eachdrink.getToppings().getToppingsButton().add(eachdrink.getToppings().getToppingsButton().getWhipCreamButton());
+                                       eachdrink.getToppings().getToppingsButton().add(eachdrink.getToppings().getToppingsButton().getOreoButton());
+                                       eachdrink.getToppings().getToppingsButton().add(eachdrink.getToppings().getToppingsButton().getCookieButton());
+                                    }
+                                    else if (choose.getCategory().equals("Juice")){
+                                       eachdrink.getTypeOfDrink().getTypeOfDrinkButton().add(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getIcedButton());
+                                       eachdrink.getTypeOfDrink().getTypeOfDrinkButton().add(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getSmoothie5Button());
+
+                                       ChooseTypeOfDrink(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getIcedButton(), eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getIcedText());
+
+                                       eachdrink.getToppings().getToppingsButton().add(eachdrink.getToppings().getToppingsButton().getBubbleButton());
+                                       eachdrink.getToppings().getToppingsButton().add(eachdrink.getToppings().getToppingsButton().getWhipCreamButton());
+                                       eachdrink.getToppings().getToppingsButton().add(eachdrink.getToppings().getToppingsButton().getSnackButton());
+                                    }
+                                    else if (choose.getCategory().equals("Soda")){
+                                       eachdrink.getTypeOfDrink().getTypeOfDrinkButton().add(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getIcedButton());
+
+                                       ChooseTypeOfDrink(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getIcedButton(), eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getIcedText());
+
+                                       eachdrink.getToppings().getToppingsButton().add(eachdrink.getToppings().getToppingsButton().getBubbleButton());
+                                       eachdrink.getToppings().getToppingsButton().add(eachdrink.getToppings().getToppingsButton().getWhipCreamButton());
+                                       eachdrink.getToppings().getToppingsButton().add(eachdrink.getToppings().getToppingsButton().getJellyButton());
+                                    }
                                 }
                             }
                         }
-                    }
-                });
-                menu.getPnlMenu().add(productss);
-                count++;
+                    });
+                    menu.getPnlMenu().add(productss);
+                    count++;
+                }
             }
         }
         menu.getPnlMenu().setPreferredSize(new Dimension(720, (int) (Math.ceil(((double) count)/3.0) * 280)));
-        System.out.println(menu.getPnlMenu().getPreferredSize());
+//        System.out.println(menu.getPnlMenu().getPreferredSize());
     }
+            
+    public static ImageIcon FileImgtoImageIcon(String file_name) {
+//        set image size
+        int width = 81;
+        int height = 62;
+        try {
+            BufferedImage image = ImageIO.read(new File(file_name));
+            ImageIcon imageIcon = new ImageIcon(image);
+            Image newimg = image.getScaledInstance(width, height, java.awt.Image.SCALE_SMOOTH);
+            imageIcon = new ImageIcon(newimg);
+            return imageIcon;
+        } catch (IOException ex) {
+            ex.printStackTrace();
+            return null;
+        }
+    }
+    
     int index;
 
     
@@ -430,7 +463,7 @@ public class AppController implements ActionListener, WindowListener, MouseListe
             try {
                 index = db.getIndex();
                 index++;
-                System.out.println(index);
+//                System.out.println(index);
                 p = new Product(index, stock.getAdminProducts().getTfName().getText(), Double.parseDouble(stock.getAdminProducts().getTfPrice().getText()), stock.getAdminProducts().getCategory().getSelectedItem().toString(), fName, 0);
 
                 db.addProduct(p);
@@ -477,19 +510,32 @@ public class AppController implements ActionListener, WindowListener, MouseListe
             }
         }
         if (ae.getSource().equals(login.getBtnLogin())) {
-            if(login.getTfUsername().getText().equals("madara") && login.getjPasswordField1().getText().equals("55555")){
+//            if(login.getTfUsername().getText().equals("madara") && login.getjPasswordField1().getText().equals("55555")){
                 mw.getPnlContainer().setVisible(false);
-                adminGUI.setVisible(true);
                 login.setVisible(false);
+
+                adminGUI.setVisible(true);
+                
+                for (int i = 0; i < db.getProducts().size(); i++) {
+//                    fecth data
+                    int population = ((Product) (db.getProducts().get(i))).getPopulation();
+                    String img = ((Product) (db.getProducts().get(i))).getImg();
+                    String productName = ((Product) (db.getProducts().get(i))).getProductName();
+                    String category= ((Product) (db.getProducts().get(i))).getCategory();
+
+                    Object[] data = {population, img, productName, category};
+                    adminGUI.getAdminControl().getTable().getTableModel().addRow(data);
+                }
+                
                 adminGUI.getAdminControl().getStock().sendData(new Stock(db.getProducts().size()));
-            }
-            else if(login.getTfUsername().getText().equals("madara")){
-                JOptionPane jp = new JOptionPane();
-                jp.showMessageDialog(null, "Wrong Password", "Worng Password", JOptionPane.ERROR_MESSAGE);
-            }else{
-                JOptionPane jp = new JOptionPane();
-                jp.showMessageDialog(null, "Wrong Username", "Worng Username", JOptionPane.ERROR_MESSAGE);
-            }
+//            }
+//            else if(login.getTfUsername().getText().equals("madara")){
+//                JOptionPane jp = new JOptionPane();
+//                jp.showMessageDialog(null, "Wrong Password", "Worng Password", JOptionPane.ERROR_MESSAGE);
+//            }else{
+//                JOptionPane jp = new JOptionPane();
+//                jp.showMessageDialog(null, "Wrong Username", "Worng Username", JOptionPane.ERROR_MESSAGE);
+//            }
             
         }
     }
@@ -515,7 +561,7 @@ public class AppController implements ActionListener, WindowListener, MouseListe
 
                 String fileName = p.toString();
                 String fileNameOutput = p.getFileName().toString().replaceFirst("[.][^.]+$", "");
-                String newPath = "public/products";
+                String newPath = "src/products";
                 File directory = new File(newPath);
                 if (!directory.exists()) {
                     directory.mkdirs();
@@ -527,6 +573,7 @@ public class AppController implements ActionListener, WindowListener, MouseListe
         }
     }
 
+    
     public void saveFile(File sourceFile, File destinationFile) {
         try {
             Files.copy(sourceFile.toPath(), destinationFile.toPath());
@@ -572,6 +619,29 @@ public class AppController implements ActionListener, WindowListener, MouseListe
     @Override
     public void windowDeactivated(WindowEvent e) {
     }
+    
+    public void updatelog(){
+        choose.setPrice(choose.getPrice() + typeOfDrinkPrice + toppingsPrice);
+
+        
+        balance += choose.getPrice();
+            totally = balance + totally;
+
+        System.out.println("today " + balance + ", totally " + totally);
+        
+        adminGUI.getAdminControl().getBalance().getLblValue().setText("      " + balance + " ฿");
+        adminGUI.getAdminControl().getTotally().getLblValue().setText("      " + totally + " ฿");
+        adminGUI.getAdminControl().getStock().sendData(new Stock(db.getProducts().size()));
+        
+        for(int i = 0;i<db.getProducts().size();i++){
+            if(((Product)db.getProducts().get(i)).getProductName().equals(choose.getProductName())){
+                System.out.println(String.format("[Purchased!] ID : %s Product : %s Price : %.2f Category : %s Population : %d", ((Product)db.getProducts().get(i)).getId(), ((Product)db.getProducts().get(i)).getProductName(),
+                        choose.getPrice(), ((Product)db.getProducts().get(i)).getCategory(), ((Product)db.getProducts().get(i)).getPopulation()));
+                
+                ((Product)db.getProducts().get(i)).setPopulation(1);
+            }
+        }
+    }
 
     private ViewModel view = new ViewModel();
     private BufferedImage img;
@@ -584,7 +654,6 @@ public class AppController implements ActionListener, WindowListener, MouseListe
     int typeOfDrinkPrice, toppingsPrice = 0;
     boolean isBubble, isWhipCream, isMilkFoam, isOreo, isJelly, isYoghurt, isCookie, isSnack, isChocolateSauce = false;
     
-
     @Override
     public void mouseClicked(MouseEvent e) {
         if (e.getSource().equals(adminGUI.getAdminControl().getStock())) {
@@ -630,13 +699,9 @@ public class AppController implements ActionListener, WindowListener, MouseListe
 //        check username
 
         if (e.getSource().equals(mw.getPnlRecommend()) || e.getSource().equals(menu.getCatagoryGUI().getRecommendButton())) {
-//            mw.getPnlContainer().setVisible(false);
-//            menu.setVisible(true);
-//            menu.getPnlMenu().removeAll();
-//            menu.getPnlMenu().revalidate();
-//            menu.getPnlMenu().repaint();
-            mw.getPnlContainer().setVisible(false);
-            paymentmain.setVisible(true);
+            ChooseProduct("Recommend", menu.getCatagoryGUI().getRecommendButton());
+
+
         } else if (e.getSource().equals(mw.getPnlCoffee()) || e.getSource().equals(menu.getCatagoryGUI().getCoffeeButton())) {
             ChooseProduct("Coffee", menu.getCatagoryGUI().getCoffeeButton());
             
@@ -671,7 +736,7 @@ public class AppController implements ActionListener, WindowListener, MouseListe
             
             paymentmain.getProductImg().setIcon(new ImageIcon(getClass().getResource(String.format("/products/%s", choose.getImg()))));
             paymentmain.getProductName().setText(choose.getProductName());
-            paymentmain.getProductValue().setText(Double.toString(choose.getPrice() + typeOfDrinkPrice + toppingsPrice));
+            paymentmain.getProductValue().setText(String.format("%.2f ฿", choose.getPrice() + typeOfDrinkPrice + toppingsPrice));
         }
         else if (e.getSource().equals(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getHotButton())){
             typeOfDrinkPrice = 0;
@@ -753,9 +818,16 @@ public class AppController implements ActionListener, WindowListener, MouseListe
         } else if (e.getSource().equals(paymentmain.getButtonCash())) {
             paymentmain.setVisible(false);
             paymentinsert.setVisible(true);
-            paymentinsert.getTotal().setText("Tolal : "+(Double.toString(choose.getPrice() + typeOfDrinkPrice + toppingsPrice))+" Baht");
+            
+            
+            paymentinsert.getTotal().setText(String.format("Tolal : %.2f Baht", choose.getPrice() + typeOfDrinkPrice + toppingsPrice));
+            
+           if((Integer.parseInt(paymentinsert.getTextInsert().getText()) < (choose.getPrice() + typeOfDrinkPrice + toppingsPrice))){
+               JOptionPane.showMessageDialog(null,"Not Enough.", "Error", JOptionPane.PLAIN_MESSAGE);
+           }
+            
         } else if (e.getSource().equals(paymentmain.getButtonQrCode()) || e.getSource().equals(paymentmain.getButtonTrue())) {
-            paymentmain.setVisible(false);
+            paymentmain.setVisible(false);  
             paymentqr.setVisible(true);
         }
 
@@ -763,6 +835,9 @@ public class AppController implements ActionListener, WindowListener, MouseListe
             paymentqr.setVisible(false);
             paymentmain.setVisible(true);
         } else if (e.getSource().equals(paymentqr.getButtonConfirm())) {
+//            Sucess Payment
+            updatelog();
+
             paymentqr.setVisible(false);
             paymentsuccess.setVisible(true);
         }
@@ -771,24 +846,42 @@ public class AppController implements ActionListener, WindowListener, MouseListe
             paymentinsert.setVisible(false);
             paymentmain.setVisible(true);
             
+            
             //paymentChange
-        } else if (e.getSource().equals(paymentinsert.getButtonConfirm())) {
-            paymentchange.getReceived().setText("Received amount : " + (Double.toString(choose.getPrice() + typeOfDrinkPrice + toppingsPrice))+" Baht");
-            amountAndChange = (Double.parseDouble(paymentinsert.getTextInsert().getText()))-(choose.getPrice() + typeOfDrinkPrice + toppingsPrice);
-            paymentchange.getChange().setText(("Chane : "+ amountAndChange +" Baht"));
-            paymentinsert.setVisible(false);
-            paymentchange.getButtonConfirm().setVisible(false);
-            paymentchange.setVisible(true);
+        }
+        if (e.getSource().equals(paymentinsert.getButtonConfirm())) {
+            try{
+                if((Integer.parseInt(paymentinsert.getTextInsert().getText()) < (choose.getPrice() + typeOfDrinkPrice + toppingsPrice))){
+                    JOptionPane.showMessageDialog(null,"Not Enough.", "Error", JOptionPane.PLAIN_MESSAGE);
+                } else {
+                     paymentinsert.setVisible(false);
+                     paymentchange.getButtonConfirm().setVisible(false);
+                     paymentchange.setVisible(true);
 
+
+                     paymentchange.getReceived().setText("Received amount : " + (Double.toString(choose.getPrice() + typeOfDrinkPrice + toppingsPrice))+" Baht");
+                     amountAndChange = (Double.parseDouble(paymentinsert.getTextInsert().getText()))-(choose.getPrice() + typeOfDrinkPrice + toppingsPrice);
+                     paymentchange.getChange().setText(("Change : "+ amountAndChange +" Baht"));
+                 }
+           } catch (NumberFormatException ex) {
+               JOptionPane.showMessageDialog(null,"Please Fill.", "Error", JOptionPane.PLAIN_MESSAGE);
+           }
+            
         }
 
         if (e.getSource().equals(paymentchange.getButtonConfirm())) {
+//            Sucess Payment
+            updatelog();
+            
             paymentchange.setVisible(false);
             paymentsuccess.setVisible(true);
             
             paymentchange.getButtonConfirm().setBackground(new Color(246, 230, 230));
             
             paymentchange.getButtonConfirm().setEnabled(false);
+            
+            
+
         }
 
         if (e.getSource().equals(paymentsuccess.getButtonConfirm())) {

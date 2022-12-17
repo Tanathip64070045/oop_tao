@@ -72,6 +72,6 @@ public class Product implements Serializable{
     }
 
     public void setPopulation(int population) {
-        this.population = population;
+        this.population += population;
     }
 }
