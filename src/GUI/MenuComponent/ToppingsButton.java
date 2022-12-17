@@ -6,6 +6,7 @@ package GUI.MenuComponent;
 
 import GUI.Components.pnlBorder;
 import java.awt.Color;
+import javax.swing.JLabel;
 
 /**
  *
@@ -30,14 +31,14 @@ public class ToppingsButton extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        oreoButton = new GUI.Components.pnlBorder();
-        oreoText = new javax.swing.JLabel();
         bubbleButton = new GUI.Components.pnlBorder();
         bubbleText = new javax.swing.JLabel();
         whipCreamButton = new GUI.Components.pnlBorder();
         whipCreamText = new javax.swing.JLabel();
         milkFoamButton = new GUI.Components.pnlBorder();
         milkFoamText = new javax.swing.JLabel();
+        oreoButton = new GUI.Components.pnlBorder();
+        oreoText = new javax.swing.JLabel();
         jellyButton = new GUI.Components.pnlBorder();
         jellyText = new javax.swing.JLabel();
         yoghurtButton = new GUI.Components.pnlBorder();
@@ -48,16 +49,6 @@ public class ToppingsButton extends javax.swing.JPanel {
         snackText = new javax.swing.JLabel();
         chocolateSauceButton = new GUI.Components.pnlBorder();
         chocolateSauceText = new javax.swing.JLabel();
-
-        oreoButton.setBackground(new java.awt.Color(144, 111, 118));
-        oreoButton.setPreferredSize(new java.awt.Dimension(135, 35));
-        oreoButton.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        oreoText.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        oreoText.setForeground(new java.awt.Color(255, 255, 255));
-        oreoText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        oreoText.setText("Oreo");
-        oreoButton.add(oreoText, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 5, 110, -1));
 
         bubbleButton.setBackground(new java.awt.Color(144, 111, 118));
         bubbleButton.setPreferredSize(new java.awt.Dimension(135, 35));
@@ -88,6 +79,16 @@ public class ToppingsButton extends javax.swing.JPanel {
         milkFoamText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         milkFoamText.setText("Milk Foam");
         milkFoamButton.add(milkFoamText, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 5, 120, -1));
+
+        oreoButton.setBackground(new java.awt.Color(144, 111, 118));
+        oreoButton.setPreferredSize(new java.awt.Dimension(135, 35));
+        oreoButton.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        oreoText.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        oreoText.setForeground(new java.awt.Color(255, 255, 255));
+        oreoText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        oreoText.setText("Oreo");
+        oreoButton.add(oreoText, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 5, 110, -1));
 
         jellyButton.setBackground(new java.awt.Color(144, 111, 118));
         jellyButton.setPreferredSize(new java.awt.Dimension(135, 35));
@@ -129,8 +130,6 @@ public class ToppingsButton extends javax.swing.JPanel {
         snackText.setText("Snack");
         snackButton.add(snackText, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 5, 110, -1));
 
-        setPreferredSize(new java.awt.Dimension(574, 45));
-
         chocolateSauceButton.setBackground(new java.awt.Color(144, 111, 118));
         chocolateSauceButton.setPreferredSize(new java.awt.Dimension(135, 35));
 
@@ -153,7 +152,7 @@ public class ToppingsButton extends javax.swing.JPanel {
             .addComponent(chocolateSauceText, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
         );
 
-        add(chocolateSauceButton);
+        setPreferredSize(new java.awt.Dimension(574, 45));
     }// </editor-fold>//GEN-END:initComponents
 
 
@@ -212,5 +211,41 @@ public class ToppingsButton extends javax.swing.JPanel {
 
     public pnlBorder getYoghurtButton() {
         return yoghurtButton;
+    }
+
+    public JLabel getBubbleText() {
+        return bubbleText;
+    }
+
+    public JLabel getChocolateSauceText() {
+        return chocolateSauceText;
+    }
+
+    public JLabel getCookieText() {
+        return cookieText;
+    }
+
+    public JLabel getJellyText() {
+        return jellyText;
+    }
+
+    public JLabel getMilkFoamText() {
+        return milkFoamText;
+    }
+
+    public JLabel getOreoText() {
+        return oreoText;
+    }
+
+    public JLabel getSnackText() {
+        return snackText;
+    }
+
+    public JLabel getWhipCreamText() {
+        return whipCreamText;
+    }
+
+    public JLabel getYoghurtText() {
+        return yoghurtText;
     }
 }

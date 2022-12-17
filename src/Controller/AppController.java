@@ -121,6 +121,15 @@ public class AppController implements ActionListener, WindowListener, MouseListe
         eachdrink.getSweetnessLevel().getSweetnessLevelButton().getButton50().addMouseListener(this);
         eachdrink.getSweetnessLevel().getSweetnessLevelButton().getButton75().addMouseListener(this);
         eachdrink.getSweetnessLevel().getSweetnessLevelButton().getButton100().addMouseListener(this);
+        eachdrink.getToppings().getToppingsButton().getBubbleButton().addMouseListener(this);
+        eachdrink.getToppings().getToppingsButton().getWhipCreamButton().addMouseListener(this);
+        eachdrink.getToppings().getToppingsButton().getMilkFoamButton().addMouseListener(this);
+        eachdrink.getToppings().getToppingsButton().getOreoButton().addMouseListener(this);
+        eachdrink.getToppings().getToppingsButton().getJellyButton().addMouseListener(this);
+        eachdrink.getToppings().getToppingsButton().getYoghurtButton().addMouseListener(this);
+        eachdrink.getToppings().getToppingsButton().getCookieButton().addMouseListener(this);
+        eachdrink.getToppings().getToppingsButton().getSnackButton().addMouseListener(this);
+        eachdrink.getToppings().getToppingsButton().getChocolateSauceButton().addMouseListener(this);
         
 
         paymentmain.getBackButton().addMouseListener(this);
@@ -246,6 +255,7 @@ public class AppController implements ActionListener, WindowListener, MouseListe
                                 eachdrink.getTypeOfDrink().getTypeOfDrinkButton().removeAll();
                                 eachdrink.getToppings().getToppingsButton().removeAll();
                                 ChooseSweetnessLevel(eachdrink.getSweetnessLevel().getSweetnessLevelButton().getButton50(), eachdrink.getSweetnessLevel().getSweetnessLevelButton().getText50());
+                                setChooseToppings();
 
                                 System.out.println(choose.getCategory());
                                 if (choose.getCategory().equals("Coffee")){
@@ -357,6 +367,47 @@ public class AppController implements ActionListener, WindowListener, MouseListe
         eachdrink.validate();
         eachdrink.repaint();
    
+    }
+    
+    public boolean ChooseToppings(boolean isTopping, pnlBorder btn, JLabel text){
+        if (isTopping){
+            btn.setBackground(Color.decode("#906F76"));
+            text.setForeground(Color.decode("#FFFFFF"));
+            toppingsPrice -= 5;
+            isTopping = false;
+        }
+        else {
+            btn.setBackground(Color.decode("#F6E6E6"));
+            text.setForeground(Color.decode("#000000"));
+            toppingsPrice += 5;
+            isTopping = true;
+        }
+        
+        eachdrink.getPurchasingButton().getPriceText().setText(String.format("Purchasing | %.2f ฿", choose.getPrice() + typeOfDrinkPrice + toppingsPrice));
+        
+        eachdrink.invalidate();
+        eachdrink.validate();
+        eachdrink.repaint();
+        return isTopping;
+    }
+    
+    public boolean ChooseToppings(pnlBorder btn, JLabel text){
+        btn.setBackground(Color.decode("#906F76"));
+        text.setForeground(Color.decode("#FFFFFF"));
+        return false;
+    }
+    
+    public void setChooseToppings(){
+        isBubble = ChooseToppings(eachdrink.getToppings().getToppingsButton().getBubbleButton(), eachdrink.getToppings().getToppingsButton().getBubbleText());
+        isWhipCream = ChooseToppings(eachdrink.getToppings().getToppingsButton().getWhipCreamButton(), eachdrink.getToppings().getToppingsButton().getWhipCreamText());
+        isMilkFoam = ChooseToppings(eachdrink.getToppings().getToppingsButton().getMilkFoamButton(), eachdrink.getToppings().getToppingsButton().getMilkFoamText());
+        isOreo = ChooseToppings(eachdrink.getToppings().getToppingsButton().getOreoButton(), eachdrink.getToppings().getToppingsButton().getOreoText());
+        isJelly = ChooseToppings(eachdrink.getToppings().getToppingsButton().getJellyButton(), eachdrink.getToppings().getToppingsButton().getJellyText());
+        isYoghurt = ChooseToppings(eachdrink.getToppings().getToppingsButton().getYoghurtButton(), eachdrink.getToppings().getToppingsButton().getYoghurtText());
+        isCookie = ChooseToppings(eachdrink.getToppings().getToppingsButton().getCookieButton(), eachdrink.getToppings().getToppingsButton().getCookieText());
+        isSnack = ChooseToppings(eachdrink.getToppings().getToppingsButton().getSnackButton(), eachdrink.getToppings().getToppingsButton().getSnackText());
+        isChocolateSauce = ChooseToppings(eachdrink.getToppings().getToppingsButton().getChocolateSauceButton(), eachdrink.getToppings().getToppingsButton().getChocolateSauceText());
+        toppingsPrice = 0;
     }
     
     @Override
@@ -507,8 +558,9 @@ public class AppController implements ActionListener, WindowListener, MouseListe
     
     Product choose;
     
-    int typeOfDrinkPrice = 0;
-    int toppingsPrice = 0;
+    int typeOfDrinkPrice, toppingsPrice = 0;
+    boolean isBubble, isWhipCream, isMilkFoam, isOreo, isJelly, isYoghurt, isCookie, isSnack, isChocolateSauce = false;
+    
 
     @Override
     public void mouseClicked(MouseEvent e) {
@@ -595,7 +647,7 @@ public class AppController implements ActionListener, WindowListener, MouseListe
             
             paymentmain.getProductImg().setIcon(new ImageIcon(getClass().getResource(String.format("/products/%s", choose.getImg()))));
             paymentmain.getProductName().setText(choose.getProductName());
-            paymentmain.getProductValue().setText(Double.toString(choose.getPrice()));
+            paymentmain.getProductValue().setText(Double.toString(choose.getPrice() + typeOfDrinkPrice + toppingsPrice));
         }
         else if (e.getSource().equals(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getHotButton())){
             typeOfDrinkPrice = 0;
@@ -641,6 +693,33 @@ public class AppController implements ActionListener, WindowListener, MouseListe
         else if (e.getSource().equals(eachdrink.getSweetnessLevel().getSweetnessLevelButton().getButton100())){
             ChooseSweetnessLevel(eachdrink.getSweetnessLevel().getSweetnessLevelButton().getButton100(), eachdrink.getSweetnessLevel().getSweetnessLevelButton().getText100());
             System.out.println("SweetnessLevel 100%");
+        }
+        else if (e.getSource().equals(eachdrink.getToppings().getToppingsButton().getBubbleButton())){
+            isBubble = ChooseToppings(isBubble, eachdrink.getToppings().getToppingsButton().getBubbleButton(), eachdrink.getToppings().getToppingsButton().getBubbleText());
+        }
+        else if (e.getSource().equals(eachdrink.getToppings().getToppingsButton().getWhipCreamButton())){
+            isWhipCream = ChooseToppings(isWhipCream, eachdrink.getToppings().getToppingsButton().getWhipCreamButton(), eachdrink.getToppings().getToppingsButton().getWhipCreamText());
+        }
+        else if (e.getSource().equals(eachdrink.getToppings().getToppingsButton().getMilkFoamButton())){
+            isMilkFoam = ChooseToppings(isMilkFoam, eachdrink.getToppings().getToppingsButton().getMilkFoamButton(), eachdrink.getToppings().getToppingsButton().getMilkFoamText());
+        }
+        else if (e.getSource().equals(eachdrink.getToppings().getToppingsButton().getOreoButton())){
+            isOreo = ChooseToppings(isOreo, eachdrink.getToppings().getToppingsButton().getOreoButton(), eachdrink.getToppings().getToppingsButton().getOreoText());
+        }
+        else if (e.getSource().equals(eachdrink.getToppings().getToppingsButton().getJellyButton())){
+            isJelly = ChooseToppings(isJelly, eachdrink.getToppings().getToppingsButton().getJellyButton(), eachdrink.getToppings().getToppingsButton().getJellyText());
+        }
+        else if (e.getSource().equals(eachdrink.getToppings().getToppingsButton().getYoghurtButton())){
+            isYoghurt = ChooseToppings(isYoghurt, eachdrink.getToppings().getToppingsButton().getYoghurtButton(), eachdrink.getToppings().getToppingsButton().getYoghurtText());
+        }
+        else if (e.getSource().equals(eachdrink.getToppings().getToppingsButton().getCookieButton())){
+            isCookie = ChooseToppings(isCookie, eachdrink.getToppings().getToppingsButton().getCookieButton(), eachdrink.getToppings().getToppingsButton().getCookieText());
+        }
+        else if (e.getSource().equals(eachdrink.getToppings().getToppingsButton().getSnackButton())){
+            isSnack = ChooseToppings(isBubble, eachdrink.getToppings().getToppingsButton().getSnackButton(), eachdrink.getToppings().getToppingsButton().getSnackText());
+        }
+        else if (e.getSource().equals(eachdrink.getToppings().getToppingsButton().getChocolateSauceButton())){
+            isChocolateSauce = ChooseToppings(isChocolateSauce, eachdrink.getToppings().getToppingsButton().getChocolateSauceButton(), eachdrink.getToppings().getToppingsButton().getChocolateSauceText());
         }
         
 
