@@ -716,7 +716,7 @@ public class AppController implements ActionListener, WindowListener, MouseListe
             isCookie = ChooseToppings(isCookie, eachdrink.getToppings().getToppingsButton().getCookieButton(), eachdrink.getToppings().getToppingsButton().getCookieText());
         }
         else if (e.getSource().equals(eachdrink.getToppings().getToppingsButton().getSnackButton())){
-            isSnack = ChooseToppings(isBubble, eachdrink.getToppings().getToppingsButton().getSnackButton(), eachdrink.getToppings().getToppingsButton().getSnackText());
+            isSnack = ChooseToppings(isSnack, eachdrink.getToppings().getToppingsButton().getSnackButton(), eachdrink.getToppings().getToppingsButton().getSnackText());
         }
         else if (e.getSource().equals(eachdrink.getToppings().getToppingsButton().getChocolateSauceButton())){
             isChocolateSauce = ChooseToppings(isChocolateSauce, eachdrink.getToppings().getToppingsButton().getChocolateSauceButton(), eachdrink.getToppings().getToppingsButton().getChocolateSauceText());
