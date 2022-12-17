@@ -5,6 +5,7 @@
 package GUI.PaymentGUI;
 
 import GUI.PaymentGUI.Components.ButtonConfirm;
+import java.awt.Label;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
@@ -184,5 +185,12 @@ public class PaymentInsertWindow extends javax.swing.JPanel {
     public JTextField getTextInsert() {
         return TextInsert;
     }
+
+    public Label getTotal() {
+        return Total;
+    }
+    
+    
+    
     
 }

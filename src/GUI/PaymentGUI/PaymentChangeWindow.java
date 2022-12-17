@@ -137,4 +137,15 @@ public class PaymentChangeWindow extends javax.swing.JPanel {
     public Label getLabel3() {
         return label3;
     }  
+
+    public Label getChange() {
+        return Change;
+    }
+
+    public Label getReceived() {
+        return Received;
+    }
+    
+    
+    
 }
