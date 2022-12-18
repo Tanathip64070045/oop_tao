@@ -7,6 +7,7 @@ package GUI.PaymentGUI.Components;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
+import javax.swing.JLabel;
 
 /**
  *
@@ -69,6 +70,10 @@ public class PaymentMainWindowCashButton extends javax.swing.JPanel {
                 .addGap(8, 8, 8))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
 
     @Override
     protected void paintChildren(Graphics g) {

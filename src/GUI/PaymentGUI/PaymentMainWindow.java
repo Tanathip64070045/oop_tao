@@ -17,6 +17,8 @@ import javax.swing.JLabel;
  */
 public class PaymentMainWindow extends javax.swing.JPanel {
 
+    public Object PaymentMainWindowCashButton;
+
     /**
      * Creates new form PaymentMainWindow
      */

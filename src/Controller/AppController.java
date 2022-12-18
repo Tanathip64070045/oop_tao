@@ -13,6 +13,7 @@ import GUI.EachDrink;
 import GUI.MainWindow;
 import GUI.Menu;
 import GUI.MenuComponent.DrinkGUI;
+import GUI.PaymentGUI.Components.PaymentMainWindowCashButton;
 import GUI.PaymentGUI.PaymentChangeWindow;
 import GUI.PaymentGUI.PaymentInsertWindow;
 import GUI.PaymentGUI.PaymentMainWindow;
@@ -51,6 +52,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileFilter;
 import javax.swing.filechooser.FileNameExtensionFilter;
+import GUI.PaymentGUI.Components.*;
 
 public class AppController implements ActionListener, WindowListener, MouseListener, Runnable, ComponentListener, KeyListener {
 
@@ -364,7 +366,7 @@ public class AppController implements ActionListener, WindowListener, MouseListe
                                 for (int n = 0; n < count; n++) {
                                     if (e.getSource().equals(tle.get(n))) {
                                 tle.get(n).setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
-                                tle.get(n).setBackground(Color.decode("#AF7B50"));
+                                tle.get(n).setBackground(Color.decode("#B09393"));
                                     }
                                 }
                             }
@@ -484,7 +486,7 @@ public class AppController implements ActionListener, WindowListener, MouseListe
                             for (int n = 0; n < count; n++) {
                                 if (e.getSource().equals(tle.get(n))) {
                             tle.get(n).setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
-                            tle.get(n).setBackground(Color.decode("#AF7B50"));
+                            tle.get(n).setBackground(Color.decode("#B09393"));
                                 }
                             }
                         }
@@ -666,9 +668,15 @@ public class AppController implements ActionListener, WindowListener, MouseListe
             if (login.getTfUsername().getText().equals("madara") && login.getjPasswordField1().getText().equals("55555")) {
                 mw.getPnlContainer().setVisible(false);
                 login.setVisible(false);
-
                 adminGUI.setVisible(true);
 
+            }
+            else if(login.getTfUsername().getText().equals("madara")){
+                JOptionPane jp = new JOptionPane();
+                jp.showMessageDialog(null, "Wrong Password", "Worng Password", JOptionPane.ERROR_MESSAGE);
+            }else{
+                JOptionPane jp = new JOptionPane();
+                jp.showMessageDialog(null, "Wrong Username", "Worng Username", JOptionPane.ERROR_MESSAGE);
             }
 
             for (int i = 0; i < db.getProducts().size(); i++) {
@@ -684,13 +692,7 @@ public class AppController implements ActionListener, WindowListener, MouseListe
 
             adminGUI.getAdminControl().getStock().sendData(new Stock(db.getProducts().size()));
 //            }
-//            else if(login.getTfUsername().getText().equals("madara")){
-//                JOptionPane jp = new JOptionPane();
-//                jp.showMessageDialog(null, "Wrong Password", "Worng Password", JOptionPane.ERROR_MESSAGE);
-//            }else{
-//                JOptionPane jp = new JOptionPane();
-//                jp.showMessageDialog(null, "Wrong Username", "Worng Username", JOptionPane.ERROR_MESSAGE);
-//            }
+//            
 
         }
     }
@@ -1063,18 +1065,18 @@ public class AppController implements ActionListener, WindowListener, MouseListe
         }
 
         if (e.getSource().equals(mw.getPnlRecommend())) {
-            hoverButton(mw.getPnlRecommend(), "#AF7B50", "#C59E7E");
+            hoverButton(mw.getPnlRecommend(), "#F6E6E6", "#C59E7E");
 
         } else if (e.getSource().equals(mw.getPnlCoffee())) {
             hoverButton(mw.getPnlCoffee(), "#F6E6E6", "#C59E7E");
         } else if (e.getSource().equals(mw.getPnlTea())) {
-            hoverButton(mw.getPnlTea(), "#AF7B50", "#C59E7E");
+            hoverButton(mw.getPnlTea(), "#F6E6E6", "#C59E7E");
         } else if (e.getSource().equals(mw.getPnlMilk())) {
-            hoverButton(mw.getPnlMilk(), "#AF7B50", "#C59E7E");
+            hoverButton(mw.getPnlMilk(), "#F6E6E6", "#C59E7E");
         } else if (e.getSource().equals(mw.getPnlJuice())) {
-            hoverButton(mw.getPnlJuice(), "#AF7B50", "#C59E7E");
+            hoverButton(mw.getPnlJuice(), "#F6E6E6", "#C59E7E");
         } else if (e.getSource().equals(mw.getPnlSoda())) {
-            hoverButton(mw.getPnlSoda(), "#AF7B50", "#C59E7E");
+            hoverButton(mw.getPnlSoda(), "#F6E6E6", "#C59E7E");
         }
         
         if (e.getSource().equals(menu.getCatagoryGUI().getRecommendButton())){
@@ -1147,40 +1149,151 @@ public class AppController implements ActionListener, WindowListener, MouseListe
         if (e.getSource().equals(paymentmain.getBackButton())) {
             paymentmain.getBackButton().setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
         } else if (e.getSource().equals(paymentmain.getButtonCash())) {
+            paymentmain.getButtonCash().setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
+             paymentmain.getButtonCash().setBackground(Color.decode("#C6B2A1"));
+             paymentmain.getButtonCash().getjLabel1().setForeground(Color.decode("#C6B2A1"));
+             
+            paymentmain.getButtonCash().addMouseListener(new MouseAdapter() {
+                
+            @Override
+            public void mouseExited(MouseEvent e) {
+                paymentmain.getButtonCash().setBackground(Color.decode("#564747"));
+                paymentmain.getButtonCash().getjLabel1().setForeground(Color.decode("#564747"));
+            }
+        });
 
         } else if (e.getSource().equals(paymentmain.getButtonQrCode())) {
-
+            paymentmain.getButtonQrCode().setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
+            paymentmain.getButtonQrCode().setBackground(Color.decode("#C6B2A1"));
+             
+            paymentmain.getButtonQrCode().addMouseListener(new MouseAdapter() {
+                
+            @Override
+            public void mouseExited(MouseEvent e) {
+                paymentmain.getButtonQrCode().setBackground(Color.decode("#564747"));
+                
+            }
+        });
         }
           else if (e.getSource().equals(paymentmain.getButtonCancel())) {
-
+              paymentmain.getButtonCancel().setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
+             paymentmain.getButtonCancel().setBackground(Color.decode("#9F5151"));
+             
+            paymentmain.getButtonCancel().addMouseListener(new MouseAdapter() {
+               
+            @Override
+            public void mouseExited(MouseEvent e) {
+                paymentmain.getButtonCancel().setBackground(Color.decode("#A32B2B"));
+                
+            }
+        });
         }
         else if (e.getSource().equals(paymentmain.getButtonTrue())) {
-
+             paymentmain.getButtonTrue().setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
+             paymentmain.getButtonTrue().setBackground(Color.decode("#C6B2A1"));
+             
+            paymentmain.getButtonTrue().addMouseListener(new MouseAdapter() {
+               
+            @Override
+            public void mouseExited(MouseEvent e) {
+                paymentmain.getButtonTrue().setBackground(Color.decode("#564747"));
+                
+            }
+        });
         }
 
-        if (e.getSource().equals(paymentqr.getBackButton()) || e.getSource().equals(paymentqr.getButtonCancel())) {
-
-        } else if (e.getSource().equals(paymentqr.getButtonConfirm())) {
-
+        if (e.getSource().equals(paymentqr.getBackButton())) {
+             paymentqr.getBackButton().setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
+             
+        }
+        if(e.getSource().equals(paymentqr.getButtonCancel())){
+             paymentqr.getButtonCancel().setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
+             paymentqr.getButtonCancel().setBackground(Color.decode("#9F5151"));
+             
+            paymentqr.getButtonCancel().addMouseListener(new MouseAdapter() {
+               
+            @Override
+            public void mouseExited(MouseEvent e) {
+                paymentqr.getButtonCancel().setBackground(Color.decode("#A32B2B"));
+                
+            }
+        });
+            
+        }
+        if (e.getSource().equals(paymentqr.getButtonConfirm())) {
+            paymentqr.getButtonConfirm().setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
+            paymentqr.getButtonConfirm().setBackground(Color.decode("#DAC1AC"));
+             
+            paymentqr.getButtonConfirm().addMouseListener(new MouseAdapter() {
+               
+            @Override
+            public void mouseExited(MouseEvent e) {
+                paymentqr.getButtonConfirm().setBackground(Color.decode("#C59E7E"));
+                
+            }
+        });
         }
 
-        if (e.getSource().equals(paymentinsert.getBackButton()) || e.getSource().equals(paymentinsert.getButtonCancel())) {
-
+        if (e.getSource().equals(paymentinsert.getBackButton())) {
+            paymentinsert.getBackButton().setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
+        }
+        if(e.getSource().equals(paymentinsert.getButtonCancel())){
+            paymentinsert.getButtonCancel().setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
+            paymentinsert.getButtonCancel().setBackground(Color.decode("#9F5151"));
+             
+            paymentinsert.getButtonCancel().addMouseListener(new MouseAdapter() {
+               
+            @Override
+            public void mouseExited(MouseEvent e) {
+                paymentinsert.getButtonCancel().setBackground(Color.decode("#A32B2B"));
+                
+            }
+        });
         }
         if (e.getSource().equals(paymentinsert.getButtonConfirm())) {
-
+            paymentinsert.getButtonConfirm().setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
+            paymentinsert.getButtonConfirm().setBackground(Color.decode("#DAC1AC"));
+             
+            paymentinsert.getButtonConfirm().addMouseListener(new MouseAdapter() {
+               
+            @Override
+            public void mouseExited(MouseEvent e) {
+                paymentinsert.getButtonConfirm().setBackground(Color.decode("#C59E7E"));
+                
+            }
+        });
         }
 
         if (e.getSource().equals(paymentchange.getButtonConfirm())) {
-
+            paymentchange.getButtonConfirm().setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
+            paymentchange.getButtonConfirm().setBackground(Color.decode("#DAC1AC"));
+             
+            paymentchange.getButtonConfirm().addMouseListener(new MouseAdapter() {
+               
+            @Override
+            public void mouseExited(MouseEvent e) {
+                paymentchange.getButtonConfirm().setBackground(Color.decode("#C59E7E"));
+                
+            }
+        });
         }
 
         if (e.getSource().equals(paymentsuccess.getButtonConfirm())) {
-
+            paymentsuccess.getButtonConfirm().setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
+            paymentsuccess.getButtonConfirm().setBackground(Color.decode("#DAC1AC"));
+             
+            paymentsuccess.getButtonConfirm().addMouseListener(new MouseAdapter() {
+               
+            @Override
+            public void mouseExited(MouseEvent e) {
+                paymentsuccess.getButtonConfirm().setBackground(Color.decode("#C59E7E"));
+                
+            }
+        });
         }
 
         if (e.getSource().equals(adminGUI.getNavbar().getBackButton())) {
-
+            adminGUI.getNavbar().getBackButton().setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
         }
     }
 
