@@ -4,6 +4,7 @@
  */
 package GUI.MenuComponent;
 
+import GUI.Components.pnlBorder;
 import java.awt.Color;
 import javax.swing.JLabel;
 
@@ -69,6 +70,10 @@ public class PurchasingButton extends javax.swing.JPanel {
 
     public JLabel getPriceText() {
         return priceText;
+    }
+
+    public pnlBorder getPnlBorder1() {
+        return pnlBorder1;
     }
     
 }

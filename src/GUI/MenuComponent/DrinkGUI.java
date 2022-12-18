@@ -125,5 +125,9 @@ public class DrinkGUI extends javax.swing.JPanel {
         return product;
     }
 
+    public JPanel getNamePanel() {
+        return namePanel;
+    }
+
 }
 

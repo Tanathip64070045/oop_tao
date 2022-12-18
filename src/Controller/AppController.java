@@ -26,6 +26,8 @@ import db.DBModel;
 import internal.Login;
 import java.awt.CardLayout;
 import java.awt.Color;
+import java.awt.Cursor;
+import static java.awt.Cursor.HAND_CURSOR;
 import java.awt.Dimension;
 import java.awt.Image;
 import java.awt.event.ComponentEvent;
@@ -356,6 +358,24 @@ public class AppController implements ActionListener, WindowListener, MouseListe
                                     }
                                 }
                             }
+                            
+                            @Override
+                            public void mouseEntered(MouseEvent e){
+                                for (int n = 0; n < count; n++) {
+                                    if (e.getSource().equals(tle.get(n))) {
+                                tle.get(n).setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
+                                tle.get(n).setBackground(Color.decode("#AF7B50"));
+                                    }
+                                }
+                            }
+                            @Override
+                            public void mouseExited(MouseEvent e) {
+                                for (int n = 0; n < count; n++) {
+                                    if (e.getSource().equals(tle.get(n))) {
+                                tle.get(n).setBackground(Color.decode("#C59E7E"));
+                                    }
+                                }
+                            }
                         });
                         menu.getPnlMenu().add(productss);
                         count++;
@@ -456,6 +476,23 @@ public class AppController implements ActionListener, WindowListener, MouseListe
                                         eachdrink.getToppings().getToppingsButton().add(eachdrink.getToppings().getToppingsButton().getWhipCreamButton());
                                         eachdrink.getToppings().getToppingsButton().add(eachdrink.getToppings().getToppingsButton().getJellyButton());
                                     }
+                                }
+                            }
+                        }
+                        @Override
+                        public void mouseEntered(MouseEvent e){
+                            for (int n = 0; n < count; n++) {
+                                if (e.getSource().equals(tle.get(n))) {
+                            tle.get(n).setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
+                            tle.get(n).setBackground(Color.decode("#AF7B50"));
+                                }
+                            }
+                        }
+                        @Override
+                        public void mouseExited(MouseEvent e) {
+                            for (int n = 0; n < count; n++) {
+                                if (e.getSource().equals(tle.get(n))) {
+                            tle.get(n).setBackground(Color.decode("#C59E7E"));
                                 }
                             }
                         }
@@ -570,7 +607,7 @@ public class AppController implements ActionListener, WindowListener, MouseListe
         isChocolateSauce = ChooseToppings(eachdrink.getToppings().getToppingsButton().getChocolateSauceButton(), eachdrink.getToppings().getToppingsButton().getChocolateSauceText());
         toppingsPrice = 0;
     }
-
+    
     @Override
 
     public void actionPerformed(ActionEvent ae) {
@@ -997,12 +1034,159 @@ public class AppController implements ActionListener, WindowListener, MouseListe
     public void mouseReleased(MouseEvent e) {
     }
 
+    
+    public void hoverButton(pnlBorder btn, String crHover, String crOrigin){
+        btn.setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
+        btn.setBackground(Color.decode(crHover));
+        btn.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseExited(MouseEvent e) {
+                notHoverButton(btn, crOrigin);
+            }
+        });
+    }
+    
+    public void notHoverButton(pnlBorder btn, String color){
+        btn.setBackground(Color.decode(color));
+    }
+
     @Override
     public void mouseEntered(MouseEvent e) {
+
+        
+        if (e.getSource().equals(adminGUI.getAdminControl().getStock())) {
+           adminGUI.getAdminControl().getStock().setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
+        }
+
+        if (e.getSource().equals(mw.getPnlLogin())) {
+            hoverButton(mw.getPnlLogin(), "#FFFFFF", "#F6E6E6");
+        }
+
+        if (e.getSource().equals(mw.getPnlRecommend())) {
+            hoverButton(mw.getPnlRecommend(), "#AF7B50", "#C59E7E");
+
+        } else if (e.getSource().equals(mw.getPnlCoffee())) {
+            hoverButton(mw.getPnlCoffee(), "#F6E6E6", "#C59E7E");
+        } else if (e.getSource().equals(mw.getPnlTea())) {
+            hoverButton(mw.getPnlTea(), "#AF7B50", "#C59E7E");
+        } else if (e.getSource().equals(mw.getPnlMilk())) {
+            hoverButton(mw.getPnlMilk(), "#AF7B50", "#C59E7E");
+        } else if (e.getSource().equals(mw.getPnlJuice())) {
+            hoverButton(mw.getPnlJuice(), "#AF7B50", "#C59E7E");
+        } else if (e.getSource().equals(mw.getPnlSoda())) {
+            hoverButton(mw.getPnlSoda(), "#AF7B50", "#C59E7E");
+        }
+        
+        if (e.getSource().equals(menu.getCatagoryGUI().getRecommendButton())){
+//            hoverButton(menu.getCatagoryGUI().getRecommendButton(), "#E0B3B3", "#F6E6E6");
+        }
+        else if (e.getSource().equals(menu.getCatagoryGUI().getCoffeeButton())){
+            
+        } else if (e.getSource().equals(menu.getCatagoryGUI().getTeaButton())) {
+
+        } else if (e.getSource().equals(menu.getCatagoryGUI().getMilkAndCocoaButton())) {
+
+        } else if (e.getSource().equals(menu.getCatagoryGUI().getJuiceButton())) {
+
+
+        } else if (e.getSource().equals(menu.getCatagoryGUI().getSodaButton())) {
+
+        }
+
+        if (e.getSource().equals(menu.getBackButton())) {
+            menu.getBackButton().setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
+        }
+
+        //Catagory GUI
+        if (e.getSource().equals(eachdrink.getBackButton())) {
+            eachdrink.getBackButton().setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
+
+        } else if (e.getSource().equals(eachdrink.getPurchasingButton())) {
+            eachdrink.getPurchasingButton().setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
+
+        } else if (e.getSource().equals(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getHotButton())) {
+
+        } else if (e.getSource().equals(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getIcedButton())) {
+
+        } else if (e.getSource().equals(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getIced5Button())) {
+
+        } else if (e.getSource().equals(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getSmoothie5Button())) {
+
+        } else if (e.getSource().equals(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getSmoothie10Button())) {
+
+        } else if (e.getSource().equals(eachdrink.getSweetnessLevel().getSweetnessLevelButton().getButton0())) {
+
+        } else if (e.getSource().equals(eachdrink.getSweetnessLevel().getSweetnessLevelButton().getButton25())) {
+
+        } else if (e.getSource().equals(eachdrink.getSweetnessLevel().getSweetnessLevelButton().getButton50())) {
+
+        } else if (e.getSource().equals(eachdrink.getSweetnessLevel().getSweetnessLevelButton().getButton75())) {
+
+        } else if (e.getSource().equals(eachdrink.getSweetnessLevel().getSweetnessLevelButton().getButton100())) {
+
+        } else if (e.getSource().equals(eachdrink.getToppings().getToppingsButton().getBubbleButton())) {
+            
+        } else if (e.getSource().equals(eachdrink.getToppings().getToppingsButton().getWhipCreamButton())) {
+            
+        } else if (e.getSource().equals(eachdrink.getToppings().getToppingsButton().getMilkFoamButton())) {
+            
+        } else if (e.getSource().equals(eachdrink.getToppings().getToppingsButton().getOreoButton())) {
+           
+        } else if (e.getSource().equals(eachdrink.getToppings().getToppingsButton().getJellyButton())) {
+            
+        } else if (e.getSource().equals(eachdrink.getToppings().getToppingsButton().getYoghurtButton())) {
+            
+        } else if (e.getSource().equals(eachdrink.getToppings().getToppingsButton().getCookieButton())) {
+            
+        } else if (e.getSource().equals(eachdrink.getToppings().getToppingsButton().getSnackButton())) {
+            
+        } else if (e.getSource().equals(eachdrink.getToppings().getToppingsButton().getChocolateSauceButton())) {
+            
+        }
+
+        if (e.getSource().equals(paymentmain.getBackButton())) {
+            paymentmain.getBackButton().setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
+        } else if (e.getSource().equals(paymentmain.getButtonCash())) {
+
+        } else if (e.getSource().equals(paymentmain.getButtonQrCode())) {
+
+        }
+          else if (e.getSource().equals(paymentmain.getButtonCancel())) {
+
+        }
+        else if (e.getSource().equals(paymentmain.getButtonTrue())) {
+
+        }
+
+        if (e.getSource().equals(paymentqr.getBackButton()) || e.getSource().equals(paymentqr.getButtonCancel())) {
+
+        } else if (e.getSource().equals(paymentqr.getButtonConfirm())) {
+
+        }
+
+        if (e.getSource().equals(paymentinsert.getBackButton()) || e.getSource().equals(paymentinsert.getButtonCancel())) {
+
+        }
+        if (e.getSource().equals(paymentinsert.getButtonConfirm())) {
+
+        }
+
+        if (e.getSource().equals(paymentchange.getButtonConfirm())) {
+
+        }
+
+        if (e.getSource().equals(paymentsuccess.getButtonConfirm())) {
+
+        }
+
+        if (e.getSource().equals(adminGUI.getNavbar().getBackButton())) {
+
+        }
     }
 
     @Override
     public void mouseExited(MouseEvent e) {
+        
     }
 
     @Override
