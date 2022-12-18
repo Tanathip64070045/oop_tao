@@ -628,12 +628,16 @@ public class AppController implements ActionListener, WindowListener, MouseListe
             }
         }
         if (ae.getSource().equals(login.getBtnLogin())) {
-//            if(login.getTfUsername().getText().equals("madara") && login.getjPasswordField1().getText().equals("55555")){
+            
+            // login
+            if(login.getTfUsername().getText().equals("madara") && login.getjPasswordField1().getText().equals("55555")){
             mw.getPnlContainer().setVisible(false);
             login.setVisible(false);
 
             adminGUI.setVisible(true);
-
+            
+}
+            
             for (int i = 0; i < db.getProducts().size(); i++) {
 //                    fecth data
                 int population = ((Product) (db.getProducts().get(i))).getPopulation();

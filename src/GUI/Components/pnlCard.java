@@ -34,6 +34,7 @@ public class pnlCard extends javax.swing.JPanel {
 
         lbl_values.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         lbl_values.setForeground(new java.awt.Color(102, 102, 102));
+        lbl_values.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         lbl_values.setText("Values");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -42,10 +43,11 @@ public class pnlCard extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(27, 27, 27)
-                .addComponent(lbl_title))
+                .addComponent(lbl_title)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
-                .addGap(130, 130, 130)
-                .addComponent(lbl_values))
+                .addContainerGap()
+                .addComponent(lbl_values, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
