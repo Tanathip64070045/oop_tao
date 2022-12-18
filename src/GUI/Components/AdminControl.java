@@ -59,7 +59,7 @@ public class AdminControl extends javax.swing.JPanel{
 
             },
             new String [] {
-                "Amount", "", "Products", "Category"
+                "Amount", "Image", "Products", "Category"
             }
         ));
         spTable.setViewportView(table);

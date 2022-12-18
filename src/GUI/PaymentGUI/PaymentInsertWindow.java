@@ -38,9 +38,9 @@ public class PaymentInsertWindow extends javax.swing.JPanel {
         ButtonConfirm = new GUI.PaymentGUI.Components.ButtonConfirm();
         jLabel2 = new javax.swing.JLabel();
         label3 = new java.awt.Label();
-        Total = new java.awt.Label();
         jLabel1 = new javax.swing.JLabel();
         TextInsert = new javax.swing.JTextField();
+        total = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(66, 56, 63));
         setPreferredSize(new java.awt.Dimension(720, 830));
@@ -105,17 +105,17 @@ public class PaymentInsertWindow extends javax.swing.JPanel {
         label3.setForeground(new java.awt.Color(161, 65, 65));
         label3.setText("Please insert money");
 
-        Total.setAlignment(java.awt.Label.CENTER);
-        Total.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        Total.setText("Total : 35 ฿");
-
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/cash-pay-hand.png"))); // NOI18N
 
         TextInsert.setBackground(new java.awt.Color(217, 217, 217));
         TextInsert.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        TextInsert.setForeground(new java.awt.Color(0, 0, 0));
         TextInsert.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        total.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        total.setForeground(new java.awt.Color(0, 0, 0));
+        total.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        total.setText("Total : 35 ฿");
 
         javax.swing.GroupLayout panelBorder1Layout = new javax.swing.GroupLayout(panelBorder1);
         panelBorder1.setLayout(panelBorder1Layout);
@@ -129,20 +129,20 @@ public class PaymentInsertWindow extends javax.swing.JPanel {
                 .addContainerGap(35, Short.MAX_VALUE))
             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(label3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(Total, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(panelBorder1Layout.createSequentialGroup()
                 .addGap(118, 118, 118)
                 .addComponent(TextInsert, javax.swing.GroupLayout.PREFERRED_SIZE, 485, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(total, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         panelBorder1Layout.setVerticalGroup(
             panelBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelBorder1Layout.createSequentialGroup()
                 .addContainerGap(103, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
-                .addComponent(Total, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
+                .addComponent(total)
+                .addGap(24, 24, 24)
                 .addComponent(label3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(22, 22, 22)
                 .addComponent(TextInsert, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -162,12 +162,12 @@ public class PaymentInsertWindow extends javax.swing.JPanel {
     private GUI.PaymentGUI.Components.ButtonConfirm ButtonCancel;
     private GUI.PaymentGUI.Components.ButtonConfirm ButtonConfirm;
     private javax.swing.JTextField TextInsert;
-    private java.awt.Label Total;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private java.awt.Label label3;
     private GUI.PaymentGUI.Components.PanelBorder panelBorder1;
+    private javax.swing.JLabel total;
     // End of variables declaration//GEN-END:variables
 
     public JLabel getBackButton() {
@@ -186,8 +186,8 @@ public class PaymentInsertWindow extends javax.swing.JPanel {
         return TextInsert;
     }
 
-    public Label getTotal() {
-        return Total;
+    public JLabel getTotal() {
+        return total;
     }
     
     
