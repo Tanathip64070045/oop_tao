@@ -222,19 +222,16 @@ public class AppController implements ActionListener, WindowListener, MouseListe
 
         tle.removeAll(tle);
         recomCategory.removeAll(recomCategory);
+        popHm.clear();
+        arr.removeAll(arr);
         count = 0;
 
 //            adding product juice
         if (category.equals("Recommend")) {
-            HashMap popHm = new HashMap();
-            DrinkGUI items;
-            ArrayList<String> arr = new <String> ArrayList();
 
-            int popCount;
             for (int i = 0; i < db.getProducts().size(); i++) {
                 if (((Product) db.getProducts().get(i)).getPopulation() >= 1) {
-                    popCount = ((Product) db.getProducts().get(i)).getPopulation();
-                    popHm.put(((Product) db.getProducts().get(i)).getProductName(), popCount);
+                    popHm.put(((Product) db.getProducts().get(i)).getProductName(), ((Product) db.getProducts().get(i)).getPopulation());
 
                 }
 
@@ -270,9 +267,9 @@ public class AppController implements ActionListener, WindowListener, MouseListe
             for (int i = 0; i < arr.size(); i++) {
                 for (int j = 0; j < db.getProducts().size(); j++) {
                     if (((Product) db.getProducts().get(j)).getProductName().equals(arr.get(i))) {
-                        items = new DrinkGUI(((Product) db.getProducts().get(j)).getProductName(), String.format("%.0f ฿", (((Product) db.getProducts().get(j)).getPrice())), new ImageIcon(getClass().getResource(String.format("/products/%s", ((Product) db.getProducts().get(j)).getImg()))));
+                        productss = new DrinkGUI(((Product) db.getProducts().get(j)).getProductName(), String.format("%.0f ฿", (((Product) db.getProducts().get(j)).getPrice())), new ImageIcon(getClass().getResource(String.format("/products/%s", ((Product) db.getProducts().get(j)).getImg()))));
                         recomCategory.add(((Product) db.getProducts().get(j)).getCategory());
-                        tle.add(items);
+                        tle.add(productss);
                         tle.get(count).addMouseListener(new MouseAdapter() {
                             @Override
                             public void mouseClicked(MouseEvent e) {
@@ -289,11 +286,10 @@ public class AppController implements ActionListener, WindowListener, MouseListe
                                                 break;
                                             }
                                         }
-                                        
+
                                         //                                    Choosing Product
                                         choose = new Product(0, tle.get(n).getProduct().getText(), Double.parseDouble(tle.get(n).getPrice().getText().replace(" ฿", "")), recomCategory.get(n), fn, 0);
-                                        
-                                        
+
                                         menu.setVisible(false);
                                         eachdrink.set(choose.getImg(), choose.getProductName(), choose.getCategory(), choose.getPrice());
                                         eachdrink.setVisible(true);
@@ -361,7 +357,7 @@ public class AppController implements ActionListener, WindowListener, MouseListe
                                 }
                             }
                         });
-                        menu.getPnlMenu().add(items);
+                        menu.getPnlMenu().add(productss);
                         count++;
                     }
                 }
@@ -628,16 +624,16 @@ public class AppController implements ActionListener, WindowListener, MouseListe
             }
         }
         if (ae.getSource().equals(login.getBtnLogin())) {
-            
-            // login
-            if(login.getTfUsername().getText().equals("madara") && login.getjPasswordField1().getText().equals("55555")){
-            mw.getPnlContainer().setVisible(false);
-            login.setVisible(false);
 
-            adminGUI.setVisible(true);
-            
-}
-            
+            // login
+            if (login.getTfUsername().getText().equals("madara") && login.getjPasswordField1().getText().equals("55555")) {
+                mw.getPnlContainer().setVisible(false);
+                login.setVisible(false);
+
+                adminGUI.setVisible(true);
+
+            }
+
             for (int i = 0; i < db.getProducts().size(); i++) {
 //                    fecth data
                 int population = ((Product) (db.getProducts().get(i))).getPopulation();
@@ -768,6 +764,9 @@ public class AppController implements ActionListener, WindowListener, MouseListe
     DrinkGUI productss;
     ArrayList<DrinkGUI> tle = new ArrayList<DrinkGUI>();
     ArrayList<String> recomCategory = new ArrayList<String>();
+    HashMap popHm = new HashMap();
+    ArrayList<String> arr = new <String> ArrayList();
+
     int count = 0;
 
     Product choose;
