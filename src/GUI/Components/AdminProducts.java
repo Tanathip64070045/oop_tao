@@ -1,6 +1,7 @@
 package GUI.Components;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
@@ -14,12 +15,19 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+import javax.swing.table.DefaultTableCellRenderer;
 
 public class AdminProducts extends javax.swing.JPanel implements ActionListener {
     public AdminProducts() {
         initComponents();
         setOpaque(false);
         setBackground(Color.WHITE);
+        
+        DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
+        centerRenderer.setHorizontalAlignment(JLabel.LEFT);
+        
+        table.getColumnModel().getColumn(0).setCellRenderer(centerRenderer);
+        table.getColumnModel().getColumn(3).setCellRenderer(centerRenderer);
         
 //        for(int i = 0; i < db.getProducts().size(); i++){
 //            int id = ((Product)(db.getProducts().get(i))).getId();
@@ -87,7 +95,15 @@ public class AdminProducts extends javax.swing.JPanel implements ActionListener 
             new String [] {
                 "id", "Image", "Product", "Price", "Category"
             }
-        ));
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
         spTable.setViewportView(table);
 
         lblProduct.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N

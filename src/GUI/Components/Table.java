@@ -3,6 +3,7 @@ package GUI.Components;
 
 import java.awt.Color;
 import java.awt.Component;
+import javax.swing.JLabel;
 
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableCellRenderer;
@@ -17,6 +18,7 @@ public class Table extends javax.swing.JTable{
         setRowHeight(40);
         getTableHeader().setReorderingAllowed(false);
         setAutoCreateRowSorter(true);
+        
 
         getTableHeader().setDefaultRenderer(new DefaultTableCellRenderer() {
             @Override
