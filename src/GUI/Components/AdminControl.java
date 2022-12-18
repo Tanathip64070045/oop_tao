@@ -11,6 +11,7 @@ import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import javax.swing.JLabel;
 import javax.swing.JScrollPane;
+import javax.swing.table.DefaultTableCellRenderer;
 
 public class AdminControl extends javax.swing.JPanel{
     public AdminControl() {
@@ -22,6 +23,11 @@ public class AdminControl extends javax.swing.JPanel{
 //        totally.setData(new Card(null, "Totally.", "9999.99 ฿", "description"));
 //        
         spTable.getViewport().setBackground(Color.WHITE);
+        
+        DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
+        centerRenderer.setHorizontalAlignment(JLabel.LEFT);
+        
+        table.getColumnModel().getColumn(0).setCellRenderer(centerRenderer);
     }
 
     public AdminControl(pnlCard balance, JLabel lblTable, pnlBorder pnlBorder1, JScrollPane spTable, pnlStock stock, Table table, pnlCard totally) {
@@ -61,7 +67,15 @@ public class AdminControl extends javax.swing.JPanel{
             new String [] {
                 "Amount", "Image", "Products", "Category"
             }
-        ));
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
         spTable.setViewportView(table);
 
         label.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
