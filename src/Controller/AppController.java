@@ -616,6 +616,7 @@ public class AppController implements ActionListener, WindowListener, MouseListe
 
         if (ae.getSource().equals(stock.getAdminProducts().getBtnAdd())) {
             try {
+                stock.getAdminProducts().getTable().removeAll();
                 index = db.getIndex();
                 index++;
 //                System.out.println(index);
@@ -1080,19 +1081,19 @@ public class AppController implements ActionListener, WindowListener, MouseListe
         }
         
         if (e.getSource().equals(menu.getCatagoryGUI().getRecommendButton())){
-//            hoverButton(menu.getCatagoryGUI().getRecommendButton(), "#E0B3B3", "#F6E6E6");
+            menu.getCatagoryGUI().getRecommendButton().setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
         }
         else if (e.getSource().equals(menu.getCatagoryGUI().getCoffeeButton())){
-            
+            menu.getCatagoryGUI().getCoffeeButton().setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
         } else if (e.getSource().equals(menu.getCatagoryGUI().getTeaButton())) {
-
+            menu.getCatagoryGUI().getTeaButton().setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
         } else if (e.getSource().equals(menu.getCatagoryGUI().getMilkAndCocoaButton())) {
-
+            menu.getCatagoryGUI().getMilkAndCocoaButton().setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
         } else if (e.getSource().equals(menu.getCatagoryGUI().getJuiceButton())) {
-
+            menu.getCatagoryGUI().getJuiceButton().setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
 
         } else if (e.getSource().equals(menu.getCatagoryGUI().getSodaButton())) {
-
+            menu.getCatagoryGUI().getSodaButton().setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
         }
 
         if (e.getSource().equals(menu.getBackButton())) {
@@ -1107,51 +1108,50 @@ public class AppController implements ActionListener, WindowListener, MouseListe
             eachdrink.getPurchasingButton().setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
 
         } else if (e.getSource().equals(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getHotButton())) {
-
+            eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getHotButton().setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
         } else if (e.getSource().equals(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getIcedButton())) {
-
+            eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getIcedButton().setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
         } else if (e.getSource().equals(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getIced5Button())) {
-
+            eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getIced5Button().setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
         } else if (e.getSource().equals(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getSmoothie5Button())) {
-
+           eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getSmoothie5Button().setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
         } else if (e.getSource().equals(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getSmoothie10Button())) {
-
+            eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getSmoothie10Button().setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
         } else if (e.getSource().equals(eachdrink.getSweetnessLevel().getSweetnessLevelButton().getButton0())) {
-
+            eachdrink.getSweetnessLevel().getSweetnessLevelButton().getButton0().setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
         } else if (e.getSource().equals(eachdrink.getSweetnessLevel().getSweetnessLevelButton().getButton25())) {
-
+            eachdrink.getSweetnessLevel().getSweetnessLevelButton().getButton25().setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
         } else if (e.getSource().equals(eachdrink.getSweetnessLevel().getSweetnessLevelButton().getButton50())) {
-
+            eachdrink.getSweetnessLevel().getSweetnessLevelButton().getButton50().setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
         } else if (e.getSource().equals(eachdrink.getSweetnessLevel().getSweetnessLevelButton().getButton75())) {
-
+            eachdrink.getSweetnessLevel().getSweetnessLevelButton().getButton75().setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
         } else if (e.getSource().equals(eachdrink.getSweetnessLevel().getSweetnessLevelButton().getButton100())) {
-
+            eachdrink.getSweetnessLevel().getSweetnessLevelButton().getButton100().setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
         } else if (e.getSource().equals(eachdrink.getToppings().getToppingsButton().getBubbleButton())) {
-            
+            eachdrink.getToppings().getToppingsButton().getBubbleButton().setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
         } else if (e.getSource().equals(eachdrink.getToppings().getToppingsButton().getWhipCreamButton())) {
-            
+            eachdrink.getToppings().getToppingsButton().getWhipCreamButton().setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
         } else if (e.getSource().equals(eachdrink.getToppings().getToppingsButton().getMilkFoamButton())) {
-            
+            eachdrink.getToppings().getToppingsButton().getMilkFoamButton().setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
         } else if (e.getSource().equals(eachdrink.getToppings().getToppingsButton().getOreoButton())) {
-           
+           eachdrink.getToppings().getToppingsButton().getOreoButton().setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
         } else if (e.getSource().equals(eachdrink.getToppings().getToppingsButton().getJellyButton())) {
-            
+            eachdrink.getToppings().getToppingsButton().getJellyButton().setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
         } else if (e.getSource().equals(eachdrink.getToppings().getToppingsButton().getYoghurtButton())) {
-            
+            eachdrink.getToppings().getToppingsButton().getYoghurtButton().setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
         } else if (e.getSource().equals(eachdrink.getToppings().getToppingsButton().getCookieButton())) {
-            
+            eachdrink.getToppings().getToppingsButton().getCookieButton().setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
         } else if (e.getSource().equals(eachdrink.getToppings().getToppingsButton().getSnackButton())) {
-            
+            eachdrink.getToppings().getToppingsButton().getSnackButton().setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
         } else if (e.getSource().equals(eachdrink.getToppings().getToppingsButton().getChocolateSauceButton())) {
-            
+            eachdrink.getToppings().getToppingsButton().getChocolateSauceButton().setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
         }
 
         if (e.getSource().equals(paymentmain.getBackButton())) {
             paymentmain.getBackButton().setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
         } else if (e.getSource().equals(paymentmain.getButtonCash())) {
             paymentmain.getButtonCash().setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
-             paymentmain.getButtonCash().setBackground(Color.decode("#C6B2A1"));
-             paymentmain.getButtonCash().getjLabel1().setForeground(Color.decode("#C6B2A1"));
+             paymentmain.getButtonCash().setBackground(Color.decode("#7B6565"));
              
             paymentmain.getButtonCash().addMouseListener(new MouseAdapter() {
                 
@@ -1164,7 +1164,7 @@ public class AppController implements ActionListener, WindowListener, MouseListe
 
         } else if (e.getSource().equals(paymentmain.getButtonQrCode())) {
             paymentmain.getButtonQrCode().setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
-            paymentmain.getButtonQrCode().setBackground(Color.decode("#C6B2A1"));
+            paymentmain.getButtonQrCode().setBackground(Color.decode("#7B6565"));
              
             paymentmain.getButtonQrCode().addMouseListener(new MouseAdapter() {
                 
@@ -1190,7 +1190,7 @@ public class AppController implements ActionListener, WindowListener, MouseListe
         }
         else if (e.getSource().equals(paymentmain.getButtonTrue())) {
              paymentmain.getButtonTrue().setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
-             paymentmain.getButtonTrue().setBackground(Color.decode("#C6B2A1"));
+             paymentmain.getButtonTrue().setBackground(Color.decode("#7B6565"));
              
             paymentmain.getButtonTrue().addMouseListener(new MouseAdapter() {
                
