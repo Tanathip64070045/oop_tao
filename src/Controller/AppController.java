@@ -19,7 +19,6 @@ import GUI.PaymentGUI.PaymentMainWindow;
 import GUI.PaymentGUI.PaymentQrWindow;
 import GUI.PaymentGUI.PaymentSuccess;
 import Model.Card;
-import Model.Finance;
 import Model.Product;
 import Model.Stock;
 import Model.ViewModel;
@@ -263,7 +262,7 @@ public class AppController implements ActionListener, WindowListener, MouseListe
                 }
                 check++;
             }
-
+            System.out.println("\n");
             for (int i = 0; i < arr.size(); i++) {
                 for (int j = 0; j < db.getProducts().size(); j++) {
                     if (((Product) db.getProducts().get(j)).getProductName().equals(arr.get(i))) {
@@ -957,11 +956,7 @@ public class AppController implements ActionListener, WindowListener, MouseListe
             paymentmain.setVisible(false);
             paymentinsert.setVisible(true);
 
-            paymentinsert.getTotal().setText(String.format("Tolal : %.2f Baht", choose.getPrice() + typeOfDrinkPrice + toppingsPrice));
-
-            if ((Integer.parseInt(paymentinsert.getTextInsert().getText()) < (choose.getPrice() + typeOfDrinkPrice + toppingsPrice))) {
-                JOptionPane.showMessageDialog(null, "Not Enough.", "Error", JOptionPane.PLAIN_MESSAGE);
-            }
+            paymentinsert.getTotal().setText(String.format("Total : %.2f ฿", choose.getPrice() + typeOfDrinkPrice + toppingsPrice));
 
         } else if (e.getSource().equals(paymentmain.getButtonQrCode()) || e.getSource().equals(paymentmain.getButtonTrue())) {
             paymentmain.setVisible(false);
@@ -986,22 +981,25 @@ public class AppController implements ActionListener, WindowListener, MouseListe
             //paymentChange
         }
         if (e.getSource().equals(paymentinsert.getButtonConfirm())) {
-            try {
-                if ((Integer.parseInt(paymentinsert.getTextInsert().getText()) < (choose.getPrice() + typeOfDrinkPrice + toppingsPrice))) {
-                    JOptionPane.showMessageDialog(null, "Not Enough.", "Error", JOptionPane.PLAIN_MESSAGE);
-                } else {
-                    paymentinsert.setVisible(false);
-                    paymentchange.getButtonConfirm().setVisible(false);
-                    paymentchange.setVisible(true);
+            if (paymentinsert.getTextInsert().getText().equals("") || (Integer.parseInt(paymentinsert.getTextInsert().getText()) < (choose.getPrice() + typeOfDrinkPrice + toppingsPrice))) {
+                JOptionPane.showMessageDialog(null, "Not Enough.", "Error", JOptionPane.PLAIN_MESSAGE);
+            } else {
+                try {
+                    if ((Integer.parseInt(paymentinsert.getTextInsert().getText()) < (choose.getPrice() + typeOfDrinkPrice + toppingsPrice))) {
+                        JOptionPane.showMessageDialog(null, "Not Enough.", "Error", JOptionPane.PLAIN_MESSAGE);
+                    } else {
+                        paymentinsert.setVisible(false);
+                        paymentchange.getButtonConfirm().setVisible(false);
+                        paymentchange.setVisible(true);
 
-                    paymentchange.getReceived().setText("Received amount : " + (Double.toString(choose.getPrice() + typeOfDrinkPrice + toppingsPrice)) + " Baht");
-                    amountAndChange = (Double.parseDouble(paymentinsert.getTextInsert().getText())) - (choose.getPrice() + typeOfDrinkPrice + toppingsPrice);
-                    paymentchange.getChange().setText(("Change : " + amountAndChange + " Baht"));
+                        paymentchange.getReceived().setText("Received amount : " + (Double.toString(choose.getPrice() + typeOfDrinkPrice + toppingsPrice)) + " ฿");
+                        amountAndChange = (Double.parseDouble(paymentinsert.getTextInsert().getText())) - (choose.getPrice() + typeOfDrinkPrice + toppingsPrice);
+                        paymentchange.getChange().setText(("Change : " + amountAndChange + " ฿"));
+                    }
+                } catch (NumberFormatException ex) {
+                    JOptionPane.showMessageDialog(null, "Please Fill.", "Error", JOptionPane.PLAIN_MESSAGE);
                 }
-            } catch (NumberFormatException ex) {
-                JOptionPane.showMessageDialog(null, "Please Fill.", "Error", JOptionPane.PLAIN_MESSAGE);
             }
-
         }
 
         if (e.getSource().equals(paymentchange.getButtonConfirm())) {

@@ -21,7 +21,6 @@ public class AdminProducts extends javax.swing.JPanel implements ActionListener 
         setOpaque(false);
         setBackground(Color.WHITE);
         
-        
 //        for(int i = 0; i < db.getProducts().size(); i++){
 //            int id = ((Product)(db.getProducts().get(i))).getId();
 //            String img = ((Product)(db.getProducts().get(i))).getImg();
@@ -86,7 +85,7 @@ public class AdminProducts extends javax.swing.JPanel implements ActionListener 
 
             },
             new String [] {
-                "id", "", "Product", "Price", "Category"
+                "id", "Image", "Product", "Price", "Category"
             }
         ));
         spTable.setViewportView(table);

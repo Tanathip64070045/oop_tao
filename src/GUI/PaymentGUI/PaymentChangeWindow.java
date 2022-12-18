@@ -6,6 +6,7 @@ package GUI.PaymentGUI;
 
 import GUI.PaymentGUI.Components.ButtonConfirm;
 import java.awt.Label;
+import javax.swing.JLabel;
 
 
 /**
@@ -37,14 +38,15 @@ public class PaymentChangeWindow extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         label2 = new java.awt.Label();
         label3 = new java.awt.Label();
-        Received = new java.awt.Label();
-        Change = new java.awt.Label();
+        Received = new javax.swing.JLabel();
+        Change = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(66, 56, 63));
         setPreferredSize(new java.awt.Dimension(720, 830));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         panelBorder1.setSize(new java.awt.Dimension(720, 830));
+        panelBorder1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         buttonComfirm.setBackground(new java.awt.Color(246, 230, 230));
         buttonComfirm.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -55,64 +57,36 @@ public class PaymentChangeWindow extends javax.swing.JPanel {
         jLabel2.setText("Continue");
         buttonComfirm.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 0, 630, 50));
 
+        panelBorder1.add(buttonComfirm, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 651, -1, -1));
+
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/glasshour.png"))); // NOI18N
+        panelBorder1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 208, 720, -1));
 
         label2.setAlignment(java.awt.Label.CENTER);
         label2.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
         label2.setForeground(new java.awt.Color(161, 65, 65));
         label2.setText("Please wait for a moment ");
+        panelBorder1.add(label2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 49, 720, -1));
 
         label3.setAlignment(java.awt.Label.CENTER);
         label3.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         label3.setForeground(new java.awt.Color(184, 184, 184));
         label3.setName(""); // NOI18N
         label3.setText("Please click continue in ");
+        panelBorder1.add(label3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 121, 720, -1));
 
-        Received.setAlignment(java.awt.Label.CENTER);
         Received.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         Received.setForeground(new java.awt.Color(184, 184, 184));
-        Received.setName(""); // NOI18N
+        Received.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Received.setText("Received amount : 40 ฿");
+        panelBorder1.add(Received, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 432, 720, 61));
 
-        Change.setAlignment(java.awt.Label.CENTER);
         Change.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        Change.setForeground(new java.awt.Color(0, 0, 0));
+        Change.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Change.setText("Change : 5 ฿");
-
-        javax.swing.GroupLayout panelBorder1Layout = new javax.swing.GroupLayout(panelBorder1);
-        panelBorder1.setLayout(panelBorder1Layout);
-        panelBorder1Layout.setHorizontalGroup(
-            panelBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelBorder1Layout.createSequentialGroup()
-                .addGroup(panelBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(label2, javax.swing.GroupLayout.DEFAULT_SIZE, 720, Short.MAX_VALUE)
-                        .addComponent(label3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(Received, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(Change, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(panelBorder1Layout.createSequentialGroup()
-                        .addGap(35, 35, 35)
-                        .addComponent(buttonComfirm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        panelBorder1Layout.setVerticalGroup(
-            panelBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelBorder1Layout.createSequentialGroup()
-                .addContainerGap(50, Short.MAX_VALUE)
-                .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(label3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
-                .addComponent(Received, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
-                .addComponent(Change, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
-                .addComponent(buttonComfirm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(30, Short.MAX_VALUE))
-        );
+        panelBorder1.add(Change, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 535, 720, -1));
 
         add(panelBorder1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 720, 730));
     }// </editor-fold>//GEN-END:initComponents
@@ -120,8 +94,8 @@ public class PaymentChangeWindow extends javax.swing.JPanel {
    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private java.awt.Label Change;
-    private java.awt.Label Received;
+    private javax.swing.JLabel Change;
+    private javax.swing.JLabel Received;
     private GUI.PaymentGUI.Components.ButtonConfirm buttonComfirm;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -138,13 +112,14 @@ public class PaymentChangeWindow extends javax.swing.JPanel {
         return label3;
     }  
 
-    public Label getChange() {
+    public JLabel getChange() {
         return Change;
     }
 
-    public Label getReceived() {
+    public JLabel getReceived() {
         return Received;
     }
+
     
     
     

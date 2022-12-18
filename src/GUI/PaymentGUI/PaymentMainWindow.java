@@ -44,8 +44,8 @@ public class PaymentMainWindow extends javax.swing.JPanel {
         jLabel = new javax.swing.JLabel();
         label1 = new java.awt.Label();
         ProductName = new java.awt.Label();
-        ProductValue = new java.awt.Label();
         ProductImg = new javax.swing.JLabel();
+        ProductValue = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(66, 56, 63));
         setPreferredSize(new java.awt.Dimension(720, 830));
@@ -99,16 +99,17 @@ public class PaymentMainWindow extends javax.swing.JPanel {
 
         ProductName.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         ProductName.setText("Product Name");
-        panelBorder1.add(ProductName, new org.netbeans.lib.awtextra.AbsoluteConstraints(95, 251, -1, -1));
-
-        ProductValue.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        ProductValue.setForeground(new java.awt.Color(238, 114, 0));
-        ProductValue.setText("0 ฿");
-        panelBorder1.add(ProductValue, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 250, 90, -1));
+        panelBorder1.add(ProductName, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 250, 240, -1));
 
         ProductImg.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         ProductImg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/icons/imgPayment.png"))); // NOI18N
         panelBorder1.add(ProductImg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 96, 720, -1));
+
+        ProductValue.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        ProductValue.setForeground(new java.awt.Color(238, 114, 0));
+        ProductValue.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        ProductValue.setText("10 ฿");
+        panelBorder1.add(ProductValue, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 250, 230, -1));
 
         add(panelBorder1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, -1, 730));
     }// </editor-fold>//GEN-END:initComponents
@@ -122,7 +123,7 @@ public class PaymentMainWindow extends javax.swing.JPanel {
     private GUI.PaymentGUI.Components.PaymentMainWindowTrueButton ButtonTrue;
     private javax.swing.JLabel ProductImg;
     private java.awt.Label ProductName;
-    private java.awt.Label ProductValue;
+    private javax.swing.JLabel ProductValue;
     private javax.swing.JLabel jLabel;
     private java.awt.Label label1;
     private GUI.PaymentGUI.Components.PanelBorder panelBorder1;
@@ -162,7 +163,7 @@ public class PaymentMainWindow extends javax.swing.JPanel {
         return ProductName;
     }
 
-    public Label getProductValue() {
+    public JLabel getProductValue() {
         return ProductValue;
     }
     
