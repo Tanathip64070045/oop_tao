@@ -10,6 +10,8 @@ public class Product implements Serializable{
     private String category;
     private String img;
     private int population;
+    
+    
     public Product() {
         this.id = 0;
         this.product = "";
@@ -26,7 +28,7 @@ public class Product implements Serializable{
         this.img = img;
         this.population = population;
     }
-
+    
     public int getId() {
         return id;
     }
@@ -74,4 +76,5 @@ public class Product implements Serializable{
     public void setPopulation(int population) {
         this.population += population;
     }
+    
 }

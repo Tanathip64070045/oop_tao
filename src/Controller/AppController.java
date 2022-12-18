@@ -13,13 +13,13 @@ import GUI.EachDrink;
 import GUI.MainWindow;
 import GUI.Menu;
 import GUI.MenuComponent.DrinkGUI;
-import GUI.PaymentGUI.Components.PaymentMainWindowCashButton;
 import GUI.PaymentGUI.PaymentChangeWindow;
 import GUI.PaymentGUI.PaymentInsertWindow;
 import GUI.PaymentGUI.PaymentMainWindow;
 import GUI.PaymentGUI.PaymentQrWindow;
 import GUI.PaymentGUI.PaymentSuccess;
 import Model.Card;
+import Model.Finance;
 import Model.Product;
 import Model.Stock;
 import Model.ViewModel;
@@ -52,7 +52,6 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileFilter;
 import javax.swing.filechooser.FileNameExtensionFilter;
-import GUI.PaymentGUI.Components.*;
 
 public class AppController implements ActionListener, WindowListener, MouseListener, Runnable, ComponentListener, KeyListener {
 
@@ -72,15 +71,13 @@ public class AppController implements ActionListener, WindowListener, MouseListe
     private Thread tr;
     private DBModel db;
     private Product p;
+
     private double amountAndChange;
 
-    private double totally;
-    private double balance;
-
+//    private double totally;
+//    private double balance;
     @Override
     public void windowOpened(WindowEvent e) {
-        db.loadFile();
-        System.out.println("load");
     }
 
     public static void main(String[] args) {
@@ -112,6 +109,9 @@ public class AppController implements ActionListener, WindowListener, MouseListe
         paymentsuccess.setVisible(false);
         adminGUI.setVisible(false);
         stock.setVisible(false);
+
+        db.loadFile();
+        System.out.println("load");
 
         paymentsuccess.getButtonConfirm().addMouseListener(this);
         login.getBtnLogin().addActionListener(this);
@@ -189,11 +189,10 @@ public class AppController implements ActionListener, WindowListener, MouseListe
         mw.addWindowListener(this);
         mw.getPnlContainer().addComponentListener(this);
 
-//        System.err.println("Product size :" + db.getProducts().size());
         adminGUI.getAdminControl().getStock().addMouseListener(this);
         adminGUI.getNavbar().getBackButton().addMouseListener(this);
-        adminGUI.getAdminControl().getBalance().setData(new Card(balaIcon, "  Balance.", "      " + balance + " ฿", "description"));
-        adminGUI.getAdminControl().getTotally().setData(new Card(tIcon, "  Totally.", "      " + totally + " ฿", "description"));
+        adminGUI.getAdminControl().getBalance().setData(new Card(balaIcon, "  Balance.", "      " + db.getFinance().getBalance() + " ฿", "description"));
+        adminGUI.getAdminControl().getTotally().setData(new Card(tIcon, "  Totally.", "      " + db.getFinance().getTotally() + " ฿", "description"));
         adminGUI.getAdminControl().getStock().sendData(new Stock(db.getProducts().size()));
     }
 
@@ -253,21 +252,18 @@ public class AppController implements ActionListener, WindowListener, MouseListe
                 sortedMap.put(entry.getKey(), entry.getValue());
             }
 
-            for (Map.Entry<String, Integer> entry : sortedMap.entrySet()) {
-                System.out.print(entry.getKey() + " " + entry.getValue() + ", ");
-            }
-            System.out.println("\n");
+//            for (Map.Entry<String, Integer> entry : sortedMap.entrySet()) {
+//                System.out.print(entry.getKey() + " " + entry.getValue() + ", ");
+//            }
             int check = 0;
             for (Map.Entry<String, Integer> entry : sortedMap.entrySet()) {
                 if (check < 6) {
-//                    System.out.print(entry.getKey() + ", ");
+                    System.out.print(entry.getKey() + " " + entry.getValue() + ", ");
                     arr.add(entry.getKey());
                 }
                 check++;
             }
 
-//            System.out.println("\n");
-            System.out.println(arr);
             for (int i = 0; i < arr.size(); i++) {
                 for (int j = 0; j < db.getProducts().size(); j++) {
                     if (((Product) db.getProducts().get(j)).getProductName().equals(arr.get(i))) {
@@ -360,21 +356,22 @@ public class AppController implements ActionListener, WindowListener, MouseListe
                                     }
                                 }
                             }
-                            
+
                             @Override
-                            public void mouseEntered(MouseEvent e){
+                            public void mouseEntered(MouseEvent e) {
                                 for (int n = 0; n < count; n++) {
                                     if (e.getSource().equals(tle.get(n))) {
-                                tle.get(n).setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
-                                tle.get(n).setBackground(Color.decode("#B09393"));
+                                        tle.get(n).setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
+                                        tle.get(n).setBackground(Color.decode("#B09393"));
                                     }
                                 }
                             }
+
                             @Override
                             public void mouseExited(MouseEvent e) {
                                 for (int n = 0; n < count; n++) {
                                     if (e.getSource().equals(tle.get(n))) {
-                                tle.get(n).setBackground(Color.decode("#C59E7E"));
+                                        tle.get(n).setBackground(Color.decode("#C59E7E"));
                                     }
                                 }
                             }
@@ -481,20 +478,22 @@ public class AppController implements ActionListener, WindowListener, MouseListe
                                 }
                             }
                         }
+
                         @Override
-                        public void mouseEntered(MouseEvent e){
+                        public void mouseEntered(MouseEvent e) {
                             for (int n = 0; n < count; n++) {
                                 if (e.getSource().equals(tle.get(n))) {
-                            tle.get(n).setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
-                            tle.get(n).setBackground(Color.decode("#B09393"));
+                                    tle.get(n).setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
+                                    tle.get(n).setBackground(Color.decode("#B09393"));
                                 }
                             }
                         }
+
                         @Override
                         public void mouseExited(MouseEvent e) {
                             for (int n = 0; n < count; n++) {
                                 if (e.getSource().equals(tle.get(n))) {
-                            tle.get(n).setBackground(Color.decode("#C59E7E"));
+                                    tle.get(n).setBackground(Color.decode("#C59E7E"));
                                 }
                             }
                         }
@@ -609,7 +608,7 @@ public class AppController implements ActionListener, WindowListener, MouseListe
         isChocolateSauce = ChooseToppings(eachdrink.getToppings().getToppingsButton().getChocolateSauceButton(), eachdrink.getToppings().getToppingsButton().getChocolateSauceText());
         toppingsPrice = 0;
     }
-    
+
     @Override
 
     public void actionPerformed(ActionEvent ae) {
@@ -671,15 +670,15 @@ public class AppController implements ActionListener, WindowListener, MouseListe
                 login.setVisible(false);
                 adminGUI.setVisible(true);
 
-            }
-            else if(login.getTfUsername().getText().equals("madara")){
+            } else if (login.getTfUsername().getText().equals("madara")) {
                 JOptionPane jp = new JOptionPane();
                 jp.showMessageDialog(null, "Wrong Password", "Worng Password", JOptionPane.ERROR_MESSAGE);
-            }else{
+            } else {
                 JOptionPane jp = new JOptionPane();
                 jp.showMessageDialog(null, "Wrong Username", "Worng Username", JOptionPane.ERROR_MESSAGE);
             }
 
+            adminGUI.getAdminControl().getTable().getTableModel().setRowCount(0);
             for (int i = 0; i < db.getProducts().size(); i++) {
 //                    fecth data
                 int population = ((Product) (db.getProducts().get(i))).getPopulation();
@@ -753,6 +752,7 @@ public class AppController implements ActionListener, WindowListener, MouseListe
 
     @Override
     public void windowClosing(WindowEvent e) {
+        db.getFinance().setBalance(0);
         db.saveFile();
         System.out.println("save");
     }
@@ -780,13 +780,15 @@ public class AppController implements ActionListener, WindowListener, MouseListe
     public void updatelog() {
         choose.setPrice(choose.getPrice() + typeOfDrinkPrice + toppingsPrice);
 
-        balance += choose.getPrice();
-        totally = balance + totally;
+//        balance += choose.getPrice();
+//        totally = balance + totally;
+        db.getFinance().setBalance(db.getFinance().getBalance() + choose.getPrice());
+        db.getFinance().setTotally(db.getFinance().getTotally() + db.getFinance().getBalance());
 
-        System.out.println("today " + balance + ", totally " + totally);
+        System.out.println("today " + db.getFinance().getBalance() + ", totally " + db.getFinance().getTotally());
 
-        adminGUI.getAdminControl().getBalance().getLblValue().setText("      " + balance + " ฿");
-        adminGUI.getAdminControl().getTotally().getLblValue().setText("      " + totally + " ฿");
+        adminGUI.getAdminControl().getBalance().getLblValue().setText("      " + db.getFinance().getBalance() + " ฿");
+        adminGUI.getAdminControl().getTotally().getLblValue().setText("      " + db.getFinance().getTotally() + " ฿");
         adminGUI.getAdminControl().getStock().sendData(new Stock(db.getProducts().size()));
 
         for (int i = 0; i < db.getProducts().size(); i++) {
@@ -1037,8 +1039,7 @@ public class AppController implements ActionListener, WindowListener, MouseListe
     public void mouseReleased(MouseEvent e) {
     }
 
-    
-    public void hoverButton(pnlBorder btn, String crHover, String crOrigin){
+    public void hoverButton(pnlBorder btn, String crHover, String crOrigin) {
         btn.setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
         btn.setBackground(Color.decode(crHover));
         btn.addMouseListener(new MouseAdapter() {
@@ -1048,17 +1049,16 @@ public class AppController implements ActionListener, WindowListener, MouseListe
             }
         });
     }
-    
-    public void notHoverButton(pnlBorder btn, String color){
+
+    public void notHoverButton(pnlBorder btn, String color) {
         btn.setBackground(Color.decode(color));
     }
 
     @Override
     public void mouseEntered(MouseEvent e) {
 
-        
         if (e.getSource().equals(adminGUI.getAdminControl().getStock())) {
-           adminGUI.getAdminControl().getStock().setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
+            adminGUI.getAdminControl().getStock().setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
         }
 
         if (e.getSource().equals(mw.getPnlLogin())) {
@@ -1079,11 +1079,10 @@ public class AppController implements ActionListener, WindowListener, MouseListe
         } else if (e.getSource().equals(mw.getPnlSoda())) {
             hoverButton(mw.getPnlSoda(), "#F6E6E6", "#C59E7E");
         }
-        
-        if (e.getSource().equals(menu.getCatagoryGUI().getRecommendButton())){
+
+        if (e.getSource().equals(menu.getCatagoryGUI().getRecommendButton())) {
             menu.getCatagoryGUI().getRecommendButton().setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
-        }
-        else if (e.getSource().equals(menu.getCatagoryGUI().getCoffeeButton())){
+        } else if (e.getSource().equals(menu.getCatagoryGUI().getCoffeeButton())) {
             menu.getCatagoryGUI().getCoffeeButton().setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
         } else if (e.getSource().equals(menu.getCatagoryGUI().getTeaButton())) {
             menu.getCatagoryGUI().getTeaButton().setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
@@ -1114,7 +1113,7 @@ public class AppController implements ActionListener, WindowListener, MouseListe
         } else if (e.getSource().equals(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getIced5Button())) {
             eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getIced5Button().setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
         } else if (e.getSource().equals(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getSmoothie5Button())) {
-           eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getSmoothie5Button().setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
+            eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getSmoothie5Button().setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
         } else if (e.getSource().equals(eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getSmoothie10Button())) {
             eachdrink.getTypeOfDrink().getTypeOfDrinkButton().getSmoothie10Button().setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
         } else if (e.getSource().equals(eachdrink.getSweetnessLevel().getSweetnessLevelButton().getButton0())) {
@@ -1134,7 +1133,7 @@ public class AppController implements ActionListener, WindowListener, MouseListe
         } else if (e.getSource().equals(eachdrink.getToppings().getToppingsButton().getMilkFoamButton())) {
             eachdrink.getToppings().getToppingsButton().getMilkFoamButton().setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
         } else if (e.getSource().equals(eachdrink.getToppings().getToppingsButton().getOreoButton())) {
-           eachdrink.getToppings().getToppingsButton().getOreoButton().setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
+            eachdrink.getToppings().getToppingsButton().getOreoButton().setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
         } else if (e.getSource().equals(eachdrink.getToppings().getToppingsButton().getJellyButton())) {
             eachdrink.getToppings().getToppingsButton().getJellyButton().setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
         } else if (e.getSource().equals(eachdrink.getToppings().getToppingsButton().getYoghurtButton())) {
@@ -1151,145 +1150,143 @@ public class AppController implements ActionListener, WindowListener, MouseListe
             paymentmain.getBackButton().setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
         } else if (e.getSource().equals(paymentmain.getButtonCash())) {
             paymentmain.getButtonCash().setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
-             paymentmain.getButtonCash().setBackground(Color.decode("#7B6565"));
-             
+            paymentmain.getButtonCash().setBackground(Color.decode("#7B6565"));
+
             paymentmain.getButtonCash().addMouseListener(new MouseAdapter() {
-                
-            @Override
-            public void mouseExited(MouseEvent e) {
-                paymentmain.getButtonCash().setBackground(Color.decode("#564747"));
-                paymentmain.getButtonCash().getjLabel1().setForeground(Color.decode("#564747"));
-            }
-        });
+
+                @Override
+                public void mouseExited(MouseEvent e) {
+                    paymentmain.getButtonCash().setBackground(Color.decode("#564747"));
+                    paymentmain.getButtonCash().getjLabel1().setForeground(Color.decode("#564747"));
+                }
+            });
 
         } else if (e.getSource().equals(paymentmain.getButtonQrCode())) {
             paymentmain.getButtonQrCode().setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
             paymentmain.getButtonQrCode().setBackground(Color.decode("#7B6565"));
-             
+
             paymentmain.getButtonQrCode().addMouseListener(new MouseAdapter() {
-                
-            @Override
-            public void mouseExited(MouseEvent e) {
-                paymentmain.getButtonQrCode().setBackground(Color.decode("#564747"));
-                
-            }
-        });
-        }
-          else if (e.getSource().equals(paymentmain.getButtonCancel())) {
-              paymentmain.getButtonCancel().setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
-             paymentmain.getButtonCancel().setBackground(Color.decode("#9F5151"));
-             
+
+                @Override
+                public void mouseExited(MouseEvent e) {
+                    paymentmain.getButtonQrCode().setBackground(Color.decode("#564747"));
+
+                }
+            });
+        } else if (e.getSource().equals(paymentmain.getButtonCancel())) {
+            paymentmain.getButtonCancel().setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
+            paymentmain.getButtonCancel().setBackground(Color.decode("#9F5151"));
+
             paymentmain.getButtonCancel().addMouseListener(new MouseAdapter() {
-               
-            @Override
-            public void mouseExited(MouseEvent e) {
-                paymentmain.getButtonCancel().setBackground(Color.decode("#A32B2B"));
-                
-            }
-        });
-        }
-        else if (e.getSource().equals(paymentmain.getButtonTrue())) {
-             paymentmain.getButtonTrue().setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
-             paymentmain.getButtonTrue().setBackground(Color.decode("#7B6565"));
-             
+
+                @Override
+                public void mouseExited(MouseEvent e) {
+                    paymentmain.getButtonCancel().setBackground(Color.decode("#A32B2B"));
+
+                }
+            });
+        } else if (e.getSource().equals(paymentmain.getButtonTrue())) {
+            paymentmain.getButtonTrue().setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
+            paymentmain.getButtonTrue().setBackground(Color.decode("#7B6565"));
+
             paymentmain.getButtonTrue().addMouseListener(new MouseAdapter() {
-               
-            @Override
-            public void mouseExited(MouseEvent e) {
-                paymentmain.getButtonTrue().setBackground(Color.decode("#564747"));
-                
-            }
-        });
+
+                @Override
+                public void mouseExited(MouseEvent e) {
+                    paymentmain.getButtonTrue().setBackground(Color.decode("#564747"));
+
+                }
+            });
         }
 
         if (e.getSource().equals(paymentqr.getBackButton())) {
-             paymentqr.getBackButton().setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
-             
+            paymentqr.getBackButton().setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
+
         }
-        if(e.getSource().equals(paymentqr.getButtonCancel())){
-             paymentqr.getButtonCancel().setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
-             paymentqr.getButtonCancel().setBackground(Color.decode("#9F5151"));
-             
+        if (e.getSource().equals(paymentqr.getButtonCancel())) {
+            paymentqr.getButtonCancel().setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
+            paymentqr.getButtonCancel().setBackground(Color.decode("#9F5151"));
+
             paymentqr.getButtonCancel().addMouseListener(new MouseAdapter() {
-               
-            @Override
-            public void mouseExited(MouseEvent e) {
-                paymentqr.getButtonCancel().setBackground(Color.decode("#A32B2B"));
-                
-            }
-        });
-            
+
+                @Override
+                public void mouseExited(MouseEvent e) {
+                    paymentqr.getButtonCancel().setBackground(Color.decode("#A32B2B"));
+
+                }
+            });
+
         }
         if (e.getSource().equals(paymentqr.getButtonConfirm())) {
             paymentqr.getButtonConfirm().setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
             paymentqr.getButtonConfirm().setBackground(Color.decode("#DAC1AC"));
-             
+
             paymentqr.getButtonConfirm().addMouseListener(new MouseAdapter() {
-               
-            @Override
-            public void mouseExited(MouseEvent e) {
-                paymentqr.getButtonConfirm().setBackground(Color.decode("#C59E7E"));
-                
-            }
-        });
+
+                @Override
+                public void mouseExited(MouseEvent e) {
+                    paymentqr.getButtonConfirm().setBackground(Color.decode("#C59E7E"));
+
+                }
+            });
         }
 
         if (e.getSource().equals(paymentinsert.getBackButton())) {
             paymentinsert.getBackButton().setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
         }
-        if(e.getSource().equals(paymentinsert.getButtonCancel())){
+        if (e.getSource().equals(paymentinsert.getButtonCancel())) {
             paymentinsert.getButtonCancel().setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
             paymentinsert.getButtonCancel().setBackground(Color.decode("#9F5151"));
-             
+
             paymentinsert.getButtonCancel().addMouseListener(new MouseAdapter() {
-               
-            @Override
-            public void mouseExited(MouseEvent e) {
-                paymentinsert.getButtonCancel().setBackground(Color.decode("#A32B2B"));
-                
-            }
-        });
+
+                @Override
+                public void mouseExited(MouseEvent e) {
+                    paymentinsert.getButtonCancel().setBackground(Color.decode("#A32B2B"));
+
+                }
+            });
         }
         if (e.getSource().equals(paymentinsert.getButtonConfirm())) {
             paymentinsert.getButtonConfirm().setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
             paymentinsert.getButtonConfirm().setBackground(Color.decode("#DAC1AC"));
-             
+
             paymentinsert.getButtonConfirm().addMouseListener(new MouseAdapter() {
-               
-            @Override
-            public void mouseExited(MouseEvent e) {
-                paymentinsert.getButtonConfirm().setBackground(Color.decode("#C59E7E"));
-                
-            }
-        });
+
+                @Override
+                public void mouseExited(MouseEvent e) {
+                    paymentinsert.getButtonConfirm().setBackground(Color.decode("#C59E7E"));
+
+                }
+            });
         }
 
         if (e.getSource().equals(paymentchange.getButtonConfirm())) {
             paymentchange.getButtonConfirm().setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
             paymentchange.getButtonConfirm().setBackground(Color.decode("#DAC1AC"));
-             
+
             paymentchange.getButtonConfirm().addMouseListener(new MouseAdapter() {
-               
-            @Override
-            public void mouseExited(MouseEvent e) {
-                paymentchange.getButtonConfirm().setBackground(Color.decode("#C59E7E"));
-                
-            }
-        });
+
+                @Override
+                public void mouseExited(MouseEvent e) {
+                    paymentchange.getButtonConfirm().setBackground(Color.decode("#C59E7E"));
+
+                }
+            });
         }
 
         if (e.getSource().equals(paymentsuccess.getButtonConfirm())) {
             paymentsuccess.getButtonConfirm().setCursor(Cursor.getPredefinedCursor(HAND_CURSOR));
             paymentsuccess.getButtonConfirm().setBackground(Color.decode("#DAC1AC"));
-             
+
             paymentsuccess.getButtonConfirm().addMouseListener(new MouseAdapter() {
-               
-            @Override
-            public void mouseExited(MouseEvent e) {
-                paymentsuccess.getButtonConfirm().setBackground(Color.decode("#C59E7E"));
-                
-            }
-        });
+
+                @Override
+                public void mouseExited(MouseEvent e) {
+                    paymentsuccess.getButtonConfirm().setBackground(Color.decode("#C59E7E"));
+
+                }
+            });
         }
 
         if (e.getSource().equals(adminGUI.getNavbar().getBackButton())) {
@@ -1299,7 +1296,7 @@ public class AppController implements ActionListener, WindowListener, MouseListe
 
     @Override
     public void mouseExited(MouseEvent e) {
-        
+
     }
 
     @Override

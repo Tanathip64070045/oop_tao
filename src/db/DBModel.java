@@ -1,5 +1,6 @@
 package db;
 
+import Model.Finance;
 import Model.Product;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -13,19 +14,8 @@ public class DBModel {
     Product product = new Product();
     public int index;
     private ArrayList products = new ArrayList ();
+    Finance finance = new Finance();
     
-    
-    
-    private double balance;
-    private double totally;
-
-    public double getBalance() {
-        return balance;
-    }
-
-    public double getTotally() {
-        return totally;
-    }
     
     public DBModel(){
             
@@ -68,6 +58,8 @@ public class DBModel {
             
             try{
                 setProducts((ArrayList <Product>) in.readObject());
+                finance = ((Finance) in.readObject());
+                System.out.println("(LOAD) Balance : " + finance.getBalance() + ", Totally : " + finance.getTotally());
             }catch(Exception e){
                 System.out.print(e);
             }
@@ -80,12 +72,22 @@ public class DBModel {
         try ( FileOutputStream fOut = new FileOutputStream("database.dat");  
                 ObjectOutputStream oout = new ObjectOutputStream(fOut);) {
 
-            oout.writeObject(this.products);
-            System.out.println(products);
+            oout.writeObject(products);
+            oout.writeObject(finance);
+            System.out.println("(SAVE) Balance : " + finance.getBalance() + ", Totally : " + finance.getTotally());
 
             return true;
         } catch (Exception i) {
             return false;
         }
     }
+
+    public Finance getFinance() {
+        return finance;
+    }
+
+    public void setFinance(Finance finance) {
+        this.finance = finance;
+    }
+    
 }
