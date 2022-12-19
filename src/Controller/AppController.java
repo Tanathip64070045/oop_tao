@@ -668,7 +668,8 @@ public class AppController implements ActionListener, WindowListener, MouseListe
                 mw.getPnlContainer().setVisible(false);
                 login.setVisible(false);
                 adminGUI.setVisible(true);
-
+                login.getTfUsername().setText("");
+                login.getjPasswordField1().setText("");
             } else if (login.getTfUsername().getText().equals("madara")) {
                 JOptionPane jp = new JOptionPane();
                 jp.showMessageDialog(null, "Wrong Password", "Worng Password", JOptionPane.ERROR_MESSAGE);
