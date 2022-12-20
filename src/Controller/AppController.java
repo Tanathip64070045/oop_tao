@@ -21,7 +21,6 @@ import GUI.PaymentGUI.PaymentSuccess;
 import Model.Card;
 import Model.Product;
 import Model.Stock;
-import Model.ViewModel;
 import db.DBModel;
 import internal.Login;
 import java.awt.CardLayout;
@@ -801,8 +800,6 @@ public class AppController implements ActionListener, WindowListener, MouseListe
         }
     }
 
-    private ViewModel view = new ViewModel();
-    private BufferedImage img;
     DrinkGUI productss;
     ArrayList<DrinkGUI> tle = new ArrayList<DrinkGUI>();
     ArrayList<String> recomCategory = new ArrayList<String>();
@@ -845,11 +842,8 @@ public class AppController implements ActionListener, WindowListener, MouseListe
                     stock.getAdminProducts().getTfName().setText(stock.getAdminProducts().getTable().getValueAt(i, 2).toString());
                     stock.getAdminProducts().getTfPrice().setText(stock.getAdminProducts().getTable().getValueAt(i, 3).toString());
                     stock.getAdminProducts().getCategory().setSelectedItem(stock.getAdminProducts().getTable().getValueAt(i, 4));
-                    view.setfName(stock.getAdminProducts().getTable().getValueAt(i, 1).toString());
-//                        System.out.println(stock.getAdminProducts().getTable().getValueAt(i, 1).toString());
                     stock.getAdminProducts().getLblFile().setText(shorten(stock.getAdminProducts().getTable().getValueAt(i, 1).toString(), 20));
 
-//                    stock.getAdminProducts().getPnlViewer().repaint();                    stock.getAdminProducts().getPnlViewer().revalidate();
                 }
             });
         }
